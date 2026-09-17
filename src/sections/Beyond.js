@@ -9,7 +9,7 @@ export function Beyond({ location } = {}) {
     </span>
 
     <h1>
-      ${location?.name || "UTOWN"}
+      ${location?.name || "The DORMS"}
     </h1>
 
     <p>

@@ -73,7 +73,7 @@ export const campus = {
 
     {
       id: "utown",
-      name: "UTOWN",
+      name: "THE DORMS",
       section: "Beyond the Screen",
       description:
         "A little bit about me outside of design and development.",

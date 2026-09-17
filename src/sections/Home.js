@@ -25,7 +25,7 @@ export function Home({
 
         <h1>
           THIS IS
-          <span>MY CAMPUS.</span>
+          <span>MY CAMPUS!</span>
         </h1>
 
         <p class="home-intro">
@@ -135,9 +135,9 @@ export function Home({
         </span>
 
         <h2>
-          THIS ISN'T
+          WHY ARE WE
           <br />
-          JUST A <em>PORTFOLIO.</em>
+          BACK ON <em>CAMPUS?!</em>
         </h2>
 
       </div>
@@ -324,7 +324,7 @@ export function Home({
         </button>
 
 
-        <!-- UTOWN -->
+        <!-- THE DORMS -->
 
         <button
           class="home-destination"
@@ -342,7 +342,7 @@ export function Home({
 
           <span class="destination-text">
             <small>VISIT</small>
-            <strong>UTOWN</strong>
+            <strong>THE DORMS</strong>
             <em>Beyond the Screen</em>
           </span>
 
