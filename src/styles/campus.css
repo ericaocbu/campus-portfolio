@@ -1,153 +1,46 @@
-/* =====================================================
-   CAMPUS
-===================================================== */
-
-body {
-  min-height: 100vh;
-
-  margin: 0;
-
-  font-family: Arial, sans-serif;
-
-  background: #dce4d6;
-
-  color: #183c35;
-
-  overflow: hidden;
-}
-
-
-/* =====================================================
-   VIEWPORT
-===================================================== */
-
-#campus {
+.campus-viewport {
+  position: relative;
   width: 100vw;
   height: 100vh;
-}
-
-.campus-viewport {
-  width: 100%;
-  height: 100%;
-
-  position: relative;
-
   overflow: auto;
-
-  background: #dce4d6;
-
+  background: #dfe8d8;
   scrollbar-width: thin;
-
-  scrollbar-color:
-    rgba(24, 60, 53, 0.35)
-    transparent;
-
-  scroll-behavior: smooth;
-
-  -webkit-overflow-scrolling: touch;
+  scrollbar-color: #183c35 #dfe8d8;
 }
-
-
-/* =====================================================
-   CAMPUS MAP
-===================================================== */
 
 .campus-map {
   position: relative;
-
   width: 1800px;
   height: 1200px;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      ellipse at 50% 50%,
-      #e9ede2 0%,
-      #dce5d6 45%,
-      #d4dfd0 100%
-    );
+  min-width: 1800px;
+  min-height: 1200px;
 }
-
-
-/* =====================================================
-   GROUND TEXTURE
-===================================================== */
-
-.campus-map::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(24, 60, 53, 0.07) 1px,
-      transparent 1px
-    );
-
-  background-size: 30px 30px;
-
-  opacity: 0.45;
-
-  pointer-events: none;
-}
-
-
-/* =====================================================
-   CENTRAL PLAZA
-===================================================== */
-
-.campus-map::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 52%;
-
-  width: 470px;
-  height: 310px;
-
-  transform:
-    translate(-50%, -50%)
-    rotate(-2deg);
-
-  border-radius: 45%;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(255, 255, 255, 0.65),
-      rgba(255, 255, 255, 0.2) 65%,
-      transparent 66%
-    );
-
-  border:
-    2px solid rgba(24, 60, 53, 0.08);
-
-  pointer-events: none;
-
-  z-index: 2;
-}
-
-
-/* =====================================================
-   ENVIRONMENT
-===================================================== */
 
 .campus-environment {
   position: absolute;
-
   inset: 0;
-
-  z-index: 5;
-
-  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.2),
+      transparent 38%
+    ),
+    #dfe8d8;
 }
 
+.campus-environment::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    radial-gradient(
+      rgba(24, 60, 53, 0.22) 0.7px,
+      transparent 0.7px
+    );
+  background-size: 18px 18px;
+}
 
 /* =====================================================
    PATH SYSTEM
@@ -155,7 +48,6 @@ body {
 
 .campus-paths {
   position: absolute;
-
   inset: 0;
 
   z-index: 1;
@@ -174,6 +66,8 @@ body {
 
   display: block;
 
+  border-radius: 999px;
+
   background:
     repeating-linear-gradient(
       90deg,
@@ -184,46 +78,25 @@ body {
     );
 
   box-shadow:
-    0 0 0 6px rgba(255, 255, 255, 0.22);
-
-  border-radius: 999px;
+    0 0 0 6px
+    rgba(255, 255, 255, 0.22);
 }
 
 .path-arrow {
-  position: absolute;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 42px;
-  height: 42px;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.25);
-
-  border-radius: 50%;
-
-  background: rgba(245, 243, 235, 0.92);
-
-  color: #183c35;
-
-  font-size: 1.1rem;
+  display: none;
 }
 
 
 /* =====================================================
-   LIBRARY PATH
+   LIBRARY ↓
 ===================================================== */
 
 .path-library {
-  width: 420px;
-  height: 340px;
+  width: 28px;
+  height: 330px;
 
   left: 50%;
-  top: 27%;
+  top: 250px;
 
   transform:
     translateX(-50%);
@@ -233,10 +106,8 @@ body {
   width: 28px;
   height: 330px;
 
-  left: 50%;
+  left: 0;
   top: 0;
-
-  transform: translateX(-50%);
 
   background:
     repeating-linear-gradient(
@@ -248,91 +119,82 @@ body {
     );
 }
 
-.path-library .path-arrow {
-  left: 50%;
-  bottom: 0;
-
-  transform: translateX(-50%);
-}
-
 
 /* =====================================================
-   LEFT PROJECT PATH
+   LEFT HORIZONTAL ROUTE
+
+   INNOVATION LAB ───────── MAIN CAMPUS
 ===================================================== */
 
 .path-lab {
-  width: 500px;
-  height: 250px;
+  width: 540px;
+  height: 28px;
 
-  left: 14%;
+  left: 9%;
   top: 49%;
 }
 
 .path-lab .path-line {
-  width: 440px;
+  width: 540px;
   height: 28px;
 
   left: 0;
   top: 50%;
 
-  transform: translateY(-50%);
-}
-
-.path-lab .path-arrow {
-  right: 0;
-  top: 50%;
-
-  transform: translateY(-50%) rotate(180deg);
+  transform:
+    translateY(-50%);
 }
 
 
 /* =====================================================
-   RIGHT EXPERIENCE PATH
+   RIGHT HORIZONTAL ROUTE
+
+   MAIN CAMPUS ───────── LECTURE HALL
 ===================================================== */
 
 .path-hall {
-  width: 500px;
-  height: 250px;
+  width: 540px;
+  height: 28px;
 
-  right: 14%;
+  right: 9%;
   top: 49%;
 }
 
 .path-hall .path-line {
-  width: 440px;
+  width: 540px;
   height: 28px;
 
   right: 0;
   top: 50%;
 
-  transform: translateY(-50%);
-}
-
-.path-hall .path-arrow {
-  left: 0;
-  top: 50%;
-
-  transform: translateY(-50%);
+  transform:
+    translateY(-50%);
 }
 
 
 /* =====================================================
-   CANTEEN PATH
+   LEFT VERTICAL ROUTE
+
+   INNOVATION LAB
+          │
+          │
+          │
+   FOOD CANTEEN
 ===================================================== */
 
 .path-canteen {
-  width: 450px;
-  height: 300px;
+  width: 28px;
+  height: 430px;
 
-  left: 14%;
-  bottom: 25%;
+  left: 9%;
+  top: 49%;
 }
 
 .path-canteen .path-line {
   width: 28px;
-  height: 280px;
+  height: 430px;
 
-  left: 55%;
+  left: 0;
   top: 0;
 
   background:
@@ -345,29 +207,30 @@ body {
     );
 }
 
-.path-canteen .path-arrow {
-  left: calc(55% - 21px);
-  bottom: 0;
-}
-
 
 /* =====================================================
-   UTOWN PATH
+   RIGHT VERTICAL ROUTE
+
+   LECTURE HALL
+          │
+          │
+          │
+   UTOWN
 ===================================================== */
 
 .path-utown {
-  width: 450px;
-  height: 300px;
+  width: 28px;
+  height: 430px;
 
-  right: 14%;
-  bottom: 25%;
+  right: 9%;
+  top: 49%;
 }
 
 .path-utown .path-line {
   width: 28px;
-  height: 280px;
+  height: 430px;
 
-  left: 45%;
+  right: 0;
   top: 0;
 
   background:
@@ -380,135 +243,28 @@ body {
     );
 }
 
-.path-utown .path-arrow {
-  left: calc(45% - 21px);
-  bottom: 0;
-}
-
-
 /* =====================================================
-   TREES
+   CAMPUS SIGN
+
+   Keep it clearly above the Library rather than
+   making it look attached to that building.
 ===================================================== */
-
-.campus-trees {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 3;
-
-  pointer-events: none;
-}
-
-.campus-trees::before {
-  content:
-    "🌴     🌳       🌿       🌳     🌴";
-
-  position: absolute;
-
-  left: 4%;
-  top: 5%;
-
-  font-size: 2.5rem;
-
-  letter-spacing: 0.6rem;
-
-  white-space: nowrap;
-
-  opacity: 0.8;
-}
-
-.campus-trees::after {
-  content:
-    "🌳     🌴       🌿       🌴     🌳";
-
-  position: absolute;
-
-  right: 4%;
-  bottom: 5%;
-
-  font-size: 2.5rem;
-
-  letter-spacing: 0.6rem;
-
-  white-space: nowrap;
-
-  opacity: 0.8;
-}
-
-
-/* =====================================================
-   GREENERY
-===================================================== */
-
-.campus-greenery {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 4;
-
-  pointer-events: none;
-}
-
-.campus-greenery::before {
-  content:
-    "🌿   🌱   🌿       🌱   🌿";
-
-  position: absolute;
-
-  left: 5%;
-  bottom: 39%;
-
-  font-size: 1.8rem;
-
-  letter-spacing: 0.5rem;
-
-  opacity: 0.8;
-}
-
-.campus-greenery::after {
-  content:
-    "🌱   🌿       🌿   🌱   🌿";
-
-  position: absolute;
-
-  right: 5%;
-  top: 38%;
-
-  font-size: 1.8rem;
-
-  letter-spacing: 0.5rem;
-
-  opacity: 0.8;
-}
-
-
-/* =====================================================
-   CAMPUS DETAILS
-===================================================== */
-
-.campus-details {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 6;
-
-  pointer-events: none;
-}
 
 .campus-details::before {
-  content: "DIGITAL CAMPUS";
+
+  content: "ERICA'S DIGITAL CAMPUS";
 
   position: absolute;
 
   left: 50%;
-  top: 3%;
 
-  transform: translateX(-50%);
+  top: 0.5%;
 
-  padding: 0.5rem 1rem;
+  transform:
+    translateX(-50%);
+
+  padding:
+    0.65rem 1.25rem;
 
   border:
     1px solid
@@ -517,14 +273,1310 @@ body {
   border-radius: 999px;
 
   background:
-    rgba(245, 243, 235, 0.88);
+    rgba(245, 243, 235, 0.94);
 
-  font-size: 0.6rem;
+  font-size: 0.62rem;
 
   font-weight: 800;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 5px 14px
+    rgba(24, 60, 53, 0.08);
+
 }
+
+/* ========================================
+   CAMPUS CENTER DETAILS
+======================================== */
+
+.campus-details {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.campus-details::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 430px;
+  height: 255px;
+  transform: translate(-50%, -50%);
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.08);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.campus-details::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 280px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(24, 60, 53, 0.045);
+}
+
+/* ========================================
+   CAMPUS SIGN
+======================================== */
+
+.campus-sign {
+  position: absolute;
+  left: 50%;
+  top: 58px;
+  width: 170px;
+  height: 110px;
+  transform: translateX(-50%);
+}
+
+.sign-post {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 8px;
+  height: 54px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background: #183c35;
+}
+
+.sign-board {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 170px;
+  padding: 0.85rem 1rem;
+  transform: translateX(-50%);
+  border:
+    2px solid
+    #183c35;
+  border-radius: 5px;
+  background: #f5f3eb;
+  color: #183c35;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow:
+    4px 5px 0
+    rgba(24, 60, 53, 0.08);
+}
+
+.sign-board strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+}
+
+/* ========================================
+   LANDSCAPING
+======================================== */
+
+.campus-landscaping {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.tree-round,
+.tree-small {
+  position: absolute;
+}
+
+.tree-round {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #789874 0,
+      #789874 20%,
+      #5e7e63 21%,
+      #5e7e63 68%,
+      #4d6c53 69%,
+      #4d6c53 100%
+    );
+  box-shadow:
+    0 7px 0
+    rgba(24, 60, 53, 0.07);
+}
+
+.tree-round::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 59px;
+  width: 12px;
+  height: 21px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: #765f49;
+  z-index: -1;
+}
+
+.tree-small {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #789a76,
+      #56775c 68%,
+      #49694f
+    );
+  box-shadow:
+    0 5px 0
+    rgba(24, 60, 53, 0.06);
+}
+
+.tree-small::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  width: 8px;
+  height: 14px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: #765f49;
+  z-index: -1;
+}
+
+.landscape-tree-1 {
+  left: 115px;
+  top: 145px;
+}
+
+.landscape-tree-2 {
+  right: 115px;
+  top: 150px;
+}
+
+.landscape-tree-3 {
+  left: 95px;
+  top: 900px;
+}
+
+.landscape-tree-4 {
+  right: 100px;
+  top: 885px;
+}
+
+.landscape-tree-5 {
+  left: 460px;
+  top: 90px;
+}
+
+.landscape-tree-6 {
+  right: 450px;
+  bottom: 85px;
+}
+
+.landscape-tree-7 {
+  left: 315px;
+  top: 530px;
+}
+
+.landscape-tree-8 {
+  right: 310px;
+  top: 535px;
+}
+
+/* Shrubs */
+
+.shrub {
+  position: absolute;
+  width: 62px;
+  height: 27px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 18% 65%,
+      #6c8c68 0,
+      #6c8c68 23%,
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 45% 40%,
+      #75966f 0,
+      #75966f 29%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 72% 62%,
+      #5e7f61 0,
+      #5e7f61 28%,
+      transparent 29%
+    );
+}
+
+.landscape-shrub-1 {
+  left: 250px;
+  top: 230px;
+}
+
+.landscape-shrub-2 {
+  right: 245px;
+  top: 225px;
+}
+
+.landscape-shrub-3 {
+  left: 260px;
+  bottom: 185px;
+}
+
+.landscape-shrub-4 {
+  right: 255px;
+  bottom: 175px;
+}
+
+/* Lamps */
+
+.lamp {
+  position: absolute;
+  width: 7px;
+  height: 52px;
+  border-radius: 5px;
+  background: #40564c;
+}
+
+.lamp::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  width: 20px;
+  height: 14px;
+  transform: translateX(-50%);
+  border:
+    2px solid
+    #40564c;
+  border-radius:
+    50% 50% 35% 35%;
+  background: #f5f3eb;
+}
+
+.landscape-lamp-1 {
+  left: 690px;
+  top: 300px;
+}
+
+.landscape-lamp-2 {
+  right: 690px;
+  top: 300px;
+}
+
+.landscape-lamp-3 {
+  left: 900px;
+  bottom: 210px;
+}
+
+/* ========================================
+   START TOUR BUTTON
+======================================== */
+
+.campus-tour-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 150;
+}
+
+.campus-tour-start {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 235px;
+  padding: 0.8rem 1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.18);
+  border-radius: 9px;
+  background:
+    rgba(245, 243, 235, 0.95);
+  color: #183c35;
+  box-shadow:
+    0 10px 28px
+    rgba(24, 60, 53, 0.12);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.campus-tour-start:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 32px
+    rgba(24, 60, 53, 0.15);
+}
+
+.campus-tour-start:focus-visible {
+  outline:
+    3px solid
+    #183c35;
+  outline-offset: 4px;
+}
+
+.campus-tour-start-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background: #183c35;
+  color: #f5f3eb;
+  font-size: 0.85rem;
+}
+
+.campus-tour-start-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.campus-tour-start-copy strong {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.campus-tour-start-copy small {
+  font-size: 0.62rem;
+  opacity: 0.5;
+}
+
+.campus-tour-start-arrow {
+  font-size: 1rem;
+}
+
+/* ========================================
+   CAMPUS DIRECTORY
+======================================== */
+
+.campus-navigation {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  left: auto;
+  z-index: 250;
+}
+
+.directory-button {
+  padding: 0.8rem 1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.18);
+  border-radius: 7px;
+  background:
+    rgba(245, 243, 235, 0.94);
+  color: #183c35;
+  box-shadow:
+    0 8px 20px
+    rgba(24, 60, 53, 0.08);
+  backdrop-filter: blur(10px);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.directory-button:hover {
+  background: #183c35;
+  color: #f5f3eb;
+}
+
+.directory-panel {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  left: auto;
+  width: min(390px, calc(100vw - 3rem));
+  max-height: calc(100vh - 3rem);
+  padding: 1.5rem;
+  overflow-y: auto;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.14);
+  border-radius: 12px;
+  background:
+    rgba(245, 243, 235, 0.97);
+  color: #183c35;
+  box-shadow:
+    0 20px 50px
+    rgba(24, 60, 53, 0.18);
+  backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+}
+
+.directory-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.directory-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.directory-eyebrow,
+.directory-divider {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+}
+
+.directory-header h2 {
+  margin-top: 0.3rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+}
+
+.directory-close {
+  width: 34px;
+  height: 34px;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.15);
+  border-radius: 50%;
+  background: transparent;
+  color: #183c35;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.start-tour-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-bottom: 1.3rem;
+  padding: 0.9rem;
+  border: 0;
+  border-radius: 8px;
+  background: #183c35;
+  color: #f5f3eb;
+  text-align: left;
+  cursor: pointer;
+}
+
+.start-tour-button > span:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.start-tour-button strong {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.start-tour-button small {
+  font-size: 0.62rem;
+  opacity: 0.6;
+}
+
+.directory-divider {
+  margin-bottom: 0.65rem;
+}
+
+.directory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.directory-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  border:
+    1px solid
+    transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #183c35;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.directory-item:hover {
+  border-color:
+    rgba(24, 60, 53, 0.1);
+  background:
+    rgba(255, 255, 255, 0.5);
+}
+
+.directory-number {
+  width: 22px;
+  font-size: 0.58rem;
+  opacity: 0.4;
+}
+
+.directory-icon {
+  font-size: 1.1rem;
+}
+
+.directory-item-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.directory-item-text strong {
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.directory-item-text small {
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+
+.directory-arrow {
+  opacity: 0.45;
+}
+
+/* ========================================
+   TOUR HUD
+======================================== */
+
+.tour-hud {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 280px;
+  z-index: 300;
+  padding: 1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.15);
+  border-radius: 10px;
+  background:
+    rgba(245, 243, 235, 0.96);
+  color: #183c35;
+  box-shadow:
+    0 16px 40px
+    rgba(24, 60, 53, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.tour-hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+  border-bottom:
+    1px solid
+    rgba(24, 60, 53, 0.1);
+}
+
+.tour-hud-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.tour-hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #426c52;
+}
+
+.tour-hud-count {
+  font-size: 0.6rem;
+  opacity: 0.45;
+}
+
+.tour-hud-current,
+.tour-hud-next {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 0;
+}
+
+.tour-hud-next {
+  border-top:
+    1px solid
+    rgba(24, 60, 53, 0.08);
+}
+
+.tour-hud-eyebrow {
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.45;
+}
+
+.tour-hud-current strong,
+.tour-hud-next strong {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.tour-hud-current small,
+.tour-hud-next small {
+  font-size: 0.62rem;
+  opacity: 0.5;
+}
+
+.tour-hud-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tour-hud-next-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 0;
+  border-radius: 6px;
+  background: #183c35;
+  color: #f5f3eb;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.tour-hud-exit {
+  padding: 0.55rem;
+  border: 0;
+  background: transparent;
+  color: #183c35;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .campus-navigation {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .directory-panel {
+    top: 1rem;
+    right: 1rem;
+    width: calc(100vw - 2rem);
+  }
+
+  .campus-tour-cta {
+    bottom: 1rem;
+  }
+
+  .tour-hud {
+    right: 1rem;
+    bottom: 1rem;
+    width: min(280px, calc(100vw - 2rem));
+  }
+}
+
+
+
+/* =====================================================
+   CAMPUS ENVIRONMENT — NEW DETAIL PASS
+===================================================== */
+
+
+/* =====================================================
+   HIDE OLD EMOJI ENVIRONMENT
+===================================================== */
+
+.campus-trees::before,
+.campus-trees::after,
+.campus-greenery::before,
+.campus-greenery::after {
+  display: none;
+}
+
+
+/* =====================================================
+   PATH SYSTEM
+===================================================== */
+
+.path-arrow {
+  display: none;
+}
+
+.path-line {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #bcc3b7 0,
+      #bcc3b7 34px,
+      #d5d9ce 34px,
+      #d5d9ce 44px
+    );
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.22),
+    inset 0 1px rgba(24, 60, 53, 0.08);
+}
+
+
+/* =====================================================
+   LIBRARY → MAIN CAMPUS
+===================================================== */
+
+.path-library {
+  width: 400px;
+  height: 380px;
+
+  left: 50%;
+  top: 25%;
+
+  transform:
+    translateX(-50%);
+}
+
+.path-library .path-line {
+  width: 24px;
+  height: 205px;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    repeating-linear-gradient(
+      180deg,
+      #bcc3b7 0,
+      #bcc3b7 34px,
+      #d5d9ce 34px,
+      #d5d9ce 44px
+    );
+}
+
+
+/* =====================================================
+   LEFT MAIN PATH
+===================================================== */
+
+.path-lab {
+  width: 540px;
+  height: 250px;
+
+  left: 10%;
+  top: 48%;
+}
+
+.path-lab .path-line {
+  width: 410px;
+  height: 24px;
+
+  left: 0;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* =====================================================
+   RIGHT MAIN PATH
+===================================================== */
+
+.path-hall {
+  width: 540px;
+  height: 250px;
+
+  right: 10%;
+  top: 48%;
+}
+
+.path-hall .path-line {
+  width: 410px;
+  height: 24px;
+
+  right: 0;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* =====================================================
+   LEFT LOWER PATH
+===================================================== */
+
+.path-canteen {
+  width: 540px;
+  height: 350px;
+
+  left: 10%;
+  bottom: 17%;
+}
+
+.path-canteen .path-line {
+  width: 24px;
+  height: 245px;
+
+  left: 27%;
+  top: 0;
+
+  background:
+    repeating-linear-gradient(
+      180deg,
+      #bcc3b7 0,
+      #bcc3b7 34px,
+      #d5d9ce 34px,
+      #d5d9ce 44px
+    );
+}
+
+
+/* =====================================================
+   RIGHT LOWER PATH
+===================================================== */
+
+.path-utown {
+  width: 540px;
+  height: 350px;
+
+  right: 10%;
+  bottom: 17%;
+}
+
+.path-utown .path-line {
+  width: 24px;
+  height: 245px;
+
+  left: 73%;
+  top: 0;
+
+  background:
+    repeating-linear-gradient(
+      180deg,
+      #bcc3b7 0,
+      #bcc3b7 34px,
+      #d5d9ce 34px,
+      #d5d9ce 44px
+    );
+}
+
+
+/* =====================================================
+   TREE SYSTEM
+===================================================== */
+
+.campus-tree {
+  position: absolute;
+
+  width: 54px;
+  height: 68px;
+
+  transform:
+    translate(-50%, -50%);
+
+  opacity: 0.9;
+
+  filter:
+    drop-shadow(
+      0 5px 4px
+      rgba(24, 60, 53, 0.12)
+    );
+}
+
+.tree-crown {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 48px;
+  height: 48px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #718c69 0,
+      #718c69 24%,
+      #5c795d 25%,
+      #5c795d 100%
+    );
+
+  border:
+    2px solid
+    rgba(24, 60, 53, 0.18);
+}
+
+.tree-trunk {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 9px;
+  height: 28px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 3px;
+
+  background: #756b58;
+}
+
+.campus-tree-large {
+  transform:
+    translate(-50%, -50%)
+    scale(1.18);
+}
+
+
+/* =====================================================
+   BUSHES
+===================================================== */
+
+.campus-bush {
+  position: absolute;
+
+  width: 52px;
+  height: 25px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius:
+    55% 55% 45% 45%;
+
+  background:
+    radial-gradient(
+      circle at 25% 40%,
+      #819978 0,
+      #819978 25%,
+      #6c8769 26%,
+      #6c8769 100%
+    );
+
+  border:
+    2px solid
+    rgba(24, 60, 53, 0.12);
+
+  box-shadow:
+    0 5px 8px
+    rgba(24, 60, 53, 0.08);
+}
+
+
+/* =====================================================
+   LANDSCAPED AREAS
+===================================================== */
+
+.campus-landscape {
+  position: absolute;
+
+  display: block;
+
+  transform:
+    rotate(var(--landscape-rotation));
+
+  border-radius: 50%;
+
+  background:
+    rgba(126, 151, 115, 0.18);
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.08);
+}
+
+.campus-landscape::before,
+.campus-landscape::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #8b9b75;
+
+  opacity: 0.7;
+}
+
+.campus-landscape::before {
+  left: 28%;
+  top: 42%;
+}
+
+.campus-landscape::after {
+  right: 24%;
+  top: 58%;
+}
+
+
+/* =====================================================
+   BENCHES
+===================================================== */
+
+.campus-bench {
+  position: absolute;
+
+  width: 62px;
+  height: 38px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--bench-rotation));
+
+  opacity: 0.9;
+}
+
+.bench-seat {
+  position: absolute;
+
+  left: 3px;
+  top: 5px;
+
+  width: 56px;
+  height: 9px;
+
+  border-radius: 3px;
+
+  background: #8a775d;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.22);
+
+  box-shadow:
+    0 3px 4px
+    rgba(24, 60, 53, 0.12);
+}
+
+.bench-seat::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 15px;
+
+  width: 56px;
+  height: 7px;
+
+  border-radius: 3px;
+
+  background: #75644f;
+}
+
+.bench-leg {
+  position: absolute;
+
+  top: 22px;
+
+  width: 5px;
+  height: 14px;
+
+  border-radius: 2px;
+
+  background: #4d5d50;
+}
+
+.bench-leg-left {
+  left: 12px;
+}
+
+.bench-leg-right {
+  right: 12px;
+}
+
+
+/* =====================================================
+   CAMPUS LAMPS
+===================================================== */
+
+.campus-lamp {
+  position: absolute;
+
+  width: 18px;
+  height: 52px;
+
+  transform:
+    translate(-50%, -50%);
+
+  opacity: 0.7;
+}
+
+.lamp-light {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 12px;
+  height: 12px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #e9dfad;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.2);
+
+  box-shadow:
+    0 0 12px
+    rgba(233, 223, 173, 0.45);
+}
+
+.lamp-pole {
+  position: absolute;
+
+  left: 50%;
+  top: 10px;
+
+  width: 4px;
+  height: 40px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background: #59685d;
+}
+
+
+/* =====================================================
+   CAMPUS SIGN
+===================================================== */
+
+.campus-sign {
+  position: absolute;
+
+  left: 50%;
+  top: 0.5%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  z-index: 10;
+}
+
+.sign-board {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 2px;
+
+  padding:
+    0.65rem 1.25rem;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.2);
+
+  border-radius: 999px;
+
+  background:
+    rgba(245, 243, 235, 0.96);
+
+  color: #183c35;
+
+  font-size: 0.58rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 5px 14px
+    rgba(24, 60, 53, 0.08);
+}
+
+.sign-board strong {
+  font-size: 0.72rem;
+
+  letter-spacing: 0.12em;
+}
+
+.sign-post {
+  width: 2px;
+  height: 18px;
+
+  background:
+    rgba(24, 60, 53, 0.35);
+}
+
+
+/* =====================================================
+   EXTRA CAMPUS DETAILS
+===================================================== */
 
 .campus-details::after {
   content: "WELCOME";
@@ -532,236 +1584,19 @@ body {
   position: absolute;
 
   left: 50%;
-  top: calc(52% + 155px);
 
-  transform: translateX(-50%);
+  top: calc(52% + 165px);
 
-  font-size: 0.6rem;
+  transform:
+    translateX(-50%);
+
+  font-size: 0.58rem;
 
   font-weight: 800;
 
   letter-spacing: 0.25em;
 
-  opacity: 0.4;
-}
-
-
-/* =====================================================
-   DIRECTORY
-===================================================== */
-
-.campus-navigation {
-  position: fixed;
-
-  top: 1.5rem;
-  right: 1.5rem;
-
-  z-index: 100;
-}
-
-.directory-button {
-  padding: 0.8rem 1rem;
-
-  border: 2px solid #183c35;
-
-  border-radius: 6px;
-
-  background: #f5f3eb;
-
-  color: #183c35;
-
-  font-size: 0.7rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 6px 18px rgba(24, 60, 53, 0.15);
-
-  transition:
-    transform 200ms ease,
-    background 200ms ease,
-    color 200ms ease;
-}
-
-.directory-button:hover {
-  transform: translateY(-2px);
-
-  background: #183c35;
-
-  color: #f5f3eb;
-}
-
-.directory-button:focus-visible {
-  outline: 3px solid #183c35;
-
-  outline-offset: 4px;
-}
-
-
-/* =====================================================
-   DIRECTORY PANEL
-===================================================== */
-
-.directory-panel {
-  position: fixed;
-
-  top: 0;
-  right: 0;
-
-  width: min(390px, 92vw);
-  height: 100vh;
-
-  padding: 2rem;
-
-  background: #f5f3eb;
-
-  color: #183c35;
-
-  box-shadow:
-    -15px 0 40px rgba(24, 60, 53, 0.18);
-
-  transform: translateX(100%);
-
-  transition:
-    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
-
-  overflow-y: auto;
-}
-
-.directory-panel.is-open {
-  transform: translateX(0);
-}
-
-.directory-header {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 2rem;
-}
-
-.directory-header h2 {
-  font-size: 1.2rem;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.08em;
-}
-
-.directory-close {
-  width: 40px;
-  height: 40px;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.25);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: #183c35;
-
-  font-size: 1.5rem;
-
-  cursor: pointer;
-
-  transition:
-    transform 200ms ease,
-    background 200ms ease;
-}
-
-.directory-close:hover {
-  transform: rotate(90deg);
-
-  background: #e8eadf;
-}
-
-.directory-list {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.7rem;
-}
-
-.directory-item {
-  width: 100%;
-
-  padding: 1rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.18);
-
-  border-radius: 8px;
-
-  background: transparent;
-
-  color: #183c35;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 1rem;
-
-  text-align: left;
-
-  transition:
-    transform 200ms ease,
-    background 200ms ease;
-}
-
-.directory-item:hover {
-  transform: translateX(5px);
-
-  background: #e8eadf;
-}
-
-.directory-icon {
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background: #e8eadf;
-
-  font-size: 1.4rem;
-}
-
-.directory-item span:last-child {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.25rem;
-}
-
-.directory-item strong {
-  font-size: 0.75rem;
-
-  letter-spacing: 0.06em;
-}
-
-.directory-item small {
-  font-size: 0.7rem;
-
-  opacity: 0.55;
+  opacity: 0.35;
 }
 
 
@@ -770,320 +1605,189 @@ body {
 ===================================================== */
 
 @media (max-width: 768px) {
-  .campus-map {
-    width: 1200px;
-    height: 1400px;
+
+  .campus-tree {
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
   }
 
-  .campus-map::after {
-    width: 330px;
-    height: 240px;
+  .campus-tree-large {
+    transform:
+      translate(-50%, -50%)
+      scale(0.92);
   }
 
-  .campus-details::before {
-    top: 2%;
-
-    font-size: 0.5rem;
+  .campus-bench,
+  .campus-lamp {
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
   }
 
-  .campus-details::after {
-    top: calc(52% + 125px);
+  .campus-landscape {
+    transform:
+      translate(-50%, -50%)
+      scale(0.8)
+      rotate(var(--landscape-rotation));
   }
 
-  .campus-trees::before,
-  .campus-trees::after {
-    font-size: 1.8rem;
-
-    letter-spacing: 0.3rem;
+  .campus-sign {
+    top: 0.8%;
   }
 
-  .campus-greenery::before,
-  .campus-greenery::after {
-    font-size: 1.3rem;
+  .sign-board {
+    font-size: 0.48rem;
   }
 
-  .directory-panel {
-    width: 100%;
-
-    padding: 1.5rem;
+  .sign-board strong {
+    font-size: 0.58rem;
   }
 }
-
 
 
 /* =====================================================
-   GUIDED TOUR
+   MAP START TOUR BUTTON
 ===================================================== */
 
-.tour-controls {
+.map-start-tour {
   position: fixed;
 
   left: 50%;
-
   bottom: 1.5rem;
 
-  width: min(700px, calc(100vw - 2rem));
+  z-index: 100;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
-  z-index: 150;
-
-  display: grid;
-
-  grid-template-columns: 1fr auto;
-
-  gap: 1rem;
-
-  padding: 0.9rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.2);
-
-  border-radius: 12px;
-
-  background:
-    rgba(245, 243, 235, 0.94);
-
-  backdrop-filter: blur(12px);
-
-  box-shadow:
-    0 15px 40px
-    rgba(24, 60, 53, 0.18);
-
-  animation:
-    tour-slide-up 500ms
-    cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@keyframes tour-slide-up {
-  from {
-    opacity: 0;
-
-    transform:
-      translate(-50%, 30px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translate(-50%, 0);
-  }
-}
-
-
-/* Progress */
-
-.tour-progress {
-  min-width: 150px;
-}
-
-.tour-progress-top {
   display: flex;
 
   align-items: center;
 
-  justify-content: space-between;
+  gap: 0.75rem;
 
-  gap: 1rem;
+  min-width: 255px;
 
-  margin-bottom: 0.5rem;
-}
+  padding:
+    0.75rem 1rem;
 
-.tour-progress-top > span {
-  font-size: 0.55rem;
+  border:
+    2px solid
+    #183c35;
 
-  font-weight: 800;
+  border-radius: 8px;
 
-  letter-spacing: 0.15em;
+  background:
+    #f5f3eb;
 
-  opacity: 0.55;
-}
-
-.tour-stop {
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
-  color: #183c35;
-
-  font-size: 0.55rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.06em;
+  color:
+    #183c35;
 
   cursor: pointer;
 
-  opacity: 0.55;
-}
-
-.tour-stop:hover {
-  opacity: 1;
-}
-
-.tour-progress-bar {
-  width: 100%;
-  height: 4px;
-
-  overflow: hidden;
-
-  border-radius: 999px;
-
-  background: #dfe5d5;
-}
-
-.tour-progress-bar span {
-  display: block;
-
-  width: 0;
-  height: 100%;
-
-  border-radius: 999px;
-
-  background: #183c35;
+  box-shadow:
+    0 8px 24px
+    rgba(24, 60, 53, 0.16);
 
   transition:
-    width 400ms ease;
+    transform 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
 }
 
-.tour-stop-count {
-  margin-top: 0.35rem;
+.map-start-tour:hover {
+  transform:
+    translateX(-50%)
+    translateY(-3px);
 
-  font-size: 0.5rem;
+  background:
+    #183c35;
 
-  font-weight: 700;
+  color:
+    #f5f3eb;
 
-  letter-spacing: 0.1em;
-
-  opacity: 0.4;
+  box-shadow:
+    0 12px 28px
+    rgba(24, 60, 53, 0.2);
 }
 
+.map-start-tour:focus-visible {
+  outline:
+    3px solid
+    #183c35;
 
-/* Next destination */
+  outline-offset:
+    4px;
+}
 
-.tour-next {
+.map-start-tour-icon {
   display: flex;
 
   align-items: center;
+  justify-content: center;
 
-  gap: 1.25rem;
+  width: 30px;
+  height: 30px;
 
-  padding-left: 1.25rem;
+  border-radius: 50%;
 
-  border-left:
-    1px solid
-    rgba(24, 60, 53, 0.15);
+  background:
+    #e8eadf;
+
+  font-size: 0.8rem;
 }
 
-.tour-next-text {
+.map-start-tour-text {
   display: flex;
 
   flex-direction: column;
 
-  gap: 0.15rem;
+  align-items: flex-start;
+
+  gap: 2px;
+
+  flex: 1;
 }
 
-.tour-next-text > span {
-  font-size: 0.5rem;
+.map-start-tour-text strong {
+  font-size: 0.62rem;
 
-  font-weight: 800;
-
-  letter-spacing: 0.14em;
-
-  opacity: 0.45;
+  letter-spacing:
+    0.08em;
 }
 
-.tour-next-text strong {
-  font-size: 0.78rem;
-
-  letter-spacing: 0.06em;
-}
-
-.tour-next-text small {
-  font-size: 0.6rem;
-
-  opacity: 0.5;
-}
-
-.tour-next-button {
-  min-width: 115px;
-
-  padding: 0.75rem 0.9rem;
-
-  border: 2px solid #183c35;
-
-  border-radius: 6px;
-
-  background: #183c35;
-
-  color: #f5f3eb;
-
+.map-start-tour-text small {
   font-size: 0.58rem;
 
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-
-  cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 0.6rem;
-
-  transition:
-    transform 200ms ease,
-    background 200ms ease;
+  opacity: 0.55;
 }
 
-.tour-next-button:hover {
-  transform: translateX(3px);
-
-  background: #274d44;
-}
-
-.tour-next-button span {
+.map-start-tour-arrow {
   font-size: 1rem;
+
+  font-weight: 700;
 }
 
 
-/* Mobile */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 768px) {
-  .tour-controls {
-    grid-template-columns: 1fr;
 
-    gap: 0.75rem;
+  .pond {
+    left: 4%;
+    top: 56%;
 
-    bottom: 0.75rem;
-
-    width: calc(100vw - 1.5rem);
-
-    padding: 0.8rem;
+    width: 180px;
+    height: 125px;
   }
 
-  .tour-next {
-    padding-left: 0;
+  .map-start-tour {
+    bottom: 1rem;
 
-    padding-top: 0.75rem;
-
-    border-left: none;
-
-    border-top:
-      1px solid
-      rgba(24, 60, 53, 0.15);
-
-    justify-content: space-between;
+    min-width: 230px;
   }
 
-  .tour-next-button {
-    min-width: 100px;
-  }
 }

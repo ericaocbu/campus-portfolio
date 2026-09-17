@@ -1,25 +1,30 @@
 import { campus } from "../data/campus.js";
 
-export function Navigation(onSelect, onStartTour) {
-  const navigation = document.createElement("nav");
+export function Navigation(
+  onSelect,
+  onStartTour
+) {
+  const navigation =
+    document.createElement("nav");
 
-  navigation.classList.add("campus-navigation");
+  navigation.classList.add(
+    "campus-navigation"
+  );
 
   navigation.innerHTML = `
     <button
       class="directory-button"
       type="button"
+      aria-label="Open Campus Directory"
     >
       ☰ CAMPUS DIRECTORY
     </button>
 
     <div class="directory-panel">
-
       <div class="directory-header">
-
         <div>
           <span class="directory-eyebrow">
-            EXPLORE
+            EXPLORE THE CAMPUS
           </span>
 
           <h2>
@@ -34,7 +39,6 @@ export function Navigation(onSelect, onStartTour) {
         >
           ×
         </button>
-
       </div>
 
       <button
@@ -44,22 +48,25 @@ export function Navigation(onSelect, onStartTour) {
         <span>✦</span>
 
         <span>
-          <strong>START CAMPUS TOUR</strong>
-          <small>Follow my journey through the campus</small>
+          <strong>
+            START CAMPUS TOUR
+          </strong>
+
+          <small>
+            Follow the guided journey
+          </small>
         </span>
 
         <span>→</span>
       </button>
 
       <div class="directory-divider">
-        <span>LOCATIONS</span>
+        DESTINATIONS
       </div>
 
       <div class="directory-list"></div>
-
     </div>
   `;
-
 
   const directoryButton =
     navigation.querySelector(
@@ -86,6 +93,16 @@ export function Navigation(onSelect, onStartTour) {
       ".directory-list"
     );
 
+  startTourButton.addEventListener(
+    "click",
+    () => {
+      directoryPanel.classList.remove(
+        "is-open"
+      );
+
+      onStartTour();
+    }
+  );
 
   campus.locations.forEach(
     (location, index) => {
@@ -133,10 +150,11 @@ export function Navigation(onSelect, onStartTour) {
         }
       );
 
-      directoryList.appendChild(item);
+      directoryList.appendChild(
+        item
+      );
     }
   );
-
 
   directoryButton.addEventListener(
     "click",
@@ -147,7 +165,6 @@ export function Navigation(onSelect, onStartTour) {
     }
   );
 
-
   closeButton.addEventListener(
     "click",
     () => {
@@ -156,19 +173,6 @@ export function Navigation(onSelect, onStartTour) {
       );
     }
   );
-
-
-  startTourButton.addEventListener(
-    "click",
-    () => {
-      directoryPanel.classList.remove(
-        "is-open"
-      );
-
-      onStartTour();
-    }
-  );
-
 
   return navigation;
 }

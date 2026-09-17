@@ -44,14 +44,20 @@
 }
 
 .building:hover {
-  filter: drop-shadow(
-    0 16px 18px rgba(24, 60, 53, 0.18)
-  );
+  filter:
+    drop-shadow(
+      0 16px 18px
+      rgba(24, 60, 53, 0.18)
+    );
 }
 
 .building:focus-visible {
-  outline: 3px solid #183c35;
+  outline:
+    3px solid
+    #183c35;
+
   outline-offset: 8px;
+
   border-radius: 10px;
 }
 
@@ -71,7 +77,8 @@
 
   border-radius: 50%;
 
-  background: rgba(24, 60, 53, 0.16);
+  background:
+    rgba(24, 60, 53, 0.16);
 
   filter: blur(5px);
 
@@ -101,14 +108,16 @@
 
   display: block;
 
-  transform-origin: bottom center;
+  transform-origin:
+    bottom center;
 
   transition:
     transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .building:hover .building-structure {
-  transform: translateY(-7px);
+  transform:
+    translateY(-7px);
 }
 
 
@@ -128,10 +137,12 @@
 
   background: #183c35;
 
-  border-radius: 10px 10px 3px 3px;
+  border-radius:
+    10px 10px 3px 3px;
 
   box-shadow:
-    0 5px 0 rgba(24, 60, 53, 0.12);
+    0 5px 0
+    rgba(24, 60, 53, 0.12);
 }
 
 .roof-detail {
@@ -146,7 +157,8 @@
 
   border-radius: 999px;
 
-  background: rgba(245, 243, 235, 0.45);
+  background:
+    rgba(245, 243, 235, 0.45);
 }
 
 
@@ -163,7 +175,9 @@
   top: 42px;
   bottom: 0;
 
-  border: 2px solid #183c35;
+  border:
+    2px solid
+    #183c35;
 
   background: #f5f3eb;
 
@@ -181,12 +195,14 @@
   position: absolute;
 
   top: 18px;
+
   left: 16px;
   right: 16px;
 
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 
   gap: 7px;
 }
@@ -194,7 +210,9 @@
 .building-windows span {
   height: 25px;
 
-  border: 1px solid #183c35;
+  border:
+    1px solid
+    #183c35;
 
   background:
     linear-gradient(
@@ -207,7 +225,8 @@
     #d8e3dd;
 
   box-shadow:
-    inset 0 -3px rgba(24, 60, 53, 0.08);
+    inset 0 -3px
+    rgba(24, 60, 53, 0.08);
 }
 
 
@@ -225,7 +244,8 @@
   width: 70px;
   height: 72px;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   display: flex;
 
@@ -239,13 +259,16 @@
 
   padding: 5px;
 
-  border: 2px solid #183c35;
+  border:
+    2px solid
+    #183c35;
 
   border-bottom: none;
 
   background: #e2e4d9;
 
-  border-radius: 8px 8px 0 0;
+  border-radius:
+    8px 8px 0 0;
 }
 
 .entrance-door {
@@ -254,7 +277,8 @@
   width: 100%;
   height: 100%;
 
-  border-radius: 3px 3px 0 0;
+  border-radius:
+    3px 3px 0 0;
 
   background:
     linear-gradient(
@@ -320,7 +344,9 @@
 
   flex-shrink: 0;
 
-  border: 2px solid #183c35;
+  border:
+    2px solid
+    #183c35;
 
   border-radius: 50%;
 
@@ -329,7 +355,8 @@
   font-size: 1.2rem;
 
   box-shadow:
-    0 4px 8px rgba(24, 60, 53, 0.12);
+    0 4px 8px
+    rgba(24, 60, 53, 0.12);
 }
 
 .building-label {
@@ -339,13 +366,17 @@
 
   gap: 2px;
 
-  padding: 7px 10px;
+  padding:
+    7px 10px;
 
-  border: 1px solid rgba(24, 60, 53, 0.22);
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.22);
 
   border-radius: 5px;
 
-  background: rgba(245, 243, 235, 0.94);
+  background:
+    rgba(245, 243, 235, 0.94);
 
   backdrop-filter: blur(5px);
 }
@@ -367,15 +398,24 @@
 
 /* =====================================================
    ENTER INDICATOR
+
+   Sits ABOVE + OUTSIDE the building's
+   upper-right corner.
 ===================================================== */
 
 .building-arrow {
   position: absolute;
 
-  right: 2px;
-  top: 12px;
+  /*
+    Deliberately outside the building.
+  */
+  right: -45px;
+  top: -5px;
 
-  padding: 5px 8px;
+  z-index: 50;
+
+  padding:
+    6px 10px;
 
   border-radius: 999px;
 
@@ -389,20 +429,49 @@
 
   letter-spacing: 0.08em;
 
+  white-space: nowrap;
+
   opacity: 0;
 
-  transform: translateX(-8px);
+  transform:
+    translateX(-8px);
 
   transition:
     opacity 200ms ease,
     transform 200ms ease;
 }
 
+/*
+  Tiny connector makes it clear that the
+  floating pill belongs to this building.
+*/
+.building-arrow::before {
+  content: "";
+
+  position: absolute;
+
+  left: -8px;
+  bottom: 8px;
+
+  width: 10px;
+  height: 1px;
+
+  background:
+    rgba(24, 60, 53, 0.55);
+
+  transform:
+    rotate(-25deg);
+
+  transform-origin:
+    right center;
+}
+
 .building:hover .building-arrow,
 .building:focus-visible .building-arrow {
   opacity: 1;
 
-  transform: translateX(0);
+  transform:
+    translateX(0);
 }
 
 
@@ -417,11 +486,16 @@
   width: 340px;
   height: 280px;
 
-  transform: translate(-50%, -50%);
+  transform:
+    translate(-50%, -50%);
 }
 
 .building-main-campus:hover {
-  transform: translate(-50%, calc(-50% - 8px));
+  transform:
+    translate(
+      -50%,
+      calc(-50% - 8px)
+    );
 }
 
 .building-main-campus .building-structure {
@@ -432,11 +506,27 @@
 .building-main-campus .building-roof {
   height: 60px;
 
-  border-radius: 18px 18px 5px 5px;
+  border-radius:
+    18px 18px 5px 5px;
 }
 
 .building-main-campus .building-facade {
   top: 52px;
+}
+
+/*
+  Main Campus is larger, so its 12 windows
+  use a 4 × 3 arrangement.
+*/
+.building-main-campus .building-windows {
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.building-main-campus .building-windows span {
+  height: 27px;
 }
 
 .building-main-campus .building-icon {
@@ -451,16 +541,21 @@
 
 .building-library {
   left: 50%;
-  top: 12%;
+  top: 9%;
 
   width: 300px;
   height: 240px;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 }
 
 .building-library:hover {
-  transform: translate(-50%, -8px);
+  transform:
+    translate(
+      -50%,
+      -8px
+    );
 }
 
 .building-library .building-roof {
@@ -474,7 +569,8 @@
 }
 
 .building-library .building-windows {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 }
 
 
@@ -483,15 +579,16 @@
 ===================================================== */
 
 .building-innovation-lab {
-  left: 14%;
-  top: 40%;
+  left: 9%;
+  top: 39%;
 
   width: 290px;
   height: 225px;
 }
 
 .building-innovation-lab .building-roof {
-  transform: skewX(-8deg);
+  transform:
+    skewX(-8deg);
 
   border-radius: 3px;
 }
@@ -518,8 +615,8 @@
 ===================================================== */
 
 .building-lecture-hall {
-  right: 14%;
-  top: 40%;
+  right: 9%;
+  top: 39%;
 
   width: 300px;
   height: 245px;
@@ -528,7 +625,8 @@
 .building-lecture-hall .building-roof {
   height: 58px;
 
-  border-radius: 24px 24px 3px 3px;
+  border-radius:
+    24px 24px 3px 3px;
 }
 
 .building-lecture-hall .building-facade {
@@ -551,8 +649,8 @@
 ===================================================== */
 
 .building-food-canteen {
-  left: 14%;
-  bottom: 12%;
+  left: 9%;
+  bottom: 9%;
 
   width: 290px;
   height: 225px;
@@ -563,7 +661,8 @@
 
   top: -5px;
 
-  border-radius: 20px 20px 2px 2px;
+  border-radius:
+    20px 20px 2px 2px;
 }
 
 .building-food-canteen .building-facade {
@@ -582,8 +681,8 @@
 ===================================================== */
 
 .building-utown {
-  right: 14%;
-  bottom: 12%;
+  right: 9%;
+  bottom: 9%;
 
   width: 290px;
   height: 245px;
@@ -592,7 +691,8 @@
 .building-utown .building-roof {
   height: 50px;
 
-  border-radius: 8px 8px 2px 2px;
+  border-radius:
+    8px 8px 2px 2px;
 }
 
 .building-utown .building-facade {
@@ -602,7 +702,8 @@
 }
 
 .building-utown .building-windows {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 }
 
 .building-utown .building-windows span {
@@ -617,6 +718,7 @@
 ===================================================== */
 
 @media (max-width: 768px) {
+
   .building {
     width: 210px;
     height: 190px;

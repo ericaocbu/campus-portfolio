@@ -3,34 +3,23 @@ import { campus } from "./data/campus.js";
 import { CampusMap } from "./components/CampusMap.js";
 import { Navigation } from "./components/Navigation.js";
 import { SectionView } from "./components/SectionView.js";
-import { TourControls } from "./components/TourControls.js";
+import { TourHUD } from "./components/TourHUD.js";
 
 import "./style.css";
-
-
-/* =====================================================
-   CAMPUS
-===================================================== */
 
 const campusContainer =
   document.querySelector("#campus");
 
-let activeSection = null;
-
 let campusMap = null;
+let navigation = null;
+let activeSection = null;
 
 let navigationTimeout = null;
 
-let tourControls = null;
+let tourHUD = null;
 
 let tourActive = false;
-
 let currentTourIndex = 0;
-
-
-/* =====================================================
-   TOUR ORDER
-===================================================== */
 
 const tourOrder = [
   "main-campus",
@@ -41,11 +30,6 @@ const tourOrder = [
   "utown",
 ];
 
-
-/* =====================================================
-   FIND LOCATION
-===================================================== */
-
 function findCampusLocation(id) {
   return campus.locations.find(
     (location) =>
@@ -53,39 +37,92 @@ function findCampusLocation(id) {
   );
 }
 
-
-/* =====================================================
-   NAVIGATE
-===================================================== */
-
-function navigateTo(location) {
+function clearNavigationTimeout() {
   if (navigationTimeout) {
-    clearTimeout(navigationTimeout);
-  }
-
-  campusMap.moveToLocation(location);
-
-  navigationTimeout = setTimeout(() => {
-    openSection(location);
+    clearTimeout(
+      navigationTimeout
+    );
 
     navigationTimeout = null;
-  }, 650);
+  }
 }
 
+function navigateTo(location) {
+  clearNavigationTimeout();
 
-/* =====================================================
-   OPEN SECTION
-===================================================== */
+  if (!location) {
+    return;
+  }
+
+  if (tourActive) {
+    stopTour(false);
+  }
+
+  campusMap.moveToLocation(
+    location
+  );
+
+  navigationTimeout =
+    setTimeout(() => {
+      openSection(location);
+      navigationTimeout = null;
+    }, 650);
+}
+
+/*
+ * Handles navigation requests coming
+ * from SectionView.js.
+ *
+ * SectionView sends:
+ *
+ * {
+ *   locationId: "library"
+ * }
+ *
+ * We use that ID to find the actual
+ * campus location and navigate there.
+ */
+function handleSectionNavigation(
+  event
+) {
+  const locationId =
+    event.detail?.locationId;
+
+  if (!locationId) {
+    return;
+  }
+
+  const location =
+    findCampusLocation(
+      locationId
+    );
+
+  if (!location) {
+    console.warn(
+      `Campus location "${locationId}" was not found.`
+    );
+
+    return;
+  }
+
+  navigateTo(location);
+}
 
 function openSection(location) {
   if (activeSection) {
     activeSection.remove();
   }
 
-  activeSection = SectionView(
-    location,
-    closeSection
-  );
+  activeSection =
+    SectionView(
+      location,
+      closeSection,
+      {
+        tourActive: false,
+        onStartTour: startTour,
+        onNavigate: navigateTo,
+      }
+    );
 
   document.body.appendChild(
     activeSection
@@ -98,11 +135,6 @@ function openSection(location) {
   });
 }
 
-
-/* =====================================================
-   CLOSE SECTION
-===================================================== */
-
 function closeSection() {
   if (!activeSection) {
     return;
@@ -112,164 +144,306 @@ function closeSection() {
     "is-active"
   );
 
+  const sectionToRemove =
+    activeSection;
+
   setTimeout(() => {
-    if (!activeSection) {
-      return;
+    sectionToRemove.remove();
+
+    if (
+      activeSection ===
+      sectionToRemove
+    ) {
+      activeSection = null;
     }
 
-    activeSection.remove();
-
-    activeSection = null;
-
-    campusMap.returnToPreviousPosition();
-
-    if (tourActive) {
-      currentTourIndex++;
-
-      showNextTourStop();
+    if (!tourActive) {
+      campusMap.returnToPreviousPosition();
     }
   }, 450);
 }
 
-
-/* =====================================================
-   START TOUR
-===================================================== */
-
 function startTour() {
-  tourActive = true;
+  clearNavigationTimeout();
 
-  currentTourIndex = 0;
-
-  showNextTourStop();
-}
-
-
-/* =====================================================
-   SHOW CURRENT TOUR STOP
-===================================================== */
-
-function showNextTourStop() {
-  if (
-    currentTourIndex >=
-    tourOrder.length
-  ) {
-    finishTour();
-
-    return;
-  }
-
-  const location =
-    findCampusLocation(
-      tourOrder[currentTourIndex]
+  if (activeSection) {
+    activeSection.classList.remove(
+      "is-active"
     );
 
-  if (!location) {
+    const sectionToRemove =
+      activeSection;
+
+    activeSection = null;
+
+    setTimeout(() => {
+      sectionToRemove.remove();
+    }, 450);
+  }
+
+  tourActive = true;
+  currentTourIndex = 0;
+
+  showTourStop();
+}
+
+function showTourStop() {
+  if (!tourActive) {
     return;
   }
 
-  createTourControls(location);
+  const currentLocation =
+    findCampusLocation(
+      tourOrder[
+        currentTourIndex
+      ]
+    );
 
-  campusMap.moveToLocation(location);
-}
+  const nextLocation =
+    findCampusLocation(
+      tourOrder[
+        currentTourIndex + 1
+      ]
+    );
 
-
-/* =====================================================
-   CREATE TOUR CONTROLS
-===================================================== */
-
-function createTourControls(
-  location
-) {
-  if (tourControls) {
-    tourControls.remove();
+  if (!currentLocation) {
+    finishTour();
+    return;
   }
 
-  tourControls = TourControls({
-    currentIndex:
-      currentTourIndex,
+  updateTourHUD(
+    currentLocation,
+    nextLocation
+  );
 
-    totalStops:
-      tourOrder.length,
+  campusMap.moveToLocation(
+    currentLocation
+  );
 
-    currentLocation:
+  clearNavigationTimeout();
+
+  navigationTimeout =
+    setTimeout(() => {
+      openTourSection(
+        currentLocation
+      );
+
+      navigationTimeout = null;
+    }, 700);
+}
+
+function openTourSection(location) {
+  if (activeSection) {
+    activeSection.remove();
+  }
+
+  activeSection =
+    SectionView(
       location,
-
-    onNext:
-      continueTour,
-
-    onStop:
-      stopTour,
-  });
+      closeTourSection,
+      {
+        tourActive: true,
+        onStartTour: startTour,
+        onNavigate: navigateTo,
+      }
+    );
 
   document.body.appendChild(
-    tourControls
+    activeSection
+  );
+
+  requestAnimationFrame(() => {
+    activeSection.classList.add(
+      "is-active"
+    );
+  });
+}
+
+function closeTourSection() {
+  if (!activeSection) {
+    return;
+  }
+
+  activeSection.classList.remove(
+    "is-active"
+  );
+
+  const sectionToRemove =
+    activeSection;
+
+  activeSection = null;
+
+  setTimeout(() => {
+    sectionToRemove.remove();
+  }, 450);
+}
+
+function updateTourHUD(
+  currentLocation,
+  nextLocation
+) {
+  if (tourHUD) {
+    tourHUD.remove();
+    tourHUD = null;
+  }
+
+  tourHUD =
+    TourHUD({
+      currentIndex:
+        currentTourIndex,
+
+      totalStops:
+        tourOrder.length,
+
+      currentLocation,
+
+      nextLocation,
+
+      onNext:
+        handleNextTourStop,
+
+      onExit:
+        () => stopTour(true),
+    });
+
+  document.body.appendChild(
+    tourHUD
   );
 }
 
-
-/* =====================================================
-   CONTINUE
-===================================================== */
-
-function continueTour() {
-  const location =
-    findCampusLocation(
-      tourOrder[currentTourIndex]
-    );
-
-  if (!location) {
+function handleNextTourStop() {
+  if (!tourActive) {
     return;
   }
 
-  navigateTo(location);
+  const isLastStop =
+    currentTourIndex >=
+    tourOrder.length - 1;
+
+  if (isLastStop) {
+    finishTour();
+    return;
+  }
+
+  if (activeSection) {
+    activeSection.classList.remove(
+      "is-active"
+    );
+
+    const sectionToRemove =
+      activeSection;
+
+    activeSection = null;
+
+    setTimeout(() => {
+      sectionToRemove.remove();
+
+      currentTourIndex++;
+
+      showTourStop();
+    }, 450);
+
+    return;
+  }
+
+  currentTourIndex++;
+
+  showTourStop();
 }
 
+function stopTour(
+  returnToCampus = true
+) {
+  clearNavigationTimeout();
 
-/* =====================================================
-   STOP
-===================================================== */
-
-function stopTour() {
   tourActive = false;
-
   currentTourIndex = 0;
 
-  if (tourControls) {
-    tourControls.remove();
+  if (tourHUD) {
+    tourHUD.remove();
+    tourHUD = null;
+  }
 
-    tourControls = null;
+  if (activeSection) {
+    activeSection.classList.remove(
+      "is-active"
+    );
+
+    const sectionToRemove =
+      activeSection;
+
+    activeSection = null;
+
+    setTimeout(() => {
+      sectionToRemove.remove();
+
+      if (returnToCampus) {
+        campusMap.centerCampus();
+      }
+    }, 450);
+
+    return;
+  }
+
+  if (returnToCampus) {
+    campusMap.centerCampus();
   }
 }
-
-
-/* =====================================================
-   FINISH
-===================================================== */
 
 function finishTour() {
-  tourActive = false;
+  clearNavigationTimeout();
 
+  tourActive = false;
   currentTourIndex = 0;
 
-  if (tourControls) {
-    tourControls.remove();
-
-    tourControls = null;
+  if (tourHUD) {
+    tourHUD.remove();
+    tourHUD = null;
   }
+
+  if (activeSection) {
+    activeSection.classList.remove(
+      "is-active"
+    );
+
+    const sectionToRemove =
+      activeSection;
+
+    activeSection = null;
+
+    setTimeout(() => {
+      sectionToRemove.remove();
+
+      campusMap.centerCampus();
+    }, 450);
+
+    return;
+  }
+
+  campusMap.centerCampus();
 }
 
-
-/* =====================================================
-   INITIALIZE
-===================================================== */
-
-campusMap = CampusMap(
-  campusContainer,
-  navigateTo
+/*
+ * Listen for navigation requests
+ * from SectionView.
+ *
+ * This connects the
+ * "WHERE SHOULD WE GO?"
+ * cards to the actual campus.
+ */
+window.addEventListener(
+  "portfolio:navigate",
+  handleSectionNavigation
 );
 
-const navigation =
+campusMap =
+  CampusMap(
+    campusContainer,
+    navigateTo,
+    startTour
+  );
+
+navigation =
   Navigation(
     navigateTo,
     startTour
