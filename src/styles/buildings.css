@@ -1,0 +1,655 @@
+/* =====================================================
+   BUILDING LAYER
+===================================================== */
+
+.campus-buildings {
+  position: absolute;
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   BASE BUILDING
+===================================================== */
+
+.building {
+  position: absolute;
+
+  width: 260px;
+  height: 230px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #183c35;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  text-align: left;
+
+  appearance: none;
+
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 300ms ease;
+}
+
+.building:hover {
+  filter: drop-shadow(
+    0 16px 18px rgba(24, 60, 53, 0.18)
+  );
+}
+
+.building:focus-visible {
+  outline: 3px solid #183c35;
+  outline-offset: 8px;
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   BUILDING SHADOW
+===================================================== */
+
+.building-shadow {
+  position: absolute;
+
+  width: 220px;
+  height: 35px;
+
+  left: 20px;
+  bottom: 24px;
+
+  border-radius: 50%;
+
+  background: rgba(24, 60, 53, 0.16);
+
+  filter: blur(5px);
+
+  transition:
+    transform 300ms ease,
+    opacity 300ms ease;
+}
+
+.building:hover .building-shadow {
+  transform: scale(1.08);
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   STRUCTURE
+===================================================== */
+
+.building-structure {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+
+  top: 25px;
+  bottom: 45px;
+
+  display: block;
+
+  transform-origin: bottom center;
+
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.building:hover .building-structure {
+  transform: translateY(-7px);
+}
+
+
+/* =====================================================
+   ROOF
+===================================================== */
+
+.building-roof {
+  position: absolute;
+
+  left: -10px;
+  right: -10px;
+
+  top: 0;
+
+  height: 48px;
+
+  background: #183c35;
+
+  border-radius: 10px 10px 3px 3px;
+
+  box-shadow:
+    0 5px 0 rgba(24, 60, 53, 0.12);
+}
+
+.roof-detail {
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+
+  top: 10px;
+
+  height: 5px;
+
+  border-radius: 999px;
+
+  background: rgba(245, 243, 235, 0.45);
+}
+
+
+/* =====================================================
+   FACADE
+===================================================== */
+
+.building-facade {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 42px;
+  bottom: 0;
+
+  border: 2px solid #183c35;
+
+  background: #f5f3eb;
+
+  border-radius: 3px;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   WINDOWS
+===================================================== */
+
+.building-windows {
+  position: absolute;
+
+  top: 18px;
+  left: 16px;
+  right: 16px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 7px;
+}
+
+.building-windows span {
+  height: 25px;
+
+  border: 1px solid #183c35;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(24, 60, 53, 0.35) 48%,
+      rgba(24, 60, 53, 0.35) 52%,
+      transparent 53%
+    ),
+    #d8e3dd;
+
+  box-shadow:
+    inset 0 -3px rgba(24, 60, 53, 0.08);
+}
+
+
+/* =====================================================
+   ENTRANCE
+===================================================== */
+
+.building-entrance {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 0;
+
+  width: 70px;
+  height: 72px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.entrance-frame {
+  width: 54px;
+  height: 68px;
+
+  padding: 5px;
+
+  border: 2px solid #183c35;
+
+  border-bottom: none;
+
+  background: #e2e4d9;
+
+  border-radius: 8px 8px 0 0;
+}
+
+.entrance-door {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 3px 3px 0 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(245, 243, 235, 0.35) 48%,
+      rgba(245, 243, 235, 0.35) 52%,
+      transparent 53%
+    ),
+    #355f55;
+}
+
+
+/* =====================================================
+   FOUNDATION
+===================================================== */
+
+.building-foundation {
+  position: absolute;
+
+  left: -6px;
+  right: -6px;
+
+  bottom: -2px;
+
+  height: 10px;
+
+  border-radius: 2px;
+
+  background: #183c35;
+}
+
+
+/* =====================================================
+   BUILDING SIGN
+===================================================== */
+
+.building-sign {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  z-index: 5;
+}
+
+.building-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 2px solid #183c35;
+
+  border-radius: 50%;
+
+  background: #f5f3eb;
+
+  font-size: 1.2rem;
+
+  box-shadow:
+    0 4px 8px rgba(24, 60, 53, 0.12);
+}
+
+.building-label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(24, 60, 53, 0.22);
+
+  border-radius: 5px;
+
+  background: rgba(245, 243, 235, 0.94);
+
+  backdrop-filter: blur(5px);
+}
+
+.building-label strong {
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.building-label small {
+  font-size: 0.6rem;
+
+  opacity: 0.55;
+}
+
+
+/* =====================================================
+   ENTER INDICATOR
+===================================================== */
+
+.building-arrow {
+  position: absolute;
+
+  right: 2px;
+  top: 12px;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: #183c35;
+
+  color: #f5f3eb;
+
+  font-size: 0.55rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0;
+
+  transform: translateX(-8px);
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.building:hover .building-arrow,
+.building:focus-visible .building-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =====================================================
+   MAIN CAMPUS
+===================================================== */
+
+.building-main-campus {
+  left: 50%;
+  top: 52%;
+
+  width: 340px;
+  height: 280px;
+
+  transform: translate(-50%, -50%);
+}
+
+.building-main-campus:hover {
+  transform: translate(-50%, calc(-50% - 8px));
+}
+
+.building-main-campus .building-structure {
+  left: 35px;
+  right: 35px;
+}
+
+.building-main-campus .building-roof {
+  height: 60px;
+
+  border-radius: 18px 18px 5px 5px;
+}
+
+.building-main-campus .building-facade {
+  top: 52px;
+}
+
+.building-main-campus .building-icon {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* =====================================================
+   LIBRARY
+===================================================== */
+
+.building-library {
+  left: 50%;
+  top: 12%;
+
+  width: 300px;
+  height: 240px;
+
+  transform: translateX(-50%);
+}
+
+.building-library:hover {
+  transform: translate(-50%, -8px);
+}
+
+.building-library .building-roof {
+  height: 42px;
+
+  border-radius: 2px;
+}
+
+.building-library .building-facade {
+  top: 36px;
+}
+
+.building-library .building-windows {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* =====================================================
+   INNOVATION LAB
+===================================================== */
+
+.building-innovation-lab {
+  left: 14%;
+  top: 40%;
+
+  width: 290px;
+  height: 225px;
+}
+
+.building-innovation-lab .building-roof {
+  transform: skewX(-8deg);
+
+  border-radius: 3px;
+}
+
+.building-innovation-lab .building-facade {
+  background: #edf1eb;
+}
+
+.building-innovation-lab .building-windows span {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(24, 60, 53, 0.35) 48%,
+      rgba(24, 60, 53, 0.35) 52%,
+      transparent 53%
+    ),
+    #cdded7;
+}
+
+
+/* =====================================================
+   LECTURE HALL
+===================================================== */
+
+.building-lecture-hall {
+  right: 14%;
+  top: 40%;
+
+  width: 300px;
+  height: 245px;
+}
+
+.building-lecture-hall .building-roof {
+  height: 58px;
+
+  border-radius: 24px 24px 3px 3px;
+}
+
+.building-lecture-hall .building-facade {
+  top: 50px;
+
+  border-radius: 4px;
+}
+
+.building-lecture-hall .building-entrance {
+  width: 100px;
+}
+
+.building-lecture-hall .entrance-frame {
+  width: 80px;
+}
+
+
+/* =====================================================
+   FOOD CANTEEN
+===================================================== */
+
+.building-food-canteen {
+  left: 14%;
+  bottom: 12%;
+
+  width: 290px;
+  height: 225px;
+}
+
+.building-food-canteen .building-roof {
+  height: 35px;
+
+  top: -5px;
+
+  border-radius: 20px 20px 2px 2px;
+}
+
+.building-food-canteen .building-facade {
+  top: 28px;
+
+  background: #f5f0df;
+}
+
+.building-food-canteen .building-windows span {
+  background: #dfe7d8;
+}
+
+
+/* =====================================================
+   UTOWN
+===================================================== */
+
+.building-utown {
+  right: 14%;
+  bottom: 12%;
+
+  width: 290px;
+  height: 245px;
+}
+
+.building-utown .building-roof {
+  height: 50px;
+
+  border-radius: 8px 8px 2px 2px;
+}
+
+.building-utown .building-facade {
+  top: 43px;
+
+  background: #e9eee5;
+}
+
+.building-utown .building-windows {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.building-utown .building-windows span {
+  height: 32px;
+
+  background: #d2ddd4;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .building {
+    width: 210px;
+    height: 190px;
+  }
+
+  .building-main-campus {
+    width: 270px;
+    height: 225px;
+  }
+
+  .building-library,
+  .building-innovation-lab,
+  .building-lecture-hall,
+  .building-food-canteen,
+  .building-utown {
+    width: 220px;
+    height: 195px;
+  }
+
+  .building-structure {
+    left: 20px;
+    right: 20px;
+  }
+
+  .building-label strong {
+    font-size: 0.58rem;
+  }
+
+  .building-label small {
+    font-size: 0.52rem;
+  }
+
+  .building-arrow {
+    display: none;
+  }
+}
