@@ -482,12 +482,14 @@
 .building-main-campus {
   left: 50%;
   top: 52%;
-
   width: 340px;
   height: 280px;
 
   transform:
     translate(-50%, -50%);
+
+  /* Main Campus — deep green */
+  color: #183c35;
 }
 
 .building-main-campus:hover {
@@ -508,16 +510,17 @@
 
   border-radius:
     18px 18px 5px 5px;
+
+  background: #183c35;
 }
 
 .building-main-campus .building-facade {
   top: 52px;
+
+  border-color: #183c35;
+  background: #dfe8dd;
 }
 
-/*
-  Main Campus is larger, so its 12 windows
-  use a 4 × 3 arrangement.
-*/
 .building-main-campus .building-windows {
   grid-template-columns:
     repeat(4, 1fr);
@@ -527,11 +530,46 @@
 
 .building-main-campus .building-windows span {
   height: 27px;
+
+  border-color: #183c35;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(24, 60, 53, 0.35) 48%,
+      rgba(24, 60, 53, 0.35) 52%,
+      transparent 53%
+    ),
+    #b8d0c5;
+}
+
+.building-main-campus .building-entrance .entrance-frame {
+  border-color: #183c35;
+}
+
+.building-main-campus .building-entrance .entrance-door {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(245, 243, 235, 0.35) 48%,
+      rgba(245, 243, 235, 0.35) 52%,
+      transparent 53%
+    ),
+    #355f55;
+}
+
+.building-main-campus .building-foundation {
+  background: #183c35;
 }
 
 .building-main-campus .building-icon {
-  width: 50px;
-  height: 50px;
+  border-color: #183c35;
+}
+
+.building-main-campus .building-arrow {
+  background: #183c35;
 }
 
 
@@ -542,12 +580,14 @@
 .building-library {
   left: 50%;
   top: 9%;
-
   width: 300px;
   height: 240px;
 
   transform:
     translateX(-50%);
+
+  /* Library — warm gold */
+  color: #6f552b;
 }
 
 .building-library:hover {
@@ -561,16 +601,68 @@
 .building-library .building-roof {
   height: 42px;
 
-  border-radius: 2px;
+  border-radius:
+    2px;
+
+  background: #8a6a32;
+
+  box-shadow:
+    0 5px 0
+    rgba(111, 85, 43, 0.14);
+}
+
+.building-library .roof-detail {
+  background:
+    rgba(245, 243, 235, 0.5);
 }
 
 .building-library .building-facade {
   top: 36px;
+
+  border-color: #8a6a32;
+
+  background: #f3ead6;
 }
 
 .building-library .building-windows {
   grid-template-columns:
     repeat(4, 1fr);
+}
+
+.building-library .building-windows span {
+  border-color: #8a6a32;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(111, 85, 43, 0.28) 48%,
+      rgba(111, 85, 43, 0.28) 52%,
+      transparent 53%
+    ),
+    #ded3b9;
+}
+
+.building-library .building-entrance .entrance-frame {
+  border-color: #8a6a32;
+
+  background: #e9dfc8;
+}
+
+.building-library .building-entrance .entrance-door {
+  background: #6f552b;
+}
+
+.building-library .building-foundation {
+  background: #8a6a32;
+}
+
+.building-library .building-icon {
+  border-color: #8a6a32;
+}
+
+.building-library .building-arrow {
+  background: #8a6a32;
 }
 
 
@@ -581,9 +673,11 @@
 .building-innovation-lab {
   left: 9%;
   top: 39%;
-
   width: 290px;
   height: 225px;
+
+  /* Innovation Lab — blue */
+  color: #35627a;
 }
 
 .building-innovation-lab .building-roof {
@@ -591,22 +685,59 @@
     skewX(-8deg);
 
   border-radius: 3px;
+
+  background: #35627a;
+
+  box-shadow:
+    0 5px 0
+    rgba(53, 98, 122, 0.14);
+}
+
+.building-innovation-lab .roof-detail {
+  background:
+    rgba(245, 243, 235, 0.5);
 }
 
 .building-innovation-lab .building-facade {
-  background: #edf1eb;
+  border-color: #35627a;
+
+  background: #e3ebee;
 }
 
 .building-innovation-lab .building-windows span {
+  border-color: #35627a;
+
   background:
     linear-gradient(
       90deg,
       transparent 47%,
-      rgba(24, 60, 53, 0.35) 48%,
-      rgba(24, 60, 53, 0.35) 52%,
+      rgba(53, 98, 122, 0.3) 48%,
+      rgba(53, 98, 122, 0.3) 52%,
       transparent 53%
     ),
-    #cdded7;
+    #bfd1da;
+}
+
+.building-innovation-lab .building-entrance .entrance-frame {
+  border-color: #35627a;
+
+  background: #dce6e9;
+}
+
+.building-innovation-lab .building-entrance .entrance-door {
+  background: #3f7188;
+}
+
+.building-innovation-lab .building-foundation {
+  background: #35627a;
+}
+
+.building-innovation-lab .building-icon {
+  border-color: #35627a;
+}
+
+.building-innovation-lab .building-arrow {
+  background: #35627a;
 }
 
 
@@ -617,9 +748,11 @@
 .building-lecture-hall {
   right: 9%;
   top: 39%;
-
   width: 300px;
   height: 245px;
+
+  /* Lecture Hall — terracotta */
+  color: #9a5745;
 }
 
 .building-lecture-hall .building-roof {
@@ -627,12 +760,41 @@
 
   border-radius:
     24px 24px 3px 3px;
+
+  background: #9a5745;
+
+  box-shadow:
+    0 5px 0
+    rgba(154, 87, 69, 0.14);
+}
+
+.building-lecture-hall .roof-detail {
+  background:
+    rgba(245, 243, 235, 0.5);
 }
 
 .building-lecture-hall .building-facade {
   top: 50px;
 
+  border-color: #9a5745;
+
   border-radius: 4px;
+
+  background: #f0dfd8;
+}
+
+.building-lecture-hall .building-windows span {
+  border-color: #9a5745;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(154, 87, 69, 0.3) 48%,
+      rgba(154, 87, 69, 0.3) 52%,
+      transparent 53%
+    ),
+    #dfc3ba;
 }
 
 .building-lecture-hall .building-entrance {
@@ -641,6 +803,26 @@
 
 .building-lecture-hall .entrance-frame {
   width: 80px;
+
+  border-color: #9a5745;
+
+  background: #ead5ce;
+}
+
+.building-lecture-hall .entrance-door {
+  background: #875040;
+}
+
+.building-lecture-hall .building-foundation {
+  background: #9a5745;
+}
+
+.building-lecture-hall .building-icon {
+  border-color: #9a5745;
+}
+
+.building-lecture-hall .building-arrow {
+  background: #9a5745;
 }
 
 
@@ -651,30 +833,159 @@
 .building-food-canteen {
   left: 9%;
   bottom: 9%;
-
   width: 290px;
   height: 225px;
+
+  /* Food Canteen — muted coral */
+  color: #a86658;
 }
 
 .building-food-canteen .building-roof {
   height: 35px;
-
   top: -5px;
 
   border-radius:
     20px 20px 2px 2px;
+
+  background: #a86658;
+
+  box-shadow:
+    0 5px 0
+    rgba(168, 102, 88, 0.14);
+}
+
+.building-food-canteen .roof-detail {
+  background:
+    rgba(245, 243, 235, 0.5);
 }
 
 .building-food-canteen .building-facade {
   top: 28px;
 
-  background: #f5f0df;
+  border-color: #a86658;
+
+  background: #f5e5dc;
 }
 
 .building-food-canteen .building-windows span {
-  background: #dfe7d8;
+  border-color: #a86658;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(168, 102, 88, 0.28) 48%,
+      rgba(168, 102, 88, 0.28) 52%,
+      transparent 53%
+    ),
+    #e3cfc5;
 }
 
+.building-food-canteen .entrance-frame {
+  border-color: #a86658;
+
+  background: #edd9d0;
+}
+
+.building-food-canteen .entrance-door {
+  background: #945a4b;
+}
+
+.building-food-canteen .building-foundation {
+  background: #a86658;
+}
+
+.building-food-canteen .building-icon {
+  border-color: #a86658;
+}
+
+.building-food-canteen .building-arrow {
+  background: #a86658;
+}
+
+
+/* =====================================================
+   UTOWN
+===================================================== */
+
+.building-utown {
+  right: 9%;
+  bottom: 9%;
+  width: 290px;
+  height: 245px;
+
+  /* UTown — sage / teal */
+  color: #52736a;
+}
+
+.building-utown .building-roof {
+  height: 50px;
+
+  border-radius:
+    8px 8px 2px 2px;
+
+  background: #52736a;
+
+  box-shadow:
+    0 5px 0
+    rgba(82, 115, 106, 0.14);
+}
+
+.building-utown .roof-detail {
+  background:
+    rgba(245, 243, 235, 0.5);
+}
+
+.building-utown .building-facade {
+  top: 43px;
+
+  border-color: #52736a;
+
+  background: #e3ebe6;
+}
+
+.building-utown .building-windows {
+  grid-template-columns:
+    repeat(4, 1fr);
+}
+
+.building-utown .building-windows span {
+  height: 32px;
+
+  border-color: #52736a;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 47%,
+      rgba(82, 115, 106, 0.3) 48%,
+      rgba(82, 115, 106, 0.3) 52%,
+      transparent 53%
+    ),
+    #c7d9d2;
+}
+
+.building-utown .building-entrance .entrance-frame {
+  border-color: #52736a;
+
+  background: #dce7e2;
+}
+
+.building-utown .building-entrance .entrance-door {
+  background: #46675e;
+}
+
+.building-utown .building-foundation {
+  background: #52736a;
+}
+
+.building-utown .building-icon {
+  border-color: #52736a;
+}
+
+.building-utown .building-arrow {
+  background: #52736a;
+}
 
 /* =====================================================
    UTOWN

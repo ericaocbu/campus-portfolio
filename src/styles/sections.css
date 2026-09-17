@@ -924,6 +924,38 @@
     rgba(24, 60, 53, 0.08);
 }
 
+/* =====================================================
+   HOME — GUIDED TOUR CARD
+===================================================== */
+
+.home-path-option.guided-tour {
+  border-color: #183c35;
+  background: #183c35;
+  color: #f5f3eb;
+}
+
+.home-path-option.guided-tour:hover {
+  background: #264f45;
+
+  box-shadow:
+    8px 8px 0
+    rgba(24, 60, 53, 0.16);
+}
+
+.home-path-option.guided-tour > span {
+  color: #f5f3eb;
+  opacity: 0.5;
+}
+
+.home-path-option.guided-tour small {
+  color: #f5f3eb;
+  opacity: 0.7;
+}
+
+.home-path-option.guided-tour b {
+  color: #f5f3eb;
+}
+
 .home-path-option:focus-visible {
   outline:
     3px solid
