@@ -243,143 +243,6 @@
     );
 }
 
-/* =====================================================
-   CAMPUS SIGN
-
-   Keep it clearly above the Library rather than
-   making it look attached to that building.
-===================================================== */
-
-.campus-details::before {
-
-  content: "ERICA'S DIGITAL CAMPUS";
-
-  position: absolute;
-
-  left: 50%;
-
-  top: 0.5%;
-
-  transform:
-    translateX(-50%);
-
-  padding:
-    0.65rem 1.25rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.2);
-
-  border-radius: 999px;
-
-  background:
-    rgba(245, 243, 235, 0.94);
-
-  font-size: 0.62rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
-
-  white-space: nowrap;
-
-  box-shadow:
-    0 5px 14px
-    rgba(24, 60, 53, 0.08);
-
-}
-
-/* ========================================
-   CAMPUS CENTER DETAILS
-======================================== */
-
-.campus-details {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
-}
-
-.campus-details::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  width: 430px;
-  height: 255px;
-  transform: translate(-50%, -50%);
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.08);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.campus-details::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  width: 280px;
-  height: 90px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: rgba(24, 60, 53, 0.045);
-}
-
-/* ========================================
-   CAMPUS SIGN
-======================================== */
-
-.campus-sign {
-  position: absolute;
-  left: 50%;
-  top: 58px;
-  width: 170px;
-  height: 110px;
-  transform: translateX(-50%);
-}
-
-.sign-post {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 8px;
-  height: 54px;
-  transform: translateX(-50%);
-  border-radius: 4px;
-  background: #183c35;
-}
-
-.sign-board {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 170px;
-  padding: 0.85rem 1rem;
-  transform: translateX(-50%);
-  border:
-    2px solid
-    #183c35;
-  border-radius: 5px;
-  background: #f5f3eb;
-  color: #183c35;
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-align: center;
-  line-height: 1.4;
-  box-shadow:
-    4px 5px 0
-    rgba(24, 60, 53, 0.08);
-}
-
-.sign-board strong {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.72rem;
-}
-
 /* ========================================
    LANDSCAPING
 ======================================== */
@@ -1500,80 +1363,6 @@
   background: #59685d;
 }
 
-
-/* =====================================================
-   CAMPUS SIGN
-===================================================== */
-
-.campus-sign {
-  position: absolute;
-
-  left: 50%;
-  top: 0.5%;
-
-  transform:
-    translateX(-50%);
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  z-index: 10;
-}
-
-.sign-board {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 2px;
-
-  padding:
-    0.65rem 1.25rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.2);
-
-  border-radius: 999px;
-
-  background:
-    rgba(245, 243, 235, 0.96);
-
-  color: #183c35;
-
-  font-size: 0.58rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.16em;
-
-  white-space: nowrap;
-
-  box-shadow:
-    0 5px 14px
-    rgba(24, 60, 53, 0.08);
-}
-
-.sign-board strong {
-  font-size: 0.72rem;
-
-  letter-spacing: 0.12em;
-}
-
-.sign-post {
-  width: 2px;
-  height: 18px;
-
-  background:
-    rgba(24, 60, 53, 0.35);
-}
-
-
 /* =====================================================
    EXTRA CAMPUS DETAILS
 ===================================================== */
@@ -1630,10 +1419,6 @@
       translate(-50%, -50%)
       scale(0.8)
       rotate(var(--landscape-rotation));
-  }
-
-  .campus-sign {
-    top: 0.8%;
   }
 
   .sign-board {
@@ -1788,6 +1573,3315 @@
     bottom: 1rem;
 
     min-width: 230px;
+  }
+
+}
+
+/* =====================================================
+   CAMPUS DISCOVERY HUD
+===================================================== */
+
+.campus-discovery-hud {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  pointer-events: auto;
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 0.85rem;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.18);
+
+  border-radius: 8px;
+
+  background:
+    rgba(245, 243, 235, 0.96);
+
+  color: #183c35;
+
+  box-shadow:
+    0 10px 28px
+    rgba(24, 60, 53, 0.14);
+
+  backdrop-filter: blur(12px);
+
+  cursor: pointer;
+
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.campus-discovery-hud:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 32px
+    rgba(24, 60, 53, 0.18);
+}
+
+.campus-discovery-hud:focus-visible {
+  outline:
+    3px solid
+    #183c35;
+
+  outline-offset:
+    4px;
+}
+
+.campus-discovery-star {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background:
+    #183c35;
+
+  color:
+    #f5f3eb;
+
+  font-size: 0.7rem;
+}
+
+.campus-discovery-copy {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.campus-discovery-copy strong {
+  font-size: 0.58rem;
+
+  letter-spacing:
+    0.1em;
+}
+
+.campus-discovery-count {
+  font-size: 0.52rem;
+
+  opacity:
+    0.5;
+}
+
+
+/* =====================================================
+   DISCOVERY MESSAGE
+===================================================== */
+
+.campus-discovery-message {
+  position: fixed;
+
+  left: 24px;
+  bottom: 82px;
+
+  z-index: 99999;
+
+  width: 320px;
+
+  padding:
+    1rem 1.1rem;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.16);
+
+  border-radius: 9px;
+
+  background:
+    rgba(245, 243, 235, 0.97);
+
+  color:
+    #183c35;
+
+  box-shadow:
+    0 16px 40px
+    rgba(24, 60, 53, 0.16);
+
+  backdrop-filter:
+    blur(14px);
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+  transform:
+    translateY(15px);
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease;
+
+  pointer-events:
+    none;
+}
+
+.campus-discovery-message.is-visible {
+  opacity:
+    1;
+
+  visibility:
+    visible;
+
+  transform:
+    translateY(0);
+}
+
+.campus-discovery-message-eyebrow {
+  display: block;
+
+  margin-bottom:
+    0.3rem;
+
+  font-size:
+    0.5rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+  opacity:
+    0.45;
+}
+
+.campus-discovery-message-title {
+  display: block;
+
+  margin-bottom:
+    0.35rem;
+
+  font-size:
+    0.82rem;
+
+  letter-spacing:
+    0.04em;
+}
+
+.campus-discovery-message-text {
+  display: block;
+
+  font-size:
+    0.62rem;
+
+  line-height:
+    1.55;
+
+  opacity:
+    0.62;
+}
+
+
+
+/* =====================================================
+   DISCOVERY MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .campus-discovery-hud {
+    left:
+      16px;
+
+    bottom:
+      18px;
+  }
+
+  .campus-discovery-message {
+    left:
+      16px;
+
+    bottom:
+      72px;
+
+    width:
+      min(300px, calc(100vw - 32px));
+  }
+
+}
+
+/* ///////////////////// */
+/* =====================================================
+   CAMPUS LIFE — FINAL LAYER SYSTEM
+===================================================== */
+
+/*
+ * IMPORTANT:
+ *
+ * CampusLife is now ONLY the foreground layer.
+ *
+ * The road, bus, and bus stop are moved into
+ * .campus-environment by CampusMap.js.
+ *
+ * Discovery UI is moved outside the map entirely.
+ */
+
+.campus-life {
+  position: absolute;
+  inset: 0;
+
+  z-index: 30;
+
+  pointer-events: none;
+
+  overflow: visible;
+}
+
+.campus-recycling,
+.campus-bike-rack,
+.campus-flower-bed,
+.campus-fountain,
+.campus-bell-tower,
+.campus-cat 
+.campus-discovery-hud {
+  pointer-events: auto;
+}
+
+/* =====================================================
+   TOP ROAD
+===================================================== */
+
+.campus-road {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 3.5%;
+
+  height: 78px;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  background: #aeb2aa;
+
+  border-top:
+    3px solid
+    rgba(24, 60, 53, 0.18);
+
+  border-bottom:
+    3px solid
+    rgba(24, 60, 53, 0.18);
+
+  box-shadow:
+    0 8px 18px
+    rgba(24, 60, 53, 0.07);
+}
+
+
+/* road markings */
+
+.road-line {
+  position: absolute;
+
+  top: 50%;
+
+  width: 145px;
+  height: 4px;
+
+  transform:
+    translateY(-50%);
+
+  border-radius: 999px;
+
+  background: #e9dfb5;
+
+  opacity: 0.9;
+}
+
+.road-line-one {
+  left: 30px;
+}
+
+.road-line-two {
+  right: 30px;
+}
+
+
+/* road curb */
+
+.road-curb {
+  position: absolute;
+
+  inset: 7px 0;
+
+  border-top:
+    1px solid
+    rgba(245, 243, 235, 0.25);
+
+  border-bottom:
+    1px solid
+    rgba(245, 243, 235, 0.25);
+}
+
+
+/* =====================================================
+   BUS
+===================================================== */
+
+.campus-bus {
+  position: absolute;
+
+  top: calc(3.5% + 15px);
+
+  left: -160px;
+
+  width: 125px;
+  height: 48px;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  animation:
+    campusBusLoop
+    28s linear
+    infinite;
+}
+
+.bus-body {
+  position: absolute;
+
+  left: 0;
+  bottom: 5px;
+
+  width: 125px;
+  height: 35px;
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius:
+    8px 8px 5px 5px;
+
+  background: #f5f3eb;
+
+  box-shadow:
+    0 6px 0
+    rgba(24, 60, 53, 0.09);
+}
+
+.bus-roof {
+  position: absolute;
+
+  left: 8px;
+  top: 4px;
+
+  width: 108px;
+  height: 7px;
+
+  border-radius: 999px;
+
+  background: #183c35;
+
+  z-index: 2;
+}
+
+.bus-front-window {
+  position: absolute;
+
+  left: 8px;
+  top: 13px;
+
+  width: 19px;
+  height: 14px;
+
+  border:
+    1px solid
+    #183c35;
+
+  background: #c9d8d2;
+}
+
+.bus-window-group {
+  position: absolute;
+
+  left: 31px;
+  top: 9px;
+
+  display: flex;
+
+  gap: 4px;
+}
+
+.bus-window {
+  width: 22px;
+  height: 15px;
+
+  border:
+    1px solid
+    #183c35;
+
+  background: #c9d8d2;
+}
+
+.bus-door {
+  position: absolute;
+
+  right: 7px;
+  top: 9px;
+
+  width: 15px;
+  height: 23px;
+
+  border:
+    1px solid
+    #183c35;
+
+  background: #d9e2dc;
+}
+
+.bus-route {
+  position: absolute;
+
+  right: 10px;
+  top: 3px;
+
+  z-index: 3;
+
+  color: #f5f3eb;
+
+  font-size: 0.45rem;
+  font-weight: 900;
+}
+
+.bus-wheel {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 15px;
+  height: 15px;
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius: 50%;
+
+  background: #4d5d50;
+}
+
+.bus-wheel-left {
+  left: 18px;
+}
+
+.bus-wheel-right {
+  right: 18px;
+}
+
+@keyframes campusBusLoop {
+
+  0% {
+    transform:
+      translateX(0);
+  }
+
+  100% {
+    transform:
+      translateX(2160px);
+  }
+
+}
+
+
+/* =====================================================
+   BUS STOP
+===================================================== */
+
+.campus-bus-stop {
+  position: absolute;
+
+  left: 12%;
+  top: 3.5%;
+
+  width: 78px;
+  height: 78px;
+
+  z-index: 6;
+
+  pointer-events: none;
+}
+
+.bus-stop-pole {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 4px;
+  height: 55px;
+
+  transform:
+    translateX(-50%);
+
+  background: #40564c;
+
+  border-radius: 999px;
+}
+
+.bus-stop-sign {
+  position: absolute;
+
+  left: 50%;
+  top: 7px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  transform:
+    translateX(-50%);
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius: 50%;
+
+  background: #f5f3eb;
+
+  color: #183c35;
+
+  font-size: 0.46rem;
+  font-weight: 900;
+
+  box-shadow:
+    0 3px 8px
+    rgba(24, 60, 53, 0.1);
+}
+
+.bus-stop-bench {
+  position: absolute;
+
+  left: 3px;
+  bottom: 3px;
+
+  width: 46px;
+  height: 6px;
+
+  border-radius: 3px;
+
+  background: #756b58;
+
+  box-shadow:
+    0 5px 0 -1px #40564c;
+}
+
+/* =====================================================
+   BELL TOWER — REFINED CAMPUS LANDMARK
+===================================================== */
+
+.campus-bell-tower {
+  position: absolute;
+
+  left: 9%;
+  top: 13%;
+
+  width: 125px;
+  height: 205px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  pointer-events: auto;
+
+  cursor: pointer;
+
+  z-index: 35;
+
+  color: #183c35;
+
+  transform-origin: bottom center;
+
+  transition:
+    transform 180ms ease;
+}
+
+.campus-bell-tower:hover {
+  transform:
+    translateY(-4px);
+}
+
+
+/* ground shadow */
+
+.bell-tower-shadow {
+  position: absolute;
+
+  left: 12px;
+  bottom: 1px;
+
+  width: 101px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(24, 60, 53, 0.13);
+
+  filter:
+    blur(2px);
+}
+
+
+/* =====================================================
+   TOWER BUILDING
+===================================================== */
+
+.bell-tower-building {
+  position: absolute;
+
+  left: 31px;
+  bottom: 14px;
+
+  width: 64px;
+  height: 148px;
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius:
+    2px 2px 0 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #cfc9b9 0%,
+      #e9e4d7 45%,
+      #ddd7c7 100%
+    );
+
+  box-shadow:
+    6px 8px 0
+    rgba(24, 60, 53, 0.07);
+
+  overflow: visible;
+}
+
+
+/* stone blocks */
+
+.bell-tower-building::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.22;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 23px,
+      rgba(24, 60, 53, 0.18) 24px,
+      transparent 25px
+    );
+}
+
+
+/* bottom architectural trim */
+
+.bell-tower-building::after {
+  content: "";
+
+  position: absolute;
+
+  left: -3px;
+  right: -3px;
+  bottom: 15px;
+
+  height: 5px;
+
+  border-top:
+    1px solid
+    rgba(24, 60, 53, 0.3);
+
+  border-bottom:
+    1px solid
+    rgba(24, 60, 53, 0.12);
+
+  background: #c1b9a7;
+}
+
+
+/* =====================================================
+   ROOF
+===================================================== */
+
+.bell-tower-roof {
+  position: absolute;
+
+  left: -8px;
+  top: -38px;
+
+  width: 76px;
+  height: 43px;
+
+  background:
+    #183c35;
+
+  border:
+    2px solid
+    #102f2a;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+
+  filter:
+    drop-shadow(
+      0 4px 0
+      rgba(24, 60, 53, 0.08)
+    );
+}
+
+
+/* little roof lip */
+
+.bell-tower-roof::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  right: 4px;
+  bottom: 3px;
+
+  height: 4px;
+
+  background:
+    #102f2a;
+}
+
+
+/* =====================================================
+   SPIRE
+===================================================== */
+
+.bell-tower-spire {
+  position: absolute;
+
+  left: 50%;
+  top: -57px;
+
+  width: 4px;
+  height: 24px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    #183c35;
+}
+
+.bell-tower-spire::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: -5px;
+
+  width: 8px;
+  height: 8px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    #183c35;
+}
+
+
+/* =====================================================
+   BELL CHAMBER
+===================================================== */
+
+.bell-tower-window {
+  position: absolute;
+
+  left: 50%;
+  top: 15px;
+
+  width: 32px;
+  height: 39px;
+
+  transform:
+    translateX(-50%);
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius:
+    18px 18px 3px 3px;
+
+  background:
+    #b9cfca;
+
+  overflow: hidden;
+}
+
+
+/* vertical opening */
+
+.bell-tower-window::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(24, 60, 53, 0.35);
+}
+
+
+/* horizontal opening */
+
+.bell-tower-window::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 18px;
+
+  height: 2px;
+
+  background:
+    rgba(24, 60, 53, 0.35);
+}
+
+
+/* =====================================================
+   BELL
+===================================================== */
+
+.bell-tower-bell {
+  position: absolute;
+
+  left: 50%;
+  top: 27px;
+
+  width: 18px;
+  height: 19px;
+
+  transform:
+    translateX(-50%);
+
+  border:
+    2px solid
+    #806d45;
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  background:
+    #b49a63;
+
+  z-index: 2;
+
+  transform-origin:
+    50% 0;
+}
+
+.bell-tower-bell::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -5px;
+
+  width: 7px;
+  height: 4px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    #806d45;
+}
+
+
+/* =====================================================
+   SECOND TOWER WINDOW
+===================================================== */
+
+.bell-tower-window-two {
+  top: 66px;
+
+  width: 22px;
+  height: 29px;
+
+  border-radius:
+    12px 12px 2px 2px;
+
+  background:
+    #d2d9d0;
+}
+
+
+/* =====================================================
+   CLOCK
+===================================================== */
+
+.bell-tower-clock {
+  position: absolute;
+
+  left: 50%;
+  bottom: 21px;
+
+  width: 29px;
+  height: 29px;
+
+  transform:
+    translateX(-50%);
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius: 50%;
+
+  background:
+    #f5f3eb;
+
+  z-index: 3;
+}
+
+.bell-tower-clock::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 5px;
+
+  width: 2px;
+  height: 9px;
+
+  transform-origin:
+    bottom center;
+
+  background:
+    #183c35;
+}
+
+.bell-tower-clock::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 8px;
+  height: 2px;
+
+  transform:
+    rotate(20deg);
+
+  transform-origin:
+    left center;
+
+  background:
+    #183c35;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.bell-tower-label {
+  position: absolute;
+
+  left: 50%;
+  bottom: -2px;
+
+  transform:
+    translateX(-50%);
+
+  white-space: nowrap;
+
+  padding:
+    0.3rem 0.55rem;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.14);
+
+  border-radius: 999px;
+
+  background:
+    rgba(245, 243, 235, 0.94);
+
+  color:
+    #183c35;
+
+  font-size:
+    0.43rem;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    0.1em;
+
+  box-shadow:
+    0 3px 8px
+    rgba(24, 60, 53, 0.07);
+}
+
+.discovery-label {
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  transform:
+    translateX(-50%);
+
+  white-space: nowrap;
+
+  padding:
+    0.15rem 0.4rem;
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.14);
+
+  border-radius: 999px;
+
+  background:
+    rgba(245, 243, 235, 0.94);
+
+  color:
+    #183c35;
+
+  font-size:
+    0.43rem;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    0.1em;
+
+  box-shadow:
+    0 3px 8px
+    rgba(24, 60, 53, 0.07);
+}
+
+
+/* ringing */
+
+.campus-bell-tower.is-ringing
+  .bell-tower-bell {
+  animation:
+    bellRing
+    120ms ease-in-out
+    6;
+}
+
+@keyframes bellRing {
+
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      rotate(0);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      rotate(10deg);
+  }
+
+}
+
+
+/* =====================================================
+   PEOPLE — GROUNDED CAMPUS CHARACTERS
+===================================================== */
+
+.campus-person {
+  position: absolute;
+
+  width: 30px;
+  height: 62px;
+
+  z-index: 36;
+
+  pointer-events: none;
+
+  transform-origin:
+    bottom center;
+
+  filter:
+    drop-shadow(
+      0 3px 2px
+      rgba(24, 60, 53, 0.08)
+    );
+}
+
+
+/* =====================================================
+   PERSON POSITIONS
+===================================================== */
+
+/*
+ * These are now short, localized walks rather than
+ * giant horizontal movements across the entire campus.
+ */
+
+.campus-person.person-one {
+  left: 31%;
+  top: 56%;
+
+  animation:
+    personOneWalk
+    8s ease-in-out
+    infinite alternate;
+}
+
+.campus-person.person-two {
+  left: 40%;
+  top: 87%;
+
+  transform:
+    scale(0.9);
+
+  animation:
+    personTwoWalk
+    9s ease-in-out
+    infinite alternate;
+}
+
+.campus-person.person-three {
+  left: 65%;
+  top: 54%;
+
+  transform:
+    scale(0.78);
+
+  animation:
+    personThreeWalk
+    5s ease-in-out
+    infinite alternate;
+}
+
+
+/* =====================================================
+   GROUND SHADOW
+===================================================== */
+
+.person-shadow {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 25px;
+  height: 7px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(24, 60, 53, 0.14);
+
+  filter:
+    blur(1px);
+}
+
+
+/* =====================================================
+   HEAD + HAIR
+===================================================== */
+
+.person-head {
+  position: absolute;
+
+  left: 50%;
+  top: 3px;
+
+  width: 13px;
+  height: 14px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    #956f5a;
+}
+
+.person-hair {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 15px;
+  height: 10px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    55% 55% 35% 35%;
+
+  background:
+    #332d29;
+
+  z-index: 2;
+}
+
+.person-hair-brown {
+  background:
+    #574236;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.person-neck {
+  position: absolute;
+
+  left: 50%;
+  top: 15px;
+
+  width: 5px;
+  height: 5px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 2px;
+
+  background:
+    #956f5a;
+}
+
+.person-body {
+  position: absolute;
+
+  left: 50%;
+  top: 18px;
+
+  width: 18px;
+  height: 22px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    6px 6px 4px 4px;
+
+  background:
+    #52736a;
+}
+
+.person-shirt-green {
+  background:
+    #52736a;
+}
+
+.person-shirt-cream {
+  background:
+    #d5c9ae;
+}
+
+.person-shirt-rust {
+  background:
+    #9b6751;
+}
+
+
+/* =====================================================
+   ARMS
+===================================================== */
+
+.person-arm {
+  position: absolute;
+
+  top: 20px;
+
+  width: 4px;
+  height: 17px;
+
+  border-radius: 999px;
+
+  background:
+    #956f5a;
+
+  transform-origin:
+    top center;
+}
+
+.person-arm-left {
+  left: 3px;
+
+  transform:
+    rotate(14deg);
+}
+
+.person-arm-right {
+  right: 3px;
+
+  transform:
+    rotate(-14deg);
+}
+
+
+/* =====================================================
+   LEGS
+===================================================== */
+
+.person-leg {
+  position: absolute;
+
+  top: 39px;
+
+  width: 5px;
+  height: 21px;
+
+  border-radius:
+    999px 999px 3px 3px;
+
+  background:
+    #354c48;
+
+  transform-origin:
+    top center;
+}
+
+.person-leg-left {
+  left: 7px;
+
+  transform:
+    rotate(3deg);
+}
+
+.person-leg-right {
+  right: 7px;
+
+  transform:
+    rotate(-3deg);
+}
+
+
+/* =====================================================
+   WALKING MOTION
+===================================================== */
+
+@keyframes personOneWalk {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(34px)
+      translateY(-1px);
+  }
+
+  100% {
+    transform:
+      translateX(150px)
+      translateY(0);
+  }
+
+}
+
+@keyframes personTwoWalk {
+
+  0% {
+    transform:
+      translateX(0)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translateX(-28px)
+      translateY(-1px)
+      scale(0.9);
+  }
+
+  100% {
+    transform:
+      translateX(-155px)
+      scale(0.9);
+  }
+
+}
+
+@keyframes personThreeWalk {
+
+  0% {
+    transform:
+      translateX(0)
+      scale(0.78);
+  }
+
+  50% {
+    transform:
+      translateX(25px)
+      translateY(-1px)
+      scale(0.78);
+  }
+
+  100% {
+    transform:
+      translateX(148px)
+      scale(0.78);
+  }
+
+}
+
+/* =====================================================
+   CAMPUS CAT
+===================================================== */
+
+.campus-cat {
+  position: absolute;
+
+  left: 66%;
+  top: 29%;
+
+  width: 68px;
+  height: 54px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  z-index: 37;
+
+  transform:
+    translate(-50%, -50%);
+
+  transform-origin:
+    center bottom;
+
+  transition:
+    transform 180ms ease;
+}
+
+.campus-cat:hover {
+  transform:
+    translate(-50%, -50%)
+    translateY(-3px);
+}
+
+
+/* =====================================================
+   GROUND SHADOW
+===================================================== */
+
+.campus-cat::after {
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  bottom: 1px;
+
+  width: 55px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(24, 60, 53, 0.15);
+
+  filter:
+    blur(1.5px);
+
+  z-index: 0;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.cat-body {
+  position: absolute;
+
+  left: 23px;
+  bottom: 13px;
+
+  width: 32px;
+  height: 21px;
+
+  border:
+    2px solid
+    #5c554c;
+
+  border-radius:
+    55% 48% 45% 48%;
+
+  background:
+    #8a7d6c;
+
+  z-index: 2;
+}
+
+
+/* chest */
+
+.cat-body::before {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  top: 3px;
+
+  width: 12px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background:
+    #9b8d7b;
+
+  opacity: 0.65;
+}
+
+
+/* =====================================================
+   HEAD
+===================================================== */
+
+.cat-head {
+  position: absolute;
+
+  left: 8px;
+  bottom: 20px;
+
+  width: 25px;
+  height: 27px;
+
+  border:
+    2px solid
+    #5c554c;
+
+  border-radius:
+    48% 48% 44% 44%;
+
+  background:
+    #968876;
+
+  z-index: 5;
+}
+
+
+/* =====================================================
+   EARS
+===================================================== */
+
+.cat-ear {
+  position: absolute;
+
+  top: -11px;
+
+  width: 10px;
+  height: 16px;
+
+  background:
+    #968876;
+
+  border:
+    2px solid
+    #5c554c;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+
+  z-index: -1;
+}
+
+
+/* left ear */
+
+.cat-ear-left {
+  left: 1px;
+
+  transform:
+    rotate(-4deg);
+}
+
+
+/* right ear */
+
+.cat-ear-right {
+  right: 1px;
+
+  transform:
+    rotate(4deg);
+}
+
+
+/* inner ears */
+
+.cat-ear-left::after,
+.cat-ear-right::after {
+  content: "";
+
+  position: absolute;
+
+  left: 3px;
+  top: 4px;
+
+  width: 6px;
+  height: 7px;
+
+  background:
+    #c09d99;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+
+/* =====================================================
+   EYES
+===================================================== */
+
+.cat-eye {
+  position: absolute;
+
+  top: 9px;
+
+  width: 3px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    #183c35;
+}
+
+.cat-eye-left {
+  left: 6px;
+}
+
+.cat-eye-right {
+  right: 6px;
+}
+
+
+/* =====================================================
+   NOSE + MOUTH
+===================================================== */
+
+.cat-head::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 16px;
+
+  width: 3px;
+  height: 4px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50% 50% 60% 60%;
+
+  background:
+    #765b58;
+}
+
+.cat-head::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 19px;
+
+  width: 7px;
+  height: 4px;
+
+  transform:
+    translateX(-50%);
+
+  border-bottom:
+    1px solid
+    #5c554c;
+
+  border-radius:
+    0 0 50% 50%;
+}
+
+
+/* =====================================================
+   WHISKERS
+===================================================== */
+
+.cat-head {
+  overflow: visible;
+}
+
+.cat-head .cat-eye-right::after {
+  content: "";
+
+  position: absolute;
+
+  right: -17px;
+  top: 5px;
+
+  width: 15px;
+  height: 1px;
+
+  background:
+    rgba(92, 85, 76, 0.65);
+
+  box-shadow:
+    0 4px 0
+    rgba(92, 85, 76, 0.55);
+}
+
+.cat-head .cat-eye-left::after {
+  content: "";
+
+  position: absolute;
+
+  left: -17px;
+  top: 5px;
+
+  width: 15px;
+  height: 1px;
+
+  background:
+    rgba(92, 85, 76, 0.65);
+
+  box-shadow:
+    0 4px 0
+    rgba(92, 85, 76, 0.55);
+}
+
+
+/* =====================================================
+   LEGS
+===================================================== */
+
+.cat-body::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0px;
+  bottom: -9px;
+
+  width: 5px;
+  height: 12px;
+
+  border-radius:
+    4px 4px 4px 4px;
+
+  background:
+    #746a5c;
+
+  box-shadow:
+    24px 0 0
+    #746a5c;
+}
+
+
+/* front legs */
+
+.cat-body {
+  box-shadow:
+    -1px 0 0 #5c554c;
+}
+
+
+/* =====================================================
+   TAIL
+===================================================== */
+
+.cat-tail {
+  position: absolute;
+
+  right: 2px;
+  bottom: 23px;
+
+  width: 20px;
+  height: 25px;
+
+  border:
+    5px solid
+    #8a7d6c;
+
+  border-left: 0;
+  border-bottom: 0;
+
+  border-radius:
+    0 30px 0 0;
+
+  transform:
+    rotate(7deg);
+
+  transform-origin:
+    left bottom;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   CAT INTERACTION
+===================================================== */
+
+.campus-cat.is-interested {
+  animation:
+    catInterest
+    900ms ease;
+}
+
+.campus-cat.is-interested
+  .cat-tail {
+
+  animation:
+    catTail
+    500ms ease
+    2;
+}
+
+
+@keyframes catInterest {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%);
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      translateY(-5px);
+  }
+
+}
+
+
+@keyframes catTail {
+
+  0%,
+  100% {
+    transform:
+      rotate(7deg);
+  }
+
+  50% {
+    transform:
+      rotate(28deg);
+  }
+
+}
+
+/* =====================================================
+   ERICA'S DIGITAL CAMPUS SIGN
+   MATCHES THE ACTUAL CAMPUSMAP HTML
+===================================================== */
+
+.campus-sign {
+  position: absolute;
+
+  left: 60%;
+  bottom: 55%;
+
+  width: 175px;
+  height: 110px;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   WOODEN POSTS
+===================================================== */
+
+.sign-post {
+  position: absolute;
+
+  bottom: 10%;
+
+  width: 7px;
+  height: 48px;
+
+  border-radius: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #594b3d,
+      #806b52,
+      #594b3d
+    );
+
+  box-shadow:
+    1px 2px 0
+    rgba(24, 60, 53, 0.08);
+}
+
+
+/* left post */
+
+.sign-post-left {
+  left: 35px;
+}
+
+
+/* right post */
+
+.sign-post-right {
+  right: 35px;
+}
+
+
+/* =====================================================
+   SIGN BOARD
+===================================================== */
+
+.sign-board {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 175px;
+
+  box-sizing: border-box;
+
+  transform:
+    translateX(-50%);
+
+  padding:
+    0.75rem 0.8rem;
+
+  border:
+    2px solid
+    #183c35;
+
+  border-radius: 4px;
+
+  background:
+    #f5f3eb;
+
+  color:
+    #183c35;
+
+  text-align: center;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    0.08em;
+
+  line-height:
+    1.35;
+
+  box-shadow:
+    0 6px 0
+    rgba(24, 60, 53, 0.08);
+}
+
+
+.sign-board strong {
+  display: block;
+
+  margin-top:
+    0.25rem;
+
+  color:
+    #6b756f;
+
+  font-size:
+    0.43rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.15em;
+}
+
+
+/* =====================================================
+   FINAL WORLD LAYERING
+===================================================== */
+
+/*
+ * These are the actual world layers.
+ *
+ * Lower number = farther back.
+ */
+
+.campus-paths {
+  z-index: 1;
+}
+
+.campus-road {
+  z-index: 3;
+}
+
+.campus-trees {
+  position: absolute;
+  inset: 0;
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+.campus-greenery {
+  position: absolute;
+  inset: 0;
+
+  z-index: 9;
+
+  pointer-events: none;
+}
+
+.campus-details {
+  z-index: 15;
+}
+
+.campus-buildings {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+
+/*
+ * Buildings need their own clicks, so this doesn't
+ * disable pointer events on individual buildings.
+ */
+
+.campus-buildings > * {
+  pointer-events: auto;
+}
+
+
+/*
+ * Foreground campus life sits above buildings.
+ */
+
+.campus-life {
+  z-index: 30;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .campus-road {
+    top: 3%;
+    height: 60px;
+  }
+
+  .campus-bus {
+    top: calc(3% + 10px);
+
+    transform:
+      scale(0.78);
+
+    transform-origin:
+      left center;
+  }
+
+  .campus-bus-stop {
+    left: 7%;
+    top: 3%;
+
+    transform:
+      scale(0.78);
+
+    transform-origin:
+      top left;
+  }
+
+  .campus-bell-tower {
+    left: 5%;
+    top: 12%;
+
+    transform:
+      scale(0.78);
+
+    transform-origin:
+      top left;
+  }
+
+  .campus-sign {
+    right: 4%;
+    bottom: 24%;
+
+    transform:
+      scale(0.72);
+
+    transform-origin:
+      bottom right;
+  }
+
+  .campus-person.person-one {
+    left: 25%;
+  }
+
+  .campus-person.person-two {
+    left: 54%;
+  }
+
+  .campus-person.person-three {
+    left: 70%;
+  }
+
+  .campus-cat {
+    left: 80%;
+    top: 68%;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.82);
+  }
+
+}
+
+/* =========================================
+   RECYCLING BINS
+========================================= */
+
+.campus-recycling {
+  position: absolute;
+  right: 25%;
+  bottom: 20%;
+  width: 48px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 17;
+}
+
+.recycling-bin {
+  position: absolute;
+  bottom: 0;
+  width: 17px;
+  height: 25px;
+  border-radius: 3px 3px 4px 4px;
+  background: #6c766b;
+  border: 2px solid #4d594e;
+}
+
+.recycling-trash {
+  left: 4px;
+}
+
+.recycling-recycle {
+  right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e7eee5;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.recycling-bin::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -5px;
+  width: calc(100% + 4px);
+  height: 5px;
+  border-radius: 3px 3px 1px 1px;
+  background: #4d594e;
+}
+
+/* =========================================
+   BIKE RACK
+========================================= */
+
+.campus-bike-rack {
+  position: absolute;
+  left: 24%;
+  bottom: 15%;
+  width: 115px;
+  height: 62px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 17;
+}
+
+.bike-rack-bar {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  width: 100px;
+  height: 4px;
+  border-radius: 3px;
+  background: #555950;
+}
+
+.campus-bike {
+  position: absolute;
+  bottom: 9px;
+  width: 48px;
+  height: 45px;
+}
+
+.bike-one {
+  left: 10px;
+}
+
+.bike-two {
+  right: 8px;
+}
+
+.bike-wheel {
+  position: absolute;
+  bottom: 0;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #414840;
+  border-radius: 50%;
+}
+
+.bike-wheel-front {
+  right: 0;
+}
+
+.bike-wheel-back {
+  left: 0;
+}
+
+.bike-frame {
+  position: absolute;
+  left: 13px;
+  bottom: 7px;
+  width: 22px;
+  height: 17px;
+  border: 2px solid #59675d;
+  transform: skew(-18deg);
+}
+
+.bike-seat {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 10px;
+  height: 3px;
+  border-radius: 2px;
+  background: #414840;
+}
+
+.bike-handlebars {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 9px;
+  height: 7px;
+  border-top: 2px solid #414840;
+  border-right: 2px solid #414840;
+}
+
+/* =========================================
+   FLOWER BED
+========================================= */
+
+.campus-flower-bed {
+  position: absolute;
+  left: 58%;
+  bottom: 76%;
+  width: 105px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 17;
+}
+
+.flower-bed-soil {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  width: 95px;
+  height: 23px;
+  border-radius: 50%;
+  background: #81715a;
+  border: 2px solid #655744;
+}
+
+.campus-flower {
+  position: absolute;
+  bottom: 18px;
+  width: 18px;
+  height: 30px;
+}
+
+.flower-one {
+  left: 13px;
+}
+
+.flower-two {
+  left: 36px;
+}
+
+.flower-three {
+  left: 59px;
+}
+
+.flower-four {
+  left: 78px;
+}
+
+.flower-stem {
+  position: absolute;
+  left: 8px;
+  bottom: 0;
+  width: 2px;
+  height: 18px;
+  background: #557057;
+}
+
+.flower-head {
+  position: absolute;
+  left: 1px;
+  top: 0;
+  font-size: 15px;
+  line-height: 1;
+  color: #d18b83;
+}
+
+/* =========================================
+   FOUNTAIN
+========================================= */
+
+.campus-fountain {
+  position: absolute;
+  right: 47%;
+  bottom: 10%;
+  width: 105px;
+  height: 85px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 17;
+}
+
+.fountain-basin {
+  position: absolute;
+  left: 8px;
+  bottom: 5px;
+  width: 89px;
+  height: 28px;
+  border-radius: 50%;
+  background: #8b9891;
+  border: 3px solid #66746d;
+}
+
+.fountain-pillar {
+  position: absolute;
+  left: 44px;
+  bottom: 25px;
+  width: 17px;
+  height: 35px;
+  border-radius: 3px 3px 1px 1px;
+  background: #aeb6ae;
+  border: 2px solid #778279;
+}
+
+.fountain-water {
+  position: absolute;
+  left: 48px;
+  top: 8px;
+  width: 9px;
+  height: 43px;
+  border-left: 2px solid #8eb8c1;
+  border-right: 2px solid #8eb8c1;
+  border-radius: 50%;
+}
+
+.fountain-ripple {
+  position: absolute;
+  left: 24px;
+  width: 55px;
+  height: 12px;
+  border: 2px solid #8eb8c1;
+  border-radius: 50%;
+}
+
+.ripple-one {
+  bottom: 17px;
+}
+
+.ripple-two {
+  bottom: 13px;
+  left: 31px;
+  width: 42px;
+}
+
+.ripple-three {
+  bottom: 10px;
+  left: 38px;
+  width: 28px;
+}
+
+/* =========================================================
+   DISCOVERY ANIMATIONS
+========================================================= */
+
+.campus-recycling {
+  transform-origin: center bottom;
+}
+
+.campus-recycling.is-discovered .recycling-trash,
+.campus-recycling.is-discovered .recycling-recycle {
+  animation: recyclingBounce 500ms ease-out;
+}
+
+.recycling-bin {
+  transform-origin: center bottom;
+}
+
+@keyframes recyclingBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  35% {
+    transform: translateY(-6px);
+  }
+
+  60% {
+    transform: translateY(1px);
+  }
+
+  80% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   BIKE RACK
+========================================= */
+
+.campus-bike {
+  transform-origin: center bottom;
+}
+
+.campus-bike-rack.is-discovered .bike-one {
+  animation:
+    bikeRock
+    650ms
+    ease-in-out;
+}
+
+.campus-bike-rack.is-discovered .bike-two {
+  animation:
+    bikeRock
+    650ms
+    100ms
+    ease-in-out;
+}
+
+@keyframes bikeRock {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  35% {
+    transform: rotate(-5deg);
+  }
+
+  70% {
+    transform: rotate(4deg);
+  }
+
+}
+
+
+/* =========================================
+   FLOWER BED
+========================================= */
+
+.campus-flower {
+  transform-origin: bottom center;
+}
+
+.campus-flower-bed.is-discovered .flower-one {
+  animation:
+    flowerSway
+    700ms
+    ease-in-out;
+}
+
+.campus-flower-bed.is-discovered .flower-two {
+  animation:
+    flowerSway
+    700ms
+    80ms
+    ease-in-out;
+}
+
+.campus-flower-bed.is-discovered .flower-three {
+  animation:
+    flowerSway
+    700ms
+    160ms
+    ease-in-out;
+}
+
+.campus-flower-bed.is-discovered .flower-four {
+  animation:
+    flowerSway
+    700ms
+    240ms
+    ease-in-out;
+}
+
+@keyframes flowerSway {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  35% {
+    transform: rotate(-7deg);
+  }
+
+  70% {
+    transform: rotate(6deg);
+  }
+
+}
+
+
+/* =========================================
+   FOUNTAIN
+========================================= */
+
+.fountain-water {
+  transform-origin: bottom center;
+}
+
+.campus-fountain.is-discovered .fountain-water {
+  animation:
+    fountainWater
+    700ms
+    ease-in-out;
+}
+
+.campus-fountain.is-discovered .ripple-one {
+  animation:
+    fountainRipple
+    900ms
+    ease-out;
+}
+
+.campus-fountain.is-discovered .ripple-two {
+  animation:
+    fountainRipple
+    900ms
+    120ms
+    ease-out;
+}
+
+.campus-fountain.is-discovered .ripple-three {
+  animation:
+    fountainRipple
+    900ms
+    240ms
+    ease-out;
+}
+
+@keyframes fountainWater {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scaleY(1.15);
+    opacity: 1;
+  }
+
+}
+
+@keyframes fountainRipple {
+
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   Respect users who prefer reduced motion.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .campus-recycling.is-discovered,
+  .campus-bike-rack.is-discovered .bike-one,
+  .campus-bike-rack.is-discovered .bike-two,
+  .campus-flower-bed.is-discovered .flower-one,
+  .campus-flower-bed.is-discovered .flower-two,
+  .campus-flower-bed.is-discovered .flower-three,
+  .campus-flower-bed.is-discovered .flower-four,
+  .campus-fountain.is-discovered .fountain-water,
+  .campus-fountain.is-discovered .ripple-one,
+  .campus-fountain.is-discovered .ripple-two,
+  .campus-fountain.is-discovered .ripple-three {
+    animation: none;
+  }
+
+}
+
+/* =========================================================
+   CAMPUS PEOPLE — EXTRA MOVEMENT
+========================================================= */
+
+/* Give the existing people a more natural walking rhythm */
+
+.campus-person {
+  transform-origin: center bottom;
+}
+
+
+/* ---------------------------------------------------------
+   WALKER ONE
+--------------------------------------------------------- */
+
+.person-one {
+  animation: personWalkBob 1.8s ease-in-out infinite;
+}
+
+.person-one .person-arm-left {
+  transform-origin: top center;
+  animation: personArmLeft 900ms ease-in-out infinite;
+}
+
+.person-one .person-arm-right {
+  transform-origin: top center;
+  animation: personArmRight 900ms ease-in-out infinite;
+}
+
+.person-one .person-leg-left {
+  transform-origin: top center;
+  animation: personLegLeft 900ms ease-in-out infinite;
+}
+
+.person-one .person-leg-right {
+  transform-origin: top center;
+  animation: personLegRight 900ms ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   WALKER TWO
+--------------------------------------------------------- */
+
+.person-two {
+  animation: personWalkBob 2.1s ease-in-out infinite;
+  animation-delay: 250ms;
+}
+
+.person-two .person-arm-left {
+  transform-origin: top center;
+  animation: personArmLeft 1s ease-in-out infinite;
+  animation-delay: 150ms;
+}
+
+.person-two .person-arm-right {
+  transform-origin: top center;
+  animation: personArmRight 1s ease-in-out infinite;
+  animation-delay: 150ms;
+}
+
+.person-two .person-leg-left {
+  transform-origin: top center;
+  animation: personLegLeft 1s ease-in-out infinite;
+  animation-delay: 150ms;
+}
+
+.person-two .person-leg-right {
+  transform-origin: top center;
+  animation: personLegRight 1s ease-in-out infinite;
+  animation-delay: 150ms;
+}
+
+
+/* ---------------------------------------------------------
+   RUNNER
+--------------------------------------------------------- */
+
+.person-three {
+  animation: runnerBob 700ms ease-in-out infinite;
+}
+
+.person-three .person-arm-left {
+  transform-origin: top center;
+  animation: runnerArmLeft 350ms ease-in-out infinite;
+}
+
+.person-three .person-arm-right {
+  transform-origin: top center;
+  animation: runnerArmRight 350ms ease-in-out infinite;
+}
+
+.person-three .person-leg-left {
+  transform-origin: top center;
+  animation: runnerLegLeft 350ms ease-in-out infinite;
+}
+
+.person-three .person-leg-right {
+  transform-origin: top center;
+  animation: runnerLegRight 350ms ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   WALKING KEYFRAMES
+--------------------------------------------------------- */
+
+@keyframes personWalkBob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1.5px);
+  }
+
+}
+
+@keyframes personArmLeft {
+
+  0%,
+  100% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+}
+
+@keyframes personArmRight {
+
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+}
+
+@keyframes personLegLeft {
+
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+
+}
+
+@keyframes personLegRight {
+
+  0%,
+  100% {
+    transform: rotate(7deg);
+  }
+
+  50% {
+    transform: rotate(-7deg);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   RUNNER KEYFRAMES
+--------------------------------------------------------- */
+
+@keyframes runnerBob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+}
+
+@keyframes runnerArmLeft {
+
+  0%,
+  100% {
+    transform: rotate(25deg);
+  }
+
+  50% {
+    transform: rotate(-25deg);
+  }
+
+}
+
+@keyframes runnerArmRight {
+
+  0%,
+  100% {
+    transform: rotate(-25deg);
+  }
+
+  50% {
+    transform: rotate(25deg);
+  }
+
+}
+
+@keyframes runnerLegLeft {
+
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+
+  50% {
+    transform: rotate(18deg);
+  }
+
+}
+
+@keyframes runnerLegRight {
+
+  0%,
+  100% {
+    transform: rotate(18deg);
+  }
+
+  50% {
+    transform: rotate(-18deg);
+  }
+
+}
+
+
+/* =========================================================
+   TWO STUDENTS TALKING
+========================================================= */
+
+.campus-conversation {
+  position: absolute;
+  left: 65%;
+  bottom: 25%;
+  width: 90px;
+  height: 82px;
+  z-index: 18;
+  pointer-events: none;
+}
+
+
+/* Individual student */
+
+.conversation-student {
+  position: absolute;
+  bottom: 0;
+  width: 34px;
+  height: 70px;
+  transform-origin: center bottom;
+}
+
+
+/* Position the two students */
+
+.conversation-student-one {
+  left: 5px;
+  animation: conversationShiftOne 3s ease-in-out infinite;
+}
+
+.conversation-student-two {
+  right: 5px;
+  animation: conversationShiftTwo 3.4s ease-in-out infinite;
+}
+
+
+/* Shadows */
+
+.conversation-shadow {
+  position: absolute;
+  left: 4px;
+  bottom: 0;
+  width: 27px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(24, 60, 53, 0.14);
+}
+
+
+/* Heads */
+
+.conversation-head {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  width: 16px;
+  height: 17px;
+  border-radius: 50%;
+  background: #c58d70;
+  border: 1px solid #9f6d56;
+}
+
+
+/* Hair */
+
+.conversation-hair {
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  width: 20px;
+  height: 14px;
+  border-radius: 12px 12px 7px 7px;
+  z-index: 2;
+}
+
+.conversation-hair-one {
+  background: #2f2724;
+}
+
+.conversation-hair-two {
+  background: #4a3327;
+}
+
+
+/* Neck */
+
+.conversation-neck {
+  position: absolute;
+  left: 14px;
+  top: 25px;
+  width: 7px;
+  height: 6px;
+  background: #c58d70;
+}
+
+
+/* Bodies */
+
+.conversation-body {
+  position: absolute;
+  left: 7px;
+  top: 29px;
+  width: 20px;
+  height: 25px;
+  border-radius: 7px 7px 4px 4px;
+}
+
+.conversation-shirt-one {
+  background: #557b73;
+}
+
+.conversation-shirt-two {
+  background: #9b6c61;
+}
+
+
+/* Arms */
+
+.conversation-arm {
+  position: absolute;
+  top: 31px;
+  width: 6px;
+  height: 21px;
+  border-radius: 4px;
+  background: #c58d70;
+  transform-origin: top center;
+}
+
+.conversation-arm-left {
+  left: 3px;
+}
+
+.conversation-arm-right {
+  right: 3px;
+}
+
+
+/* Legs */
+
+.conversation-leg {
+  position: absolute;
+  top: 52px;
+  width: 7px;
+  height: 17px;
+  border-radius: 3px;
+  background: #3f4a49;
+  transform-origin: top center;
+}
+
+.conversation-leg-left {
+  left: 9px;
+}
+
+.conversation-leg-right {
+  right: 9px;
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE CONVERSATION MOVEMENT
+--------------------------------------------------------- */
+
+@keyframes conversationShiftOne {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  30% {
+    transform: translateY(-1px) rotate(-1deg);
+  }
+
+  55% {
+    transform: translateY(0) rotate(1deg);
+  }
+
+  75% {
+    transform: translateY(-1px) rotate(0);
+  }
+
+}
+
+@keyframes conversationShiftTwo {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  35% {
+    transform: translateY(-1px) rotate(1deg);
+  }
+
+  60% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  80% {
+    transform: translateY(-1px) rotate(0);
+  }
+
+}
+
+
+/* Occasional conversational arm gestures */
+
+.conversation-student-one .conversation-arm-right {
+  transform-origin: top center;
+  animation: conversationGestureOne 3s ease-in-out infinite;
+}
+
+.conversation-student-two .conversation-arm-left {
+  transform-origin: top center;
+  animation: conversationGestureTwo 3.4s ease-in-out infinite;
+}
+
+@keyframes conversationGestureOne {
+
+  0%,
+  55%,
+  100% {
+    transform: rotate(0);
+  }
+
+  65% {
+    transform: rotate(-18deg);
+  }
+
+  75% {
+    transform: rotate(-8deg);
+  }
+
+}
+
+@keyframes conversationGestureTwo {
+
+  0%,
+  60%,
+  100% {
+    transform: rotate(0);
+  }
+
+  70% {
+    transform: rotate(20deg);
+  }
+
+  80% {
+    transform: rotate(8deg);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .person-one,
+  .person-two,
+  .person-three,
+  .person-one .person-arm-left,
+  .person-one .person-arm-right,
+  .person-one .person-leg-left,
+  .person-one .person-leg-right,
+  .person-two .person-arm-left,
+  .person-two .person-arm-right,
+  .person-two .person-leg-left,
+  .person-two .person-leg-right,
+  .person-three .person-arm-left,
+  .person-three .person-arm-right,
+  .person-three .person-leg-left,
+  .person-three .person-leg-right,
+  .conversation-student-one,
+  .conversation-student-two,
+  .conversation-student-one .conversation-arm-right,
+  .conversation-student-two .conversation-arm-left {
+    animation: none;
   }
 
 }

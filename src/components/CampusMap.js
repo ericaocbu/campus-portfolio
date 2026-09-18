@@ -1,17 +1,27 @@
 import { campus } from "../data/campus.js";
 import { Building } from "./Building.js";
+import { CampusLife } from "./CampusLife.js";
 
 export function CampusMap(
   container,
   onSelect,
   onStartTour
 ) {
+  /* =====================================================
+     VIEWPORT
+  ===================================================== */
+
   const viewport =
     document.createElement("div");
 
   viewport.classList.add(
     "campus-viewport"
   );
+
+
+  /* =====================================================
+     MAP
+  ===================================================== */
 
   const map =
     document.createElement("div");
@@ -22,7 +32,7 @@ export function CampusMap(
 
 
   /* =====================================================
-     CAMPUS ENVIRONMENT
+     ENVIRONMENT
   ===================================================== */
 
   const environment =
@@ -31,6 +41,11 @@ export function CampusMap(
   environment.classList.add(
     "campus-environment"
   );
+
+
+  /* =====================================================
+     WORLD LAYERS
+  ===================================================== */
 
   const paths =
     document.createElement("div");
@@ -69,6 +84,25 @@ export function CampusMap(
 
 
   /* =====================================================
+     CAMPUS LIFE
+
+     CampusLife contains:
+     - road
+     - bus
+     - bus stop
+     - bell tower
+     - people
+     - cat
+     - discovery UI
+
+     We will distribute these into the correct
+     visual layers below.
+  ===================================================== */
+
+  const life =
+    CampusLife();
+
+  /* =====================================================
      PATHS
   ===================================================== */
 
@@ -96,6 +130,7 @@ export function CampusMap(
 
   pathDefinitions.forEach(
     (pathDefinition) => {
+
       const path =
         document.createElement("div");
 
@@ -108,7 +143,10 @@ export function CampusMap(
         <span class="path-line"></span>
       `;
 
-      paths.appendChild(path);
+      paths.appendChild(
+        path
+      );
+
     }
   );
 
@@ -139,6 +177,7 @@ export function CampusMap(
 
   treePositions.forEach(
     (position, index) => {
+
       const tree =
         document.createElement("span");
 
@@ -147,9 +186,11 @@ export function CampusMap(
       );
 
       if (index % 3 === 0) {
+
         tree.classList.add(
           "campus-tree-large"
         );
+
       }
 
       tree.style.left =
@@ -163,7 +204,10 @@ export function CampusMap(
         <span class="tree-trunk"></span>
       `;
 
-      trees.appendChild(tree);
+      trees.appendChild(
+        tree
+      );
+
     }
   );
 
@@ -186,6 +230,7 @@ export function CampusMap(
 
   bushPositions.forEach(
     (position) => {
+
       const bush =
         document.createElement("span");
 
@@ -202,6 +247,7 @@ export function CampusMap(
       greenery.appendChild(
         bush
       );
+
     }
   );
 
@@ -238,6 +284,7 @@ export function CampusMap(
 
   benchPositions.forEach(
     (position) => {
+
       const bench =
         document.createElement("span");
 
@@ -265,6 +312,7 @@ export function CampusMap(
       details.appendChild(
         bench
       );
+
     }
   );
 
@@ -285,6 +333,7 @@ export function CampusMap(
 
   lampPositions.forEach(
     (position) => {
+
       const lamp =
         document.createElement("span");
 
@@ -306,6 +355,7 @@ export function CampusMap(
       details.appendChild(
         lamp
       );
+
     }
   );
 
@@ -350,6 +400,7 @@ export function CampusMap(
 
   landscapePositions.forEach(
     (position) => {
+
       const landscape =
         document.createElement("span");
 
@@ -377,24 +428,33 @@ export function CampusMap(
       greenery.appendChild(
         landscape
       );
+
     }
   );
 
 
   /* =====================================================
-     CAMPUS SIGN
+   CAMPUS SIGN
   ===================================================== */
 
-  details.innerHTML += `
-    <div class="campus-sign">
-      <span class="sign-post"></span>
+    details.innerHTML += `
+      <div class="campus-sign">
 
-      <span class="sign-board">
-        ERICA'S
-        <strong>DIGITAL CAMPUS</strong>
-      </span>
-    </div>
-  `;
+        <span class="sign-post sign-post-left"></span>
+        <span class="sign-post sign-post-right"></span>
+
+        <span class="sign-board">
+
+          ERICA'S
+
+          <strong>
+            DIGITAL CAMPUS
+          </strong>
+
+        </span>
+
+      </div>
+    `;
 
 
   /* =====================================================
@@ -410,6 +470,7 @@ export function CampusMap(
 
   campus.locations.forEach(
     (location) => {
+
       const building =
         Building(
           location,
@@ -419,48 +480,62 @@ export function CampusMap(
       buildings.appendChild(
         building
       );
+
     }
   );
 
 
   /* =====================================================
-     START CAMPUS TOUR
+     EXTRACT CAMPUS LIFE ELEMENTS
   ===================================================== */
 
-  const tourButton =
-    document.createElement("button");
+  const road =
+    life.querySelector(
+      ".campus-road"
+    );
 
-  tourButton.type = "button";
+  const bus =
+    life.querySelector(
+      ".campus-bus"
+    );
 
-  tourButton.classList.add(
-    "map-start-tour"
-  );
+  const busStop =
+    life.querySelector(
+      ".campus-bus-stop"
+    );
 
-  tourButton.innerHTML = `
-    <span class="map-start-tour-icon">
-      ✦
-    </span>
 
-    <span class="map-start-tour-text">
-      <strong>START CAMPUS TOUR</strong>
-      <small>Follow the guided journey</small>
-    </span>
+  /*
+   * Road belongs to the environment layer.
+   */
 
-    <span class="map-start-tour-arrow">
-      →
-    </span>
-  `;
+  if (road) {
+    environment.appendChild(
+      road
+    );
+  }
 
-  tourButton.addEventListener(
-    "click",
-    () => {
-      onStartTour();
-    }
-  );
+
+  /*
+   * Bus and bus stop stay with the road,
+   * but are above the road surface.
+   */
+
+  if (bus) {
+    environment.appendChild(
+      bus
+    );
+  }
+
+  if (busStop) {
+    environment.appendChild(
+      busStop
+    );
+  }
 
 
   /* =====================================================
-     ASSEMBLE CAMPUS
+     ASSEMBLE ENVIRONMENT
   ===================================================== */
 
   environment.appendChild(
@@ -483,6 +558,11 @@ export function CampusMap(
     details
   );
 
+
+  /* =====================================================
+     ASSEMBLE MAP
+  ===================================================== */
+
   map.appendChild(
     environment
   );
@@ -491,9 +571,68 @@ export function CampusMap(
     buildings
   );
 
+  /*
+   * CampusLife now contains only the
+   * foreground interactive elements:
+   *
+   * - bell tower
+   * - people
+   * - cat
+   */
+
+  map.appendChild(
+    life
+  );
+
+
   viewport.appendChild(
     map
   );
+
+
+  /* =====================================================
+     START CAMPUS TOUR
+  ===================================================== */
+
+  const tourButton =
+    document.createElement("button");
+
+  tourButton.type = "button";
+
+  tourButton.classList.add(
+    "map-start-tour"
+  );
+
+  tourButton.innerHTML = `
+    <span class="map-start-tour-icon">
+      ✦
+    </span>
+
+    <span class="map-start-tour-text">
+
+      <strong>
+        START CAMPUS TOUR
+      </strong>
+
+      <small>
+        Follow the guided journey
+      </small>
+
+    </span>
+
+    <span class="map-start-tour-arrow">
+      →
+    </span>
+  `;
+
+
+  tourButton.addEventListener(
+    "click",
+    () => {
+      onStartTour();
+    }
+  );
+
 
   container.appendChild(
     viewport
@@ -517,72 +656,98 @@ export function CampusMap(
   function moveToLocation(
     location
   ) {
+
     previousScrollPosition = {
       x: viewport.scrollLeft,
       y: viewport.scrollTop,
     };
 
+
     const targetX =
       location.camera.x -
       viewport.clientWidth / 2;
+
 
     const targetY =
       location.camera.y -
       viewport.clientHeight / 2;
 
+
     viewport.scrollTo({
-      left: Math.max(
-        0,
-        targetX
-      ),
 
-      top: Math.max(
-        0,
-        targetY
-      ),
+      left:
+        Math.max(
+          0,
+          targetX
+        ),
 
-      behavior: "smooth",
+      top:
+        Math.max(
+          0,
+          targetY
+        ),
+
+      behavior:
+        "smooth",
+
     });
+
   }
 
 
   function returnToPreviousPosition() {
+
     viewport.scrollTo({
+
       left:
         previousScrollPosition.x,
 
       top:
         previousScrollPosition.y,
 
-      behavior: "smooth",
+      behavior:
+        "smooth",
+
     });
+
   }
 
 
   function centerCampus() {
+
     const x =
-      (map.offsetWidth -
-        viewport.clientWidth) /
-      2;
+      (
+        map.offsetWidth -
+        viewport.clientWidth
+      ) / 2;
+
 
     const y =
-      (map.offsetHeight -
-        viewport.clientHeight) /
-      2;
+      (
+        map.offsetHeight -
+        viewport.clientHeight
+      ) / 2;
+
 
     viewport.scrollTo({
-      left: Math.max(
-        0,
-        x
-      ),
 
-      top: Math.max(
-        0,
-        y
-      ),
+      left:
+        Math.max(
+          0,
+          x
+        ),
 
-      behavior: "instant",
+      top:
+        Math.max(
+          0,
+          y
+        ),
+
+      behavior:
+        "instant",
+
     });
+
   }
 
 
@@ -592,9 +757,14 @@ export function CampusMap(
 
 
   return {
+
     viewport,
+
     moveToLocation,
+
     returnToPreviousPosition,
+
     centerCampus,
+
   };
 }
