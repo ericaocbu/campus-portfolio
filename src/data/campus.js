@@ -36,7 +36,7 @@ export const campus = {
       section: "Projects",
       description:
         "Explore my UX, UI, and front-end projects.",
-      icon: "🧪",
+      icon: "👩🏽‍💻",
 
       camera: {
         x: 252,
