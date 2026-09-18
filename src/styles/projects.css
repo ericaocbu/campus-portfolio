@@ -63,9 +63,9 @@
   position: relative;
 
   padding:
-    clamp(100px, 12vw, 170px)
-    clamp(28px, 7vw, 110px)
-    80px;
+    clamp(100px, 12vw, 100px)
+    clamp(28px, 7vw, 100px)
+    60px;
 }
 
 

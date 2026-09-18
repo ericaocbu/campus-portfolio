@@ -2951,7 +2951,7 @@
 
 .person-shirt-rust {
   background:
-    #9b6751;
+    #b7b779;
 }
 
 
@@ -3096,6 +3096,153 @@
     transform:
       translateX(148px)
       scale(0.78);
+  }
+
+}
+
+/* =====================================================
+   FEMALE-PRESENTING CAMPUS CHARACTERS
+===================================================== */
+
+/* ---------- HAIRSTYLES ---------- */
+
+.person-hair-long {
+  width: 17px;
+  height: 20px;
+
+  top: 0;
+
+  border-radius:
+    55% 55% 45% 45%;
+
+  z-index: 2;
+}
+
+.person-hair-long::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 7px;
+
+  width: 18px;
+  height: 14px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    40% 40% 50% 50%;
+
+  background:
+    inherit;
+
+  z-index: -1;
+}
+
+
+/* =====================================================
+   GIRL OUTFITS
+===================================================== */
+
+.person-shirt-blue {
+  background:
+    #527b91;
+}
+
+.person-shirt-pink {
+  background:
+    #b97878;
+}
+
+.person-shirt-lavender {
+  background:
+    #81729a;
+}
+
+.person-shirt-yellow {
+  background:
+    #c19b55;
+}
+
+/* =====================================================
+   GIRL CHARACTER VARIATIONS
+===================================================== */
+
+/* Girl 1 — long hair */
+
+.campus-person.person-girl-one {
+  left: 20%;
+  top: 27%;
+
+  transform:
+    scale(0.92);
+
+  animation:
+    girlOneWalk
+    8s ease-in-out
+    infinite alternate;
+}
+
+.campus-person.person-girl-one .person-hair {
+  background:
+    #2f2927;
+}
+
+.campus-person.person-girl-one .person-body {
+  background:
+    #b97878;
+}
+
+
+/* Girl 2 — long hair + dress */
+
+.campus-person.person-girl-two {
+  left: 76%;
+  top: 16%;
+
+  transform:
+    scale(0.76);
+
+  animation:
+    girlOneWalk
+    10s ease-in-out
+    infinite alternate;
+}
+
+.campus-person.person-girl-two .person-hair {
+  background:
+    #af8c29;
+}
+
+.campus-person.person-girl-two .person-body {
+  background:
+    #81729a;
+}
+
+/* =====================================================
+   GIRL WALKING MOTION
+===================================================== */
+
+@keyframes girlOneWalk {
+
+  0% {
+    transform:
+      translateX(0)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(34px)
+      translateY(-1px);
+  }
+
+  100% {
+    transform:
+      translateX(150px)
+      translateY(0);
   }
 
 }
@@ -4368,33 +4515,42 @@
 
 
 /* ---------------------------------------------------------
-   WALKER ONE
+   WALKER ONE + GIRL
 --------------------------------------------------------- */
 
-.person-one {
+.person-one,
+.person-girl-one,
+.person-girl-two {
   animation: personWalkBob 1.8s ease-in-out infinite;
 }
 
-.person-one .person-arm-left {
+.person-one .person-arm-left, 
+.person-girl-one .person-arm-left,
+.person-girl-two .person-arm-left {
   transform-origin: top center;
   animation: personArmLeft 900ms ease-in-out infinite;
 }
 
-.person-one .person-arm-right {
+.person-one .person-arm-right,
+.person-girl-one .person-arm-right,
+.person-girl-two .person-arm-right {
   transform-origin: top center;
   animation: personArmRight 900ms ease-in-out infinite;
 }
 
-.person-one .person-leg-left {
+.person-one .person-leg-left,
+.person-girl-one .person-leg-left,
+.person-girl-two .person-leg-left {
   transform-origin: top center;
   animation: personLegLeft 900ms ease-in-out infinite;
 }
 
-.person-one .person-leg-right {
+.person-one .person-leg-right,
+.person-girl-one .person-leg-right,
+.person-girl-two .person-leg-right {
   transform-origin: top center;
   animation: personLegRight 900ms ease-in-out infinite;
 }
-
 
 /* ---------------------------------------------------------
    WALKER TWO
@@ -4884,4 +5040,430 @@
     animation: none;
   }
 
+}
+
+/* =====================================================
+   ORIENTATION LEADER ERICA
+===================================================== */
+
+.campus-erica {
+  position: absolute;
+
+  left: -6%;
+  top: 72%;
+
+  width: 38px;
+  height: 72px;
+
+  z-index: 45;
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+
+  transition:
+    left 850ms ease-in-out,
+    top 850ms ease-in-out;
+}
+
+
+/* Shadow */
+
+.erica-shadow {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 34px;
+  height: 9px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(24, 60, 53, 0.18);
+}
+
+
+/* Head */
+
+.erica-head {
+  position: absolute;
+
+  left: 50%;
+  top: 7px;
+
+  width: 18px;
+  height: 18px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #9b674e;
+}
+
+
+/* Hair */
+
+.erica-hair {
+  position: absolute;
+
+  left: 50%;
+  top: 4px;
+
+  width: 22px;
+  height: 27px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  background: #241b1a;
+
+  z-index: 2;
+}
+
+/* Neck */
+
+.erica-neck {
+  position: absolute;
+
+  left: 50%;
+  top: 23px;
+
+  width: 7px;
+  height: 7px;
+
+  transform:
+    translateX(-50%);
+
+  background: #c58d70;
+}
+
+
+/* Body */
+
+.erica-body {
+  position: absolute;
+
+  left: 50%;
+  top: 28px;
+
+  width: 25px;
+  height: 27px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    8px 8px 5px 5px;
+
+  background: #3974aa;
+}
+
+
+/* Arms */
+
+.erica-arm {
+  position: absolute;
+
+  top: 30px;
+
+  width: 6px;
+  height: 23px;
+
+  border-radius: 5px;
+
+  background: #c58d70;
+
+  transform-origin:
+    top center;
+}
+
+
+.erica-arm-left {
+  left: 5px;
+
+  transform:
+    rotate(16deg);
+}
+
+
+.erica-arm-right {
+  right: 5px;
+
+  transform:
+    rotate(-16deg);
+}
+
+
+/* Legs */
+
+.erica-leg {
+  position: absolute;
+
+  top: 52px;
+
+  width: 7px;
+  height: 18px;
+
+  border-radius: 5px;
+
+  background: #263b50;
+
+  transform-origin:
+    top center;
+}
+
+
+.erica-leg-left {
+  left: 12px;
+}
+
+
+.erica-leg-right {
+  right: 12px;
+}
+
+
+/* Tour badge */
+
+.erica-badge {
+  position: absolute;
+
+  left: 50%;
+  top: 27px;
+
+  transform:
+    translateX(-50%);
+
+  padding:
+    2px 4px;
+
+  border-radius: 3px;
+
+  background: #f5f1df;
+
+  color: #285d86;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 5px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  z-index: 5;
+}
+
+
+/* Walking animation */
+
+.campus-erica.is-walking
+.erica-leg-left {
+  animation:
+    ericaWalkLeft
+    0.22s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.campus-erica.is-walking
+.erica-leg-right {
+  animation:
+    ericaWalkRight
+    0.22s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.campus-erica.is-walking
+.erica-arm-left {
+  animation:
+    ericaArmLeft
+    0.22s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.campus-erica.is-walking
+.erica-arm-right {
+  animation:
+    ericaArmRight
+    0.22s
+    ease-in-out
+    infinite alternate;
+}
+
+
+@keyframes ericaWalkLeft {
+  from {
+    transform:
+      rotate(18deg);
+  }
+
+  to {
+    transform:
+      rotate(-18deg);
+  }
+}
+
+
+@keyframes ericaWalkRight {
+  from {
+    transform:
+      rotate(-18deg);
+  }
+
+  to {
+    transform:
+      rotate(18deg);
+  }
+}
+
+
+@keyframes ericaArmLeft {
+  from {
+    transform:
+      rotate(18deg);
+  }
+
+  to {
+    transform:
+      rotate(-18deg);
+  }
+}
+
+
+@keyframes ericaArmRight {
+  from {
+    transform:
+      rotate(-18deg);
+  }
+
+  to {
+    transform:
+      rotate(18deg);
+  }
+}
+
+
+/* =====================================================
+   ERICA DIALOGUE
+===================================================== */
+.erica-dialogue {
+  position: absolute;
+
+  left: 50%;
+  top: 61%;
+
+  z-index: 60;
+
+  width: min(300px, 28vw);
+
+  padding: 13px 16px;
+
+  transform:
+    translate(-50%, 10px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.18);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(24, 60, 53, 0.12);
+
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.erica-dialogue.is-visible {
+  opacity: 1;
+
+  transform:
+    translate(-50%, 0);
+}
+
+.erica-dialogue::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -7px;
+
+  width: 12px;
+  height: 12px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border-right:
+    1px solid
+    rgba(24, 60, 53, 0.12);
+
+  border-bottom:
+    1px solid
+    rgba(24, 60, 53, 0.12);
+}
+
+
+.erica-dialogue-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color:
+    rgba(24, 60, 53, 0.48);
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+.erica-dialogue-text {
+  display: block;
+
+  color: #183c35;
+
+  font-size: 13px;
+
+  line-height: 1.35;
 }

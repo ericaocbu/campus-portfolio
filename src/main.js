@@ -7,6 +7,11 @@ import { TourHUD } from "./components/TourHUD.js";
 
 import "./style.css";
 
+
+/* =====================================================
+   APP SETUP
+===================================================== */
+
 const campusContainer =
   document.querySelector("#campus");
 
@@ -15,11 +20,15 @@ let navigation = null;
 let activeSection = null;
 
 let navigationTimeout = null;
-
 let tourHUD = null;
 
 let tourActive = false;
 let currentTourIndex = 0;
+
+
+/* =====================================================
+   GUIDED TOUR ORDER
+===================================================== */
 
 const tourOrder = [
   "main-campus",
@@ -29,6 +38,11 @@ const tourOrder = [
   "food-canteen",
   "utown",
 ];
+
+
+/* =====================================================
+   CAMPUS HELPERS
+===================================================== */
 
 function findCampusLocation(id) {
   return campus.locations.find(
@@ -47,6 +61,11 @@ function clearNavigationTimeout() {
   }
 }
 
+
+/* =====================================================
+   NORMAL CAMPUS NAVIGATION
+===================================================== */
+
 function navigateTo(location) {
   clearNavigationTimeout();
 
@@ -54,6 +73,10 @@ function navigateTo(location) {
     return;
   }
 
+  /*
+   * If the visitor navigates somewhere while
+   * the guided tour is active, stop the tour.
+   */
   if (tourActive) {
     stopTour(false);
   }
@@ -64,24 +87,19 @@ function navigateTo(location) {
 
   navigationTimeout =
     setTimeout(() => {
+
       openSection(location);
+
       navigationTimeout = null;
+
     }, 650);
 }
 
-/*
- * Handles navigation requests coming
- * from SectionView.js.
- *
- * SectionView sends:
- *
- * {
- *   locationId: "library"
- * }
- *
- * We use that ID to find the actual
- * campus location and navigate there.
- */
+
+/* =====================================================
+   SECTION NAVIGATION
+===================================================== */
+
 function handleSectionNavigation(
   event
 ) {
@@ -107,6 +125,11 @@ function handleSectionNavigation(
 
   navigateTo(location);
 }
+
+
+/* =====================================================
+   OPEN NORMAL SECTION
+===================================================== */
 
 function openSection(location) {
   if (activeSection) {
@@ -134,6 +157,11 @@ function openSection(location) {
     );
   });
 }
+
+
+/* =====================================================
+   CLOSE NORMAL SECTION
+===================================================== */
 
 function closeSection() {
   if (!activeSection) {
@@ -163,9 +191,17 @@ function closeSection() {
   }, 450);
 }
 
+
+/* =====================================================
+   START GUIDED TOUR
+===================================================== */
+
 function startTour() {
   clearNavigationTimeout();
 
+  /*
+   * Close whatever section is currently open.
+   */
   if (activeSection) {
     activeSection.classList.remove(
       "is-active"
@@ -181,11 +217,39 @@ function startTour() {
     }, 450);
   }
 
+  /*
+   * Activate the guided tour.
+   */
   tourActive = true;
   currentTourIndex = 0;
 
+
+  /*
+   * Tell Erica that the tour has started.
+   *
+   * Erica is already waiting at Main Campus,
+   * so she does NOT walk there again.
+   */
+  window.dispatchEvent(
+    new CustomEvent(
+      "portfolio:erica-tour",
+      {
+        detail: {
+          action: "start",
+        },
+      }
+    )
+  );
+
+  /*
+   * Show the first tour stop.
+   */
   showTourStop();
 }
+
+/* =====================================================
+   SHOW CURRENT TOUR STOP
+===================================================== */
 
 function showTourStop() {
   if (!tourActive) {
@@ -194,43 +258,88 @@ function showTourStop() {
 
   const currentLocation =
     findCampusLocation(
-      tourOrder[
-        currentTourIndex
-      ]
+      tourOrder[currentTourIndex]
     );
 
   const nextLocation =
     findCampusLocation(
-      tourOrder[
-        currentTourIndex + 1
-      ]
+      tourOrder[currentTourIndex + 1]
     );
 
+  /*
+   * Make sure the location exists.
+   */
   if (!currentLocation) {
     finishTour();
     return;
   }
 
+  /*
+   * Update the tour HUD.
+   */
   updateTourHUD(
     currentLocation,
     nextLocation
   );
 
+  /*
+   * Move the camera to the destination.
+   */
   campusMap.moveToLocation(
     currentLocation
   );
 
-  clearNavigationTimeout();
+  /*
+   * Main Campus is where Erica is already waiting.
+   * Give her message time to be seen before opening.
+   */
+  if (currentLocation.id === "main-campus") {
 
-  navigationTimeout =
-    setTimeout(() => {
-      openTourSection(
-        currentLocation
-      );
+    clearNavigationTimeout();
 
-      navigationTimeout = null;
-    }, 700);
+    navigationTimeout =
+      setTimeout(() => {
+
+        if (!tourActive) {
+          return;
+        }
+
+        openTourSection(
+          currentLocation
+        );
+
+        navigationTimeout = null;
+
+      }, 1200);
+
+    return;
+  }
+
+  /*
+   * For every building, Erica walks there.
+   *
+   * The building will NOT open yet.
+   * CampusLife will tell us when Erica arrives
+   * and her message has been displayed.
+   */
+  window.dispatchEvent(
+    new CustomEvent(
+      "portfolio:erica-tour",
+      {
+        detail: {
+          action: "move",
+          locationId:
+            currentLocation.id,
+        },
+      }
+    )
+  );
 }
+
+
+/* =====================================================
+   OPEN TOUR SECTION
+===================================================== */
 
 function openTourSection(location) {
   if (activeSection) {
@@ -259,6 +368,11 @@ function openTourSection(location) {
   });
 }
 
+
+/* =====================================================
+   CLOSE TOUR SECTION
+===================================================== */
+
 function closeTourSection() {
   if (!activeSection) {
     return;
@@ -277,6 +391,11 @@ function closeTourSection() {
     sectionToRemove.remove();
   }, 450);
 }
+
+
+/* =====================================================
+   TOUR HUD
+===================================================== */
 
 function updateTourHUD(
   currentLocation,
@@ -311,6 +430,11 @@ function updateTourHUD(
   );
 }
 
+
+/* =====================================================
+   NEXT TOUR STOP
+===================================================== */
+
 function handleNextTourStop() {
   if (!tourActive) {
     return;
@@ -320,11 +444,19 @@ function handleNextTourStop() {
     currentTourIndex >=
     tourOrder.length - 1;
 
+
+  /*
+   * If we're at UTown, the tour is finished.
+   */
   if (isLastStop) {
     finishTour();
     return;
   }
 
+
+  /*
+   * Close the current section first.
+   */
   if (activeSection) {
     activeSection.classList.remove(
       "is-active"
@@ -338,6 +470,9 @@ function handleNextTourStop() {
     setTimeout(() => {
       sectionToRemove.remove();
 
+      /*
+       * Move to the next location.
+       */
       currentTourIndex++;
 
       showTourStop();
@@ -346,10 +481,19 @@ function handleNextTourStop() {
     return;
   }
 
+
+  /*
+   * No section is open, so move immediately.
+   */
   currentTourIndex++;
 
   showTourStop();
 }
+
+
+/* =====================================================
+   STOP TOUR
+===================================================== */
 
 function stopTour(
   returnToCampus = true
@@ -359,11 +503,34 @@ function stopTour(
   tourActive = false;
   currentTourIndex = 0;
 
+
+  /*
+   * Tell Erica to stop guided-tour mode.
+   */
+  window.dispatchEvent(
+    new CustomEvent(
+      "portfolio:erica-tour",
+      {
+        detail: {
+          action: "stop",
+        },
+      }
+    )
+  );
+
+
+  /*
+   * Remove the tour HUD.
+   */
   if (tourHUD) {
     tourHUD.remove();
     tourHUD = null;
   }
 
+
+  /*
+   * Close the active section.
+   */
   if (activeSection) {
     activeSection.classList.remove(
       "is-active"
@@ -385,22 +552,32 @@ function stopTour(
     return;
   }
 
+
+  /*
+   * Return to the campus center.
+   */
   if (returnToCampus) {
     campusMap.centerCampus();
   }
 }
 
+
+/* =====================================================
+   FINISH TOUR
+===================================================== */
+
 function finishTour() {
   clearNavigationTimeout();
 
-  tourActive = false;
-  currentTourIndex = 0;
+  /*
+   * Keep the tour active while Erica walks back
+   * to Main Campus and delivers her final message.
+   */
+  tourActive = true;
 
-  if (tourHUD) {
-    tourHUD.remove();
-    tourHUD = null;
-  }
-
+  /*
+   * Close the final section first.
+   */
   if (activeSection) {
     activeSection.classList.remove(
       "is-active"
@@ -414,27 +591,149 @@ function finishTour() {
     setTimeout(() => {
       sectionToRemove.remove();
 
-      campusMap.centerCampus();
+      /*
+       * Tell Erica to return to Main Campus.
+       */
+      window.dispatchEvent(
+        new CustomEvent(
+          "portfolio:erica-tour",
+          {
+            detail: {
+              action: "complete",
+            },
+          }
+        )
+      );
+
     }, 450);
 
     return;
   }
 
-  campusMap.centerCampus();
+  /*
+   * No section is open, so send Erica back immediately.
+   */
+  window.dispatchEvent(
+    new CustomEvent(
+      "portfolio:erica-tour",
+      {
+        detail: {
+          action: "complete",
+        },
+      }
+    )
+  );
 }
 
-/*
- * Listen for navigation requests
- * from SectionView.
- *
- * This connects the
- * "WHERE SHOULD WE GO?"
- * cards to the actual campus.
- */
+/* =====================================================
+   ERICA TOUR FINISHED
+===================================================== */
+
+window.addEventListener(
+  "portfolio:erica-tour-finished",
+  () => {
+
+    clearNavigationTimeout();
+
+    navigationTimeout =
+      setTimeout(() => {
+
+        /*
+         * Hide Erica's final message.
+         */
+        window.dispatchEvent(
+          new CustomEvent(
+            "portfolio:erica-tour",
+            {
+              detail: {
+                action: "hide-message",
+              },
+            }
+          )
+        );
+
+        /*
+         * Now the guided tour is officially over.
+         */
+        tourActive = false;
+        currentTourIndex = 0;
+
+        if (tourHUD) {
+          tourHUD.remove();
+          tourHUD = null;
+        }
+
+        navigationTimeout = null;
+
+      }, 5500);
+  }
+);
+
+/* =====================================================
+   SECTION NAVIGATION EVENT
+===================================================== */
+
 window.addEventListener(
   "portfolio:navigate",
   handleSectionNavigation
 );
+
+/* =====================================================
+   ERICA ARRIVAL EVENT
+===================================================== */
+
+window.addEventListener(
+  "portfolio:erica-arrived",
+  (event) => {
+
+    if (!tourActive) {
+      return;
+    }
+
+    const locationId =
+      event.detail?.locationId;
+
+    if (!locationId) {
+      return;
+    }
+
+    const location =
+      findCampusLocation(
+        locationId
+      );
+
+    if (!location) {
+      return;
+    }
+
+    /*
+     * Erica has arrived and her message
+     * has already been displayed.
+     *
+     * Now open the building.
+     */
+    clearNavigationTimeout();
+
+    navigationTimeout =
+      setTimeout(() => {
+
+        if (!tourActive) {
+          return;
+        }
+
+        openTourSection(
+          location
+        );
+
+        navigationTimeout = null;
+
+      }, 4500);
+  }
+);
+
+/* =====================================================
+   CREATE CAMPUS
+===================================================== */
 
 campusMap =
   CampusMap(
@@ -442,6 +741,11 @@ campusMap =
     navigateTo,
     startTour
   );
+
+
+/* =====================================================
+   CREATE NAVIGATION
+===================================================== */
 
 navigation =
   Navigation(
