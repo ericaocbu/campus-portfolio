@@ -324,7 +324,7 @@ export function About({
     </section>
 
 
-<!-- =========================================
+  <!-- =========================================
          03 — SKILLS
     ========================================== -->
 
@@ -471,7 +471,7 @@ export function About({
     </section>
 
     <!-- =====================================================
-         04 / HOW I WORK
+     04 / HOW I WORK
     ====================================================== -->
 
     <section
@@ -488,75 +488,227 @@ export function About({
 
       <div class="library-process-header">
 
-        <h2>
-          FROM RESEARCH
-          <br />
-          <em>TO INTERFACE.</em>
-        </h2>
+        <div class="library-process-title-wrap">
 
-        <p>
-          I move between research, design, and
-          development throughout a project —
-          not treating them as separate worlds.
-        </p>
+          <span class="library-process-catalog">
+            REFERENCE DESK · CATALOG NO. 004
+          </span>
+
+          <h2>
+            FROM RESEARCH
+            <br />
+            <em>TO INTERFACE.</em>
+          </h2>
+
+        </div>
+
+        <div class="library-process-note">
+
+          <span class="library-note-label">
+            FIELD NOTE
+          </span>
+
+          <p>
+            I move between research, design, and
+            development throughout a project —
+            not treating them as separate worlds.
+          </p>
+
+        </div>
 
       </div>
 
 
-      <div class="library-process-map">
+      <div class="library-reading-table">
 
-        <div class="library-process-step">
-          <span>01</span>
-          <strong>RESEARCH</strong>
-          <small>
-            Understand people, context, and needs.
-            Defining clear directions before design begins.
-          </small>
+        <div class="library-table-top">
+
+          <div class="library-table-label">
+            <span>ERICA'S WORKING METHOD</span>
+            <strong>REFERENCE MATERIAL</strong>
+          </div>
+
+          <div class="library-table-card">
+            <span>PROCESS</span>
+            <strong>LISTEN → THINK → MAKE → REFINE</strong>
+          </div>
+
         </div>
 
-        <div class="library-process-line"></div>
 
-        <div class="library-process-step">
-          <span>02</span>
-          <strong>DEFINE</strong>
-          <small>
-            Shaping ideas into concepts, structuring ideas and 
-            features around real user goals.
-          </small>
+        <div class="library-process-books">
+
+          <!-- RESEARCH -->
+
+          <article class="library-process-book">
+
+            <div class="library-process-book-spine">
+              <span>01</span>
+            </div>
+
+            <div class="library-process-book-cover">
+
+              <span class="library-process-book-type">
+                VOLUME I
+              </span>
+
+              <strong>
+                RESEARCH
+              </strong>
+
+              <p>
+                Understand people, context,
+                and needs.
+              </p>
+
+              <span class="library-process-book-footer">
+                BEGIN WITH CURIOSITY
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- DEFINE -->
+
+          <article class="library-process-book">
+
+            <div class="library-process-book-spine">
+              <span>02</span>
+            </div>
+
+            <div class="library-process-book-cover">
+
+              <span class="library-process-book-type">
+                VOLUME II
+              </span>
+
+              <strong>
+                DEFINE
+              </strong>
+
+              <p>
+                Shape ideas around real
+                user goals.
+              </p>
+
+              <span class="library-process-book-footer">
+                FIND THE PROBLEM
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROTOTYPE -->
+
+          <article class="library-process-book">
+
+            <div class="library-process-book-spine">
+              <span>03</span>
+            </div>
+
+            <div class="library-process-book-cover">
+
+              <span class="library-process-book-type">
+                VOLUME III
+              </span>
+
+              <strong>
+                PROTOTYPE
+              </strong>
+
+              <p>
+                Explore ideas before
+                committing to code.
+              </p>
+
+              <span class="library-process-book-footer">
+                MAKE IT TANGIBLE
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- TEST -->
+
+          <article class="library-process-book">
+
+            <div class="library-process-book-spine">
+              <span>04</span>
+            </div>
+
+            <div class="library-process-book-cover">
+
+              <span class="library-process-book-type">
+                VOLUME IV
+              </span>
+
+              <strong>
+                TEST
+              </strong>
+
+              <p>
+                Learn what works,
+                then refine.
+              </p>
+
+              <span class="library-process-book-footer">
+                LISTEN + ITERATE
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- BUILD -->
+
+          <article class="library-process-book library-process-book-featured">
+
+            <div class="library-process-book-spine">
+              <span>05</span>
+            </div>
+
+            <div class="library-process-book-cover">
+
+              <span class="library-process-book-type">
+                VOLUME V
+              </span>
+
+              <strong>
+                BUILD
+              </strong>
+
+              <p>
+                Turn the design into
+                a functional experience.
+              </p>
+
+              <span class="library-process-book-footer">
+                BRING IT TO LIFE
+              </span>
+
+            </div>
+
+          </article>
+
         </div>
 
-        <div class="library-process-line"></div>
 
-        <div class="library-process-step">
-          <span>03</span>
-          <strong>PROTOTYPE</strong>
-          <small>
-            Creating interactive prototypes using tools like Figma.
-            Explore ideas before committing to code.
-          </small>
-        </div>
+        <div class="library-table-bottom">
+          <span>
+            EVERY PROJECT HAS ITS OWN CHAPTER.
+          </span>
 
-        <div class="library-process-line"></div>
+          <span>
+            01 — 05
+          </span>
 
-        <div class="library-process-step">
-          <span>04</span>
-          <strong>TEST</strong>
-          <small>
-            Learn what works and what needs to change, 
-            and refine usability through real feedback.
-          </small>
-        </div>
-
-        <div class="library-process-line"></div>
-
-        <div class="library-process-step">
-          <span>05</span>
-          <strong>BUILD</strong>
-          <small>
-            Turning designs into responsive, functional interfaces 
-            while maintaining visual consistency, usability, and 
-            attention to detail.
-          </small>
         </div>
 
       </div>
@@ -564,15 +716,104 @@ export function About({
     </section>
 
 
-    <!-- =====================================================
-         BEYOND THE SCREEN
-    ====================================================== -->
+<!-- =====================================================
+     BEYOND THE SCREEN
+====================================================== -->
 
-    <section class="library-beyond">
+<section class="library-beyond">
 
-      <div class="library-beyond-card">
+  <div class="library-return-cart">
 
-        <span>LAST BOOK ON THE SHELF</span>
+    <!-- CART HANDLE -->
+
+    <div class="library-cart-handle">
+      <span></span>
+      <span></span>
+    </div>
+
+
+    <!-- CART BODY -->
+
+    <div class="library-cart-body">
+
+      <div class="library-cart-header">
+
+        <div>
+          <span>LIBRARY SERVICES</span>
+
+          <strong>
+            RETURN CART
+          </strong>
+        </div>
+
+        <span class="library-cart-number">
+          CART NUM 005
+        </span>
+
+      </div>
+
+
+      <!-- BOOKS -->
+
+      <div class="library-cart-books">
+
+        <div class="library-cart-book cart-book-one">
+
+          <span>VOLUME</span>
+
+          <strong>
+            DESIGN<br />
+            + CODE
+          </strong>
+
+          <small>
+            ERICA'S LIBRARY
+          </small>
+
+        </div>
+
+
+        <div class="library-cart-book cart-book-two">
+
+          <span>VOLUME</span>
+
+          <strong>
+            BEYOND<br />
+            THE SCREEN
+          </strong>
+
+          <small>
+            CONTINUED...
+          </small>
+
+        </div>
+
+
+        <div class="library-cart-book cart-book-three">
+
+          <span>VOLUME</span>
+
+          <strong>
+            LIFE<br />
+            OFFLINE
+          </strong>
+
+          <small>
+            NEXT CHAPTER
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- RETURN SLIP -->
+
+      <div class="library-return-slip">
+
+        <span class="library-return-slip-label">
+          FINAL VOLUME
+        </span>
 
         <h2>
           THERE'S MORE
@@ -583,22 +824,41 @@ export function About({
         <p>
           Design and development are a big part of
           my world, but they're not the whole story.
-          Head over to the Dorms to see a little more
-          of what exists beyond the screen.
+          There's a little more to discover beyond
+          the screen.
         </p>
 
-        <button
-          type="button"
-          class="library-beyond-button"
-          data-location="utown"
-        >
-          VISIT THE DORMS
-          <span>→</span>
-        </button>
+        <div class="library-return-slip-footer">
+
+          <span>
+            DESTINATION
+            <strong>THE DORMS</strong>
+          </span>
+
+          <button
+            type="button"
+            class="library-beyond-button"
+            data-location="utown"
+          >
+            CONTINUE READING
+            <span>→</span>
+          </button>
+
+        </div>
 
       </div>
 
-    </section>
+    </div>
+
+
+    <!-- CART WHEELS -->
+
+    <div class="library-cart-wheel library-cart-wheel-left"></div>
+    <div class="library-cart-wheel library-cart-wheel-right"></div>
+
+  </div>
+
+</section>
 
 
     <!-- =====================================================

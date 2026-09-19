@@ -137,7 +137,7 @@ export function Experience() {
     },
 
     ra: {
-      number: "03",
+      number: "04",
       type: "LEADERSHIP",
       title: "Resident Advisor",
       company: "Carolina Housing",
@@ -168,7 +168,7 @@ export function Experience() {
     },
 
     sog: {
-      number: "04",
+      number: "05",
       type: "DESIGN + SYSTEMS",
       title: "User Systems & Experience Analyst",
       company: "UNC School of Government",
@@ -198,7 +198,7 @@ export function Experience() {
     },
 
     dentistry: {
-      number: "05",
+      number: "06",
       type: "SYSTEMS + SUPPORT",
       title: "User Systems Support Specialist",
       company: "UNC School of Dentistry",
