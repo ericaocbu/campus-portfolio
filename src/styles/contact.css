@@ -1,0 +1,1264 @@
+/* =====================================================
+   FOOD CANTEEN
+===================================================== */
+
+.canteen-portfolio {
+  --canteen-terracotta: #c9826d;
+  --canteen-terracotta-dark: #9f5f50;
+  --canteen-terracotta-light: #e2aa96;
+
+  --canteen-cream: #f7f1e6;
+  --canteen-paper: #fffaf0;
+  --canteen-beige: #ded0b8;
+  --canteen-brown: #49372f;
+  --canteen-brown-light: #765c4e;
+  --canteen-gold: #c6a15b;
+  --canteen-sage: #7d8a70;
+
+  position: relative;
+
+  min-height: 100%;
+
+  overflow: hidden;
+
+  color:
+    var(--canteen-brown);
+
+  background:
+    var(--canteen-cream);
+}
+
+
+/* =====================================================
+   SHARED
+===================================================== */
+
+.canteen-section-heading {
+  display: grid;
+
+  grid-template-columns:
+    0.35fr
+    1fr;
+
+  gap: 4rem;
+
+  align-items: start;
+
+  margin-bottom: 4rem;
+}
+
+
+.canteen-section-number {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  padding-top: 0.5rem;
+
+  font-size: 0.5rem;
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  opacity: 0.45;
+}
+
+
+.canteen-section-number i {
+  width: 35px;
+
+  height: 1px;
+
+  background:
+    currentColor;
+}
+
+
+.canteen-heading-copy {
+  max-width: 700px;
+}
+
+
+.canteen-small-label {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color:
+    var(--canteen-terracotta-dark);
+
+  font-size: 0.5rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+
+.canteen-heading-copy h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      3rem,
+      7vw,
+      6rem
+    );
+
+  line-height: 0.84;
+
+  letter-spacing: -0.06em;
+}
+
+
+.canteen-heading-copy h2 em {
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   ENTRANCE
+===================================================== */
+
+.canteen-entrance {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  gap: 5rem;
+
+  min-height: 720px;
+
+  padding:
+    6rem
+    5rem;
+
+  background:
+    var(--canteen-terracotta);
+
+  color:
+    var(--canteen-cream);
+
+  overflow: hidden;
+}
+
+
+/* decorative tiled wall */
+
+.canteen-entrance::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.12;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.7) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(255,255,255,0.7) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    70px 70px;
+
+  pointer-events: none;
+}
+
+
+.canteen-window {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.canteen-window-frame {
+  position: relative;
+
+  width: min(100%, 500px);
+
+  aspect-ratio:
+    0.82;
+
+  padding:
+    1.2rem;
+
+  border:
+    12px solid
+    var(--canteen-brown);
+
+  background:
+    var(--canteen-cream);
+
+  box-shadow:
+    18px 20px 0
+    rgba(73,55,47,0.15);
+}
+
+
+.canteen-window-top {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  padding:
+    1rem;
+
+  color:
+    var(--canteen-brown);
+
+  border-bottom:
+    1px solid
+    rgba(73,55,47,0.18);
+
+  text-align: center;
+}
+
+
+.canteen-window-top span {
+  font-size: 0.42rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  opacity: 0.45;
+}
+
+
+.canteen-window-top strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.2rem;
+
+  letter-spacing: 0.04em;
+}
+
+
+.canteen-window-glass {
+  position: relative;
+
+  height: calc(100% - 70px);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7f1e6 0%,
+      #ead9c5 100%
+    );
+}
+
+
+.canteen-window-glow {
+  position: absolute;
+
+  left: 12%;
+  top: 15%;
+
+  width: 65%;
+  height: 50%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(198,161,91,0.18);
+
+  filter:
+    blur(20px);
+}
+
+
+.canteen-window-line {
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+
+  height: 1px;
+
+  background:
+    rgba(73,55,47,0.12);
+}
+
+.canteen-window-line a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+}
+
+.canteen-window-line a:hover {
+  color: var(--canteen-terracotta-dark);
+  letter-spacing: 0.16em;
+}
+
+.canteen-window-line:nth-child(2) {
+  top: 30%;
+}
+
+.canteen-window-line:nth-child(3) {
+  top: 55%;
+}
+
+.canteen-window-line:nth-child(4) {
+  top: 80%;
+}
+
+.canteen-window-line {
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 70px;
+
+  border-bottom:
+    1px solid
+    rgba(73, 55, 47, 0.12);
+
+  color:
+    var(--canteen-terracotta-dark);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.75;
+}
+
+.canteen-window-line:nth-of-type(2) {
+  top: 20%;
+}
+
+.canteen-window-line:nth-of-type(3) {
+  top: 45%;
+}
+
+.canteen-window-line:nth-of-type(4) {
+  top: 70%;
+}
+
+.canteen-entrance-copy {
+  position: relative;
+
+  z-index: 2;
+
+  align-self: center;
+
+  max-width: 650px;
+}
+
+
+.canteen-kicker {
+  display: block;
+
+  margin-bottom: 1.5rem;
+
+  font-size: 0.5rem;
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+
+  opacity: 0.65;
+}
+
+
+.canteen-entrance-copy h1 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      4rem,
+      8vw,
+      8rem
+    );
+
+  line-height: 0.8;
+
+  letter-spacing: -0.07em;
+}
+
+
+.canteen-entrance-copy h1 em {
+  font-weight: 400;
+}
+
+
+.canteen-entrance-copy p {
+  max-width: 470px;
+
+  margin:
+    2.5rem
+    0
+    0;
+
+  font-size: 0.9rem;
+
+  line-height: 1.8;
+
+  opacity: 0.78;
+}
+
+
+.canteen-entrance-note {
+  display: inline-flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  margin-top: 2rem;
+
+  padding:
+    0.8rem
+    1rem;
+
+  border:
+    1px solid
+    rgba(247,241,230,0.3);
+}
+
+
+.canteen-entrance-note span {
+  font-size: 0.4rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  opacity: 0.55;
+}
+
+
+.canteen-entrance-note strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.canteen-menu-section {
+  padding:
+    8rem
+    5rem;
+}
+
+
+.canteen-menu-board {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding:
+    2.5rem;
+
+  color:
+    var(--canteen-cream);
+
+  background:
+    var(--canteen-brown);
+
+  box-shadow:
+    14px 16px 0
+    rgba(73,55,47,0.12);
+}
+
+
+.canteen-menu-board-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 1.2rem;
+
+  border-bottom:
+    1px solid
+    rgba(247,241,230,0.2);
+
+  font-size: 0.42rem;
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  opacity: 0.5;
+}
+
+
+.canteen-menu-board-header strong {
+  color:
+    var(--canteen-terracotta-light);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1rem;
+
+  letter-spacing: 0.03em;
+
+  opacity: 1;
+}
+
+
+.canteen-menu-intro {
+  display: grid;
+
+  grid-template-columns:
+    0.5fr
+    1fr;
+
+  gap: 3rem;
+
+  padding:
+    2.5rem
+    0;
+}
+
+
+.canteen-menu-intro > span {
+  font-size: 0.45rem;
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  color:
+    var(--canteen-terracotta-light);
+}
+
+
+.canteen-menu-intro p {
+  max-width: 520px;
+
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.25rem;
+
+  line-height: 1.5;
+}
+
+
+/* menu items */
+
+.canteen-menu-items {
+  border-top:
+    1px solid
+    rgba(247,241,230,0.16);
+}
+
+
+.canteen-menu-item {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    1fr
+    1.3fr
+    30px;
+
+  gap: 1rem;
+
+  align-items: center;
+
+  padding:
+    1.4rem
+    0;
+
+  border: 0;
+
+  border-bottom:
+    1px solid
+    rgba(247,241,230,0.16);
+
+  background: transparent;
+
+  color:
+    var(--canteen-cream);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    padding 180ms ease,
+    background 180ms ease;
+}
+
+
+.canteen-menu-item:hover {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  background:
+    rgba(201,130,109,0.13);
+}
+
+
+.canteen-menu-item-number {
+  color:
+    var(--canteen-terracotta-light);
+
+  font-size: 0.5rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.canteen-menu-item-main {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+}
+
+
+.canteen-menu-item-main strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.05rem;
+
+  letter-spacing: 0.01em;
+}
+
+
+.canteen-menu-item-main small {
+  font-size: 0.4rem;
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  color:
+    var(--canteen-terracotta-light);
+
+  opacity: 0.8;
+}
+
+
+.canteen-menu-item-description {
+  max-width: 360px;
+
+  font-size: 0.65rem;
+
+  line-height: 1.55;
+
+  opacity: 0.58;
+}
+
+
+.canteen-menu-item-arrow {
+  color:
+    var(--canteen-terracotta-light);
+
+  font-size: 1.2rem;
+
+  transition:
+    transform 180ms ease;
+}
+
+
+.canteen-menu-item:hover
+.canteen-menu-item-arrow {
+  transform:
+    translateX(5px);
+}
+
+
+.canteen-menu-board-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 1.3rem;
+
+  font-size: 0.4rem;
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  opacity: 0.4;
+}
+
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+.canteen-counter-section {
+  padding:
+    8rem
+    5rem
+    6rem;
+
+  background:
+    var(--canteen-brown);
+}
+
+
+.canteen-counter {
+  position: relative;
+
+  max-width: 1100px;
+
+  min-height: 400px;
+
+  margin: 0 auto;
+
+  padding:
+    4rem;
+
+  background:
+    var(--canteen-terracotta);
+
+  overflow: hidden;
+}
+
+
+.canteen-counter::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 45px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--canteen-cream) 0 55px,
+      var(--canteen-terracotta-dark) 55px 110px
+    );
+
+  opacity: 0.7;
+}
+
+
+.canteen-counter-sign {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  max-width: 520px;
+}
+
+
+.canteen-counter-sign span {
+  font-size: 0.45rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  opacity: 0.6;
+}
+
+
+.canteen-counter-sign strong {
+  margin-top: 1rem;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      5rem
+    );
+
+  line-height: 0.9;
+}
+
+
+/* register */
+
+.canteen-counter-register {
+  position: absolute;
+
+  right: 12%;
+  bottom: 28%;
+
+  width: 190px;
+  height: 150px;
+}
+
+
+.register-body {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 190px;
+  height: 105px;
+
+  border-radius:
+    12px;
+
+  background:
+    var(--canteen-brown);
+}
+
+
+.register-screen {
+  position: absolute;
+
+  left: 35px;
+  top: 0;
+
+  width: 120px;
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color:
+    var(--canteen-brown);
+
+  background:
+    var(--canteen-cream);
+
+  border:
+    6px solid
+    var(--canteen-brown);
+
+  font-size: 0.6rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+
+  z-index: 2;
+}
+
+
+.register-button {
+  position: absolute;
+
+  bottom: 25px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background:
+    var(--canteen-terracotta-light);
+}
+
+
+.button-one {
+  left: 35px;
+}
+
+.button-two {
+  left: 65px;
+}
+
+.button-three {
+  left: 95px;
+}
+
+
+/* ticket */
+
+.canteen-counter-ticket {
+  position: absolute;
+
+  right: 5%;
+  top: 12%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 220px;
+
+  padding:
+    1.2rem;
+
+  color:
+    var(--canteen-brown);
+
+  background:
+    var(--canteen-paper);
+
+  transform:
+    rotate(4deg);
+
+  box-shadow:
+    6px 7px 0
+    rgba(73,55,47,0.16);
+}
+
+
+.canteen-counter-ticket span {
+  font-size: 0.4rem;
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.45;
+}
+
+
+.canteen-counter-ticket strong {
+  margin:
+    1.3rem
+    0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.25rem;
+
+  line-height: 0.95;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.canteen-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding:
+    1.5rem
+    5rem;
+
+  color:
+    var(--canteen-cream);
+
+  background:
+    var(--canteen-brown);
+
+  font-size: 0.42rem;
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+}
+
+
+.canteen-footer i {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(247,241,230,0.25);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .canteen-entrance {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      5rem
+      2rem;
+  }
+
+
+  .canteen-window {
+    max-width: 400px;
+
+    margin: 0 auto;
+  }
+
+
+  .canteen-entrance-copy {
+    text-align: center;
+  }
+
+
+  .canteen-entrance-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .canteen-menu-section,
+  .canteen-dining-section,
+  .canteen-coffee-section,
+  .canteen-counter-section {
+    padding:
+      6rem
+      2rem;
+  }
+
+
+  .canteen-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+
+  .canteen-menu-intro {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+
+  .canteen-menu-item {
+    grid-template-columns:
+      35px
+      1fr
+      30px;
+  }
+
+
+  .canteen-menu-item-description {
+    display: none;
+  }
+
+
+  .canteen-dining-room {
+    min-height: 500px;
+  }
+
+
+  .canteen-table-back {
+    left: 4%;
+
+    transform:
+      scale(0.75);
+
+    transform-origin:
+      left top;
+  }
+
+
+  .canteen-table-side {
+    right: 0;
+
+    transform:
+      scale(0.75);
+
+    transform-origin:
+      right top;
+  }
+
+
+  .canteen-table-main {
+    transform:
+      translateX(-50%)
+      scale(0.8);
+
+    transform-origin:
+      center bottom;
+  }
+
+
+  .canteen-coffee-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .canteen-coffee-illustration {
+    min-height: 350px;
+  }
+
+
+  .canteen-counter {
+    padding:
+      3rem
+      2rem;
+
+    min-height: 520px;
+  }
+
+
+  .canteen-counter-register {
+    right: 50%;
+
+    bottom: 15%;
+
+    transform:
+      translateX(50%)
+      scale(0.8);
+  }
+
+
+  .canteen-counter-ticket {
+    right: 5%;
+    top: 48%;
+  }
+
+
+  .canteen-footer {
+    padding:
+      1.5rem
+      2rem;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .canteen-entrance-copy h1 {
+    font-size:
+      clamp(
+        3.5rem,
+        17vw,
+        5rem
+      );
+  }
+
+
+  .canteen-menu-board {
+    padding:
+      1.3rem;
+  }
+
+
+  .canteen-menu-board-header {
+    flex-wrap: wrap;
+
+    gap: 0.8rem;
+  }
+
+
+  .canteen-menu-item {
+    padding:
+      1.2rem
+      0;
+  }
+
+
+  .canteen-menu-item-main strong {
+    font-size: 0.9rem;
+  }
+
+
+  .canteen-dining-room {
+    min-height: 440px;
+  }
+
+
+  .canteen-table-back,
+  .canteen-table-side {
+    display: none;
+  }
+
+
+  .canteen-table-main {
+    width: 350px;
+
+    transform:
+      translateX(-50%)
+      scale(0.75);
+  }
+
+
+  .canteen-chair {
+    display: none;
+  }
+
+
+  .canteen-coffee-copy {
+    padding:
+      3rem
+      1.8rem;
+  }
+
+
+  .canteen-counter {
+    min-height: 560px;
+  }
+
+
+  .canteen-counter-ticket {
+    right: 50%;
+
+    transform:
+      translateX(50%)
+      rotate(3deg);
+  }
+
+
+  .canteen-counter-register {
+    bottom: 8%;
+  }
+
+
+  .canteen-footer {
+    flex-wrap: wrap;
+  }
+
+}

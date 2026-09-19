@@ -20,12 +20,12 @@ export function Home({
 
         <div class="home-kicker">
           <span class="home-kicker-line"></span>
-          WELCOME TO MY DIGITAL CAMPUS
+          THIS IS MY DIGITAL CAMPUS
         </div>
 
         <h1>
-          THIS IS
-          <span>MY CAMPUS!</span>
+          WELCOME TO
+          <span>MAIN CAMPUS!</span>
         </h1>
 
         <p class="home-intro">
@@ -162,9 +162,15 @@ export function Home({
         </p>
 
         <p>
-          Every building has a purpose. Every path
+          Every building has a purpose and every path
           leads somewhere. And you decide where
-          you want to go next.
+          you want to go next. You can explore freely or take a guided tour
+          with Orientation Leader Erica!
+        </p>
+
+        <p>
+          After you're done looking through campus, stick around and 
+          try to find some <i>discoveries</i> on <i>campus</i> (hint: there's 6 of them!)
         </p>
 
 

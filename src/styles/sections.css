@@ -265,9 +265,9 @@
 
   font-size:
     clamp(
-      4.5rem,
-      9vw,
-      8.5rem
+      3rem,
+      6vw,
+      6rem
     );
 
   line-height: 0.78;
@@ -278,10 +278,7 @@
 }
 
 .home-hero h1 span {
-  display: block;
-
   margin-top: 0.35em;
-
   font-style: italic;
   font-weight: 400;
 }
@@ -678,7 +675,7 @@
 
 .home-about-content > p:not(.home-large-text) {
   max-width: 590px;
-
+  margin-bottom: 20px;
   font-size: 0.95rem;
   line-height: 1.8;
 
