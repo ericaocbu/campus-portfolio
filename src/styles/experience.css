@@ -1,0 +1,2775 @@
+/*
+============================================================
+LECTURE HALL
+============================================================
+*/
+
+.section-lecture-hall {
+  --lecture-terracotta: #a65f4b;
+  --lecture-terracotta-dark: #7f4335;
+  --lecture-terracotta-light: #c9826d;
+
+  --lecture-cream: #f7f0df;
+  --lecture-paper: #fffaf0;
+  --lecture-wood: #76513a;
+  --lecture-wood-dark: #543827;
+
+  --lecture-green: #315f52;
+  --lecture-blue: #52758a;
+  --lecture-gold: #c39449;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f3e5d4 0%,
+      #eee0ce 45%,
+      #d9bda5 100%
+    );
+
+  color: #382c27;
+}
+
+
+/*
+============================================================
+SHARED SECTION CONTENT
+============================================================
+*/
+
+.section-lecture-hall .section-content {
+  position: relative;
+  z-index: 20;
+
+  width: min(
+    1220px,
+    calc(100% - 64px)
+  );
+
+  min-height: 100%;
+
+  margin: 0 auto;
+
+  padding:
+    86px
+    0
+    90px;
+
+  overflow: visible;
+}
+
+
+/*
+============================================================
+BACK TO CAMPUS
+============================================================
+*/
+
+.section-lecture-hall .back-to-campus {
+  position: absolute;
+
+  top: 24px;
+  left: 0;
+
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 15px;
+
+  border: 1px solid
+    rgba(87, 61, 48, 0.18);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 250, 240, 0.92);
+
+  color: #543827;
+
+  box-shadow:
+    0 8px 24px
+    rgba(69, 43, 31, 0.08);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.section-lecture-hall
+  .back-to-campus:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(69, 43, 31, 0.14);
+}
+
+
+/*
+============================================================
+ROOM
+============================================================
+*/
+
+.experience-room {
+  position: relative;
+
+  min-height: 1450px;
+
+  overflow: visible;
+
+  padding:
+    30px
+    34px
+    90px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e8c9b3 0%,
+      #e2c0a8 28%,
+      #cfa58c 72%,
+      #b9896e 100%
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(75, 45, 32, 0.18);
+
+  isolation: isolate;
+}
+
+
+/*
+============================================================
+LECTURE HALL WALL
+============================================================
+*/
+
+.experience-room::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  border-radius: 28px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 82px,
+      rgba(105, 66, 47, 0.035) 83px,
+      transparent 84px
+    );
+
+  pointer-events: none;
+}
+
+.experience-room::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 280px;
+
+  z-index: -1;
+
+  border-radius:
+    0
+    0
+    28px
+    28px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #78513c 0,
+      #78513c 88px,
+      #6d4937 89px,
+      #6d4937 91px
+    );
+
+  box-shadow:
+    inset 0 12px 0
+    rgba(255,255,255,0.08);
+
+  pointer-events: none;
+}
+
+
+/*
+============================================================
+HEADER
+============================================================
+*/
+
+.experience-header {
+  position: relative;
+
+  z-index: 50;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+
+  padding:
+    0
+    8px;
+}
+
+.experience-header-copy {
+  max-width: 700px;
+}
+
+.experience-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--lecture-terracotta-dark);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.22em;
+}
+
+.experience-header h1 {
+  margin: 0;
+
+  color:
+    #4d3024;
+
+  font-size:
+    clamp(42px, 6vw, 72px);
+
+  line-height: 0.95;
+
+  letter-spacing:
+    -0.055em;
+}
+
+.experience-header p {
+  max-width: 560px;
+
+  margin:
+    14px 0 0;
+
+  color:
+    rgba(62, 44, 36, 0.72);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/*
+============================================================
+ROOM SIGN
+============================================================
+*/
+
+.experience-room-sign {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-width: 105px;
+
+  padding:
+    13px 16px;
+
+  border:
+    2px solid
+    rgba(82, 55, 41, 0.55);
+
+  background:
+    rgba(255, 247, 232, 0.72);
+
+  box-shadow:
+    4px 5px 0
+    rgba(82, 55, 41, 0.1);
+
+  transform:
+    rotate(2deg);
+}
+
+.experience-room-sign span,
+.experience-room-sign small {
+  color:
+    #78513c;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.16em;
+}
+
+.experience-room-sign strong {
+  margin:
+    2px 0;
+
+  color:
+    #543827;
+
+  font-size: 34px;
+
+  line-height: 1;
+}
+
+
+/*
+============================================================
+FRONT OF LECTURE HALL
+============================================================
+*/
+
+.lecture-front {
+  position: relative;
+
+  z-index: 40;
+
+  min-height: 470px;
+
+  padding-top: 24px;
+}
+
+
+/*
+============================================================
+WALL LIGHTS
+============================================================
+*/
+
+.lecture-wall-light {
+  position: absolute;
+
+  top: 180px;
+
+  width: 10px;
+  height: 150px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 248, 219, 0.9),
+      rgba(255, 248, 219, 0.05)
+    );
+
+  opacity: 0.55;
+
+  filter:
+    blur(1px);
+}
+
+.lecture-wall-light-left {
+  left: 0%;
+}
+
+.lecture-wall-light-right {
+  right: 0%;
+}
+
+
+/*
+============================================================
+PROJECTOR SCREEN
+============================================================
+*/
+
+.lecture-screen-frame {
+  position: relative;
+
+  width:
+    min(780px, 76%);
+
+  margin: 0 auto;
+
+  padding: 13px;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #644431,
+      #412c20
+    );
+
+  box-shadow:
+    0 18px 35px
+    rgba(56, 35, 25, 0.25);
+}
+
+.lecture-screen-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding:
+    5px 8px 10px;
+
+  color:
+    rgba(255, 247, 232, 0.62);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.16em;
+}
+
+.lecture-screen {
+  position: relative;
+
+  min-height: 265px;
+
+  overflow: hidden;
+
+  border:
+    5px solid
+    #d9c5a5;
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8f3e5,
+      #ebe5d4
+    );
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(64, 43, 31, 0.16);
+}
+
+
+/*
+============================================================
+SCREEN CONTENT
+============================================================
+*/
+
+.screen-content {
+  position: relative;
+
+  z-index: 4;
+
+  max-width: 500px;
+
+  padding:
+    38px 42px;
+}
+
+.screen-kicker {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--lecture-terracotta-dark);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.18em;
+}
+
+.screen-content h2 {
+  max-width: 520px;
+
+  margin: 0;
+
+  color:
+    #4a3025;
+
+  font-size:
+    clamp(27px, 4vw, 44px);
+
+  line-height: 1.02;
+
+  letter-spacing:
+    -0.04em;
+}
+
+.screen-company {
+  margin:
+    10px 0 15px;
+
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.screen-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.screen-meta span {
+  padding:
+    6px 9px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(49, 95, 82, 0.1);
+
+  color:
+    var(--lecture-green);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+.screen-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 18px;
+}
+
+.screen-skills span {
+  padding:
+    5px 8px;
+
+  border:
+    1px solid
+    rgba(80, 60, 48, 0.16);
+
+  color:
+    rgba(62, 44, 36, 0.72);
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+/*
+============================================================
+SCREEN DECORATION
+============================================================
+*/
+
+.screen-decoration {
+  position: absolute;
+
+  right: 32px;
+  bottom: 25px;
+
+  width: 150px;
+  height: 120px;
+
+  opacity: 0.38;
+}
+
+.screen-window {
+  position: absolute;
+
+  width: 60px;
+  height: 42px;
+
+  border:
+    5px solid
+    rgba(82, 117, 138, 0.42);
+
+  background:
+    rgba(82, 117, 138, 0.09);
+}
+
+.window-a {
+  top: 0;
+  left: 0;
+}
+
+.window-b {
+  top: 0;
+  right: 0;
+}
+
+.window-c {
+  bottom: 0;
+  left: 0;
+}
+
+.window-d {
+  bottom: 0;
+  right: 0;
+}
+
+
+/*
+============================================================
+SCREEN BUTTON
+============================================================
+*/
+
+.screen-present-button {
+  position: absolute;
+
+  right: 22px;
+  bottom: 21px;
+
+  z-index: 8;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.3);
+
+  border-radius: 999px;
+
+  background:
+    var(--lecture-terracotta);
+
+  color: white;
+
+  box-shadow:
+    0 8px 18px
+    rgba(88, 45, 34, 0.22);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.screen-present-button:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--lecture-terracotta-dark);
+}
+
+.screen-present-button strong {
+  font-size: 13px;
+}
+
+
+/*
+============================================================
+PODIUM
+============================================================
+*/
+
+.lecture-podium {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 0;
+
+  width: 150px;
+  height: 190px;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 12;
+}
+
+.podium-top {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 150px;
+  height: 18px;
+
+  border-radius: 5px 5px 2px 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #906249,
+      #674431
+    );
+
+  box-shadow:
+    0 6px 0
+    rgba(68, 42, 30, 0.16);
+}
+
+.podium-body {
+  position: absolute;
+
+  top: 18px;
+
+  left: 17px;
+
+  width: 116px;
+  height: 142px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius:
+    2px
+    2px
+    5px
+    5px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #80523a,
+      #593a2b
+    );
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255,255,255,0.08);
+}
+
+.podium-name {
+  color:
+    #f7ead6;
+
+  font-size: 17px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+.podium-subtitle {
+  margin-top: 5px;
+
+  color:
+    rgba(247, 234, 214, 0.62);
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+.podium-base {
+  position: absolute;
+
+  left: 5px;
+  bottom: 0;
+
+  width: 140px;
+  height: 26px;
+
+  border-radius: 3px;
+
+  background:
+    #563827;
+}
+
+.podium-paper {
+  position: absolute;
+
+  top: -7px;
+  left: 45px;
+
+  z-index: 5;
+
+  width: 55px;
+  height: 42px;
+
+  padding: 8px;
+
+  transform:
+    rotate(-3deg);
+
+  background:
+    #fff9ec;
+
+  box-shadow:
+    0 5px 10px
+    rgba(50, 30, 22, 0.14);
+}
+
+.podium-paper span {
+  display: block;
+
+  height: 2px;
+
+  margin-bottom: 5px;
+
+  background:
+    rgba(82, 58, 43, 0.25);
+}
+
+
+/*
+============================================================
+ROOM DECOR
+============================================================
+*/
+
+.lecture-room-decor {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/*
+============================================================
+CLOCK
+============================================================
+*/
+
+.wall-clock {
+  position: absolute;
+
+  top: 90px;
+  right: 8%;
+
+  width: 74px;
+  height: 74px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    #f8f0dc;
+
+  border:
+    5px solid
+    #76513a;
+
+  box-shadow:
+    4px 6px 0
+    rgba(75, 47, 35, 0.12);
+}
+
+.clock-face {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+.clock-hand {
+  position: absolute;
+
+  left: 50%;
+  bottom: 50%;
+
+  width: 3px;
+
+  transform-origin: bottom center;
+
+  border-radius: 999px;
+
+  background:
+    #543827;
+}
+
+.clock-hand-hour {
+  height: 18px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+.clock-hand-minute {
+  height: 25px;
+
+  transform:
+    translateX(-50%)
+    rotate(135deg);
+}
+
+.clock-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    #543827;
+}
+
+
+/*
+============================================================
+LECTURE BOARD
+============================================================
+*/
+
+.lecture-board {
+  position: absolute;
+
+  top: 100px;
+  left: 7%;
+
+  width: 205px;
+  min-height: 145px;
+
+  padding: 17px;
+
+  transform:
+    rotate(-2deg);
+
+  border:
+    8px solid
+    #674431;
+
+  background:
+    #486957;
+
+  box-shadow:
+    5px 8px 0
+    rgba(67, 43, 32, 0.14);
+}
+
+.board-heading {
+  color:
+    rgba(255,255,255,0.75);
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.17em;
+}
+
+.board-line {
+  height: 2px;
+
+  margin-top: 13px;
+
+  background:
+    rgba(255,255,255,0.25);
+}
+
+.board-line-long {
+  width: 85%;
+}
+
+.board-line-medium {
+  width: 65%;
+}
+
+.board-line-short {
+  width: 48%;
+
+  margin-top: 11px;
+}
+
+.board-equation {
+  margin-top: 14px;
+
+  color:
+    #f8edcf;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.06em;
+}
+
+.board-equation span {
+  margin:
+    0 3px;
+
+  color:
+    #dba56f;
+}
+
+.board-note {
+  margin-top: 12px;
+
+  color:
+    rgba(255,255,255,0.54);
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 8px;
+}
+
+
+/*
+============================================================
+CEILING LIGHTS
+============================================================
+*/
+
+.lecture-light {
+  position: absolute;
+
+  top: 18px;
+
+  width: 115px;
+  height: 12px;
+
+  border-radius: 999px;
+
+  background:
+    #f7e8c5;
+
+  box-shadow:
+    0 0 28px
+    rgba(255, 235, 181, 0.75);
+}
+
+.lecture-light-left {
+  left: 27%;
+}
+
+.lecture-light-right {
+  right: 27%;
+}
+
+
+/*
+============================================================
+RESEARCH / NUS DISPLAYS
+============================================================
+*/
+
+.experience-displays {
+  position: relative;
+
+  z-index: 35;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 28px;
+
+  max-width: 860px;
+
+  margin:
+    34px auto 46px;
+}
+
+.display-board {
+  position: relative;
+
+  min-height: 180px;
+
+  padding: 25px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(79, 53, 40, 0.18);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 247, 232, 0.92);
+
+  color:
+    #543827;
+
+  text-align: left;
+
+  box-shadow:
+    0 14px 25px
+    rgba(73, 46, 34, 0.12);
+
+  cursor: pointer;
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.display-board:hover {
+  transform:
+    translateY(-4px)
+    rotate(0deg);
+
+  box-shadow:
+    0 20px 35px
+    rgba(73, 46, 34, 0.17);
+}
+
+.rapid-display {
+  transform:
+    rotate(-1deg);
+}
+
+.nus-display {
+  transform:
+    rotate(1deg);
+}
+
+.display-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.16em;
+}
+
+.display-board strong {
+  display: block;
+
+  font-size: 28px;
+
+  line-height: 1;
+}
+
+.display-board small {
+  display: block;
+
+  margin-top: 7px;
+
+  color:
+    rgba(62, 44, 36, 0.62);
+
+  font-size: 10px;
+}
+
+.display-paper {
+  position: absolute;
+
+  bottom: 20px;
+
+  padding: 8px 10px;
+
+  border:
+    1px solid
+    rgba(73, 50, 38, 0.14);
+
+  background:
+    #fffdf4;
+
+  color:
+    #76513a;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  box-shadow:
+    2px 3px 7px
+    rgba(50, 30, 22, 0.08);
+}
+
+.paper-one {
+  left: 25px;
+
+  transform:
+    rotate(-7deg);
+}
+
+.paper-two {
+  left: 105px;
+
+  bottom: 27px;
+
+  transform:
+    rotate(4deg);
+}
+
+.paper-three {
+  left: 185px;
+
+  transform:
+    rotate(-3deg);
+}
+
+.display-arrow {
+  position: absolute;
+
+  right: 22px;
+  bottom: 22px;
+
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+/*
+============================================================
+MINI GLOBE
+============================================================
+*/
+
+.mini-globe {
+  position: absolute;
+
+  right: 30px;
+  top: 30px;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  background:
+    #87a9b2;
+
+  border:
+    4px solid
+    #52758a;
+
+  overflow: hidden;
+
+  box-shadow:
+    inset -9px -5px 0
+    rgba(35, 73, 82, 0.12);
+}
+
+.globe-line {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.45);
+
+  border-radius: 50%;
+}
+
+.globe-line-one {
+  inset:
+    5px 19px;
+}
+
+.globe-line-two {
+  inset:
+    19px 5px;
+}
+
+.globe-line-three {
+  top: 34px;
+  left: -5px;
+
+  width: 72px;
+  height: 1px;
+
+  border: none;
+
+  background:
+    rgba(255,255,255,0.45);
+
+  transform:
+    rotate(-20deg);
+}
+
+.display-route {
+  position: absolute;
+
+  left: 25px;
+  bottom: 28px;
+
+  color:
+    #52758a;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+/*
+============================================================
+LECTURE SEATING
+============================================================
+*/
+
+.lecture-seating {
+  position: relative;
+
+  z-index: 45;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+
+  margin-top: 10px;
+
+  padding:
+    20px 5% 0;
+}
+
+
+/*
+============================================================
+ROWS
+============================================================
+*/
+
+.lecture-row {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 30px;
+
+  min-height: 170px;
+
+  padding:
+    22px 18px;
+
+  border-radius:
+    8px
+    8px
+    3px
+    3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(111, 73, 52, 0.16),
+      rgba(92, 59, 43, 0.25)
+    );
+
+  box-shadow:
+    inset 0 4px 0
+    rgba(255,255,255,0.08);
+}
+
+.lecture-row-front {
+  transform:
+    translateY(0);
+}
+
+.lecture-row-middle {
+  transform:
+    translateY(8px);
+}
+
+.lecture-row-back {
+  transform:
+    translateY(16px);
+}
+
+
+/*
+============================================================
+EXPERIENCE DESKS
+============================================================
+*/
+
+.experience-desk {
+  position: relative;
+
+  width: 270px;
+  min-height: 145px;
+
+  padding: 0;
+
+  border: none;
+
+  background:
+    transparent;
+
+  color:
+    #543827;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.experience-desk:hover {
+  transform:
+    translateY(-8px);
+}
+
+.desk-shadow {
+  position: absolute;
+
+  left: 8%;
+  right: 4%;
+  bottom: 0;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(48, 31, 23, 0.16);
+
+  filter:
+    blur(5px);
+}
+
+.desk-surface {
+  position: absolute;
+
+  top: 0;
+  left: 7%;
+
+  width: 86%;
+  height: 46px;
+
+  border-radius:
+    6px
+    6px
+    3px
+    3px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #966747,
+      #684530
+    );
+
+  box-shadow:
+    0 7px 0
+    rgba(66, 40, 28, 0.17);
+
+  transform:
+    perspective(250px)
+    rotateX(7deg);
+}
+
+.desk-front {
+  position: absolute;
+
+  top: 42px;
+  left: 11%;
+
+  width: 78%;
+  min-height: 94px;
+
+  padding:
+    13px 15px;
+
+  border-radius:
+    2px
+    2px
+    5px
+    5px;
+
+  background:
+    #f8eddb;
+
+  border:
+    1px solid
+    rgba(76, 50, 37, 0.12);
+
+  box-shadow:
+    0 8px 15px
+    rgba(63, 39, 28, 0.12);
+}
+
+.desk-number {
+  position: absolute;
+
+  top: 10px;
+  right: 12px;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 23px;
+  height: 23px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(82, 117, 138, 0.12);
+
+  color:
+    #52758a;
+
+  font-size: 8px;
+
+  font-weight: 900;
+}
+
+.desk-title {
+  display: block;
+
+  max-width: 175px;
+
+  color:
+    #4b3025;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  line-height: 1.08;
+}
+
+.desk-company {
+  display: block;
+
+  max-width: 180px;
+
+  margin-top: 5px;
+
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+.desk-view {
+  display: block;
+
+  margin-top: 10px;
+
+  color:
+    rgba(75, 48, 37, 0.5);
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+/*
+============================================================
+DESK PAPER
+============================================================
+*/
+
+.desk-paper {
+  position: absolute;
+
+  top: -2px;
+  left: 45px;
+
+  width: 42px;
+  height: 32px;
+
+  padding: 7px;
+
+  transform:
+    rotate(-4deg);
+
+  background:
+    #fff9ec;
+
+  box-shadow:
+    1px 3px 6px
+    rgba(50, 30, 22, 0.15);
+}
+
+.desk-paper span {
+  display: block;
+
+  height: 2px;
+
+  margin-bottom: 4px;
+
+  background:
+    rgba(76, 50, 37, 0.18);
+}
+
+
+/*
+============================================================
+PENCIL
+============================================================
+*/
+
+.desk-pencil {
+  position: absolute;
+
+  top: 20px;
+  right: 42px;
+
+  width: 45px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background:
+    #c18b55;
+
+  transform:
+    rotate(23deg);
+}
+
+
+/*
+============================================================
+CHAIR
+============================================================
+*/
+
+.desk-chair {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -27px;
+
+  width: 72px;
+  height: 42px;
+
+  transform:
+    translateX(-50%);
+
+  z-index: -1;
+}
+
+.chair-back {
+  position: absolute;
+
+  top: 0;
+  left: 12px;
+
+  width: 48px;
+  height: 25px;
+
+  border-radius:
+    7px
+    7px
+    3px
+    3px;
+
+  background:
+    #8b624b;
+
+  box-shadow:
+    inset 0 0 0 2px
+    rgba(65, 42, 31, 0.12);
+}
+
+.chair-seat {
+  position: absolute;
+
+  top: 22px;
+  left: 7px;
+
+  width: 58px;
+  height: 10px;
+
+  border-radius: 4px;
+
+  background:
+    #76513c;
+}
+
+.chair-leg {
+  position: absolute;
+
+  top: 30px;
+
+  width: 4px;
+  height: 15px;
+
+  background:
+    #593a2b;
+}
+
+.chair-leg-left {
+  left: 17px;
+}
+
+.chair-leg-right {
+  right: 17px;
+}
+
+
+/*
+============================================================
+DESK COLORS
+============================================================
+*/
+
+.desk-green .desk-front {
+  border-top:
+    4px solid
+    var(--lecture-green);
+}
+
+.desk-rust .desk-front {
+  border-top:
+    4px solid
+    var(--lecture-terracotta);
+}
+
+.desk-gold .desk-front {
+  border-top:
+    4px solid
+    var(--lecture-gold);
+}
+
+.desk-blue .desk-front {
+  border-top:
+    4px solid
+    var(--lecture-blue);
+}
+
+.desk-teal .desk-front {
+  border-top:
+    4px solid
+    #527f76;
+}
+
+
+/*
+============================================================
+LECTURE NOTES
+============================================================
+*/
+
+.lecture-notes {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 55;
+
+  pointer-events: none;
+}
+
+.lecture-note {
+  position: absolute;
+
+  width: 150px;
+
+  padding: 17px;
+
+  background:
+    #fff8e9;
+
+  box-shadow:
+    4px 7px 14px
+    rgba(61, 38, 27, 0.12);
+
+  border:
+    1px solid
+    rgba(78, 52, 39, 0.1);
+}
+
+.note-left {
+  left: 3%;
+  bottom: 380px;
+
+  transform:
+    rotate(-4deg);
+}
+
+.note-right {
+  right: 3%;
+  bottom: 390px;
+
+  transform:
+    rotate(3deg);
+}
+
+.note-pin {
+  position: absolute;
+
+  top: -6px;
+  left: 50%;
+
+  width: 11px;
+  height: 11px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    #a65f4b;
+
+  box-shadow:
+    0 2px 3px
+    rgba(50, 30, 22, 0.18);
+}
+
+.lecture-note small {
+  display: block;
+
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+}
+
+.lecture-note strong {
+  display: block;
+
+  margin-top: 8px;
+
+  color:
+    #503328;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.18;
+}
+
+.note-line {
+  display: block;
+
+  width: 80%;
+
+  height: 2px;
+
+  margin-top: 12px;
+
+  background:
+    rgba(78, 52, 39, 0.15);
+}
+
+.note-line.short {
+  width: 55%;
+
+  margin-top: 6px;
+}
+
+.note-star {
+  position: absolute;
+
+  right: 15px;
+  bottom: 13px;
+
+  color:
+    var(--lecture-gold);
+
+  font-size: 20px;
+}
+
+
+/*
+============================================================
+FLOOR DETAILS
+============================================================
+*/
+
+.lecture-floor-details {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 260px;
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+.floor-marker {
+  position: absolute;
+
+  left: 50px;
+  bottom: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color:
+    rgba(255, 246, 228, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+.floor-marker strong {
+  font-size: 17px;
+}
+
+.floor-lines {
+  position: absolute;
+
+  left: 50%;
+  bottom: 35px;
+
+  display: flex;
+
+  gap: 8px;
+
+  transform:
+    translateX(-50%);
+}
+
+.floor-lines span {
+  display: block;
+
+  width: 65px;
+  height: 3px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 246, 228, 0.12);
+}
+
+/*
+============================================================
+DETAIL MODAL
+============================================================
+*/
+
+.experience-detail {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.experience-detail.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.experience-detail-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(30, 25, 22, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.experience-detail-panel {
+  position: relative;
+  z-index: 1;
+
+  width: min(760px, 100%);
+  max-height: min(820px, 88vh);
+
+  overflow-y: auto;
+
+  background: #f8f1e7;
+  border: 2px solid #3c302a;
+  border-radius: 22px;
+
+  padding: 42px;
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.28);
+
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+
+.experience-detail.is-open .experience-detail-panel {
+  transform: translateY(0) scale(1);
+}
+
+/*
+============================================================
+MODAL CLOSE
+============================================================
+*/
+
+.experience-detail-close {
+  position: absolute;
+
+  top: 17px;
+  right: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(78, 52, 39, 0.08);
+
+  color:
+    #543827;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.experience-detail-close:hover {
+  transform:
+    rotate(90deg);
+
+  background:
+    rgba(166, 95, 75, 0.14);
+}
+
+
+/*
+============================================================
+MODAL TOP
+============================================================
+*/
+
+.detail-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.detail-number {
+  display: grid;
+
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(49, 95, 82, 0.11);
+
+  color:
+    var(--lecture-green);
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+.detail-type {
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.17em;
+}
+
+
+/*
+============================================================
+MODAL HEADING
+============================================================
+*/
+
+.detail-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color:
+    rgba(78, 52, 39, 0.5);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.17em;
+}
+
+.detail-title {
+  max-width: 650px;
+
+  margin: 0;
+
+  color:
+    #4c3024;
+
+  font-size:
+    clamp(32px, 5vw, 52px);
+
+  line-height: 0.98;
+
+  letter-spacing:
+    -0.05em;
+}
+
+.detail-company {
+  margin:
+    11px 0 0;
+
+  color:
+    var(--lecture-terracotta);
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+/*
+============================================================
+MODAL META
+============================================================
+*/
+
+.detail-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.detail-meta span {
+  padding:
+    7px 11px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(82, 117, 138, 0.09);
+
+  color:
+    #52758a;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+/*
+============================================================
+DIVIDER
+============================================================
+*/
+
+.detail-divider {
+  width: 100%;
+  height: 1px;
+
+  margin:
+    28px 0;
+
+  background:
+    rgba(78, 52, 39, 0.12);
+}
+
+
+/*
+============================================================
+DETAIL BODY
+============================================================
+*/
+
+.detail-body {
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, 0.75fr)
+    minmax(0, 1.5fr);
+
+  gap: 30px;
+}
+
+.detail-summary {
+  color:
+    #684535;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  line-height: 1.48;
+}
+
+.detail-description {
+  color:
+    rgba(60, 43, 35, 0.75);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.detail-description p {
+  margin:
+    0 0 16px;
+}
+
+.detail-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+============================================================
+SKILLS
+============================================================
+*/
+
+.detail-skills {
+  margin-top: 30px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    rgba(78, 52, 39, 0.12);
+}
+
+.detail-skills-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color:
+    rgba(78, 52, 39, 0.48);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.16em;
+}
+
+.detail-skills-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.detail-skills-list span {
+  padding:
+    7px 10px;
+
+  border:
+    1px solid
+    rgba(49, 95, 82, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(49, 95, 82, 0.06);
+
+  color:
+    var(--lecture-green);
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+/*
+============================================================
+BODY LOCK
+============================================================
+*/
+
+body.experience-modal-open {
+  overflow: hidden;
+}
+
+
+/*
+============================================================
+RESPONSIVE
+============================================================
+*/
+
+@media (max-width: 1000px) {
+
+  .section-lecture-hall
+    .section-content {
+    width:
+      min(
+        100% - 32px,
+        900px
+      );
+
+    padding-top: 82px;
+  }
+
+  .experience-room {
+    min-height: 1500px;
+
+    padding:
+      25px
+      20px
+      70px;
+  }
+
+  .lecture-screen-frame {
+    width: 82%;
+  }
+
+  .lecture-board {
+    left: 3%;
+
+    transform:
+      scale(0.9)
+      rotate(-2deg);
+
+    transform-origin:
+      top left;
+  }
+
+  .wall-clock {
+    right: 3%;
+
+    transform:
+      scale(0.9);
+  }
+
+  .experience-displays {
+    max-width: 760px;
+  }
+
+  .experience-desk {
+    width: 245px;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .section-lecture-hall
+    .section-content {
+    width:
+      calc(100% - 20px);
+
+    padding:
+      78px
+      0
+      40px;
+  }
+
+  .experience-room {
+    min-height: 1850px;
+
+    padding:
+      20px
+      14px
+      50px;
+
+    border-radius: 20px;
+  }
+
+  .experience-header {
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .experience-header h1 {
+    font-size: 45px;
+  }
+
+  .experience-header p {
+    font-size: 13px;
+  }
+
+  .experience-room-sign {
+    min-width: 76px;
+
+    padding:
+      9px 10px;
+  }
+
+  .experience-room-sign strong {
+    font-size: 27px;
+  }
+
+  .lecture-front {
+    min-height: 440px;
+  }
+
+  .lecture-screen-frame {
+    width: 94%;
+  }
+
+  .lecture-screen {
+    min-height: 300px;
+  }
+
+  .screen-content {
+    padding:
+      28px 25px;
+  }
+
+  .screen-content h2 {
+    font-size: 31px;
+  }
+
+  .screen-decoration {
+    right: -5px;
+    bottom: 10px;
+
+    opacity: 0.2;
+  }
+
+  .screen-present-button {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .lecture-podium {
+    transform:
+      translateX(-50%)
+      scale(0.86);
+
+    transform-origin:
+      bottom center;
+  }
+
+  .lecture-board {
+    top: 78px;
+    left: -3%;
+
+    transform:
+      scale(0.68)
+      rotate(-2deg);
+
+    transform-origin:
+      top left;
+  }
+
+  .wall-clock {
+    top: 75px;
+    right: -2%;
+
+    transform:
+      scale(0.7);
+  }
+
+  .lecture-light {
+    display: none;
+  }
+
+  .experience-displays {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 20px;
+  }
+
+  .display-board {
+    min-height: 155px;
+  }
+
+  .lecture-seating {
+    padding:
+      10px
+      0
+      0;
+  }
+
+  .lecture-row {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 38px;
+
+    padding:
+      22px 10px 45px;
+  }
+
+  .lecture-row-middle {
+    transform:
+      translateY(0);
+  }
+
+  .lecture-row-back {
+    transform:
+      translateY(0);
+  }
+
+  .experience-desk {
+    width:
+      min(
+        100%,
+        330px
+      );
+
+    min-height: 160px;
+  }
+
+  .lecture-note {
+    display: none;
+  }
+
+  .lecture-floor-details {
+    display: none;
+  }
+
+  .experience-detail {
+    padding: 12px;
+  }
+
+  .experience-detail-panel {
+    max-height: 94vh;
+
+    padding:
+      32px
+      23px
+      28px;
+  }
+
+  .detail-title {
+    font-size: 36px;
+  }
+
+  .detail-body {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .detail-summary {
+    font-size: 16px;
+  }
+
+  .detail-description {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .section-lecture-hall
+    .back-to-campus {
+    left: 0;
+
+    font-size: 9px;
+  }
+
+  .experience-room {
+    min-height: 1880px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .experience-room-sign {
+    align-self: flex-start;
+  }
+
+  .lecture-screen-frame {
+    width: 100%;
+  }
+
+  .lecture-screen {
+    min-height: 320px;
+  }
+
+  .screen-content {
+    padding:
+      24px 20px;
+  }
+
+  .screen-content h2 {
+    font-size: 27px;
+  }
+
+  .screen-company {
+    font-size: 15px;
+  }
+
+  .screen-skills {
+    max-width: 210px;
+  }
+
+  .screen-present-button {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    justify-content: center;
+
+    margin-top: 10px;
+  }
+
+  .lecture-podium {
+    bottom: -4px;
+  }
+
+  .display-board {
+    padding: 20px;
+  }
+
+  .detail-title {
+    font-size: 31px;
+  }
+}
+
+
+/*
+============================================================
+REDUCED MOTION
+============================================================
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+  .experience-desk,
+  .display-board,
+  .screen-present-button,
+  .experience-detail-panel,
+  .experience-detail-close {
+    transition: none;
+  }
+}
