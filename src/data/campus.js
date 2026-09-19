@@ -5,7 +5,7 @@ export const campus = {
   locations: [
     {
       id: "main-campus",
-      name: "MAIN CAMPUS",
+      name: "STUDENT UNION",
       section: "Home",
       description: "Welcome to my digital campus.",
       icon: "🏫",

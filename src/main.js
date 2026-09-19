@@ -227,7 +227,7 @@ function startTour() {
   /*
    * Tell Erica that the tour has started.
    *
-   * Erica is already waiting at Main Campus,
+   * Erica is already waiting at Student Campus,
    * so she does NOT walk there again.
    */
   window.dispatchEvent(
@@ -290,7 +290,7 @@ function showTourStop() {
   );
 
   /*
-   * Main Campus is where Erica is already waiting.
+   * Student Campus is where Erica is already waiting.
    * Give her message time to be seen before opening.
    */
   if (currentLocation.id === "main-campus") {
@@ -571,7 +571,7 @@ function finishTour() {
 
   /*
    * Keep the tour active while Erica walks back
-   * to Main Campus and delivers her final message.
+   * to Student Campus and delivers her final message.
    */
   tourActive = true;
 
@@ -592,7 +592,7 @@ function finishTour() {
       sectionToRemove.remove();
 
       /*
-       * Tell Erica to return to Main Campus.
+       * Tell Erica to return to Student Campus.
        */
       window.dispatchEvent(
         new CustomEvent(
@@ -742,7 +742,21 @@ campusMap =
     startTour
   );
 
+function returnToCampus() {
+  clearNavigationTimeout();
 
+  if (tourActive) {
+    stopTour(true);
+    return;
+  }
+
+  if (activeSection) {
+    closeSection();
+    return;
+  }
+
+  campusMap.centerCampus();
+}
 /* =====================================================
    CREATE NAVIGATION
 ===================================================== */
@@ -750,7 +764,8 @@ campusMap =
 navigation =
   Navigation(
     navigateTo,
-    startTour
+    startTour,
+    returnToCampus
   );
 
 document.body.appendChild(

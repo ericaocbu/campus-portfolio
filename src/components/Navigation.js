@@ -2,7 +2,8 @@ import { campus } from "../data/campus.js";
 
 export function Navigation(
   onSelect,
-  onStartTour
+  onStartTour,
+  onBackToCampus
 ) {
   const navigation =
     document.createElement("nav");
@@ -104,6 +105,57 @@ export function Navigation(
     }
   );
 
+  // MAIN CAMPUS — special destination 00
+  const mainCampusItem =
+    document.createElement("button");
+
+  mainCampusItem.type = "button";
+
+  mainCampusItem.classList.add(
+    "directory-item",
+    "directory-main-campus"
+  );
+
+  mainCampusItem.innerHTML = `
+    <span class="directory-number">
+      00
+    </span>
+
+    <span class="directory-icon">
+      📍
+    </span>
+
+    <span class="directory-item-text">
+      <strong>
+        Main Campus
+      </strong>
+
+      <small>
+        Campus Map
+      </small>
+    </span>
+
+    <span class="directory-arrow">
+      →
+    </span>
+  `;
+
+  mainCampusItem.addEventListener(
+    "click",
+    () => {
+      directoryPanel.classList.remove(
+        "is-open"
+      );
+
+      onBackToCampus();
+    }
+  );
+
+  directoryList.appendChild(
+    mainCampusItem
+  );
+
+  // ACTUAL CAMPUS DESTINATIONS
   campus.locations.forEach(
     (location, index) => {
       const item =
