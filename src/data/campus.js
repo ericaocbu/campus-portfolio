@@ -33,7 +33,7 @@ export const campus = {
     {
       id: "innovation-lab",
       name: "INNOVATION LAB",
-      section: "Projects",
+      section: "My Projects",
       description:
         "Explore my UX, UI, and front-end projects.",
       icon: "👩🏽‍💻",
@@ -47,7 +47,7 @@ export const campus = {
     {
       id: "lecture-hall",
       name: "LECTURE HALL",
-      section: "Experience",
+      section: "My Experience",
       description:
         "Explore my education, research, and professional experience.",
       icon: "🎓",
@@ -61,7 +61,7 @@ export const campus = {
     {
       id: "food-canteen",
       name: "FOOD CANTEEN",
-      section: "Contact",
+      section: "Contact Me",
       description: "Let's connect.",
       icon: "🍜",
 
@@ -74,7 +74,7 @@ export const campus = {
     {
       id: "utown",
       name: "THE DORMS",
-      section: "Beyond the Screen",
+      section: "Outside of Work",
       description:
         "A little bit about me outside of design and development.",
       icon: "🏠",

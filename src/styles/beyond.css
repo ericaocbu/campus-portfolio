@@ -1,0 +1,2225 @@
+/* =========================================================
+   UTOWN / DORM ROOM
+========================================================= */
+
+.dorm-portfolio {
+  --wall: #eee7da;
+  --wall-shadow: #ded3c1;
+
+  --wood: #8a6042;
+  --wood-dark: #624532;
+  --wood-light: #ad805d;
+
+  --floor: #b88359;
+  --floor-light: #c99569;
+
+  --cream: #f8f2e7;
+  --paper: #fffaf1;
+
+  --terracotta: #c9826d;
+  --terracotta-dark: #9d5e4f;
+
+  --sage: #78876e;
+  --sage-light: #b9c4a9;
+
+  --blue: #8299a2;
+  --blue-light: #c7d4d5;
+
+  --ink: #40362f;
+  --muted: #776b60;
+
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--wall);
+}
+
+
+/* =========================================================
+   ROOM SCENE
+========================================================= */
+
+.dorm-room-scene {
+  position: relative;
+  width: 100%;
+  min-height: 850px;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   WALL
+========================================================= */
+
+.dorm-wall {
+  position: absolute;
+  inset: 0 0 250px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(98,69,50,0.035),
+      transparent 18%,
+      transparent 82%,
+      rgba(98,69,50,0.035)
+    ),
+    var(--wall);
+}
+
+.dorm-wall::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 12px;
+  background: var(--wall-shadow);
+}
+
+
+/* =========================================================
+   WINDOW
+========================================================= */
+
+.dorm-window {
+  position: absolute;
+  left: 50%;
+  top: 9%;
+  width: 250px;
+  height: 205px;
+  transform: translateX(-50%);
+  background: #faf6ed;
+  border: 9px solid var(--wood-dark);
+  box-shadow:
+    10px 12px 0 rgba(62,43,31,0.1);
+}
+
+.dorm-window-glass {
+  position: absolute;
+  inset: 12px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      to bottom,
+      #8eaab4 0%,
+      #c8d7d7 58%,
+      #a8b9a0 59%,
+      #829879 100%
+    );
+}
+
+.window-cloud {
+  position: absolute;
+  width: 65px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+}
+
+.window-cloud-one {
+  top: 35px;
+  left: 30px;
+}
+
+.window-cloud-two {
+  top: 70px;
+  right: 25px;
+  transform: scale(0.7);
+}
+
+.window-building {
+  position: absolute;
+  left: 35px;
+  bottom: 0;
+  width: 70px;
+  height: 65px;
+  background: #b4a58e;
+}
+
+.window-building::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #6f7771 0 7px,
+      transparent 7px 18px
+    );
+}
+
+.window-tree {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 75px;
+  border-radius: 50% 50% 20% 20%;
+  background: var(--sage);
+}
+
+.window-tree-one {
+  left: 125px;
+}
+
+.window-tree-two {
+  right: 15px;
+  height: 58px;
+  width: 40px;
+}
+
+.window-frame {
+  position: absolute;
+  background: var(--wood-dark);
+}
+
+.window-frame-top {
+  inset: 0 0 auto;
+  height: 9px;
+}
+
+.window-frame-bottom {
+  inset: auto 0 0;
+  height: 9px;
+}
+
+.window-frame-left {
+  inset: 0 auto 0 0;
+  width: 9px;
+}
+
+.window-frame-right {
+  inset: 0 0 0 auto;
+  width: 9px;
+}
+
+.window-frame-middle {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 7px;
+  transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   ROOM TITLE
+========================================================= */
+
+.dorm-room-title {
+  position: absolute;
+  left: 2rem;
+  top: 1.75rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.dorm-room-title span {
+  font-size: 0.48rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  color: var(--terracotta-dark);
+}
+
+.dorm-room-title strong {
+  margin-top: 0.1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   GALLERY WALL
+========================================================= */
+
+.dorm-gallery-wall {
+  position: absolute;
+  right: 7%;
+  top: 9%;
+  width: 300px;
+  height: 220px;
+}
+
+.wall-photo,
+.wall-postcard {
+  position: absolute;
+}
+
+.wall-photo {
+  padding: 0;
+  border: 0;
+  background: var(--paper);
+  box-shadow:
+    4px 6px 0 rgba(62,43,31,0.12);
+  cursor: pointer;
+}
+
+.wall-photo-large {
+  left: 0;
+  top: 30px;
+  width: 135px;
+  height: 155px;
+  transform: rotate(-4deg);
+}
+
+.wall-photo-small {
+  right: 10px;
+  top: 5px;
+  width: 110px;
+  height: 125px;
+  transform: rotate(5deg);
+}
+
+.wall-photo-image {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  top: 9px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      145deg,
+      #9caeb0,
+      #d2bea3
+    );
+  color: rgba(64,54,47,0.5);
+  font-size: 0.42rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.wall-photo-art {
+  background:
+    linear-gradient(
+      135deg,
+      #c98c76 0 35%,
+      #e5d3b5 35% 65%,
+      #8c9b7b 65%
+    );
+}
+
+.wall-photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  font-family: Georgia, serif;
+  font-size: 0.5rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.wall-postcard {
+  right: 65px;
+  bottom: -5px;
+  width: 100px;
+  height: 72px;
+  padding: 0.6rem;
+  background: #f6dfad;
+  transform: rotate(-7deg);
+  box-shadow: 3px 4px 0 rgba(62,43,31,0.1);
+}
+
+.wall-postcard span {
+  display: block;
+  font-size: 0.4rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.wall-postcard strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: Georgia, serif;
+  font-size: 0.75rem;
+  line-height: 0.9;
+}
+
+.wall-tape {
+  position: absolute;
+  width: 42px;
+  height: 11px;
+  background: rgba(198,161,91,0.55);
+}
+
+.wall-tape-one {
+  left: 47px;
+  top: 12px;
+  transform: rotate(-8deg);
+}
+
+.wall-tape-two {
+  right: 55px;
+  bottom: 58px;
+  transform: rotate(25deg);
+}
+
+
+/* =========================================================
+   CORKBOARD
+========================================================= */
+
+.dorm-corkboard {
+  position: absolute;
+  left: 10%;
+  top: 22%;
+  width: 235px;
+  height: 175px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(-1deg);
+}
+
+.corkboard-frame {
+  position: absolute;
+  inset: 0;
+  border: 9px solid var(--wood-dark);
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255,255,255,0.12) 0 2px,
+      transparent 3px
+    ),
+    #b98761;
+  box-shadow:
+    7px 9px 0 rgba(62,43,31,0.12);
+}
+
+.cork-note {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 67px;
+  height: 63px;
+  padding: 0.35rem;
+  background: #f7e5b4;
+  box-shadow: 2px 3px 0 rgba(62,43,31,0.12);
+  font-size: 0.43rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+}
+
+.cork-note-one {
+  left: 17px;
+  top: 20px;
+  transform: rotate(-5deg);
+}
+
+.cork-note-two {
+  left: 87px;
+  top: 12px;
+  background: #d5dfc9;
+  transform: rotate(3deg);
+}
+
+.cork-note-three {
+  right: 15px;
+  top: 28px;
+  background: #e6b3a5;
+  transform: rotate(5deg);
+}
+
+.cork-photo {
+  position: absolute;
+  left: 76px;
+  bottom: 15px;
+  width: 75px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid white;
+  background: #9aafb0;
+  box-shadow: 2px 3px 0 rgba(62,43,31,0.1);
+}
+
+.cork-photo span {
+  font-size: 1rem;
+}
+
+.cork-pin {
+  position: absolute;
+  z-index: 5;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terracotta-dark);
+}
+
+.cork-pin-one {
+  left: 29px;
+  top: 16px;
+}
+
+.cork-pin-two {
+  left: 114px;
+  top: 8px;
+}
+
+.cork-pin-three {
+  right: 39px;
+  top: 23px;
+}
+
+
+/* =========================================================
+   SIGN
+========================================================= */
+
+.dorm-sign {
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  transform: translateX(-50%);
+  background: var(--paper);
+  border: 3px solid var(--wood-dark);
+  box-shadow: 4px 5px 0 rgba(62,43,31,0.1);
+}
+
+.dorm-sign span {
+  font-size: 0.4rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  opacity: 0.5;
+}
+
+.dorm-sign strong {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   FLOOR
+========================================================= */
+
+.dorm-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 250px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--floor) 0,
+      var(--floor) 75px,
+      var(--floor-light) 76px,
+      var(--floor-light) 78px
+    );
+  border-top: 8px solid var(--wood-dark);
+}
+
+
+/* =========================================================
+   RUG
+========================================================= */
+
+.dorm-rug {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  width: 420px;
+  height: 105px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e1d3bc 0 35px,
+      #d1c1a8 35px 70px
+    );
+  box-shadow:
+    0 9px 0 rgba(62,43,31,0.1);
+}
+
+.dorm-rug span {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(157,94,79,0.35);
+}
+
+.dorm-rug span:nth-child(1) {
+  left: 60px;
+  top: 30px;
+  width: 70px;
+  height: 35px;
+}
+
+.dorm-rug span:nth-child(2) {
+  left: 175px;
+  top: 20px;
+  width: 80px;
+  height: 45px;
+}
+
+.dorm-rug span:nth-child(3) {
+  right: 45px;
+  top: 30px;
+  width: 65px;
+  height: 35px;
+}
+
+
+/* =========================================================
+   BED
+========================================================= */
+
+.bed-area {
+  position: absolute;
+  left: 3%;
+  bottom: 30px;
+  width: 370px;
+  height: 240px;
+}
+
+.bed-headboard {
+  position: absolute;
+  left: 10px;
+  bottom: 58px;
+  width: 350px;
+  height: 170px;
+  border-radius: 14px 14px 4px 4px;
+  background: var(--wood);
+  box-shadow:
+    7px 9px 0 rgba(62,43,31,0.12);
+}
+
+.bed-mattress {
+  position: absolute;
+  left: 0;
+  bottom: 43px;
+  width: 370px;
+  height: 125px;
+  border-radius: 10px;
+  background: #f7f0e5;
+  border: 4px solid var(--wood-dark);
+  overflow: hidden;
+}
+
+.bed-pillow {
+  position: absolute;
+  top: 13px;
+  width: 65px;
+  height: 50px;
+  border-radius: 10px;
+  background: #fffaf0;
+  box-shadow: 0 2px 4px rgba(62,43,31,0.1);
+}
+
+.bed-pillow-one {
+  left: 12px;
+  top: 5px;
+}
+
+.bed-pillow-two {
+  left: 12px;
+  top: 58px;
+}
+
+.bed-cover {
+  position: absolute;
+  right: -10px;
+  top: 0;
+  width: 225px;
+  height: 125px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--terracotta) 0 34px,
+      #d89a85 34px 68px
+    );
+  transform: skewX(-7deg);
+}
+
+.bed-frame {
+  position: absolute;
+  left: -5px;
+  bottom: 10px;
+  width: 380px;
+  height: 42px;
+  border-radius: 5px;
+  background: var(--wood-dark);
+}
+
+.bed-object {
+  position: absolute;
+  left: 30px;
+  top: 85px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.65);
+  color: var(--terracotta-dark);
+  cursor: pointer;
+}
+
+.bed-object-label {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   NIGHTSTAND
+========================================================= */
+
+.dorm-nightstand {
+  position: absolute;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  left: 420px;
+  bottom: 210px;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+}
+
+.nightstand-top {
+  position: absolute;
+  left: -5px;
+  top: 25px;
+  width: 102px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--wood-dark);
+}
+
+.nightstand-body {
+  position: absolute;
+  left: 3px;
+  top: 36px;
+  width: 86px;
+  height: 105px;
+  background: var(--wood);
+}
+
+.nightstand-drawer {
+  position: absolute;
+  left: 13px;
+  top: 51px;
+  width: 66px;
+  height: 28px;
+  background: var(--wood-light);
+  border: 2px solid var(--wood-dark);
+}
+
+.nightstand-handle {
+  position: absolute;
+  left: 42px;
+  top: 62px;
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--wood-dark);
+}
+
+.nightstand-lamp {
+  position: absolute;
+  left: 15px;
+  top: -37px;
+  width: 65px;
+  height: 70px;
+}
+
+.lamp-shade {
+  position: absolute;
+  left: 2px;
+  top: 0;
+  width: 61px;
+  height: 35px;
+  border-radius: 50% 50% 8px 8px;
+  background: #d8bd83;
+}
+
+.lamp-stem {
+  position: absolute;
+  left: 30px;
+  top: 31px;
+  width: 6px;
+  height: 28px;
+  background: var(--wood-dark);
+}
+
+.lamp-base {
+  position: absolute;
+  left: 18px;
+  bottom: 5px;
+  width: 30px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wood-dark);
+}
+
+
+/* =========================================================
+   DESK
+========================================================= */
+
+.dorm-desk {
+  position: absolute;
+  right: 2%;
+  bottom: 25px;
+  width: 400px;
+  height: 245px;
+  z-index: 8;
+}
+
+.desk-top {
+  position: absolute;
+  left: 0;
+  bottom: 125px;
+  width: 400px;
+  height: 25px;
+  border-radius: 4px;
+  background: var(--wood-dark);
+  box-shadow: 0 6px 0 rgba(62,43,31,0.1);
+}
+
+.desk-drawer {
+  position: absolute;
+  left: 20px;
+  width: 120px;
+  height: 34px;
+  border: 3px solid var(--wood-dark);
+  background: var(--wood);
+}
+
+.desk-drawer-one {
+  bottom: 90px;
+}
+
+.desk-drawer-two {
+  bottom: 50px;
+}
+
+.desk-leg {
+  position: absolute;
+  bottom: 0;
+  width: 18px;
+  height: 128px;
+  background: var(--wood-dark);
+}
+
+.desk-leg-one {
+  left: 20px;
+}
+
+.desk-leg-two {
+  right: 20px;
+}
+
+.desk-leg-three {
+  left: 137px;
+}
+
+
+/* =========================================================
+   MONITOR
+========================================================= */
+
+.desk-monitor {
+  position: absolute;
+  left: 75px;
+  bottom: 53px;
+  width: 205px;
+  height: 125px;
+  padding: 0;
+  border: 8px solid var(--wood-dark);
+  border-radius: 7px;
+  background: #d6d0c3;
+  cursor: pointer;
+}
+
+.monitor-screen {
+  position: absolute;
+  inset: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.8rem;
+  text-align: left;
+  background:
+    linear-gradient(
+      145deg,
+      #e2ded3,
+      #c5c4b8
+    );
+}
+
+.monitor-screen small {
+  font-size: 0.4rem;
+  opacity: 0.5;
+}
+
+.monitor-screen strong {
+  margin-top: 0.15rem;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.monitor-tags {
+  margin-top: 0.55rem;
+  font-size: 0.35rem;
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: var(--terracotta-dark);
+}
+
+.monitor-stand {
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  width: 12px;
+  height: 28px;
+  transform: translateX(-50%);
+  background: var(--wood-dark);
+}
+
+.monitor-base {
+  position: absolute;
+  left: 50%;
+  bottom: -34px;
+  width: 55px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--wood-dark);
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+.desk-laptop {
+  position: absolute;
+  right: 28px;
+  bottom: 150px;
+  width: 105px;
+  height: 75px;
+}
+
+.laptop-screen {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  width: 89px;
+  height: 55px;
+  border: 5px solid var(--wood-dark);
+  border-radius: 5px;
+  background:
+    linear-gradient(
+      135deg,
+      #b6c5c6,
+      #e1d8c4
+    );
+}
+
+.laptop-base {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 105px;
+  height: 13px;
+  clip-path: polygon(
+    5% 0,
+    95% 0,
+    100% 100%,
+    0 100%
+  );
+  background: var(--wood-dark);
+}
+
+
+/* =========================================================
+   NOTEBOOK
+========================================================= */
+
+.desk-notebook {
+  position: absolute;
+  right: 128px;
+  bottom: 135px;
+  width: 70px;
+  height: 60px;
+  padding: 10px;
+  transform: rotate(-5deg);
+  background: #f2dfae;
+  box-shadow: 2px 4px 0 rgba(62,43,31,0.12);
+}
+
+.desk-notebook span {
+  display: block;
+  height: 2px;
+  margin-bottom: 8px;
+  background: rgba(64,54,47,0.25);
+}
+
+
+/* =========================================================
+   CAMERA
+========================================================= */
+
+.desk-camera {
+  position: absolute;
+  right: 190px;
+  bottom: 17px;
+  width: 82px;
+  height: 55px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.camera-body {
+  position: absolute;
+  inset: 4px;
+  border-radius: 7px;
+  background: #4c4b48;
+  box-shadow: 3px 5px 0 rgba(62,43,31,0.15);
+}
+
+.camera-lens {
+  position: absolute;
+  left: 25px;
+  top: 8px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 6px solid #73716c;
+  background: #272727;
+}
+
+.camera-lens::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8ba2a4;
+}
+
+.camera-viewfinder {
+  position: absolute;
+  left: 9px;
+  top: -7px;
+  width: 23px;
+  height: 10px;
+  border-radius: 3px 3px 0 0;
+  background: #4c4b48;
+}
+
+.camera-button {
+  position: absolute;
+  right: 9px;
+  top: 7px;
+  width: 8px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--terracotta);
+}
+
+
+/* =========================================================
+   HEADPHONES
+========================================================= */
+
+.desk-headphones {
+  position: absolute;
+  right: 20px;
+  bottom: 25px;
+  width: 90px;
+  height: 100px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.headphone-band {
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  width: 60px;
+  height: 70px;
+  border: 8px solid var(--terracotta-dark);
+  border-bottom: 0;
+  border-radius: 50px 50px 0 0;
+}
+
+.headphone-left,
+.headphone-right {
+  position: absolute;
+  bottom: 10px;
+  width: 27px;
+  height: 37px;
+  border-radius: 8px;
+  background: var(--terracotta-dark);
+}
+
+.headphone-left {
+  left: 4px;
+}
+
+.headphone-right {
+  right: 4px;
+}
+
+
+/* =========================================================
+   CUP
+========================================================= */
+
+.desk-cup {
+  position: absolute;
+  right: 6px;
+  bottom: 147px;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px 3px 8px 8px;
+  background: #f8f0e3;
+  border: 3px solid var(--wood-dark);
+}
+
+.desk-cup span {
+  position: absolute;
+  right: -12px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid var(--wood-dark);
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+
+/* =========================================================
+   BOOKSHELF
+========================================================= */
+
+.dorm-bookshelf {
+  position: absolute;
+  left: 47%;
+  bottom: 27px;
+  width: 155px;
+  height: 325px;
+  z-index: 7;
+}
+
+.bookshelf-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: var(--wood-dark);
+}
+
+.bookshelf-side-left {
+  left: 0;
+}
+
+.bookshelf-side-right {
+  right: 0;
+}
+
+.bookshelf-shelf {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: var(--wood-dark);
+}
+
+.shelf-one {
+  top: 0;
+}
+
+.shelf-two {
+  top: 78px;
+}
+
+.shelf-three {
+  top: 156px;
+}
+
+.shelf-four {
+  bottom: 0;
+}
+
+.bookshelf-books {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 14px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+}
+
+.book {
+  display: block;
+  width: 24px;
+  height: 55px;
+  background: var(--terracotta);
+}
+
+.book-two {
+  height: 47px;
+  background: var(--sage);
+}
+
+.book-three {
+  height: 58px;
+  background: #7e969d;
+}
+
+.book-four {
+  height: 50px;
+  background: #b89562;
+}
+
+.book-five {
+  height: 44px;
+  background: #d6aa91;
+}
+
+.book-label {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: Georgia, serif;
+  font-size: 0.43rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.bookshelf-plant {
+  position: absolute;
+  right: 15px;
+  top: 96px;
+  width: 50px;
+  height: 65px;
+}
+
+.plant-pot {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 30px;
+  height: 27px;
+  border-radius: 3px 3px 10px 10px;
+  background: var(--wood-light);
+}
+
+.plant-leaf {
+  position: absolute;
+  bottom: 18px;
+  width: 24px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.leaf-one {
+  left: 0;
+  transform: rotate(-30deg);
+}
+
+.leaf-two {
+  left: 10px;
+  transform: rotate(10deg);
+}
+
+.leaf-three {
+  left: 22px;
+  transform: rotate(35deg);
+}
+
+.leaf-four {
+  left: 12px;
+  bottom: 28px;
+  transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   SUITCASE
+========================================================= */
+
+.dorm-suitcase {
+  position: absolute;
+  left: 40%;
+  bottom: -68px;
+  width: 135px;
+  height: 145px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(-5deg);
+  z-index: 10;
+}
+
+.suitcase-handle {
+  position: absolute;
+  left: 45px;
+  top: 0;
+  width: 48px;
+  height: 35px;
+  border: 7px solid var(--wood-dark);
+  border-bottom: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.suitcase-body {
+  position: absolute;
+  left: 8px;
+  bottom: 0;
+  width: 119px;
+  height: 112px;
+  border: 5px solid var(--wood-dark);
+  border-radius: 10px;
+  background: var(--terracotta);
+  box-shadow:
+    5px 7px 0 rgba(62,43,31,0.12);
+}
+
+.suitcase-seam {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  background: rgba(62,43,31,0.18);
+}
+
+.suitcase-sticker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 23px;
+  background: #f8efdf;
+  color: var(--ink);
+  font-size: 0.4rem;
+  font-weight: 900;
+  border-radius: 3px;
+}
+
+.sticker-airplane {
+  left: 12px;
+  top: 17px;
+  transform: rotate(-8deg);
+}
+
+.sticker-sg {
+  right: 11px;
+  top: 45px;
+  background: #d1ddc7;
+  transform: rotate(8deg);
+}
+
+.sticker-star {
+  left: 42px;
+  bottom: 14px;
+  background: #e1c08b;
+}
+
+
+/* =========================================================
+   TOTE
+========================================================= */
+
+.dorm-tote {
+  position: absolute;
+  left: 15%;
+  bottom: 27px;
+  width: 105px;
+  height: 130px;
+  z-index: 9;
+  transform: rotate(4deg);
+}
+
+.tote-handle {
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  width: 50px;
+  height: 35px;
+  border: 7px solid var(--wood-dark);
+  border-bottom: 0;
+  border-radius: 40px 40px 0 0;
+}
+
+.tote-body {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 0;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e8dfce;
+  box-shadow: 4px 6px 0 rgba(62,43,31,0.1);
+}
+
+.tote-body strong {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+.tote-body small {
+  margin-top: 2px;
+  font-size: 0.35rem;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   FLOOR PILLOW
+========================================================= */
+
+.floor-pillow {
+  position: absolute;
+  left: 43%;
+  bottom: 28px;
+  width: 90px;
+  height: 48px;
+  border-radius: 50%;
+  background: #d8b6a6;
+  transform: rotate(-8deg);
+  box-shadow: 0 6px 0 rgba(62,43,31,0.1);
+}
+
+
+/* =========================================================
+   FLOOR PLANT
+========================================================= */
+
+.floor-plant {
+  position: absolute;
+  right: 30%;
+  bottom: 27px;
+  width: 90px;
+  height: 135px;
+}
+
+.floor-plant-pot {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 52px;
+  height: 55px;
+  border-radius: 4px 4px 20px 20px;
+  background: #b87d57;
+  box-shadow: 4px 5px 0 rgba(62,43,31,0.1);
+}
+
+.floor-leaf {
+  position: absolute;
+  bottom: 38px;
+  width: 35px;
+  height: 80px;
+  border-radius: 100% 0 100% 0;
+  background: var(--sage);
+  transform-origin: bottom;
+}
+
+.floor-leaf.leaf-one {
+  left: 3px;
+  transform: rotate(-32deg);
+}
+
+.floor-leaf.leaf-two {
+  left: 24px;
+  transform: rotate(-8deg);
+}
+
+.floor-leaf.leaf-three {
+  left: 44px;
+  transform: rotate(18deg);
+}
+
+.floor-leaf.leaf-four {
+  left: 30px;
+  bottom: 55px;
+  transform: rotate(38deg);
+}
+
+
+/* =========================================================
+   INFO PANEL
+========================================================= */
+
+.dorm-info-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(49,38,31,0.58);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.dorm-info-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dorm-info-card {
+  position: relative;
+  width: min(700px, 100%);
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: var(--paper);
+  border: 6px solid var(--wood-dark);
+  box-shadow:
+    12px 14px 0 rgba(35,26,20,0.18);
+}
+
+.dorm-info-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: var(--terracotta);
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.dorm-info-eyebrow {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--terracotta-dark);
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+.dorm-info-content h2 {
+  margin: 0 0 1.6rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.dorm-info-body {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTENT: LIST
+========================================================= */
+
+.dorm-content-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.dorm-content-list span {
+  padding: 0.8rem 0.9rem;
+  border-left: 3px solid var(--terracotta);
+  background: #f0e7d8;
+  font-family: Georgia, serif;
+}
+
+
+/* =========================================================
+   CONTENT: PILLS
+========================================================= */
+
+.dorm-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.dorm-pill-grid span {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(64,54,47,0.18);
+  border-radius: 999px;
+  background: #f0e7d8;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CONTENT: RECOMMENDATIONS
+========================================================= */
+
+.favorites-list {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(73, 55, 47, 0.16);
+}
+
+.favorite-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(73, 55, 47, 0.16);
+}
+
+.favorite-label {
+  color: #9f5f50;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.favorite-item strong {
+  color: #49372f;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .favorite-item {
+    grid-template-columns: 75px 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* =========================================================
+   CONTENT: INSPIRATION
+========================================================= */
+
+.dorm-inspiration-list {
+  border-top: 1px solid rgba(64,54,47,0.15);
+}
+
+.dorm-inspiration-list a {
+  display: grid;
+  grid-template-columns: 35px 1fr 80px 25px;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(64,54,47,0.15);
+  color: inherit;
+  text-decoration: none;
+}
+
+.dorm-inspiration-list a > span {
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+.dorm-inspiration-list strong {
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+}
+
+.dorm-inspiration-list small {
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   CONTENT: TRAVEL
+========================================================= */
+.travel-stamps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.travel-stamp {
+  position: relative;
+  min-height: 105px;
+  padding: 1.25rem;
+  border: 2px dashed rgba(159, 95, 80, 0.65);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-2deg);
+  color: #9f5f50;
+}
+
+.travel-stamp:nth-child(2n) {
+  transform: rotate(2deg);
+}
+
+.travel-stamp:nth-child(3n) {
+  transform: rotate(-4deg);
+}
+
+.travel-stamp strong {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.travel-stamp span {
+  margin-top: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   CONTENT: PHOTOGRAPHY
+========================================================= */
+
+.dorm-photo-content {
+  text-align: center;
+}
+
+.dorm-photo-content a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--terracotta);
+  color: white;
+  text-decoration: none;
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   CONTENT: INTERESTS
+========================================================= */
+
+.reading-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1.25rem;
+  border-top: 1px solid rgba(73, 55, 47, 0.16);
+}
+
+.reading-item {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(73, 55, 47, 0.16);
+}
+
+.reading-number {
+  font-size: 0.7rem;
+  color: #9f5f50;
+  font-weight: 700;
+}
+
+.reading-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.reading-item strong {
+  color: #49372f;
+  font-size: 0.95rem;
+}
+
+.reading-item small {
+  color: #8b766a;
+  font-size: 0.75rem;
+}
+
+.reading-status {
+  color: #9f5f50;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: right;
+}
+
+
+/* =========================================================
+   CONTENT: MUSIC
+========================================================= */
+
+.dorm-music-content {
+  text-align: center;
+}
+
+.music-symbol {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--terracotta);
+  font-size: 3rem;
+}
+
+.music-placeholder {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background: #eee5d6;
+}
+
+.music-placeholder small {
+  display: block;
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.music-placeholder strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   CONTENT: FACTS
+========================================================= */
+
+.dorm-fact-list > div {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  gap: 0.8rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(64,54,47,0.15);
+}
+
+.dorm-fact-list span {
+  font-size: 0.5rem;
+  opacity: 0.45;
+}
+
+.dorm-fact-list p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .dorm-room-scene {
+    min-height: 1000px;
+  }
+
+  .dorm-desk {
+    right: 0;
+    transform: scale(0.85);
+    transform-origin: right bottom;
+  }
+
+  .dorm-bed {
+    left: 0;
+    transform: scale(0.85);
+    transform-origin: left bottom;
+  }
+
+  .dorm-bookshelf {
+    left: 45%;
+    transform: scale(0.9);
+    transform-origin: bottom center;
+  }
+
+  .dorm-suitcase {
+    left: 31%;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .dorm-room-scene {
+    min-height: 1250px;
+  }
+
+  .dorm-room-title {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .dorm-window {
+    width: 200px;
+    height: 165px;
+    top: 7%;
+  }
+
+  .dorm-gallery-wall {
+    right: 3%;
+    top: 25%;
+    transform: scale(0.75);
+    transform-origin: right top;
+  }
+
+  .dorm-corkboard {
+    left: 3%;
+    top: 25%;
+    transform: scale(0.75) rotate(-1deg);
+    transform-origin: left top;
+  }
+
+  .bed-area {
+    left: 2%;
+    bottom: 310px;
+    transform: scale(0.75);
+    transform-origin: left bottom;
+  }
+
+  .dorm-nightstand {
+    left: 32%;
+    bottom: 300px;
+    transform: scale(0.8);
+    transform-origin: bottom center;
+  }
+
+  .dorm-bookshelf {
+    left: 47%;
+    bottom: 285px;
+    transform: scale(0.75);
+    transform-origin: bottom center;
+  }
+
+  .dorm-desk {
+    right: 2%;
+    bottom: 30px;
+    transform: scale(0.7);
+    transform-origin: right bottom;
+  }
+
+  .dorm-suitcase {
+    left: 4%;
+    bottom: 45px;
+    transform: scale(0.7);
+    transform-origin: left bottom;
+  }
+
+  .dorm-tote {
+    left: 28%;
+    bottom: 35px;
+    transform: scale(0.7);
+    transform-origin: bottom center;
+  }
+
+  .floor-plant {
+    right: 30%;
+    bottom: 35px;
+    transform: scale(0.7);
+    transform-origin: bottom center;
+  }
+
+  .dorm-rug {
+    width: 340px;
+  }
+
+  .dorm-content-list,
+  .dorm-travel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dorm-interest-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dorm-inspiration-list a {
+    grid-template-columns: 25px 1fr 20px;
+  }
+
+  .dorm-inspiration-list small {
+    display: block;
+  }
+
+  .dorm-info-panel {
+    padding: 1rem;
+  }
+
+  .dorm-info-card {
+    padding: 1.75rem;
+    border-width: 5px;
+  }
+}
+
+/* =========================================================
+   INTERACTIVE OBJECTS
+========================================================= */
+
+/* Every clickable room object gets a subtle interaction cue */
+.dorm-portfolio
+  [data-panel] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Small indicator showing that an object is interactive */
+.dorm-portfolio [data-panel] {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Small interactive indicator */
+.dorm-portfolio [data-panel]::after {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 2px solid var(--paper);
+  box-shadow: 0 2px 5px rgba(62, 43, 31, 0.2);
+  right: 6px;
+  top: 6px;
+  z-index: 30;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    border-radius 0.2s ease;
+}
+
+/* Hover/focus: turn indicator into the label */
+.dorm-portfolio [data-panel]:hover::after,
+.dorm-portfolio [data-panel]:focus-visible::after {
+  width: auto;
+  height: auto;
+  min-width: 105px;
+  padding: 6px 9px;
+  border-radius: 4px;
+  color: var(--paper);
+  background: var(--terracotta);
+  border: 0;
+  box-shadow: 0 3px 8px rgba(62, 43, 31, 0.2);
+  right: 0;
+  top: -32px;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+/* Add a warm interactive outline without changing the room */
+.dorm-portfolio
+  [data-panel]:hover,
+.dorm-portfolio
+  [data-panel]:focus-visible {
+  outline: 3px solid rgba(201,130,109,0.75);
+  outline-offset: 5px;
+}
+
+
+/* Small "explore" label */
+.dorm-portfolio
+  [data-panel]::before {
+  content: "CLICK TO EXPLORE";
+
+  position: absolute;
+  left: 50%;
+  top: -34px;
+  z-index: 50;
+
+  transform:
+    translateX(-50%)
+    translateY(4px);
+
+  padding: 0.4rem 0.6rem;
+
+  white-space: nowrap;
+
+  border: 2px solid var(--wood-dark);
+
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: Arial, sans-serif;
+  font-size: 0.42rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+
+  box-shadow:
+    3px 4px 0 rgba(62,43,31,0.12);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.dorm-portfolio
+  [data-panel]:hover::before,
+.dorm-portfolio
+  [data-panel]:focus-visible::before {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+
+/* Keyboard accessibility */
+.dorm-portfolio
+  [data-panel]:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 6px;
+}
+
+
+/* =========================================================
+   OBJECT-SPECIFIC HOVER MOVEMENT
+========================================================= */
+
+.dorm-corkboard:hover,
+.dorm-corkboard:focus-visible {
+  transform: rotate(-1deg) translateY(-4px);
+}
+
+.wall-photo:hover,
+.wall-photo:focus-visible {
+  transform: rotate(-4deg) translateY(-4px) scale(1.02);
+}
+
+.wall-photo-small:hover,
+.wall-photo-small:focus-visible {
+  transform: rotate(5deg) translateY(-4px) scale(1.02);
+}
+
+.desk-monitor:hover,
+.desk-monitor:focus-visible {
+  transform: translateY(-4px);
+}
+
+.desk-camera:hover,
+.desk-camera:focus-visible {
+  transform: translateY(-5px) rotate(-2deg);
+}
+
+.desk-headphones:hover,
+.desk-headphones:focus-visible {
+  transform: translateY(-4px);
+}
+
+.dorm-suitcase:hover,
+.dorm-suitcase:focus-visible {
+  transform: rotate(-5deg) translateY(-5px);
+}
+
+.bookshelf-books:hover,
+.bookshelf-books:focus-visible {
+  transform: translateY(-4px);
+}
+
+.bed-object:hover,
+.bed-object:focus-visible {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   DISABLE THE GENERIC LABEL ON THE CAMERA / HEADPHONES
+   WHEN THEIR PARENT IS TOO SMALL
+========================================================= */
+
+.desk-camera::before,
+.desk-headphones::before {
+  top: -38px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .dorm-portfolio
+    [data-panel]::before {
+    content: "TAP TO EXPLORE";
+  }
+
+  .dorm-portfolio
+    [data-panel]::after {
+    width: 20px;
+    height: 20px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .travel-stamps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .travel-stamp {
+    min-height: 85px;
+    padding: 0.75rem;
+  }
+
+  .travel-stamp strong {
+    font-size: 0.75rem;
+  }
+
+  .reading-item {
+    grid-template-columns: 28px 1fr;
+  }
+
+  .reading-status {
+    grid-column: 2;
+    text-align: left;
+  }
+}

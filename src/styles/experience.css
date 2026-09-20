@@ -49,73 +49,10 @@ SHARED SECTION CONTENT
 
   margin: 0 auto;
 
-  padding:
-    86px
-    0
-    90px;
+  padding: 2.5rem 0 6rem;
 
   overflow: visible;
 }
-
-
-/*
-============================================================
-BACK TO CAMPUS
-============================================================
-*/
-
-.section-lecture-hall .back-to-campus {
-  position: absolute;
-
-  top: 24px;
-  left: 0;
-
-  z-index: 9999;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 9px 15px;
-
-  border: 1px solid
-    rgba(87, 61, 48, 0.18);
-
-  border-radius: 999px;
-
-  background:
-    rgba(255, 250, 240, 0.92);
-
-  color: #543827;
-
-  box-shadow:
-    0 8px 24px
-    rgba(69, 43, 31, 0.08);
-
-  backdrop-filter: blur(8px);
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: 0.12em;
-
-  cursor: pointer;
-
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.section-lecture-hall
-  .back-to-campus:hover {
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 12px 28px
-    rgba(69, 43, 31, 0.14);
-}
-
 
 /*
 ============================================================
@@ -2685,14 +2622,6 @@ RESPONSIVE
 
 
 @media (max-width: 480px) {
-
-  .section-lecture-hall
-    .back-to-campus {
-    left: 0;
-
-    font-size: 9px;
-  }
-
   .experience-room {
     min-height: 1880px;
   }

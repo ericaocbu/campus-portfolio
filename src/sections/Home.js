@@ -262,7 +262,7 @@ export function Home({
           <span class="destination-text">
             <small>ENTER THE</small>
             <strong>INNOVATION LAB</strong>
-            <em>Projects</em>
+            <em>My Projects</em>
           </span>
 
           <span class="destination-arrow">
@@ -291,7 +291,7 @@ export function Home({
           <span class="destination-text">
             <small>STEP INTO THE</small>
             <strong>LECTURE HALL</strong>
-            <em>Experience</em>
+            <em>My Experience</em>
           </span>
 
           <span class="destination-arrow">
@@ -320,7 +320,7 @@ export function Home({
           <span class="destination-text">
             <small>STOP BY THE</small>
             <strong>FOOD CANTEEN</strong>
-            <em>Contact</em>
+            <em>Contact Me</em>
           </span>
 
           <span class="destination-arrow">
@@ -349,7 +349,7 @@ export function Home({
           <span class="destination-text">
             <small>VISIT</small>
             <strong>THE DORMS</strong>
-            <em>Beyond the Screen</em>
+            <em>Outside of work</em>
           </span>
 
           <span class="destination-arrow">
