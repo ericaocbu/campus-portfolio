@@ -18,7 +18,6 @@ export function Contact({
         <div class="canteen-window-frame">
 
           <div class="canteen-window-top">
-            <span>My Favorites :)</span>
             <strong>FOOD CANTEEN</strong>
           </div>
 
@@ -62,8 +61,8 @@ export function Contact({
         </h1>
 
         <p>
-          A little design, a little development,
-          some research, and a lot of curiosity.
+          A little of this, a little of that,
+          and a lot of staying up late.
           Pull up a chair and stay awhile :)
         </p>
 
@@ -325,7 +324,7 @@ export function Contact({
         <div class="canteen-counter-ticket">
 
           <span>
-            ORDER #006
+            ORDER #005
           </span>
 
           <strong>

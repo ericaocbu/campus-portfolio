@@ -145,29 +145,23 @@
 
 .lab-hero-title h1 em {
   display: block;
-
   color: #3676b4;
-
   font-style: normal;
 }
 
 
 .lab-hero-copy {
   align-self: end;
-
   max-width: 360px;
-
   padding-bottom: 6px;
 }
 
 
 .lab-hero-copy p {
   margin: 0 0 35px;
-
   color: rgba(16, 43, 78, 0.7);
-
   font-size: 17px;
-
+  font-weight: 800;
   line-height: 1.7;
 }
 
@@ -187,44 +181,35 @@
     "Courier New",
     monospace;
 
-  font-size: 9px;
-
+  font-size: 10px;
+  font-weight: 700;
   line-height: 1.7;
-
   letter-spacing: 0.08em;
 }
 
 
 .lab-hero-note span {
   display: block;
-
   margin-bottom: 4px;
-
   color: #3676b4;
-
   font-weight: 700;
+  font-size: 11px;
 }
 
 
 .lab-focus-strip {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 10px;
-
   margin-top: 75px;
+  font-weight: 700;
 }
 
 
 .lab-focus-strip span {
   padding: 10px 14px;
-
-  border:
-    1px solid rgba(54, 118, 180, 0.3);
-
+  border: 1px solid rgba(54, 118, 180, 0.3);
   color: #326b9f;
-
   background:
     rgba(255, 255, 255, 0.5);
 
@@ -233,7 +218,6 @@
     monospace;
 
   font-size: 9px;
-
   letter-spacing: 0.12em;
 }
 
@@ -244,36 +228,28 @@
 
 .lab-section-heading {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 30px;
-
   padding-bottom: 15px;
-
   border-bottom:
     1px solid rgba(16, 43, 78, 0.18);
 
-  color: rgba(16, 43, 78, 0.52);
+  color: rgba(0, 0, 0, 0.52);
 
   font-family:
     "Courier New",
     monospace;
 
-  font-size: 9px;
-
+  font-size: 10px;
   font-weight: 700;
-
   letter-spacing: 0.15em;
 }
 
 
 .lab-section-heading > div {
   display: flex;
-
   align-items: center;
-
   gap: 14px;
 }
 

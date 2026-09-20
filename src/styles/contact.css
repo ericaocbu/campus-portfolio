@@ -35,42 +35,30 @@
 
 .canteen-section-heading {
   display: grid;
-
   grid-template-columns:
     0.35fr
     1fr;
 
   gap: 4rem;
-
   align-items: start;
-
   margin-bottom: 4rem;
 }
 
 
 .canteen-section-number {
   display: flex;
-
   align-items: center;
-
   gap: 0.8rem;
-
   padding-top: 0.5rem;
-
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
-
-  opacity: 0.45;
 }
 
 
 .canteen-section-number i {
   width: 35px;
-
   height: 1px;
-
   background:
     currentColor;
 }
@@ -83,15 +71,12 @@
 
 .canteen-small-label {
   display: block;
-
   margin-bottom: 1rem;
-
   color:
     var(--canteen-terracotta-dark);
 
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
 }
 
@@ -215,14 +200,9 @@
 
 .canteen-window-top {
   display: flex;
-
   flex-direction: column;
-
   gap: 0.35rem;
-
-  padding:
-    1rem;
-
+  padding: 1rem;
   color:
     var(--canteen-brown);
 
@@ -233,17 +213,6 @@
   text-align: center;
 }
 
-
-.canteen-window-top span {
-  font-size: 0.42rem;
-  font-weight: 900;
-
-  letter-spacing: 0.14em;
-
-  opacity: 0.45;
-}
-
-
 .canteen-window-top strong {
   font-family:
     Georgia,
@@ -251,18 +220,14 @@
     serif;
 
   font-size: 1.2rem;
-
   letter-spacing: 0.04em;
 }
 
 
 .canteen-window-glass {
   position: relative;
-
   height: calc(100% - 70px);
-
   overflow: hidden;
-
   background:
     linear-gradient(
       135deg,
@@ -274,15 +239,11 @@
 
 .canteen-window-glow {
   position: absolute;
-
   left: 12%;
   top: 15%;
-
   width: 65%;
   height: 50%;
-
   border-radius: 50%;
-
   background:
     rgba(198,161,91,0.18);
 
@@ -293,12 +254,9 @@
 
 .canteen-window-line {
   position: absolute;
-
   left: 10%;
   right: 10%;
-
   height: 1px;
-
   background:
     rgba(73,55,47,0.12);
 }
@@ -328,16 +286,12 @@
 
 .canteen-window-line {
   position: absolute;
-
   left: 10%;
   right: 10%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   height: 70px;
-
   border-bottom:
     1px solid
     rgba(73, 55, 47, 0.12);
@@ -352,9 +306,7 @@
 
   font-size: 0.9rem;
   font-weight: 700;
-
   letter-spacing: 0.12em;
-
   opacity: 0.75;
 }
 
@@ -372,26 +324,18 @@
 
 .canteen-entrance-copy {
   position: relative;
-
   z-index: 2;
-
   align-self: center;
-
   max-width: 650px;
 }
 
 
 .canteen-kicker {
   display: block;
-
   margin-bottom: 1.5rem;
-
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 900;
-
   letter-spacing: 0.15em;
-
-  opacity: 0.65;
 }
 
 
@@ -418,29 +362,21 @@
 
 .canteen-entrance-copy p {
   max-width: 470px;
-
   margin:
     2.5rem
     0
     0;
 
-  font-size: 0.9rem;
-
+  font-size: 1rem;
   line-height: 1.8;
-
-  opacity: 0.78;
 }
 
 
 .canteen-entrance-note {
   display: inline-flex;
-
   flex-direction: column;
-
   gap: 0.35rem;
-
   margin-top: 2rem;
-
   padding:
     0.8rem
     1rem;
@@ -452,12 +388,10 @@
 
 
 .canteen-entrance-note span {
-  font-size: 0.4rem;
+  font-size: 0.5rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
 
-  opacity: 0.55;
 }
 
 
@@ -467,7 +401,7 @@
     "Times New Roman",
     serif;
 
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 
@@ -514,12 +448,9 @@
     1px solid
     rgba(247,241,230,0.2);
 
-  font-size: 0.42rem;
+  font-size: 0.52rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
-
-  opacity: 0.5;
 }
 
 
@@ -533,22 +464,18 @@
     serif;
 
   font-size: 1rem;
-
   letter-spacing: 0.03em;
-
   opacity: 1;
 }
 
 
 .canteen-menu-intro {
   display: grid;
-
   grid-template-columns:
     0.5fr
     1fr;
 
   gap: 3rem;
-
   padding:
     2.5rem
     0;
@@ -556,11 +483,9 @@
 
 
 .canteen-menu-intro > span {
-  font-size: 0.45rem;
+  font-size: 0.55rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
-
   color:
     var(--canteen-terracotta-light);
 }
@@ -568,16 +493,13 @@
 
 .canteen-menu-intro p {
   max-width: 520px;
-
   margin: 0;
-
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
   font-size: 1.25rem;
-
   line-height: 1.5;
 }
 
@@ -644,18 +566,15 @@
   color:
     var(--canteen-terracotta-light);
 
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-weight: 900;
-
   letter-spacing: 0.1em;
 }
 
 
 .canteen-menu-item-main {
   display: flex;
-
   flex-direction: column;
-
   gap: 0.35rem;
 }
 
@@ -666,33 +585,24 @@
     "Times New Roman",
     serif;
 
-  font-size: 1.05rem;
-
+  font-size: 1.1rem;
   letter-spacing: 0.01em;
 }
 
 
 .canteen-menu-item-main small {
-  font-size: 0.4rem;
+  font-size: 0.5rem;
   font-weight: 900;
-
   letter-spacing: 0.12em;
-
   color:
     var(--canteen-terracotta-light);
-
-  opacity: 0.8;
 }
 
 
 .canteen-menu-item-description {
   max-width: 360px;
-
-  font-size: 0.65rem;
-
+  font-size: 0.85rem;
   line-height: 1.55;
-
-  opacity: 0.58;
 }
 
 
@@ -716,17 +626,11 @@
 
 .canteen-menu-board-footer {
   display: flex;
-
   justify-content: space-between;
-
   padding-top: 1.3rem;
-
-  font-size: 0.4rem;
+  font-size: 0.55rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
-
-  opacity: 0.4;
 }
 
 
@@ -766,15 +670,11 @@
 
 .canteen-counter::before {
   content: "";
-
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
-
   height: 45px;
-
   background:
     repeating-linear-gradient(
       90deg,
@@ -788,24 +688,17 @@
 
 .canteen-counter-sign {
   position: relative;
-
   z-index: 2;
-
   display: flex;
-
   flex-direction: column;
-
   max-width: 520px;
 }
 
 
 .canteen-counter-sign span {
-  font-size: 0.45rem;
+  font-size: 0.6rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
-
-  opacity: 0.6;
 }
 
 
@@ -843,10 +736,8 @@
 
 .register-body {
   position: absolute;
-
   left: 0;
   bottom: 0;
-
   width: 190px;
   height: 105px;
 
@@ -860,15 +751,11 @@
 
 .register-screen {
   position: absolute;
-
   left: 35px;
   top: 0;
-
   width: 120px;
   height: 60px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -882,11 +769,9 @@
     6px solid
     var(--canteen-brown);
 
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 900;
-
   letter-spacing: 0.1em;
-
   z-index: 2;
 }
 
@@ -923,19 +808,12 @@
 
 .canteen-counter-ticket {
   position: absolute;
-
   right: 5%;
   top: 12%;
-
   display: flex;
-
   flex-direction: column;
-
   width: 220px;
-
-  padding:
-    1.2rem;
-
+  padding: 1.2rem;
   color:
     var(--canteen-brown);
 
@@ -952,12 +830,9 @@
 
 
 .canteen-counter-ticket span {
-  font-size: 0.4rem;
+  font-size: 0.55rem;
   font-weight: 900;
-
   letter-spacing: 0.12em;
-
-  opacity: 0.45;
 }
 
 
@@ -983,11 +858,8 @@
 
 .canteen-footer {
   display: flex;
-
   align-items: center;
-
   gap: 1rem;
-
   padding:
     1.5rem
     5rem;
@@ -998,9 +870,8 @@
   background:
     var(--canteen-brown);
 
-  font-size: 0.42rem;
+  font-size: 0.52rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
 }
 
@@ -1069,7 +940,6 @@
 
   .canteen-menu-intro {
     grid-template-columns: 1fr;
-
     gap: 1rem;
   }
 
