@@ -665,7 +665,7 @@ window.addEventListener(
 
         navigationTimeout = null;
 
-      }, 5500);
+      }, 5000);
   }
 );
 
@@ -727,7 +727,7 @@ window.addEventListener(
 
         navigationTimeout = null;
 
-      }, 4500);
+      }, 3500);
   }
 );
 

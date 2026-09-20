@@ -413,13 +413,10 @@
 
 .home-card-building {
   position: absolute;
-
   left: 50%;
   top: 47%;
-
   width: 170px;
   height: 145px;
-
   transform:
     translate(-50%, -50%);
 
@@ -436,13 +433,10 @@
 
 .home-card-building::before {
   content: "";
-
   position: absolute;
-
-  left: -15px;
-  top: -42px;
-
-  width: 196px;
+  left: -18px;
+  top: -50px;
+  width: 202px;
   height: 48px;
 
   clip-path:
@@ -457,10 +451,8 @@
 
 .home-card-building span {
   position: absolute;
-
   width: 18px;
   height: 24px;
-
   border:
     2px solid
     #183c35;

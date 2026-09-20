@@ -789,7 +789,6 @@
 
 .tour-hud-count {
   font-size: 0.6rem;
-  opacity: 0.45;
 }
 
 .tour-hud-current,
@@ -810,7 +809,7 @@
   font-size: 0.5rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  opacity: 0.45;
+
 }
 
 .tour-hud-current strong,
@@ -822,7 +821,7 @@
 .tour-hud-current small,
 .tour-hud-next small {
   font-size: 0.62rem;
-  opacity: 0.5;
+
 }
 
 .tour-hud-actions {
@@ -855,7 +854,6 @@
   font-size: 0.52rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -5380,7 +5378,6 @@
   transform:
     translate(-50%, 10px);
 
-  opacity: 0;
 
   pointer-events: none;
 
@@ -5439,20 +5436,15 @@
 
 .erica-dialogue-label {
   display: block;
-
   margin-bottom: 5px;
-
   color:
-    rgba(24, 60, 53, 0.48);
-
-  font-family:
+    rgba(0, 0, 0, 0.48);
+  
+    font-family:
     "Courier New",
     monospace;
-
-  font-size: 7px;
-
+  font-size: 10px;
   font-weight: 700;
-
   letter-spacing:
     0.12em;
 }
@@ -5460,10 +5452,7 @@
 
 .erica-dialogue-text {
   display: block;
-
   color: #183c35;
-
-  font-size: 13px;
-
+  font-size: 15px;
   line-height: 1.35;
 }
