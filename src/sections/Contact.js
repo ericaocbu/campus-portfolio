@@ -32,15 +32,12 @@ export function Contact({
               BEEF HOR FUN
             </a></span>
             <span class="canteen-window-line">
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer">
+            <a>
               CHICKEN ALFREDO
             </a></span>
             <span class="canteen-window-line">
             <a
-              href=""
+              href="https://guide.michelin.com/my/en/best-of/where-to-find-the-best-chicken-rice-in-singapore"
               target="_blank"
               rel="noopener noreferrer">
               SINGAPORE CHICKEN RICE

@@ -80,7 +80,7 @@ export function About({
 
         <p>
           A collection of the ideas,
-          experiences, and people
+          experiences, and skills
           that shaped how I design.
         </p>
       </div>
@@ -163,12 +163,10 @@ export function About({
             </p>
 
             <p>
-              My work sits at the intersection of
-              people, design, and technology. I like
-              understanding the problem first, figuring
-              out what people actually need, and then
-              turning that insight into an experience
-              that works — and feels good to use.
+              I like understanding the problem first, 
+              figuring out what people actually need, 
+              and then turning those findings into an 
+              experience that works and feels good to use.
             </p>
 
           </div>
@@ -292,7 +290,7 @@ export function About({
           <p>
             Started exploring the intersection
             of information, people, and technology
-            at UNC.
+            during my first year at UNC.
           </p>
         </div>
 
@@ -510,8 +508,7 @@ export function About({
 
           <p>
             I move between research, design, and
-            development throughout a project —
-            not treating them as separate worlds.
+            development throughout a project.
           </p>
 
         </div>

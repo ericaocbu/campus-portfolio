@@ -538,10 +538,10 @@ export function Beyond({ onBack }) {
           <div class="reading-item">
             <span class="reading-number">01</span>
             <div>
-              <strong>[BOOK TITLE]</strong>
-              <small>[AUTHOR]</small>
+              <strong>[A COURT OF THORNS AND ROSES]</strong>
+              <small>[SARAH J. MAAS]</small>
             </div>
-            <span class="reading-status">READING</span>
+            <span class="reading-status">CURRENTLY READING</span>
           </div>
 
           <div class="reading-item">
@@ -550,7 +550,7 @@ export function Beyond({ onBack }) {
               <strong>[SUITS]</strong>
               <small>[TV SHOW]</small>
             </div>
-            <span class="reading-status">WATCHING</span>
+            <span class="reading-status">CURRENTLY WATCHING</span>
           </div>
 
           <div class="reading-item">

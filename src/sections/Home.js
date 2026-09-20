@@ -24,7 +24,7 @@ export function Home({
         </div>
 
         <h1>
-          WELCOME TO
+          WELCOME TO THE
           <span>STUDENT UNION!</span>
         </h1>
 
