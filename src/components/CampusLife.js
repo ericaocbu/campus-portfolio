@@ -543,37 +543,37 @@ export function CampusLife() {
     "bell-tower": {
       title: "THE BELL TOWER",
       text:
-        "Some things are meant to be noticed. Others are meant to be discovered.",
+        "You found the loudest thing on campus... .·°՞(˃ ᗝ ˂)՞°·.",
     },
 
     "campus-cat": {
       title: "THE CAMPUS CAT",
       text:
-        "It doesn't work here...it simply lives here.",
+        "It doesn't work here...it simply lives here (˶ᵔ ᵕ ᵔ˶)",
     },
 
     recycling: {
       title: "RECYCLING",
       text:
-        "Small choices help keep the campus clean.",
+        "Please keep the campus clean (''-ࡇ-)",
     },
 
     "bike-rack": {
       title: "BIKE RACK",
       text:
-        "A favorite stop for getting around campus.",
+        "A parking lot for bikes (•̀⤙•́ )",
     },
 
     flowers: {
       title: "CAMPUS GARDEN",
       text:
-        "A little color growing between the paths.",
+        "Watered daily by student tears (╥﹏╥)",
     },
 
     fountain: {
       title: "CAMPUS FOUNTAIN",
       text:
-        "A quiet place to pause between destinations.",
+        "This feels like a good place to sit and figure things out (⸝⸝ᵕᴗᵕ⸝⸝)",
     },
 
   };
@@ -854,8 +854,8 @@ export function CampusLife() {
 
         discoveryText.textContent =
           complete
-            ? "You found every hidden detail."
-            : "There are still a few things hiding around campus.";
+            ? "You found every hidden detail ٩(>ᴗ<)و"
+            : "There are still a few things hiding around campus (•̀ᴗ•́ )ゞ ";
 
 
         discoveryMessage.classList.toggle(
