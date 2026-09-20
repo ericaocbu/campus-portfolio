@@ -24,6 +24,7 @@ let tourHUD = null;
 
 let tourActive = false;
 let currentTourIndex = 0;
+let tourStopReady = false;
 
 
 /* =====================================================
@@ -222,6 +223,7 @@ function startTour() {
    */
   tourActive = true;
   currentTourIndex = 0;
+  tourStopReady = false;
 
 
   /*
@@ -346,6 +348,12 @@ function openTourSection(location) {
     activeSection.remove();
   }
 
+  /*
+   * The user has now reached this tour stop.
+   * Next is allowed from here.
+   */
+  tourStopReady = true;
+
   activeSection =
     SectionView(
       location,
@@ -440,10 +448,17 @@ function handleNextTourStop() {
     return;
   }
 
+  /*
+   * Do not allow the user to advance until
+   * they have actually reached the current stop.
+   */
+  if (!tourStopReady) {
+    return;
+  }
+
   const isLastStop =
     currentTourIndex >=
     tourOrder.length - 1;
-
 
   /*
    * If we're at UTown, the tour is finished.
@@ -453,6 +468,11 @@ function handleNextTourStop() {
     return;
   }
 
+  /*
+   * The current stop has been completed.
+   * Reset this before moving to the next stop.
+   */
+  tourStopReady = false;
 
   /*
    * Close the current section first.
@@ -470,9 +490,6 @@ function handleNextTourStop() {
     setTimeout(() => {
       sectionToRemove.remove();
 
-      /*
-       * Move to the next location.
-       */
       currentTourIndex++;
 
       showTourStop();
@@ -480,7 +497,6 @@ function handleNextTourStop() {
 
     return;
   }
-
 
   /*
    * No section is open, so move immediately.
@@ -502,6 +518,7 @@ function stopTour(
 
   tourActive = false;
   currentTourIndex = 0;
+  tourStopReady = false;
 
 
   /*
@@ -569,6 +586,7 @@ function stopTour(
 function finishTour() {
   clearNavigationTimeout();
 
+  tourStopReady = false;
   /*
    * Keep the tour active while Erica walks back
    * to Student Campus and delivers her final message.
