@@ -252,8 +252,8 @@ export function Beyond({ onBack }) {
           <div class="bookshelf-side bookshelf-side-left"></div>
           <div class="bookshelf-side bookshelf-side-right"></div>
 
-          <div class="bookshelf-shelf shelf-one"></div>
-          <div class="bookshelf-shelf shelf-two"></div>
+          <div class="bookshelf-shelf shelf-onee"></div>
+          <div class="bookshelf-shelf shelf-twoo"></div>
           <div class="bookshelf-shelf shelf-three"></div>
           <div class="bookshelf-shelf shelf-four"></div>
 

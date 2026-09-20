@@ -317,11 +317,9 @@
     #d9ccb3;
 }
 
-
 .shelf-one {
   top: 34%;
 }
-
 
 .shelf-two {
   top: 59%;
@@ -330,11 +328,8 @@
 
 .library-window-shelf span {
   display: block;
-
   width: 18px;
-
   border-radius: 2px 2px 0 0;
-
   background:
     #d9ccb3;
 
@@ -439,7 +434,7 @@
   writing-mode:
     vertical-rl;
 
-  opacity: 0.45;
+  opacity: 0.75;
 }
 
 
@@ -468,7 +463,7 @@
 
   margin-bottom: 0.7rem;
 
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-weight: 900;
 
   letter-spacing: 0.12em;
@@ -478,10 +473,9 @@
 .library-entrance-note p {
   margin: 0;
 
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   line-height: 1.6;
 
-  opacity: 0.58;
 }
 
 
@@ -498,7 +492,7 @@
 
   margin-bottom: 3rem;
 
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 900;
 
   letter-spacing: 0.14em;
@@ -653,15 +647,10 @@
 
 .library-page-top {
   display: flex;
-
   justify-content: space-between;
-
   font-size: 0.48rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
-
-  opacity: 0.45;
 }
 
 
@@ -757,13 +746,9 @@
 
 .library-eyebrow {
   margin: 0 0 1.3rem;
-
-  font-size: 0.5rem;
-  font-weight: 900;
-
+  font-size: 0.60rem;
+  font-weight: 600;
   letter-spacing: 0.14em;
-
-  opacity: 0.5;
 }
 
 
@@ -809,22 +794,14 @@
 
 .library-role span {
   margin: 0 0.35rem;
-
   opacity: 0.35;
 }
 
 
 .library-intro-copy > p:not(.library-role) {
-  margin:
-    0
-    0
-    1.25rem;
-
+  margin: 0 0 1.25rem;
   font-size: 0.9rem;
-
   line-height: 1.8;
-
-  opacity: 0.67;
 }
 
 
@@ -876,10 +853,7 @@
 ===================================================== */
 
 .library-background {
-  padding:
-    7rem
-    0;
-
+  padding: 7rem 0;
   border-bottom:
     1px solid
     var(--library-line);
@@ -888,22 +862,18 @@
 
 .library-shelf-layout {
   display: grid;
-
   grid-template-columns:
     0.85fr
     1.15fr;
-
+  
   gap: 5rem;
-
   align-items: center;
 }
 
 
 .library-big-note {
   max-width: 440px;
-
   margin: 0;
-
   font-size:
     clamp(
       1.5rem,
@@ -912,33 +882,24 @@
     );
 
   line-height: 1.25;
-
   letter-spacing: -0.035em;
 }
 
 
 .library-shelf-caption {
   display: flex;
-
   align-items: center;
-
   gap: 0.65rem;
-
   margin-top: 2rem;
-
-  font-size: 0.45rem;
+  font-size: 0.60rem;
   font-weight: 900;
-
   letter-spacing: 0.12em;
-
-  opacity: 0.4;
 }
 
 
 .library-shelf-caption i {
   width: 30px;
   height: 1px;
-
   background:
     var(--library-ink);
 }
@@ -948,33 +909,20 @@
 
 .library-bookshelf {
   position: relative;
-
   display: flex;
-
   align-items: flex-end;
-
   justify-content: center;
-
   gap: 8px;
-
   min-height: 310px;
-
-  padding:
-    0
-    1rem
-    27px;
+  padding: 0 1rem 27px;
 }
 
 
 .library-book {
   position: relative;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
   padding:
     1rem
     0.65rem;
@@ -996,7 +944,6 @@
 .library-book small {
   font-size: 0.43rem;
   font-weight: 900;
-
   letter-spacing: 0.12em;
 }
 
@@ -1020,7 +967,6 @@
 .library-book-unc {
   width: 82px;
   height: 230px;
-
   background:
     #31574d;
 
@@ -1034,7 +980,6 @@
 .library-book-nus {
   width: 70px;
   height: 190px;
-
   background:
     #6a7f6b;
 
@@ -1049,10 +994,8 @@
 
 .library-book-nus .library-book-vertical {
   position: absolute;
-
   left: 50%;
   top: 50%;
-
   transform:
     translate(-50%, -50%)
     rotate(-90deg);
@@ -1132,26 +1075,17 @@
 
 
 .library-timeline span {
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   font-weight: 900;
-
   letter-spacing: 0.1em;
 }
 
 
 .library-timeline p {
   max-width: 260px;
-
-  margin:
-    0.75rem
-    0
-    0;
-
-  font-size: 0.72rem;
-
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
   line-height: 1.65;
-
-  opacity: 0.62;
 }
 
 
@@ -1408,7 +1342,6 @@
 
 .library-footer {
   margin-top: 1rem;
-
   padding-bottom: 2rem;
 }
 
@@ -1682,13 +1615,7 @@
 
 .library-skills-intro {
   max-width: 650px;
-
-  margin:
-    3rem
-    0
-    4rem
-    auto;
-
+  margin: 3rem 0 4rem auto;
   font-size: 1.1rem;
   line-height: 1.75;
   color: #183c35;
@@ -1696,20 +1623,15 @@
 
 .library-skills-grid {
   display: grid;
-
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
-
   gap: 1rem;
 }
 
 .library-skill-card {
   position: relative;
-
   min-height: 360px;
-
   padding: 1.5rem;
-
   border:
     1px solid
     rgba(24, 60, 53, 0.18);
@@ -1718,7 +1640,6 @@
     rgba(255, 255, 255, 0.25);
 
   color: #183c35;
-
   transition:
     transform 220ms ease,
     background 220ms ease,
@@ -1750,11 +1671,9 @@
 }
 
 .library-skill-card-header span {
-  font-size: 0.55rem;
+  font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.08em;
-
-  opacity: 0.4;
 }
 
 .library-skill-card-header strong {
@@ -1765,33 +1684,24 @@
 
 .library-skill-card > p {
   max-width: 390px;
-
   margin:
     1.5rem
     0
     2rem;
-
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   line-height: 1.7;
-
-  opacity: 0.7;
 }
 
 .library-skill-list {
   display: flex;
   flex-wrap: wrap;
-
   gap: 0.45rem;
 }
 
 .library-skill-list span {
   display: inline-flex;
   align-items: center;
-
-  padding:
-    0.45rem
-    0.6rem;
-
+  padding: 0.45rem 0.6rem;
   border:
     1px solid
     rgba(24, 60, 53, 0.15);
@@ -1799,8 +1709,8 @@
   background:
     rgba(247, 245, 237, 0.7);
 
-  font-size: 0.48rem;
-  font-weight: 900;
+  font-size: 0.80rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
 }
 
@@ -1816,23 +1726,17 @@
 }
 
 .library-section-number {
-  font-size: 0.55rem;
+  font-size: 0.60rem;
   font-weight: 900;
   letter-spacing: 0.1em;
-
-  opacity: 0.4;
 }
 
 .library-section-label {
   display: block;
-
   margin-bottom: 1rem;
-
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 900;
   letter-spacing: 0.15em;
-
-  opacity: 0.45;
 }
 
 .library-section-heading h2 {
@@ -1956,7 +1860,6 @@
     0.55fr;
 
   gap: 5rem;
-
   align-items: end;
 }
 
@@ -1968,21 +1871,15 @@
 
 .library-process-catalog {
   display: block;
-
   margin-bottom: 1.2rem;
-
-  font-size: 0.48rem;
+  font-size: 0.58rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
-
-  opacity: 0.42;
 }
 
 
 .library-process-title-wrap h2 {
   margin: 0;
-
   font-size:
     clamp(
       3.3rem,
@@ -1991,7 +1888,6 @@
     );
 
   line-height: 0.82;
-
   letter-spacing: -0.06em;
 }
 
@@ -2016,26 +1912,17 @@
 
 .library-note-label {
   display: block;
-
   margin-bottom: 0.8rem;
-
-  font-size: 0.48rem;
+  font-size: 0.55rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
-
-  opacity: 0.4;
 }
 
 
 .library-process-note p {
   margin: 0;
-
-  font-size: 0.82rem;
-
+  font-size: 0.85rem;
   line-height: 1.75;
-
-  opacity: 0.62;
 }
 
 
@@ -2118,49 +2005,36 @@
 
 
 .library-table-label span {
-  font-size: 0.48rem;
+  font-size: 0.58rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
-
-  opacity: 0.48;
 }
 
 
 .library-table-label strong {
-  font-size: 0.7rem;
-
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
 }
 
 
 .library-table-card {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-end;
-
   gap: 0.35rem;
 }
 
 
 .library-table-card span {
-  font-size: 0.42rem;
+  font-size: 0.58rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
-
-  opacity: 0.4;
 }
 
 
 .library-table-card strong {
-  font-size: 0.48rem;
-
+  font-size: 0.58rem;
   letter-spacing: 0.08em;
-
-  opacity: 0.65;
 }
 
 
@@ -2248,18 +2122,13 @@
 
 .library-process-book-spine {
   width: 27px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   background:
     #183c35;
-
   color:
     #f7f3e8;
-
   border:
     1px solid
     rgba(24, 60, 53, 0.3);
@@ -2267,11 +2136,9 @@
 
 
 .library-process-book-spine span {
-  font-size: 0.45rem;
+  font-size: 0.60rem;
   font-weight: 900;
-
   letter-spacing: 0.08em;
-
   writing-mode:
     vertical-rl;
 }
@@ -2335,11 +2202,8 @@
 
 .library-process-book-cover::before {
   content: "";
-
   position: absolute;
-
   inset: 8px;
-
   border:
     1px solid
     rgba(247, 243, 232, 0.18);
@@ -2350,59 +2214,40 @@
 
 .library-process-book-type {
   position: relative;
-
-  font-size: 0.4rem;
+  font-size: 0.43rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
-
-  opacity: 0.55;
 }
 
 
 .library-process-book-cover strong {
   position: relative;
-
   margin-top: 3.5rem;
-
   font-size: 1rem;
-
   line-height: 0.9;
-
   letter-spacing: -0.035em;
 }
 
 
 .library-process-book-cover p {
   position: relative;
-
   margin-top: auto;
-
   margin-bottom: 1rem;
-
-  font-size: 0.58rem;
-
+  font-size: 0.70rem;
   line-height: 1.5;
-
-  opacity: 0.72;
 }
 
 
 .library-process-book-footer {
   position: relative;
-
   padding-top: 0.7rem;
-
   border-top:
     1px solid
     rgba(247, 243, 232, 0.2);
 
-  font-size: 0.38rem;
+  font-size: 0.43rem;
   font-weight: 900;
-
   letter-spacing: 0.08em;
-
-  opacity: 0.5;
 }
 
 
@@ -2410,28 +2255,19 @@
 
 .library-table-bottom {
   position: relative;
-
   z-index: 2;
-
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 1rem;
-
   padding-top: 1.2rem;
-
   border-top:
     1px solid
     rgba(24, 60, 53, 0.18);
 
-  font-size: 0.43rem;
+  font-size: 0.53rem;
   font-weight: 900;
-
   letter-spacing: 0.12em;
-
-  opacity: 0.5;
 }
 
 /* =====================================================
@@ -2440,7 +2276,6 @@
 
 .library-beyond {
   position: relative;
-
   padding:
     8rem
     0
@@ -2450,11 +2285,8 @@
 
 .library-return-cart {
   position: relative;
-
   max-width: 1000px;
-
   margin: 0 auto;
-
   padding-top: 75px;
 }
 
@@ -2760,13 +2592,9 @@
 
 .library-return-slip-label {
   position: relative;
-
-  font-size: 0.46rem;
+  font-size: 0.54rem;
   font-weight: 900;
-
   letter-spacing: 0.14em;
-
-  opacity: 0.42;
 }
 
 
@@ -2801,9 +2629,7 @@
 
 .library-return-slip p {
   position: relative;
-
   max-width: 560px;
-
   margin:
     1.8rem
     0
@@ -2813,27 +2639,18 @@
     #183c35;
 
   font-size: 0.82rem;
-
   line-height: 1.75;
-
-  opacity: 0.62;
 }
 
 
 .library-return-slip-footer {
   position: relative;
-
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 2rem;
-
   margin-top: 2rem;
-
   padding-top: 1.2rem;
-
   border-top:
     1px dashed
     rgba(24, 60, 53, 0.2);
@@ -2842,17 +2659,11 @@
 
 .library-return-slip-footer > span {
   display: flex;
-
   flex-direction: column;
-
   gap: 0.35rem;
-
   font-size: 0.62rem;
   font-weight: 900;
-
   letter-spacing: 0.12em;
-
-  opacity: 0.45;
 }
 
 
@@ -3032,7 +2843,6 @@
 
   .library-return-slip-footer {
     align-items: flex-start;
-
     flex-direction: column;
   }
 

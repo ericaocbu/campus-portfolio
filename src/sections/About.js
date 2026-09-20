@@ -521,7 +521,7 @@ export function About({
         <div class="library-table-top">
 
           <div class="library-table-label">
-            <span>ERICA'S WORKING METHOD</span>
+            <span>MY WORKING METHOD</span>
             <strong>REFERENCE MATERIAL</strong>
           </div>
 
