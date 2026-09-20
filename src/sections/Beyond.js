@@ -42,7 +42,7 @@ export function Beyond({ onBack }) {
               <span>PHOTO</span>
             </span>
             <span class="wall-photo-caption">
-              inspired by
+              places to see
             </span>
           </button>
 
@@ -97,6 +97,82 @@ export function Beyond({ onBack }) {
           <span class="cork-pin cork-pin-three"></span>
         </button>
 
+        <!-- ROOM CHECKLIST -->
+        <div class="dorm-checklist">
+          <div class="dorm-checklist-header">
+            <span>ROOM 204</span>
+            <strong>TO-DO LIST</strong>
+          </div>
+
+          <div class="dorm-checklist-items">
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="enjoy"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">check the pillow</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="goals"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">read the cork board</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="photography"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">check the camera</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="music"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">check the headphones</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="learning"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">check the monitor</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="inspiration"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">look at the photos</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="travel"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">open the suitcase</span>
+            </div>
+
+            <div
+              class="dorm-checklist-item"
+              data-checklist-panel="interests"
+            >
+              <span class="check-box"></span>
+              <span class="check-text">browse the bookshelf</span>
+            </div>
+
+          </div>
+        </div>
+
 
         <!-- ROOM SIGN -->
         <div class="dorm-sign">
@@ -120,26 +196,24 @@ export function Beyond({ onBack }) {
         <!-- BED -->
         <div class="bed-area">
           <div class="bed-headboard"></div>
+
           <div class="bed-mattress">
-            <div class="bed-pillow bed-pillow-one"></div>
+
+            <button
+              type="button"
+              class="bed-pillow bed-pillow-one"
+              data-panel="enjoy"
+              aria-label="A Few Favorites"
+            ></button>
+
             <div class="bed-pillow bed-pillow-two"></div>
+
             <div class="bed-cover"></div>
+
           </div>
 
           <div class="bed-frame"></div>
-
-          <button
-            type="button"
-            class="bed-object"
-            data-panel="enjoy"
-            aria-label="Things I Enjoy"
-          >
-            <span class="bed-object-label">
-            </span>
-          </button>
-
         </div>
-
 
         <!-- NIGHTSTAND -->
         <div class="dorm-nightstand">
@@ -178,8 +252,6 @@ export function Beyond({ onBack }) {
             aria-label="Things I'm learning"
           >
             <span class="monitor-screen">
-
-              <small>please</small>
 
               <strong>
                 go to bed
@@ -595,7 +667,7 @@ export function Beyond({ onBack }) {
     },
 
     enjoy: {
-      eyebrow: "Recommendations",
+      eyebrow: "RECOMMENDATIONS",
       title: "personal picks",
       body: `
         <div class="favorites-list">
@@ -705,9 +777,21 @@ export function Beyond({ onBack }) {
       object.addEventListener(
         "click",
         () => {
-          openPanel(
-            object.dataset.panel
-          );
+          const panelName =
+            object.dataset.panel;
+
+          openPanel(panelName);
+
+          const checklistItem =
+            section.querySelector(
+              `[data-checklist-panel="${panelName}"]`
+            );
+
+          if (checklistItem) {
+            checklistItem.classList.add(
+              "is-complete"
+            );
+          }
         }
       );
 

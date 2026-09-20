@@ -1,7 +1,6 @@
 /* =========================================================
-   UTOWN / DORM ROOM
+  DORM ROOM
 ========================================================= */
-
 .dorm-portfolio {
   --wall: #eee7da;
   --wall-shadow: #ded3c1;
@@ -35,11 +34,9 @@
   background: var(--wall);
 }
 
-
 /* =========================================================
    ROOM SCENE
 ========================================================= */
-
 .dorm-room-scene {
   position: relative;
   width: 100%;
@@ -47,11 +44,9 @@
   overflow: hidden;
 }
 
-
 /* =========================================================
    WALL
 ========================================================= */
-
 .dorm-wall {
   position: absolute;
   inset: 0 0 250px;
@@ -76,11 +71,9 @@
   background: var(--wall-shadow);
 }
 
-
 /* =========================================================
    WINDOW
 ========================================================= */
-
 .dorm-window {
   position: absolute;
   left: 50%;
@@ -200,11 +193,9 @@
   transform: translateX(-50%);
 }
 
-
 /* =========================================================
    ROOM TITLE
 ========================================================= */
-
 .dorm-room-title {
   position: absolute;
   left: 2rem;
@@ -227,11 +218,9 @@
   font-size: 1.25rem;
 }
 
-
 /* =========================================================
    GALLERY WALL
 ========================================================= */
-
 .dorm-gallery-wall {
   position: absolute;
   right: 7%;
@@ -357,11 +346,9 @@
   transform: rotate(25deg);
 }
 
-
 /* =========================================================
    CORKBOARD
 ========================================================= */
-
 .dorm-corkboard {
   position: absolute;
   left: 10%;
@@ -469,11 +456,153 @@
   top: 23px;
 }
 
+/* =========================================================
+   ROOM CHECKLIST
+========================================================= */
+.dorm-checklist {
+  position: absolute;
+  left: 30%;
+  top: 55%;
+  width: 235px;
+  min-height: 175px;
+  padding: 0.85rem 0.9rem 1rem;
+  z-index: 4;
+  background: var(--paper);
+  border: 3px solid var(--wood-dark);
+  box-shadow:
+    6px 7px 0 rgba(62,43,31,0.12);
+  transform: rotate(1deg);
+}
+
+
+/* HEADER */
+.dorm-checklist-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
+  border-bottom: 2px dashed
+    rgba(98,69,50,0.25);
+}
+
+.dorm-checklist-header span {
+  font-size: 0.4rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--terracotta-dark);
+}
+
+.dorm-checklist-header strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* ITEMS */
+.dorm-checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.dorm-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 18px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+
+/* CHECK BOX */
+.check-box {
+  position: relative;
+  flex: 0 0 11px;
+  width: 11px;
+  height: 11px;
+  border: 1.5px solid var(--wood-dark);
+  background: transparent;
+}
+
+
+/* CHECK MARK */
+.dorm-checklist-item.is-complete
+  .check-box {
+  background: var(--terracotta);
+  border-color: var(--terracotta-dark);
+}
+
+.dorm-checklist-item.is-complete
+  .check-box::after {
+  content: "✓";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:
+    translate(-50%, -55%);
+
+  color: var(--paper);
+  font-size: 0.48rem;
+  font-weight: 900;
+}
+
+
+/* CROSSED-OFF TEXT */
+.dorm-checklist-item.is-complete
+  .check-text {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color:
+    var(--terracotta-dark);
+}
+
+
+/* LITTLE PAPER DETAIL */
+.dorm-checklist::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -7px;
+  width: 42px;
+  height: 11px;
+  transform:
+    translateX(-50%)
+    rotate(-2deg);
+
+  background:
+    rgba(198,161,91,0.58);
+}
+
+
+/* =========================================================
+   CLICKABLE PILLOW
+========================================================= */
+.bed-pillow-one {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+.bed-pillow-one:hover,
+.bed-pillow-one:focus-visible {
+  transform: translateY(-3px);
+}
+
+.bed-pillow-one:focus-visible {
+  outline: 3px solid
+    rgba(201,130,109,0.75);
+  outline-offset: 4px;
+}
 
 /* =========================================================
    SIGN
 ========================================================= */
-
 .dorm-sign {
   position: absolute;
   left: 50%;
@@ -500,11 +629,9 @@
   font-size: 1rem;
 }
 
-
 /* =========================================================
    FLOOR
 ========================================================= */
-
 .dorm-floor {
   position: absolute;
   left: 0;
@@ -522,11 +649,9 @@
   border-top: 8px solid var(--wood-dark);
 }
 
-
 /* =========================================================
    RUG
 ========================================================= */
-
 .dorm-rug {
   position: absolute;
   left: 50%;
@@ -572,11 +697,9 @@
   height: 35px;
 }
 
-
 /* =========================================================
    BED
 ========================================================= */
-
 .bed-area {
   position: absolute;
   left: 3%;
@@ -672,11 +795,9 @@
   font-size: 1.2rem;
 }
 
-
 /* =========================================================
    NIGHTSTAND
 ========================================================= */
-
 .dorm-nightstand {
   position: absolute;
   border: 0;
@@ -766,11 +887,9 @@
   background: var(--wood-dark);
 }
 
-
 /* =========================================================
    DESK
 ========================================================= */
-
 .dorm-desk {
   position: absolute;
   right: 2%;
@@ -828,11 +947,9 @@
   left: 137px;
 }
 
-
 /* =========================================================
    MONITOR
 ========================================================= */
-
 .desk-monitor {
   position: absolute;
   left: 75px;
@@ -862,11 +979,6 @@
     );
 }
 
-.monitor-screen small {
-  font-size: 0.4rem;
-  opacity: 0.5;
-}
-
 .monitor-screen strong {
   margin-top: 0.15rem;
   font-family: Georgia, serif;
@@ -876,7 +988,7 @@
 
 .monitor-tags {
   margin-top: 0.55rem;
-  font-size: 0.35rem;
+  font-size: 0.6rem;
   font-weight: 900;
   line-height: 1.6;
   letter-spacing: 0.05em;
@@ -904,11 +1016,9 @@
   background: var(--wood-dark);
 }
 
-
 /* =========================================================
    LAPTOP
 ========================================================= */
-
 .desk-laptop {
   position: absolute;
   right: 28px;
@@ -972,11 +1082,9 @@
   background: rgba(64,54,47,0.25);
 }
 
-
 /* =========================================================
    CAMERA
 ========================================================= */
-
 .desk-camera {
   position: absolute;
   right: 190px;
@@ -1039,11 +1147,9 @@
   background: var(--terracotta);
 }
 
-
 /* =========================================================
    HEADPHONES
 ========================================================= */
-
 .desk-headphones {
   position: absolute;
   right: 20px;
@@ -1085,11 +1191,9 @@
   right: 4px;
 }
 
-
 /* =========================================================
    CUP
 ========================================================= */
-
 .desk-cup {
   position: absolute;
   right: 6px;
@@ -1112,11 +1216,9 @@
   border-radius: 0 8px 8px 0;
 }
 
-
 /* =========================================================
    BOOKSHELF
 ========================================================= */
-
 .dorm-bookshelf {
   position: absolute;
   left: 47%;
@@ -1211,14 +1313,14 @@
 
 .book-label {
   position: absolute;
-  left: 50%;
-  bottom: -18px;
+  left: 47%;
+  bottom: -14px;
   transform: translateX(-50%);
   white-space: nowrap;
   font-family: Georgia, serif;
   font-size: 0.43rem;
   font-style: italic;
-  color: var(--muted);
+  color: white;
 }
 
 .bookshelf-plant {
@@ -1269,11 +1371,9 @@
   transform: rotate(-5deg);
 }
 
-
 /* =========================================================
    SUITCASE
 ========================================================= */
-
 .dorm-suitcase {
   position: absolute;
   left: 40%;
@@ -1355,11 +1455,9 @@
   background: #e1c08b;
 }
 
-
 /* =========================================================
    TOTE
 ========================================================= */
-
 .dorm-tote {
   position: absolute;
   left: 15%;
@@ -1406,11 +1504,9 @@
   letter-spacing: 0.08em;
 }
 
-
 /* =========================================================
    FLOOR PILLOW
 ========================================================= */
-
 .floor-pillow {
   position: absolute;
   left: 43%;
@@ -1423,11 +1519,9 @@
   box-shadow: 0 6px 0 rgba(62,43,31,0.1);
 }
 
-
 /* =========================================================
    FLOOR PLANT
 ========================================================= */
-
 .floor-plant {
   position: absolute;
   right: 30%;
@@ -1478,11 +1572,9 @@
   transform: rotate(38deg);
 }
 
-
 /* =========================================================
    INFO PANEL
 ========================================================= */
-
 .dorm-info-panel {
   position: fixed;
   inset: 0;
@@ -1555,11 +1647,9 @@
   line-height: 1.7;
 }
 
-
 /* =========================================================
    CONTENT: LIST
 ========================================================= */
-
 .dorm-content-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1573,11 +1663,9 @@
   font-family: Georgia, serif;
 }
 
-
 /* =========================================================
    CONTENT: PILLS
 ========================================================= */
-
 .dorm-pill-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1596,7 +1684,6 @@
 /* =========================================================
    CONTENT: RECOMMENDATIONS
 ========================================================= */
-
 .favorites-list {
   margin-top: 1.5rem;
   border-top: 1px solid rgba(73, 55, 47, 0.16);
@@ -1634,7 +1721,6 @@
 /* =========================================================
    CONTENT: INSPIRATION
 ========================================================= */
-
 .dorm-inspiration-list {
   border-top: 1px solid rgba(64,54,47,0.15);
 }
@@ -1664,7 +1750,6 @@
   font-size: 1rem;
   opacity: 0.75;
 }
-
 
 /* =========================================================
    CONTENT: TRAVEL
@@ -1716,7 +1801,6 @@
 /* =========================================================
    CONTENT: PHOTOGRAPHY
 ========================================================= */
-
 .dorm-photo-content {
   text-align: center;
 }
@@ -1733,11 +1817,9 @@
   letter-spacing: 0.1em;
 }
 
-
 /* =========================================================
    CONTENT: INTERESTS
 ========================================================= */
-
 .reading-list {
   display: flex;
   flex-direction: column;
@@ -1785,11 +1867,9 @@
   text-align: right;
 }
 
-
 /* =========================================================
    CONTENT: MUSIC
 ========================================================= */
-
 .dorm-music-content {
   text-align: center;
 }
@@ -1821,11 +1901,9 @@
   font-size: 1rem;
 }
 
-
 /* =========================================================
    CONTENT: FACTS
 ========================================================= */
-
 .dorm-fact-list > div {
   display: grid;
   grid-template-columns: 35px 1fr;
@@ -1845,11 +1923,9 @@
   font-size: 1rem;
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
-
 @media (max-width: 1050px) {
 
   .dorm-room-scene {
@@ -1878,7 +1954,6 @@
     left: 31%;
   }
 }
-
 
 @media (max-width: 760px) {
 
@@ -2063,41 +2138,31 @@
 .dorm-portfolio
   [data-panel]::before {
   content: "CLICK TO EXPLORE";
-
   position: absolute;
   left: 50%;
   top: -34px;
   z-index: 50;
-
   transform:
     translateX(-50%)
     translateY(4px);
-
   padding: 0.4rem 0.6rem;
-
   white-space: nowrap;
-
   border: 2px solid var(--wood-dark);
-
   background: var(--paper);
   color: var(--ink);
-
   font-family: Arial, sans-serif;
   font-size: 0.42rem;
   font-weight: 900;
   letter-spacing: 0.08em;
-
   box-shadow:
     3px 4px 0 rgba(62,43,31,0.12);
 
   opacity: 0;
   pointer-events: none;
-
   transition:
     opacity 0.18s ease,
     transform 0.18s ease;
 }
-
 
 .dorm-portfolio
   [data-panel]:hover::before,
@@ -2110,7 +2175,6 @@
     translateY(0);
 }
 
-
 /* Keyboard accessibility */
 .dorm-portfolio
   [data-panel]:focus-visible {
@@ -2122,7 +2186,6 @@
 /* =========================================================
    OBJECT-SPECIFIC HOVER MOVEMENT
 ========================================================= */
-
 .dorm-corkboard:hover,
 .dorm-corkboard:focus-visible {
   transform: rotate(-1deg) translateY(-4px);
@@ -2168,22 +2231,18 @@
   transform: scale(1.08);
 }
 
-
 /* =========================================================
    DISABLE THE GENERIC LABEL ON THE CAMERA / HEADPHONES
    WHEN THEIR PARENT IS TOO SMALL
 ========================================================= */
-
 .desk-camera::before,
 .desk-headphones::before {
   top: -38px;
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
-
 @media (max-width: 760px) {
 
   .dorm-portfolio
