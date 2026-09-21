@@ -1,5 +1,3 @@
-import "../styles/experience.css";
-
 export function Experience() {
   const section = document.createElement("div");
   section.classList.add("experience-room");
