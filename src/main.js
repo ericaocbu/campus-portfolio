@@ -5,8 +5,6 @@ import { Navigation } from "./components/Navigation.js";
 import { SectionView } from "./components/SectionView.js";
 import { TourHUD } from "./components/TourHUD.js";
 
-import "./style.css";
-
 
 /* =====================================================
    APP SETUP
