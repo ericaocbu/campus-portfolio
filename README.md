@@ -1,6 +1,9 @@
 # Campus Portfolio
+<img width="1512" height="784" alt="Screenshot 2026-09-20 at 11 42 51 PM" src="https://github.com/user-attachments/assets/54f9922e-3e4a-4bfa-96a4-74e8053ab46d" />
 
-An interactive portfolio website built around a virtual campus. Each area of the campus represents a 
+
+
+<br> An interactive portfolio website built around a virtual campus. Each area of the campus represents a 
 different part of my portfolio, making it possible to explore my work, experience, education, and more 
 in a less traditional way.
 
@@ -46,12 +49,12 @@ campus-portfolio/
 │   │   └── projects.js         # Project portfolio data
 │   │
 │   ├── sections/
-│   │   ├── about.js            # About / education / skills content
-│   │   ├── beyond.js           # Additional information and interests
-│   │   ├── contact.js          # Contact information
-│   │   ├── experience.js       # Professional experience
-│   │   ├── home.js             # Home / landing page content
-│   │   └── projects.js         # Project portfolio section
+│   │   ├── About.js            # About / education / skills content
+│   │   ├── Beyond.js           # Additional information and interests
+│   │   ├── Contact.js          # Contact information
+│   │   ├── Experience.js       # Professional experience
+│   │   ├── Home.js             # Home / landing page content
+│   │   └── Projects.js         # Project portfolio section
 │   │
 │   ├── styles/
 │   │   ├── beyond.css          # Beyond section styles
@@ -64,7 +67,7 @@ campus-portfolio/
 │   │   └── sections.css        # Shared section styles
 │   │
 │   ├── main.js                 # Application entry point
-│   └── style.css               # Global styles
+│   └── style.css               # Main stylesheet
 │
 ├── package.json
 └── README.md
@@ -72,15 +75,16 @@ campus-portfolio/
 
 ## Organization
 
-The project is organized around a component-based React structure:
-- **components/** contains reusable React components that make up the interactive campus experience.
+The project is organized around the following structure:
+- **components/** contains reusable JavaScript components that make up the interactive campus experience.
 - **data/** stores structured information used throughout the portfolio, including campus locations and projects.
 - **sections/** separates portfolio content into individual sections such as About, Experience, Projects, and Contact.
 - **styles/** contains CSS files organized by campus areas and portfolio sections.
-- **main.js** serves as the entry point for the application, while style.css contains global styling.
+- **main.js** serves as the entry point for the application and initializes the campus experience,
+  while **style.css** serves as the main stylesheet and imports the project's individual CSS files.
 
 The campus itself acts as the main navigation system, with different buildings representing different areas of the portfolio.
 
 ## Live Website
 
-[View the Campus Portfolio](YOUR-LIVE-URL)
+[View the Campus Portfolio](https://ericaocbu.github.io/campus-portfolio/)
