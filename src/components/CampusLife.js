@@ -19,6 +19,9 @@ export function CampusLife() {
 
       <span class="road-line road-line-one"></span>
       <span class="road-line road-line-two"></span>
+      <span class="road-line road-line-three"></span>
+      <span class="road-line road-line-four"></span>
+      <span class="road-line road-line-five"></span>
 
       <span class="road-curb"></span>
 

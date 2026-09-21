@@ -49,25 +49,19 @@
 .campus-paths {
   position: absolute;
   inset: 0;
-
   z-index: 1;
-
   pointer-events: none;
 }
 
 .campus-path {
   position: absolute;
-
   pointer-events: none;
 }
 
 .path-line {
   position: absolute;
-
   display: block;
-
   border-radius: 999px;
-
   background:
     repeating-linear-gradient(
       90deg,
@@ -76,28 +70,19 @@
       #d4d5ca 45px,
       #d4d5ca 90px
     );
-
   box-shadow:
     0 0 0 6px
     rgba(255, 255, 255, 0.22);
 }
 
-.path-arrow {
-  display: none;
-}
-
-
 /* =====================================================
    LIBRARY ↓
 ===================================================== */
-
 .path-library {
   width: 28px;
   height: 330px;
-
   left: 50%;
   top: 250px;
-
   transform:
     translateX(-50%);
 }
@@ -105,10 +90,8 @@
 .path-library .path-line {
   width: 28px;
   height: 330px;
-
   left: 0;
   top: 0;
-
   background:
     repeating-linear-gradient(
       180deg,
@@ -119,17 +102,13 @@
     );
 }
 
-
 /* =====================================================
    LEFT HORIZONTAL ROUTE
-
    INNOVATION LAB ───────── MAIN CAMPUS
 ===================================================== */
-
 .path-lab {
   width: 540px;
   height: 28px;
-
   left: 9%;
   top: 49%;
 }
@@ -137,25 +116,19 @@
 .path-lab .path-line {
   width: 540px;
   height: 28px;
-
   left: 0;
   top: 50%;
-
   transform:
     translateY(-50%);
 }
 
-
 /* =====================================================
    RIGHT HORIZONTAL ROUTE
-
    MAIN CAMPUS ───────── LECTURE HALL
 ===================================================== */
-
 .path-hall {
   width: 540px;
   height: 28px;
-
   right: 9%;
   top: 49%;
 }
@@ -163,29 +136,19 @@
 .path-hall .path-line {
   width: 540px;
   height: 28px;
-
   right: 0;
   top: 50%;
-
   transform:
     translateY(-50%);
 }
 
-
 /* =====================================================
    LEFT VERTICAL ROUTE
-
-   INNOVATION LAB
-          │
-          │
-          │
-   FOOD CANTEEN
+   INNOVATION LAB --- FOOD CANTEEN
 ===================================================== */
-
 .path-canteen {
   width: 28px;
   height: 430px;
-
   left: 9%;
   top: 49%;
 }
@@ -193,10 +156,8 @@
 .path-canteen .path-line {
   width: 28px;
   height: 430px;
-
   left: 0;
   top: 0;
-
   background:
     repeating-linear-gradient(
       180deg,
@@ -207,21 +168,13 @@
     );
 }
 
-
 /* =====================================================
    RIGHT VERTICAL ROUTE
-
-   LECTURE HALL
-          │
-          │
-          │
-   UTOWN
+   LECTURE HALL --- THE DORMS
 ===================================================== */
-
 .path-utown {
   width: 28px;
   height: 430px;
-
   right: 9%;
   top: 49%;
 }
@@ -229,10 +182,8 @@
 .path-utown .path-line {
   width: 28px;
   height: 430px;
-
   right: 0;
   top: 0;
-
   background:
     repeating-linear-gradient(
       180deg,
@@ -246,7 +197,6 @@
 /* ========================================
    LANDSCAPING
 ======================================== */
-
 .campus-landscaping {
   position: absolute;
   inset: 0;
@@ -361,7 +311,6 @@
 }
 
 /* Shrubs */
-
 .shrub {
   position: absolute;
   width: 62px;
@@ -409,7 +358,6 @@
 }
 
 /* Lamps */
-
 .lamp {
   position: absolute;
   width: 7px;
@@ -452,7 +400,6 @@
 /* ========================================
    START TOUR BUTTON
 ======================================== */
-
 .campus-tour-cta {
   position: fixed;
   left: 50%;
@@ -535,7 +482,6 @@
 /* ========================================
    CAMPUS DIRECTORY
 ======================================== */
-
 .campus-navigation {
   position: fixed;
   top: 1.5rem;
@@ -740,7 +686,6 @@
 /* ========================================
    TOUR HUD
 ======================================== */
-
 .tour-hud {
   position: fixed;
   right: 1.5rem;
@@ -880,33 +825,10 @@
   }
 }
 
-
-
 /* =====================================================
    CAMPUS ENVIRONMENT — NEW DETAIL PASS
-===================================================== */
-
-
-/* =====================================================
-   HIDE OLD EMOJI ENVIRONMENT
-===================================================== */
-
-.campus-trees::before,
-.campus-trees::after,
-.campus-greenery::before,
-.campus-greenery::after {
-  display: none;
-}
-
-
-/* =====================================================
    PATH SYSTEM
 ===================================================== */
-
-.path-arrow {
-  display: none;
-}
-
 .path-line {
   background:
     repeating-linear-gradient(
@@ -922,18 +844,14 @@
     inset 0 1px rgba(24, 60, 53, 0.08);
 }
 
-
 /* =====================================================
-   LIBRARY → MAIN CAMPUS
+   LIBRARY → MAIN CAMPUS.
 ===================================================== */
-
 .path-library {
   width: 400px;
   height: 380px;
-
   left: 50%;
   top: 25%;
-
   transform:
     translateX(-50%);
 }
@@ -941,13 +859,10 @@
 .path-library .path-line {
   width: 24px;
   height: 205px;
-
   left: 50%;
   top: 0;
-
   transform:
     translateX(-50%);
-
   background:
     repeating-linear-gradient(
       180deg,
@@ -958,15 +873,12 @@
     );
 }
 
-
 /* =====================================================
    LEFT MAIN PATH
 ===================================================== */
-
 .path-lab {
   width: 540px;
   height: 250px;
-
   left: 10%;
   top: 48%;
 }
@@ -974,23 +886,18 @@
 .path-lab .path-line {
   width: 410px;
   height: 24px;
-
   left: 0;
   top: 50%;
-
   transform:
     translateY(-50%);
 }
 
-
 /* =====================================================
    RIGHT MAIN PATH
 ===================================================== */
-
 .path-hall {
   width: 540px;
   height: 250px;
-
   right: 10%;
   top: 48%;
 }
@@ -998,23 +905,18 @@
 .path-hall .path-line {
   width: 410px;
   height: 24px;
-
   right: 0;
   top: 50%;
-
   transform:
     translateY(-50%);
 }
 
-
 /* =====================================================
    LEFT LOWER PATH
 ===================================================== */
-
 .path-canteen {
   width: 540px;
   height: 350px;
-
   left: 10%;
   bottom: 17%;
 }
@@ -1022,10 +924,8 @@
 .path-canteen .path-line {
   width: 24px;
   height: 245px;
-
   left: 27%;
   top: 0;
-
   background:
     repeating-linear-gradient(
       180deg,
@@ -1036,15 +936,12 @@
     );
 }
 
-
 /* =====================================================
    RIGHT LOWER PATH
 ===================================================== */
-
 .path-utown {
   width: 540px;
   height: 350px;
-
   right: 10%;
   bottom: 17%;
 }
@@ -1052,10 +949,8 @@
 .path-utown .path-line {
   width: 24px;
   height: 245px;
-
   left: 73%;
   top: 0;
-
   background:
     repeating-linear-gradient(
       180deg,
@@ -1070,18 +965,13 @@
 /* =====================================================
    TREE SYSTEM
 ===================================================== */
-
 .campus-tree {
   position: absolute;
-
   width: 54px;
   height: 68px;
-
   transform:
     translate(-50%, -50%);
-
   opacity: 0.9;
-
   filter:
     drop-shadow(
       0 5px 4px
@@ -1091,18 +981,14 @@
 
 .tree-crown {
   position: absolute;
-
   left: 50%;
   top: 0;
-
   width: 48px;
   height: 48px;
-
   transform:
     translateX(-50%);
 
   border-radius: 50%;
-
   background:
     radial-gradient(
       circle at 35% 30%,
@@ -1119,18 +1005,13 @@
 
 .tree-trunk {
   position: absolute;
-
   left: 50%;
   bottom: 0;
-
   width: 9px;
   height: 28px;
-
   transform:
     translateX(-50%);
-
   border-radius: 3px;
-
   background: #756b58;
 }
 
@@ -1144,19 +1025,14 @@
 /* =====================================================
    BUSHES
 ===================================================== */
-
 .campus-bush {
   position: absolute;
-
   width: 52px;
   height: 25px;
-
   transform:
     translate(-50%, -50%);
-
   border-radius:
     55% 55% 45% 45%;
-
   background:
     radial-gradient(
       circle at 25% 40%,
@@ -1165,11 +1041,9 @@
       #6c8769 26%,
       #6c8769 100%
     );
-
   border:
     2px solid
     rgba(24, 60, 53, 0.12);
-
   box-shadow:
     0 5px 8px
     rgba(24, 60, 53, 0.08);
@@ -1179,20 +1053,14 @@
 /* =====================================================
    LANDSCAPED AREAS
 ===================================================== */
-
 .campus-landscape {
   position: absolute;
-
   display: block;
-
   transform:
     rotate(var(--landscape-rotation));
-
   border-radius: 50%;
-
   background:
     rgba(126, 151, 115, 0.18);
-
   border:
     1px solid
     rgba(24, 60, 53, 0.08);
@@ -1201,14 +1069,10 @@
 .campus-landscape::before,
 .campus-landscape::after {
   content: "";
-
   position: absolute;
-
   width: 7px;
   height: 7px;
-
   border-radius: 50%;
-
   background:
     #8b9b75;
 
@@ -1225,37 +1089,27 @@
   top: 58%;
 }
 
-
 /* =====================================================
    BENCHES
 ===================================================== */
-
 .campus-bench {
   position: absolute;
-
   width: 62px;
   height: 38px;
-
   transform:
     translate(-50%, -50%)
     rotate(var(--bench-rotation));
-
   opacity: 0.9;
 }
 
 .bench-seat {
   position: absolute;
-
   left: 3px;
   top: 5px;
-
   width: 56px;
   height: 9px;
-
   border-radius: 3px;
-
   background: #8a775d;
-
   border:
     1px solid
     rgba(24, 60, 53, 0.22);
@@ -1267,30 +1121,21 @@
 
 .bench-seat::after {
   content: "";
-
   position: absolute;
-
   left: 0;
   top: 15px;
-
   width: 56px;
   height: 7px;
-
   border-radius: 3px;
-
   background: #75644f;
 }
 
 .bench-leg {
   position: absolute;
-
   top: 22px;
-
   width: 5px;
   height: 14px;
-
   border-radius: 2px;
-
   background: #4d5d50;
 }
 
@@ -1302,39 +1147,28 @@
   right: 12px;
 }
 
-
 /* =====================================================
    CAMPUS LAMPS
 ===================================================== */
-
 .campus-lamp {
   position: absolute;
-
   width: 18px;
   height: 52px;
-
   transform:
     translate(-50%, -50%);
-
   opacity: 0.7;
 }
 
 .lamp-light {
   position: absolute;
-
   left: 50%;
   top: 0;
-
   width: 12px;
   height: 12px;
-
   transform:
     translateX(-50%);
-
   border-radius: 50%;
-
   background: #e9dfad;
-
   border:
     1px solid
     rgba(24, 60, 53, 0.2);
@@ -1346,43 +1180,29 @@
 
 .lamp-pole {
   position: absolute;
-
   left: 50%;
   top: 10px;
-
   width: 4px;
   height: 40px;
-
   transform:
     translateX(-50%);
-
   border-radius: 999px;
-
   background: #59685d;
 }
 
 /* =====================================================
    EXTRA CAMPUS DETAILS
 ===================================================== */
-
 .campus-details::after {
   content: "WELCOME";
-
   position: absolute;
-
   left: 50%;
-
   top: calc(52% + 165px);
-
   transform:
     translateX(-50%);
-
   font-size: 0.58rem;
-
   font-weight: 800;
-
   letter-spacing: 0.25em;
-
   opacity: 0.35;
 }
 
@@ -1390,9 +1210,7 @@
 /* =====================================================
    MOBILE
 ===================================================== */
-
 @media (max-width: 768px) {
-
   .campus-tree {
     transform:
       translate(-50%, -50%)
@@ -1432,43 +1250,25 @@
 /* =====================================================
    MAP START TOUR BUTTON
 ===================================================== */
-
 .map-start-tour {
   position: fixed;
-
   left: 50%;
   bottom: 1.5rem;
-
   z-index: 100;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   display: flex;
-
   align-items: center;
-
   gap: 0.75rem;
-
   min-width: 255px;
-
-  padding:
-    0.75rem 1rem;
-
+  padding: 0.75rem 1rem;
   border:
     2px solid
     #183c35;
 
   border-radius: 8px;
-
-  background:
-    #f5f3eb;
-
-  color:
-    #183c35;
-
+  background:#f5f3eb;
+  color:#183c35;
   cursor: pointer;
-
   box-shadow:
     0 8px 24px
     rgba(24, 60, 53, 0.16);
@@ -1484,12 +1284,8 @@
     translateX(-50%)
     translateY(-3px);
 
-  background:
-    #183c35;
-
-  color:
-    #f5f3eb;
-
+  background:#183c35;
+  color:#f5f3eb;
   box-shadow:
     0 12px 28px
     rgba(24, 60, 53, 0.2);
@@ -1499,78 +1295,70 @@
   outline:
     3px solid
     #183c35;
-
-  outline-offset:
-    4px;
+  outline-offset: 4px;
 }
 
 .map-start-tour-icon {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 30px;
   height: 30px;
-
   border-radius: 50%;
-
-  background:
-    #e8eadf;
-
+  background:#e8eadf;
   font-size: 0.8rem;
 }
 
 .map-start-tour-text {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
-
   gap: 2px;
-
   flex: 1;
 }
 
 .map-start-tour-text strong {
   font-size: 0.62rem;
-
   letter-spacing:
     0.08em;
 }
 
 .map-start-tour-text small {
   font-size: 0.58rem;
-
   opacity: 0.55;
 }
 
 .map-start-tour-arrow {
   font-size: 1rem;
-
   font-weight: 700;
 }
-
 
 /* =====================================================
    MOBILE
 ===================================================== */
-
 @media (max-width: 768px) {
 
   .pond {
     left: 4%;
     top: 56%;
-
     width: 180px;
     height: 125px;
   }
 
   .map-start-tour {
     bottom: 1rem;
-
     min-width: 230px;
+  }
+
+  .campus-discovery-hud {
+    left: 16px;
+    bottom: 18px;
+  }
+
+  .campus-discovery-message {
+    left: 16px;
+    bottom: 72px;
+    width: min(300px, calc(100vw - 32px));
   }
 
 }
@@ -1578,41 +1366,27 @@
 /* =====================================================
    CAMPUS DISCOVERY HUD
 ===================================================== */
-
 .campus-discovery-hud {
   position: fixed;
   left: 24px;
   bottom: 24px;
-  pointer-events: auto;
   z-index: 99998;
   display: flex;
   align-items: center;
   gap: 0.55rem;
   padding: 0.7rem 0.85rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.18);
-
+  border: 1px solid rgba(24, 60, 53, 0.18);
   border-radius: 8px;
-
-  background:
-    rgba(245, 243, 235, 0.96);
-
+  background: rgba(245, 243, 235, 0.96);
   color: #183c35;
-
   box-shadow:
     0 10px 28px
     rgba(24, 60, 53, 0.14);
-
   backdrop-filter: blur(12px);
-
   cursor: pointer;
-
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -1621,227 +1395,110 @@
 
 .campus-discovery-hud:hover {
   transform: translateY(-2px);
-
   box-shadow:
     0 14px 32px
     rgba(24, 60, 53, 0.18);
 }
 
 .campus-discovery-hud:focus-visible {
-  outline:
-    3px solid
-    #183c35;
-
-  outline-offset:
-    4px;
+  outline: 3px solid #183c35;
+  outline-offset: 4px;
 }
 
 .campus-discovery-star {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 24px;
   height: 24px;
-
   border-radius: 50%;
-
-  background:
-    #183c35;
-
-  color:
-    #f5f3eb;
-
+  background: #183c35;
+  color: #f5f3eb;
   font-size: 0.7rem;
 }
 
 .campus-discovery-copy {
   display: flex;
-
   flex-direction: column;
-
   gap: 2px;
 }
 
 .campus-discovery-copy strong {
   font-size: 0.58rem;
-
-  letter-spacing:
-    0.1em;
+  letter-spacing: 0.1em;
 }
 
 .campus-discovery-count {
   font-size: 0.52rem;
-
-  opacity:
-    0.5;
+  opacity: 0.5;
 }
-
 
 /* =====================================================
    DISCOVERY MESSAGE
 ===================================================== */
-
 .campus-discovery-message {
   position: fixed;
-
   left: 24px;
   bottom: 82px;
-
   z-index: 99999;
-
   width: 320px;
-
-  padding:
-    1rem 1.1rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.16);
-
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(24, 60, 53, 0.16);
   border-radius: 9px;
-
-  background:
-    rgba(245, 243, 235, 0.97);
-
-  color:
-    #183c35;
-
+  background: rgba(245, 243, 235, 0.97);
+  color: #183c35;
   box-shadow:
     0 16px 40px
     rgba(24, 60, 53, 0.16);
 
-  backdrop-filter:
-    blur(14px);
-
-  opacity:
-    0;
-
-  visibility:
-    hidden;
-
-  transform:
-    translateY(15px);
-
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
   transition:
     opacity 200ms ease,
     transform 200ms ease,
     visibility 200ms ease;
-
-  pointer-events:
-    none;
+  pointer-events: none;
 }
 
 .campus-discovery-message.is-visible {
-  opacity:
-    1;
-
-  visibility:
-    visible;
-
-  transform:
-    translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .campus-discovery-message-eyebrow {
   display: block;
-
-  margin-bottom:
-    0.3rem;
-
-  font-size:
-    0.5rem;
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    0.12em;
-
-  opacity:
-    0.45;
+  margin-bottom: 0.3rem;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.45;
 }
 
 .campus-discovery-message-title {
   display: block;
-
-  margin-bottom:
-    0.35rem;
-
-  font-size:
-    0.82rem;
-
-  letter-spacing:
-    0.04em;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 .campus-discovery-message-text {
   display: block;
-
-  font-size:
-    0.62rem;
-
-  line-height:
-    1.55;
-
-  opacity:
-    0.62;
+  font-size: 0.62rem;
+  line-height: 1.55;
+  opacity: 0.62;
 }
 
-
-
-/* =====================================================
-   DISCOVERY MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  .campus-discovery-hud {
-    left:
-      16px;
-
-    bottom:
-      18px;
-  }
-
-  .campus-discovery-message {
-    left:
-      16px;
-
-    bottom:
-      72px;
-
-    width:
-      min(300px, calc(100vw - 32px));
-  }
-
-}
-
-/* ///////////////////// */
 /* =====================================================
    CAMPUS LIFE — FINAL LAYER SYSTEM
 ===================================================== */
-
-/*
- * IMPORTANT:
- *
- * CampusLife is now ONLY the foreground layer.
- *
- * The road, bus, and bus stop are moved into
- * .campus-environment by CampusMap.js.
- *
- * Discovery UI is moved outside the map entirely.
- */
-
 .campus-life {
   position: absolute;
   inset: 0;
-
   z-index: 30;
-
   pointer-events: none;
-
   overflow: visible;
 }
 
@@ -1850,7 +1507,7 @@
 .campus-flower-bed,
 .campus-fountain,
 .campus-bell-tower,
-.campus-cat 
+.campus-cat,
 .campus-discovery-hud {
   pointer-events: auto;
 }
@@ -1858,53 +1515,34 @@
 /* =====================================================
    TOP ROAD
 ===================================================== */
-
 .campus-road {
   position: absolute;
-
   left: 0;
   right: 0;
   top: 3.5%;
-
   height: 78px;
-
   z-index: 3;
-
   pointer-events: none;
-
   background: #aeb2aa;
-
-  border-top:
-    3px solid
-    rgba(24, 60, 53, 0.18);
-
-  border-bottom:
-    3px solid
-    rgba(24, 60, 53, 0.18);
-
+  border-top: 3px solid rgba(24, 60, 53, 0.18);
+  border-bottom: 3px solid rgba(24, 60, 53, 0.18);
   box-shadow:
     0 8px 18px
     rgba(24, 60, 53, 0.07);
 }
 
 
-/* road markings */
-
+/* =====================================================
+   ROAD MARKINGS
+===================================================== */
 .road-line {
   position: absolute;
-
   top: 50%;
-
   width: 145px;
   height: 4px;
-
-  transform:
-    translateY(-50%);
-
+  transform: translateY(-50%);
   border-radius: 999px;
-
   background: #e9dfb5;
-
   opacity: 0.9;
 }
 
@@ -1916,42 +1554,39 @@
   right: 30px;
 }
 
-
-/* road curb */
-
-.road-curb {
-  position: absolute;
-
-  inset: 7px 0;
-
-  border-top:
-    1px solid
-    rgba(245, 243, 235, 0.25);
-
-  border-bottom:
-    1px solid
-    rgba(245, 243, 235, 0.25);
+.road-line-three {
+  left: 400px;
 }
 
+.road-line-four {
+  left: 800px;
+}
+
+.road-line-five {
+  left: 1200px;
+}
+
+/* =====================================================
+   ROAD CURB
+===================================================== */
+.road-curb {
+  position: absolute;
+  inset: 7px 0;
+  border-top: 1px solid rgba(245, 243, 235, 0.25);
+  border-bottom: 1px solid rgba(245, 243, 235, 0.25);
+}
 
 /* =====================================================
    BUS
 ===================================================== */
-
 .campus-bus {
   position: absolute;
-
   top: calc(3.5% + 15px);
-
   left: -160px;
-
   width: 125px;
   height: 48px;
-
   z-index: 5;
-
   pointer-events: none;
-
   animation:
     campusBusLoop
     28s linear
@@ -1960,20 +1595,12 @@
 
 .bus-body {
   position: absolute;
-
   left: 0;
   bottom: 5px;
-
   width: 125px;
   height: 35px;
-
-  border:
-    2px solid
-    #183c35;
-
-  border-radius:
-    8px 8px 5px 5px;
-
+  border: 2px solid #183c35;
+  border-radius: 8px 8px 5px 5px;
   background: #f5f3eb;
 
   box-shadow:
@@ -1983,102 +1610,67 @@
 
 .bus-roof {
   position: absolute;
-
   left: 8px;
   top: 4px;
-
   width: 108px;
   height: 7px;
-
-  border-radius: 999px;
-
-  background: #183c35;
-
   z-index: 2;
+  border-radius: 999px;
+  background: #183c35;
 }
 
 .bus-front-window {
   position: absolute;
-
   left: 8px;
   top: 13px;
-
   width: 19px;
   height: 14px;
-
-  border:
-    1px solid
-    #183c35;
-
+  border: 1px solid #183c35;
   background: #c9d8d2;
 }
 
 .bus-window-group {
   position: absolute;
-
   left: 31px;
   top: 9px;
-
   display: flex;
-
   gap: 4px;
 }
 
 .bus-window {
   width: 22px;
   height: 15px;
-
-  border:
-    1px solid
-    #183c35;
-
+  border: 1px solid #183c35;
   background: #c9d8d2;
 }
 
 .bus-door {
   position: absolute;
-
   right: 7px;
   top: 9px;
-
   width: 15px;
   height: 23px;
-
-  border:
-    1px solid
-    #183c35;
-
+  border: 1px solid #183c35;
   background: #d9e2dc;
 }
 
 .bus-route {
   position: absolute;
-
   right: 10px;
   top: 3px;
-
   z-index: 3;
-
   color: #f5f3eb;
-
   font-size: 0.45rem;
   font-weight: 900;
 }
 
 .bus-wheel {
   position: absolute;
-
   bottom: 0;
-
   width: 15px;
   height: 15px;
-
-  border:
-    2px solid
-    #183c35;
-
+  border: 2px solid #183c35;
   border-radius: 50%;
-
   background: #4d5d50;
 }
 
@@ -2091,85 +1683,55 @@
 }
 
 @keyframes campusBusLoop {
-
   0% {
-    transform:
-      translateX(0);
+    transform: translateX(0);
   }
 
   100% {
-    transform:
-      translateX(2160px);
+    transform: translateX(2160px);
   }
-
 }
-
 
 /* =====================================================
    BUS STOP
 ===================================================== */
-
 .campus-bus-stop {
   position: absolute;
-
   left: 12%;
   top: 3.5%;
-
   width: 78px;
   height: 78px;
-
   z-index: 6;
-
   pointer-events: none;
 }
 
 .bus-stop-pole {
   position: absolute;
-
   left: 50%;
   bottom: 0;
-
   width: 4px;
   height: 55px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   background: #40564c;
-
   border-radius: 999px;
 }
 
 .bus-stop-sign {
   position: absolute;
-
   left: 50%;
   top: 7px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 32px;
   height: 32px;
-
-  transform:
-    translateX(-50%);
-
-  border:
-    2px solid
-    #183c35;
-
+  transform: translateX(-50%);
+  border: 2px solid #183c35;
   border-radius: 50%;
-
   background: #f5f3eb;
-
   color: #183c35;
-
   font-size: 0.46rem;
   font-weight: 900;
-
   box-shadow:
     0 3px 8px
     rgba(24, 60, 53, 0.1);
@@ -2177,101 +1739,68 @@
 
 .bus-stop-bench {
   position: absolute;
-
   left: 3px;
   bottom: 3px;
-
   width: 46px;
   height: 6px;
-
   border-radius: 3px;
-
   background: #756b58;
-
   box-shadow:
-    0 5px 0 -1px #40564c;
+    0 5px 0 -1px
+    #40564c;
 }
 
 /* =====================================================
    BELL TOWER — REFINED CAMPUS LANDMARK
 ===================================================== */
-
 .campus-bell-tower {
   position: absolute;
-
   left: 9%;
   top: 13%;
-
   width: 125px;
   height: 205px;
-
-  padding: 0;
-
-  border: 0;
-
-  background: transparent;
-
-  pointer-events: auto;
-
-  cursor: pointer;
-
   z-index: 35;
-
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: auto;
+  cursor: pointer;
   color: #183c35;
-
   transform-origin: bottom center;
-
   transition:
     transform 180ms ease;
 }
 
 .campus-bell-tower:hover {
-  transform:
-    translateY(-4px);
+  transform: translateY(-4px);
 }
 
-
-/* ground shadow */
-
+/* =====================================================
+   GROUND SHADOW
+===================================================== */
 .bell-tower-shadow {
   position: absolute;
-
   left: 12px;
   bottom: 1px;
-
   width: 101px;
   height: 14px;
-
   border-radius: 50%;
-
   background:
     rgba(24, 60, 53, 0.13);
-
-  filter:
-    blur(2px);
+  filter: blur(2px);
 }
-
 
 /* =====================================================
    TOWER BUILDING
 ===================================================== */
-
 .bell-tower-building {
   position: absolute;
-
   left: 31px;
   bottom: 14px;
-
   width: 64px;
   height: 148px;
-
-  border:
-    2px solid
-    #183c35;
-
-  border-radius:
-    2px 2px 0 0;
-
+  border: 2px solid #183c35;
+  border-radius: 2px 2px 0 0;
   background:
     linear-gradient(
       90deg,
@@ -2279,26 +1808,19 @@
       #e9e4d7 45%,
       #ddd7c7 100%
     );
-
   box-shadow:
     6px 8px 0
     rgba(24, 60, 53, 0.07);
-
   overflow: visible;
 }
 
 
 /* stone blocks */
-
 .bell-tower-building::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   opacity: 0.22;
-
   background:
     repeating-linear-gradient(
       to bottom,
@@ -2311,50 +1833,29 @@
 
 
 /* bottom architectural trim */
-
 .bell-tower-building::after {
   content: "";
-
   position: absolute;
-
   left: -3px;
   right: -3px;
   bottom: 15px;
-
   height: 5px;
-
-  border-top:
-    1px solid
-    rgba(24, 60, 53, 0.3);
-
-  border-bottom:
-    1px solid
-    rgba(24, 60, 53, 0.12);
-
+  border-top: 1px solid rgba(24, 60, 53, 0.3);
+  border-bottom: 1px solid rgba(24, 60, 53, 0.12);
   background: #c1b9a7;
 }
-
 
 /* =====================================================
    ROOF
 ===================================================== */
-
 .bell-tower-roof {
   position: absolute;
-
   left: -8px;
   top: -38px;
-
   width: 76px;
   height: 43px;
-
-  background:
-    #183c35;
-
-  border:
-    2px solid
-    #102f2a;
-
+  background: #183c35;
+  border: 2px solid #102f2a;
   clip-path:
     polygon(
       50% 0,
@@ -2369,363 +1870,195 @@
     );
 }
 
-
-/* little roof lip */
-
 .bell-tower-roof::after {
   content: "";
-
   position: absolute;
-
   left: 4px;
   right: 4px;
   bottom: 3px;
-
   height: 4px;
-
-  background:
-    #102f2a;
+  background: #102f2a;
 }
-
 
 /* =====================================================
    SPIRE
 ===================================================== */
-
 .bell-tower-spire {
   position: absolute;
-
   left: 50.5%;
   top: -10px;
-
   width: 4px;
   height: 24px;
-
-  transform:
-    translateX(-50%);
-
-  background:
-    #183c35;
+  transform: translateX(-50%);
+  background: #183c35;
 }
 
 .bell-tower-spire::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: -5px;
-
   width: 8px;
   height: 8px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   border-radius: 50%;
-
-  background:
-    #183c35;
+  background: #183c35;
 }
-
 
 /* =====================================================
    BELL CHAMBER
 ===================================================== */
-
 .bell-tower-window {
   position: absolute;
-
   left: 50%;
   top: 15px;
-
   width: 32px;
   height: 39px;
-
-  transform:
-    translateX(-50%);
-
-  border:
-    2px solid
-    #183c35;
-
-  border-radius:
-    18px 18px 3px 3px;
-
-  background:
-    #b9cfca;
-
+  transform: translateX(-50%);
+  border: 2px solid #183c35;
+  border-radius: 18px 18px 3px 3px;
+  background: #b9cfca;
   overflow: hidden;
 }
 
-
-/* vertical opening */
-
 .bell-tower-window::before {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 0;
   bottom: 0;
-
   width: 2px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   background:
     rgba(24, 60, 53, 0.35);
 }
-
-
-/* horizontal opening */
 
 .bell-tower-window::after {
   content: "";
-
   position: absolute;
-
   left: 0;
   right: 0;
   top: 18px;
-
   height: 2px;
-
   background:
     rgba(24, 60, 53, 0.35);
 }
-
 
 /* =====================================================
    BELL
 ===================================================== */
-
 .bell-tower-bell {
   position: absolute;
-
   left: 50%;
   top: 27px;
-
   width: 18px;
   height: 19px;
-
-  transform:
-    translateX(-50%);
-
-  border:
-    2px solid
-    #806d45;
-
-  border-radius:
-    50% 50% 45% 45%;
-
-  background:
-    #b49a63;
-
   z-index: 2;
-
-  transform-origin:
-    50% 0;
+  transform: translateX(-50%);
+  transform-origin: 50% 0;
+  border: 2px solid #806d45;
+  border-radius: 50% 50% 45% 45%;
+  background: #b49a63;
 }
 
 .bell-tower-bell::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: -5px;
-
   width: 7px;
   height: 4px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   border-radius: 50%;
-
-  background:
-    #806d45;
+  background: #806d45;
 }
-
 
 /* =====================================================
    SECOND TOWER WINDOW
 ===================================================== */
-
 .bell-tower-window-two {
   top: 66px;
-
   width: 22px;
   height: 29px;
-
-  border-radius:
-    12px 12px 2px 2px;
-
-  background:
-    #d2d9d0;
+  border-radius: 12px 12px 2px 2px;
+  background: #d2d9d0;
 }
-
 
 /* =====================================================
    CLOCK
 ===================================================== */
-
 .bell-tower-clock {
   position: absolute;
-
   left: 50%;
   bottom: 21px;
-
   width: 29px;
   height: 29px;
-
-  transform:
-    translateX(-50%);
-
-  border:
-    2px solid
-    #183c35;
-
-  border-radius: 50%;
-
-  background:
-    #f5f3eb;
-
   z-index: 3;
+  transform: translateX(-50%);
+  border: 2px solid #183c35;
+  border-radius: 50%;
+  background: #f5f3eb;
 }
 
 .bell-tower-clock::before {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 5px;
-
   width: 2px;
   height: 9px;
-
-  transform-origin:
-    bottom center;
-
-  background:
-    #183c35;
+  transform-origin: bottom center;
+  background: #183c35;
 }
 
 .bell-tower-clock::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 50%;
-
   width: 8px;
   height: 2px;
-
-  transform:
-    rotate(20deg);
-
-  transform-origin:
-    left center;
-
-  background:
-    #183c35;
+  transform: rotate(20deg);
+  transform-origin: left center;
+  background: #183c35;
 }
 
-
 /* =====================================================
-   LABEL
+   LABELS
 ===================================================== */
-
-.bell-tower-label {
+.bell-tower-label,
+.discovery-label {
   position: absolute;
-
   left: 50%;
-  bottom: -2px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   white-space: nowrap;
-
-  padding:
-    0.3rem 0.55rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.14);
-
+  border: 1px solid rgba(24, 60, 53, 0.14);
   border-radius: 999px;
-
-  background:
-    rgba(245, 243, 235, 0.94);
-
-  color:
-    #183c35;
-
-  font-size:
-    0.43rem;
-
-  font-weight:
-    900;
-
-  letter-spacing:
-    0.1em;
-
+  background: rgba(245, 243, 235, 0.94);
+  color: #183c35;
+  font-size: 0.43rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   box-shadow:
     0 3px 8px
     rgba(24, 60, 53, 0.07);
+}
+
+.bell-tower-label {
+  bottom: -2px;
+  padding: 0.3rem 0.55rem;
 }
 
 .discovery-label {
-  position: absolute;
-
-  left: 50%;
   bottom: -8px;
-
-  transform:
-    translateX(-50%);
-
-  white-space: nowrap;
-
-  padding:
-    0.15rem 0.4rem;
-
-  border:
-    1px solid
-    rgba(24, 60, 53, 0.14);
-
-  border-radius: 999px;
-
-  background:
-    rgba(245, 243, 235, 0.94);
-
-  color:
-    #183c35;
-
-  font-size:
-    0.43rem;
-
-  font-weight:
-    900;
-
-  letter-spacing:
-    0.1em;
-
-  box-shadow:
-    0 3px 8px
-    rgba(24, 60, 53, 0.07);
+  padding: 0.15rem 0.4rem;
 }
 
-
-/* ringing */
-
+/* =====================================================
+   RINGING
+===================================================== */
 .campus-bell-tower.is-ringing
-  .bell-tower-bell {
+.bell-tower-bell {
   animation:
     bellRing
     120ms ease-in-out
@@ -2733,7 +2066,6 @@
 }
 
 @keyframes bellRing {
-
   0%,
   100% {
     transform:
@@ -2746,27 +2078,18 @@
       translateX(-50%)
       rotate(10deg);
   }
-
 }
-
 
 /* =====================================================
    PEOPLE — GROUNDED CAMPUS CHARACTERS
 ===================================================== */
-
 .campus-person {
   position: absolute;
-
   width: 30px;
   height: 62px;
-
   z-index: 36;
-
   pointer-events: none;
-
-  transform-origin:
-    bottom center;
-
+  transform-origin: bottom center;
   filter:
     drop-shadow(
       0 3px 2px
@@ -2774,20 +2097,13 @@
     );
 }
 
-
 /* =====================================================
    PERSON POSITIONS
 ===================================================== */
 
-/*
- * These are now short, localized walks rather than
- * giant horizontal movements across the entire campus.
- */
-
 .campus-person.person-one {
   left: 31%;
   top: 56%;
-
   animation:
     personOneWalk
     8s ease-in-out
@@ -2797,10 +2113,7 @@
 .campus-person.person-two {
   left: 40%;
   top: 87%;
-
-  transform:
-    scale(0.9);
-
+  transform: scale(0.9);
   animation:
     personTwoWalk
     9s ease-in-out
@@ -2810,221 +2123,149 @@
 .campus-person.person-three {
   left: 65%;
   top: 54%;
-
-  transform:
-    scale(0.78);
-
+  transform: scale(0.78);
   animation:
     personThreeWalk
     5s ease-in-out
     infinite alternate;
 }
 
-
 /* =====================================================
    GROUND SHADOW
 ===================================================== */
-
 .person-shadow {
   position: absolute;
-
   left: 50%;
   bottom: 0;
-
   width: 25px;
   height: 7px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   border-radius: 50%;
-
   background:
     rgba(24, 60, 53, 0.14);
-
-  filter:
-    blur(1px);
+  filter: blur(1px);
 }
-
 
 /* =====================================================
    HEAD + HAIR
 ===================================================== */
-
 .person-head {
   position: absolute;
-
   left: 50%;
   top: 3px;
-
   width: 13px;
   height: 14px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   border-radius: 50%;
-
-  background:
-    #956f5a;
+  background: #956f5a;
 }
 
 .person-hair {
   position: absolute;
-
   left: 50%;
   top: 0;
-
   width: 15px;
   height: 10px;
-
-  transform:
-    translateX(-50%);
-
-  border-radius:
-    55% 55% 35% 35%;
-
-  background:
-    #332d29;
-
+  transform: translateX(-50%);
   z-index: 2;
+  border-radius: 55% 55% 35% 35%;
+  background: #332d29;
 }
 
 .person-hair-brown {
-  background:
-    #574236;
+  background: #574236;
 }
-
 
 /* =====================================================
    BODY
 ===================================================== */
-
 .person-neck {
   position: absolute;
-
   left: 50%;
   top: 15px;
-
   width: 5px;
   height: 5px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   border-radius: 2px;
-
-  background:
-    #956f5a;
+  background: #956f5a;
 }
 
 .person-body {
   position: absolute;
-
   left: 50%;
   top: 18px;
-
   width: 18px;
   height: 22px;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
-  border-radius:
-    6px 6px 4px 4px;
+  border-radius: 6px 6px 4px 4px;
 
-  background:
-    #52736a;
+  background: #52736a;
 }
 
 .person-shirt-green {
-  background:
-    #52736a;
+  background: #52736a;
 }
 
 .person-shirt-cream {
-  background:
-    #d5c9ae;
+  background: #d5c9ae;
 }
 
 .person-shirt-rust {
-  background:
-    #b7b779;
+  background: #b7b779;
 }
-
 
 /* =====================================================
    ARMS
 ===================================================== */
-
 .person-arm {
   position: absolute;
-
   top: 20px;
-
   width: 4px;
   height: 17px;
-
   border-radius: 999px;
-
-  background:
-    #956f5a;
-
-  transform-origin:
-    top center;
+  background: #956f5a;
+  transform-origin: top center;
 }
 
 .person-arm-left {
   left: 3px;
-
-  transform:
-    rotate(14deg);
+  transform: rotate(14deg);
 }
 
 .person-arm-right {
   right: 3px;
-
-  transform:
-    rotate(-14deg);
+  transform: rotate(-14deg);
 }
-
 
 /* =====================================================
    LEGS
 ===================================================== */
-
 .person-leg {
   position: absolute;
-
   top: 39px;
-
   width: 5px;
   height: 21px;
-
   border-radius:
     999px 999px 3px 3px;
-
   background:
     #354c48;
-
   transform-origin:
     top center;
 }
 
 .person-leg-left {
   left: 7px;
-
   transform:
     rotate(3deg);
 }
 
 .person-leg-right {
   right: 7px;
-
   transform:
     rotate(-3deg);
 }
-
 
 /* =====================================================
    WALKING MOTION
@@ -3099,51 +2340,37 @@
 }
 
 /* =====================================================
-   FEMALE-PRESENTING CAMPUS CHARACTERS
+   GIRL CAMPUS CHARACTERS
 ===================================================== */
-
 /* ---------- HAIRSTYLES ---------- */
-
 .person-hair-long {
   width: 17px;
   height: 20px;
-
   top: 0;
-
   border-radius:
     55% 55% 45% 45%;
-
   z-index: 2;
 }
 
 .person-hair-long::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 7px;
-
   width: 18px;
   height: 14px;
-
   transform:
     translateX(-50%);
-
   border-radius:
     40% 40% 50% 50%;
-
   background:
     inherit;
-
   z-index: -1;
 }
-
 
 /* =====================================================
    GIRL OUTFITS
 ===================================================== */
-
 .person-shirt-blue {
   background:
     #527b91;
@@ -3167,8 +2394,7 @@
 /* =====================================================
    GIRL CHARACTER VARIATIONS
 ===================================================== */
-
-/* Girl 1 — long hair */
+/* Girl 1 */
 
 .campus-person.person-girl-one {
   left: 20%;
@@ -3193,9 +2419,7 @@
     #b97878;
 }
 
-
-/* Girl 2 — long hair + dress */
-
+/* Girl 2 */
 .campus-person.person-girl-two {
   left: 76%;
   top: 20%;
@@ -3222,7 +2446,6 @@
 /* =====================================================
    GIRL WALKING MOTION
 ===================================================== */
-
 @keyframes girlOneWalk {
 
   0% {
@@ -3248,34 +2471,22 @@
 /* =====================================================
    CAMPUS CAT
 ===================================================== */
-
 .campus-cat {
   position: absolute;
-
   left: 66%;
   top: 29%;
-
   width: 68px;
   height: 54px;
-
   padding: 0;
-
   border: 0;
-
   background: transparent;
-
   cursor: pointer;
-
   pointer-events: auto;
-
   z-index: 37;
-
   transform:
     translate(-50%, -50%);
-
   transform-origin:
     center bottom;
-
   transition:
     transform 180ms ease;
 }
@@ -3286,177 +2497,126 @@
     translateY(-3px);
 }
 
-
 /* =====================================================
    GROUND SHADOW
 ===================================================== */
-
 .campus-cat::after {
   content: "";
-
   position: absolute;
-
   left: 12px;
   bottom: 1px;
-
   width: 55px;
   height: 8px;
-
   border-radius: 50%;
-
   background:
     rgba(24, 60, 53, 0.15);
-
   filter:
     blur(1.5px);
-
   z-index: 0;
 }
-
 
 /* =====================================================
    BODY
 ===================================================== */
-
 .cat-body {
   position: absolute;
-
   left: 23px;
   bottom: 13px;
-
   width: 32px;
   height: 21px;
-
   border:
     2px solid
     #5c554c;
-
   border-radius:
     55% 48% 45% 48%;
-
   background:
     #8a7d6c;
-
   z-index: 2;
+  box-shadow:
+    -1px 0 0 #5c554c;
 }
-
 
 /* chest */
-
 .cat-body::before {
   content: "";
-
   position: absolute;
-
   left: 4px;
   top: 3px;
-
   width: 12px;
   height: 14px;
-
   border-radius: 50%;
-
   background:
     #9b8d7b;
-
   opacity: 0.65;
 }
-
 
 /* =====================================================
    HEAD
 ===================================================== */
-
 .cat-head {
   position: absolute;
-
   left: 8px;
   bottom: 20px;
-
   width: 25px;
   height: 25px;
-
   border:
     2px solid
     #5c554c;
-
   border-radius:
     48% 48% 44% 44%;
-
   background:
     #968876;
-
   z-index: 5;
+  overflow: visible;
 }
-
 
 /* =====================================================
    EARS
 ===================================================== */
-
 .cat-ear {
   position: absolute;
-
   top: -11px;
-
   width: 10px;
   height: 15px;
-
   background:
     #968876;
-
   border:
     2px solid
     #5c554c;
-
   clip-path:
     polygon(
       50% 0,
       100% 100%,
       0 100%
     );
-
   z-index: -1;
 }
 
-
 /* left ear */
-
 .cat-ear-left {
   left: 1px;
-
   transform:
     rotate(-4deg);
 }
 
-
 /* right ear */
-
 .cat-ear-right {
   right: 1px;
-
   transform:
     rotate(4deg);
 }
 
-
 /* inner ears */
-
 .cat-ear-left::after,
 .cat-ear-right::after {
   content: "";
-
   position: absolute;
-
   left: 3px;
   top: 4px;
-
   width: 6px;
   height: 7px;
-
   background:
     #c09d99;
-
   clip-path:
     polygon(
       50% 0,
@@ -3465,21 +2625,15 @@
     );
 }
 
-
 /* =====================================================
    EYES
 ===================================================== */
-
 .cat-eye {
   position: absolute;
-
   top: 7px;
-
   width: 3px;
   height: 5px;
-
   border-radius: 50%;
-
   background:
     #183c35;
 }
@@ -3492,77 +2646,52 @@
   right: 6px;
 }
 
-
 /* =====================================================
    NOSE + MOUTH
 ===================================================== */
-
 .cat-head::before {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 14px;
-
   width: 3px;
   height: 4px;
-
   transform:
     translateX(-50%);
-
   border-radius:
     50% 50% 60% 60%;
-
   background:
     #765b58;
 }
 
 .cat-head::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   top: 16.5px;
-
   width: 7px;
   height: 4px;
-
   transform:
     translateX(-50%);
-
   border-bottom:
     1px solid
     #5c554c;
-
   border-radius:
     0 0 50% 50%;
 }
 
-
 /* =====================================================
    WHISKERS
 ===================================================== */
-
-.cat-head {
-  overflow: visible;
-}
-
 .cat-head .cat-eye-right::after {
   content: "";
-
   position: absolute;
-
   right: -13px;
   top: 5px;
-
   width: 12px;
   height: 1px;
-
   background:
     rgba(92, 85, 76, 0.65);
-
   box-shadow:
     0 4px 0
     rgba(92, 85, 76, 0.55);
@@ -3570,96 +2699,63 @@
 
 .cat-head .cat-eye-left::after {
   content: "";
-
   position: absolute;
-
   left: -13px;
   top: 5px;
-
   width: 12px;
   height: 1px;
-
   background:
     rgba(92, 85, 76, 0.65);
-
   box-shadow:
     0 4px 0
     rgba(92, 85, 76, 0.55);
 }
 
-
 /* =====================================================
    LEGS
 ===================================================== */
-
 .cat-body::after {
   content: "";
-
   position: absolute;
-
   left: 0px;
   bottom: -9px;
-
   width: 5px;
   height: 13px;
-
   border-radius:
     4px 4px 4px 4px;
-
   background:
     #746a5c;
-
   box-shadow:
     24px 0 0
     #746a5c;
 }
 
-
-/* front legs */
-
-.cat-body {
-  box-shadow:
-    -1px 0 0 #5c554c;
-}
-
-
 /* =====================================================
    TAIL
 ===================================================== */
-
 .cat-tail {
   position: absolute;
-
   right: 13px;
   bottom: 23px;
-
   width: 20px;
   height: 25px;
-
   border:
     5px solid
     #8a7d6c;
-
   border-left: 0;
   border-bottom: 0;
-
   border-radius:
     0 30px 0 0;
-
   transform:
     rotate(15deg);
-
   transform-origin:
     left bottom;
-
   z-index: 1;
 }
-
 
 /* =====================================================
    CAT INTERACTION
 ===================================================== */
-
 .campus-cat.is-interested {
   animation:
     catInterest
@@ -3668,13 +2764,11 @@
 
 .campus-cat.is-interested
   .cat-tail {
-
   animation:
     catTail
     500ms ease
     2;
 }
-
 
 @keyframes catInterest {
 
@@ -3691,7 +2785,6 @@
   }
 
 }
-
 
 @keyframes catTail {
 
@@ -3710,38 +2803,26 @@
 
 /* =====================================================
    ERICA'S DIGITAL CAMPUS SIGN
-   MATCHES THE ACTUAL CAMPUSMAP HTML
 ===================================================== */
-
 .campus-sign {
   position: absolute;
-
   left: 60%;
   bottom: 55%;
-
   width: 175px;
   height: 110px;
-
   z-index: 10;
-
   pointer-events: none;
 }
-
 
 /* =====================================================
    WOODEN POSTS
 ===================================================== */
-
 .sign-post {
   position: absolute;
-
   bottom: 10%;
-
   width: 7px;
   height: 48px;
-
   border-radius: 2px;
-
   background:
     linear-gradient(
       90deg,
@@ -3749,7 +2830,6 @@
       #806b52,
       #594b3d
     );
-
   box-shadow:
     1px 2px 0
     rgba(24, 60, 53, 0.08);
@@ -3757,104 +2837,70 @@
 
 
 /* left post */
-
 .sign-post-left {
   left: 35px;
 }
 
-
 /* right post */
-
 .sign-post-right {
   right: 35px;
 }
 
-
 /* =====================================================
    SIGN BOARD
 ===================================================== */
-
 .sign-board {
   position: absolute;
-
   left: 50%;
   top: 0;
-
   width: 175px;
-
   box-sizing: border-box;
-
   transform:
     translateX(-50%);
-
   padding:
     0.75rem 0.8rem;
-
   border:
     2px solid
     #183c35;
-
   border-radius: 4px;
-
   background:
     #f5f3eb;
-
   color:
     #183c35;
-
   text-align: center;
-
   font-size:
     0.72rem;
-
   font-weight:
     900;
-
   letter-spacing:
     0.08em;
-
   line-height:
     1.35;
-
   box-shadow:
     0 6px 0
     rgba(24, 60, 53, 0.08);
 }
 
-
 .sign-board strong {
   display: block;
-
   margin-top:
     0.25rem;
-
   color:
     #6b756f;
-
   font-size:
     0.43rem;
-
   font-weight:
     800;
-
   letter-spacing:
     0.15em;
 }
 
-
 /* =====================================================
    FINAL WORLD LAYERING
 ===================================================== */
-
 /*
- * These are the actual world layers.
- *
  * Lower number = farther back.
  */
-
-.campus-paths {
-  z-index: 1;
-}
 
 .campus-road {
   z-index: 3;
@@ -3863,18 +2909,14 @@
 .campus-trees {
   position: absolute;
   inset: 0;
-
   z-index: 8;
-
   pointer-events: none;
 }
 
 .campus-greenery {
   position: absolute;
   inset: 0;
-
   z-index: 9;
-
   pointer-events: none;
 }
 
@@ -3884,14 +2926,10 @@
 
 .campus-buildings {
   position: absolute;
-
   inset: 0;
-
   z-index: 20;
-
   pointer-events: none;
 }
-
 
 /*
  * Buildings need their own clicks, so this doesn't
@@ -3901,7 +2939,6 @@
 .campus-buildings > * {
   pointer-events: auto;
 }
-
 
 /*
  * Foreground campus life sits above buildings.
@@ -3914,7 +2951,6 @@
 /* =====================================================
    MOBILE
 ===================================================== */
-
 @media (max-width: 768px) {
 
   .campus-road {
@@ -3989,15 +3025,14 @@
 }
 
 /* =========================================
-   RECYCLING BINS
+  SHARED DISCOVERIES
 ========================================= */
 
-.campus-recycling {
+.campus-recycling,
+.campus-bike-rack,
+.campus-flower-bed,
+.campus-fountain {
   position: absolute;
-  right: 25%;
-  bottom: 20%;
-  width: 48px;
-  height: 38px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -4005,6 +3040,37 @@
   z-index: 17;
 }
 
+.campus-recycling {
+  right: 25%;
+  bottom: 20%;
+  width: 48px;
+  height: 38px;
+}
+
+.campus-bike-rack {
+  left: 24%;
+  bottom: 15%;
+  width: 115px;
+  height: 62px;
+}
+
+.campus-flower-bed {
+  left: 58%;
+  bottom: 76%;
+  width: 105px;
+  height: 58px;
+}
+
+.campus-fountain {
+  right: 47%;
+  bottom: 10%;
+  width: 105px;
+  height: 85px;
+}
+
+/* =========================================
+   RECYCLING BINS
+========================================= */
 .recycling-bin {
   position: absolute;
   bottom: 0;
@@ -4043,20 +3109,6 @@
 /* =========================================
    BIKE RACK
 ========================================= */
-
-.campus-bike-rack {
-  position: absolute;
-  left: 24%;
-  bottom: 15%;
-  width: 115px;
-  height: 62px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  z-index: 17;
-}
-
 .bike-rack-bar {
   position: absolute;
   left: 8px;
@@ -4132,20 +3184,6 @@
 /* =========================================
    FLOWER BED
 ========================================= */
-
-.campus-flower-bed {
-  position: absolute;
-  left: 58%;
-  bottom: 76%;
-  width: 105px;
-  height: 58px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  z-index: 17;
-}
-
 .flower-bed-soil {
   position: absolute;
   left: 5px;
@@ -4201,20 +3239,6 @@
 /* =========================================
    FOUNTAIN
 ========================================= */
-
-.campus-fountain {
-  position: absolute;
-  right: 47%;
-  bottom: 10%;
-  width: 105px;
-  height: 85px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  z-index: 17;
-}
-
 .fountain-basin {
   position: absolute;
   left: 8px;
@@ -4276,7 +3300,6 @@
 /* =========================================================
    DISCOVERY ANIMATIONS
 ========================================================= */
-
 .campus-recycling {
   transform-origin: center bottom;
 }
@@ -4315,7 +3338,6 @@
 /* =========================================
    BIKE RACK
 ========================================= */
-
 .campus-bike {
   transform-origin: center bottom;
 }
@@ -4352,11 +3374,9 @@
 
 }
 
-
 /* =========================================
    FLOWER BED
 ========================================= */
-
 .campus-flower {
   transform-origin: bottom center;
 }
@@ -4409,11 +3429,9 @@
 
 }
 
-
 /* =========================================
    FOUNTAIN
 ========================================= */
-
 .fountain-water {
   transform-origin: bottom center;
 }
@@ -4477,14 +3495,10 @@
 
 }
 
-
 /* =========================================================
    ACCESSIBILITY
-   Respect users who prefer reduced motion.
 ========================================================= */
-
 @media (prefers-reduced-motion: reduce) {
-
   .campus-recycling.is-discovered,
   .campus-bike-rack.is-discovered .bike-one,
   .campus-bike-rack.is-discovered .bike-two,
@@ -4504,18 +3518,13 @@
 /* =========================================================
    CAMPUS PEOPLE — EXTRA MOVEMENT
 ========================================================= */
-
-/* Give the existing people a more natural walking rhythm */
-
 .campus-person {
   transform-origin: center bottom;
 }
 
-
 /* ---------------------------------------------------------
    WALKER ONE + GIRL
 --------------------------------------------------------- */
-
 .person-one,
 .person-girl-one,
 .person-girl-two {
@@ -4553,7 +3562,6 @@
 /* ---------------------------------------------------------
    WALKER TWO
 --------------------------------------------------------- */
-
 .person-two {
   animation: personWalkBob 2.1s ease-in-out infinite;
   animation-delay: 250ms;
@@ -4612,11 +3620,9 @@
   animation: runnerLegRight 350ms ease-in-out infinite;
 }
 
-
 /* ---------------------------------------------------------
    WALKING KEYFRAMES
 --------------------------------------------------------- */
-
 @keyframes personWalkBob {
 
   0%,
@@ -4682,11 +3688,9 @@
 
 }
 
-
 /* ---------------------------------------------------------
    RUNNER KEYFRAMES
 --------------------------------------------------------- */
-
 @keyframes runnerBob {
 
   0%,
@@ -4752,11 +3756,9 @@
 
 }
 
-
 /* =========================================================
    TWO STUDENTS TALKING
 ========================================================= */
-
 .campus-conversation {
   position: absolute;
   left: 65%;
@@ -4767,9 +3769,7 @@
   pointer-events: none;
 }
 
-
 /* Individual student */
-
 .conversation-student {
   position: absolute;
   bottom: 0;
@@ -4778,9 +3778,7 @@
   transform-origin: center bottom;
 }
 
-
 /* Position the two students */
-
 .conversation-student-one {
   left: 5px;
   animation: conversationShiftOne 3s ease-in-out infinite;
@@ -4791,9 +3789,7 @@
   animation: conversationShiftTwo 3.4s ease-in-out infinite;
 }
 
-
 /* Shadows */
-
 .conversation-shadow {
   position: absolute;
   left: 4px;
@@ -4804,9 +3800,7 @@
   background: rgba(24, 60, 53, 0.14);
 }
 
-
 /* Heads */
-
 .conversation-head {
   position: absolute;
   left: 9px;
@@ -4818,9 +3812,7 @@
   border: 1px solid #9f6d56;
 }
 
-
 /* Hair */
-
 .conversation-hair {
   position: absolute;
   left: 7px;
@@ -4841,7 +3833,6 @@
 
 
 /* Neck */
-
 .conversation-neck {
   position: absolute;
   left: 14px;
@@ -4851,9 +3842,7 @@
   background: #c58d70;
 }
 
-
 /* Bodies */
-
 .conversation-body {
   position: absolute;
   left: 7px;
@@ -4873,7 +3862,6 @@
 
 
 /* Arms */
-
 .conversation-arm {
   position: absolute;
   top: 31px;
@@ -4894,7 +3882,6 @@
 
 
 /* Legs */
-
 .conversation-leg {
   position: absolute;
   top: 52px;
@@ -4913,11 +3900,9 @@
   right: 9px;
 }
 
-
 /* ---------------------------------------------------------
    SUBTLE CONVERSATION MOVEMENT
 --------------------------------------------------------- */
-
 @keyframes conversationShiftOne {
 
   0%,
@@ -5009,13 +3994,10 @@
 
 }
 
-
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
-
 @media (prefers-reduced-motion: reduce) {
-
   .person-one,
   .person-two,
   .person-three,
@@ -5043,180 +4025,121 @@
 /* =====================================================
    ORIENTATION LEADER ERICA
 ===================================================== */
-
 .campus-erica {
   position: absolute;
-
   left: -6%;
   top: 72%;
-
   width: 38px;
   height: 72px;
-
   z-index: 45;
-
   transform:
     translate(-50%, -50%);
-
   pointer-events: none;
-
   transition:
     left 850ms ease-in-out,
     top 850ms ease-in-out;
 }
 
-
 /* Shadow */
-
 .erica-shadow {
   position: absolute;
-
   left: 50%;
   bottom: 0;
-
   width: 34px;
   height: 9px;
-
   transform:
     translateX(-50%);
-
   border-radius: 50%;
-
   background:
     rgba(24, 60, 53, 0.18);
 }
 
-
 /* Head */
-
 .erica-head {
   position: absolute;
-
   left: 50%;
   top: 7px;
-
   width: 18px;
   height: 18px;
-
   transform:
     translateX(-50%);
-
   border-radius: 50%;
-
   background: #9b674e;
 }
 
-
 /* Hair */
-
 .erica-hair {
   position: absolute;
-
   left: 50%;
   top: 4px;
-
   width: 22px;
   height: 27px;
-
   transform:
     translateX(-50%);
-
   border-radius:
     50% 50% 45% 45%;
-
   background: #241b1a;
-
   z-index: 2;
 }
 
 /* Neck */
-
 .erica-neck {
   position: absolute;
-
   left: 50%;
   top: 23px;
-
   width: 7px;
   height: 7px;
-
   transform:
     translateX(-50%);
-
   background: #c58d70;
 }
 
-
 /* Body */
-
 .erica-body {
   position: absolute;
-
   left: 50%;
   top: 28px;
-
   width: 25px;
   height: 27px;
-
   transform:
     translateX(-50%);
-
   border-radius:
     8px 8px 5px 5px;
-
   background: #3974aa;
 }
 
-
 /* Arms */
-
 .erica-arm {
   position: absolute;
-
   top: 30px;
-
   width: 6px;
   height: 23px;
-
   border-radius: 5px;
-
   background: #c58d70;
-
   transform-origin:
     top center;
 }
 
-
 .erica-arm-left {
   left: 5px;
-
   transform:
     rotate(16deg);
 }
 
-
 .erica-arm-right {
   right: 5px;
-
   transform:
     rotate(-16deg);
 }
 
-
 /* Legs */
-
 .erica-leg {
   position: absolute;
-
   top: 52px;
-
   width: 7px;
   height: 18px;
-
   border-radius: 5px;
-
   background: #263b50;
-
   transform-origin:
     top center;
 }
@@ -5233,35 +4156,23 @@
 
 
 /* Tour badge */
-
 .erica-badge {
   position: absolute;
-
   left: 50%;
   top: 27px;
-
   transform:
     translateX(-50%);
-
   padding:
     2px 4px;
-
   border-radius: 3px;
-
   background: #f5f1df;
-
   color: #285d86;
-
   font-family:
     "Courier New",
     monospace;
-
   font-size: 5px;
-
   font-weight: 700;
-
   letter-spacing: 0.04em;
-
   z-index: 5;
 }
 
@@ -5359,41 +4270,29 @@
   }
 }
 
-
 /* =====================================================
    ERICA DIALOGUE
 ===================================================== */
 .erica-dialogue {
   position: absolute;
-
   left: 50%;
   top: 61%;
-
   z-index: 60;
-
   width: min(300px, 28vw);
   opacity: 0;
   padding: 13px 16px;
-
   transform:
     translate(-50%, 10px);
-
-
   pointer-events: none;
-
   background:
     rgba(255, 255, 255, 0.94);
-
   border:
     1px solid
     rgba(24, 60, 53, 0.18);
-
   border-radius: 10px;
-
   box-shadow:
     0 12px 30px
     rgba(24, 60, 53, 0.12);
-
   transition:
     opacity 250ms ease,
     transform 250ms ease;
@@ -5401,45 +4300,35 @@
 
 .erica-dialogue.is-visible {
   opacity: 1;
-
   transform:
     translate(-50%, 0);
 }
 
 .erica-dialogue::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: -7px;
-
   width: 12px;
   height: 12px;
-
   transform:
     translateX(-50%)
     rotate(45deg);
-
   background:
     rgba(255, 255, 255, 0.94);
-
   border-right:
     1px solid
     rgba(24, 60, 53, 0.12);
-
   border-bottom:
     1px solid
     rgba(24, 60, 53, 0.12);
 }
-
 
 .erica-dialogue-label {
   display: block;
   margin-bottom: 5px;
   color:
     rgba(0, 0, 0, 0.48);
-  
     font-family:
     "Courier New",
     monospace;
@@ -5448,7 +4337,6 @@
   letter-spacing:
     0.12em;
 }
-
 
 .erica-dialogue-text {
   display: block;
