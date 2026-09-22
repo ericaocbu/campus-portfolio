@@ -559,10 +559,9 @@
 
 .directory-eyebrow,
 .directory-divider {
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  opacity: 0.55;
 }
 
 .directory-header h2 {
@@ -613,7 +612,6 @@
 
 .start-tour-button small {
   font-size: 0.62rem;
-  opacity: 0.6;
 }
 
 .directory-divider {
@@ -654,8 +652,7 @@
 
 .directory-number {
   width: 22px;
-  font-size: 0.58rem;
-  opacity: 0.4;
+  font-size: 0.65rem;
 }
 
 .directory-icon {
@@ -670,17 +667,16 @@
 }
 
 .directory-item-text strong {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.05em;
 }
 
 .directory-item-text small {
-  font-size: 0.6rem;
-  opacity: 0.5;
+  font-size: 0.65rem;
 }
 
 .directory-arrow {
-  opacity: 0.45;
+  opacity: 0.7;
 }
 
 /* ========================================
@@ -1318,14 +1314,13 @@
 }
 
 .map-start-tour-text strong {
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   letter-spacing:
     0.08em;
 }
 
 .map-start-tour-text small {
-  font-size: 0.58rem;
-  opacity: 0.55;
+  font-size: 0.7rem;
 }
 
 .map-start-tour-arrow {
@@ -4327,12 +4322,12 @@
 .erica-dialogue-label {
   display: block;
   margin-bottom: 5px;
-  color:
-    rgba(0, 0, 0, 0.48);
+  color: 
+    rgba(0, 0, 0, 0.70);
     font-family:
     "Courier New",
     monospace;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing:
     0.12em;

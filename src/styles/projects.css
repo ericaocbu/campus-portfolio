@@ -2,16 +2,11 @@
    INNOVATION LAB
    BLUE DESIGN STUDIO
    ========================================================= */
-
 .innovation-lab-page {
   position: relative;
-
   min-height: 100%;
-
   overflow: hidden;
-
   color: #102b4e;
-
   background:
     radial-gradient(
       circle at 75% 5%,
@@ -26,20 +21,14 @@
     #eaf2f8;
 }
 
-
 /* =========================================================
    BLUEPRINT BACKGROUND
    ========================================================= */
-
 .lab-blueprint {
   position: absolute;
-
   inset: 0;
-
   pointer-events: none;
-
   opacity: 0.5;
-
   background-image:
     linear-gradient(
       rgba(57, 109, 157, 0.09) 1px,
@@ -54,14 +43,11 @@
   background-size: 40px 40px;
 }
 
-
 /* =========================================================
    HERO
    ========================================================= */
-
 .lab-hero {
   position: relative;
-
   padding:
     clamp(100px, 12vw, 100px)
     clamp(28px, 7vw, 100px)
@@ -71,21 +57,15 @@
 
 .lab-hero-top {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
-
   padding-bottom: 18px;
-
   border-bottom:
     1px solid rgba(16, 43, 78, 0.2);
-
   font-family:
     "Courier New",
     monospace;
-
   font-size: 10px;
-
   letter-spacing: 0.16em;
 }
 
@@ -97,47 +77,34 @@
 
 .lab-hero-grid {
   display: grid;
-
   grid-template-columns:
     minmax(0, 1.4fr)
     minmax(280px, 0.6fr);
-
   gap: 70px;
-
   padding-top: 60px;
 }
 
 
 .lab-eyebrow {
   display: block;
-
   margin-bottom: 20px;
-
   color: #3974aa;
-
   font-family:
     "Courier New",
     monospace;
-
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 0.18em;
 }
 
 
 .lab-hero-title h1 {
   max-width: 900px;
-
   margin: 0;
-
   font-size:
     clamp(62px, 10vw, 100px);
-
   line-height: 0.86;
-
   letter-spacing: -0.07em;
-
   font-weight: 800;
   white-space: nowrap;
 }
@@ -1512,16 +1479,12 @@ body.case-study-open {
 
 .case-study-year {
   position: absolute;
-
   right: 0;
   bottom: 55px;
-
-  color: rgba(16, 43, 78, 0.35);
-
+  color: darkblue;
   font-family:
     "Courier New",
     monospace;
-
   font-size: 11px;
 }
 
@@ -2143,118 +2106,86 @@ body.case-study-open {
 
 .case-label {
   color: #3974aa;
-
   font-family:
     "Courier New",
     monospace;
 
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 0.14em;
 }
 
 
 .case-overview-lead {
   max-width: 700px;
-
   margin: 0;
-
   color: #244d70;
-
   font-size: 22px;
-
   line-height: 1.55;
 }
 
 
 .case-overview-details {
   display: grid;
-
   grid-template-columns:
     1fr 1fr;
-
   gap: 30px;
-
   max-width: 700px;
-
   margin-top: 45px;
 }
 
-
 .case-overview-details div {
   padding-top: 15px;
-
   border-top:
     1px solid rgba(16, 43, 78, 0.14);
 }
 
-
 .case-overview-details span,
 .case-skill-group > span {
   display: block;
-
   margin-bottom: 10px;
-
-  color: rgba(16, 43, 78, 0.4);
-
+  color: #173b60;
   font-family:
     "Courier New",
     monospace;
-
-  font-size: 8px;
-
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.1em;
 }
 
 
 .case-overview-details strong {
-  color: #173b60;
-
-  font-size: 13px;
-
+  color: #1e4e7b;
+  font-size: 14px;
   font-weight: 500;
-
   line-height: 1.5;
 }
 
-
 /* Skills */
-
 .case-skills-content {
   display: grid;
-
   gap: 35px;
 }
 
-
 .case-tags {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 7px;
 }
 
-
 .case-tags span {
   padding: 9px 11px;
-
   border:
     1px solid rgba(54, 118, 180, 0.22);
-
   background:
     rgba(54, 118, 180, 0.05);
-
   color: #3974aa;
-
   font-family:
     "Courier New",
     monospace;
-
-  font-size: 8px;
-
+  font-size: 10px;
   letter-spacing: 0.07em;
+  font-weight: 700;
 }
 
 
@@ -2268,14 +2199,10 @@ body.case-study-open {
 
 .case-process-step {
   display: grid;
-
   grid-template-columns:
     70px 1fr;
-
   gap: 25px;
-
   padding: 25px 0;
-
   border-bottom:
     1px solid rgba(16, 43, 78, 0.12);
 }
@@ -2283,35 +2210,27 @@ body.case-study-open {
 
 .case-process-number {
   color: #3974aa;
-
   font-family:
     "Courier New",
     monospace;
-
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 
 .case-process-step h3 {
   margin: 0 0 8px;
-
   color: #173b60;
-
   font-size: 17px;
-
   letter-spacing: -0.02em;
 }
 
 
 .case-process-step p {
   max-width: 650px;
-
   margin: 0;
-
-  color: rgba(16, 43, 78, 0.62);
-
-  font-size: 13px;
-
+  color: #1e4e7b;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -2348,7 +2267,7 @@ body.case-study-open {
     "Courier New",
     monospace;
 
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 
   letter-spacing: 0.1em;
@@ -2373,20 +2292,15 @@ body.case-study-open {
 
 .case-study-footer {
   display: flex;
-
   justify-content: space-between;
-
   padding-top: 30px;
-
-  color: rgba(16, 43, 78, 0.38);
-
+  color: #3974aa;
   font-family:
     "Courier New",
     monospace;
-
-  font-size: 8px;
-
+  font-size: 9px;
   letter-spacing: 0.12em;
+  font-weight: 700;
 }
 
 
