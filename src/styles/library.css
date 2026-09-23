@@ -777,24 +777,20 @@
 
 .library-intro-copy {
   max-width: 520px;
-
   margin-top: 3rem;
 }
 
 
 .library-role {
   margin: 0 0 1.5rem;
-
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 900;
-
   letter-spacing: 0.13em;
 }
 
 
 .library-role span {
   margin: 0 0.35rem;
-  opacity: 0.35;
 }
 
 
@@ -2341,19 +2337,15 @@
 
 .library-cart-body {
   position: relative;
-
   padding:
     2rem
     2rem
     2.5rem;
-
   border:
     2px solid
     #183c35;
-
   background:
-    #faedd5;
-
+    #f3eddf;
   box-shadow:
     12px 14px 0
     rgba(24, 60, 53, 0.08);
@@ -2414,7 +2406,6 @@
   font-weight: 400;
   font-style: italic;
   letter-spacing: 0.04em;
-  opacity: 0.55;
 }
 
 
@@ -2431,7 +2422,6 @@
 
 .library-cart-number {
   font-size: 0.6rem !important;
-  opacity: 0.4 !important;
 }
 
 
@@ -2972,4 +2962,153 @@
     right: 55px;
   }
 
+}
+
+/* =====================================================
+   RÉSUMÉ CHECKOUT CARD
+===================================================== */
+.library-resume-card {
+  position: relative;
+  max-width: 520px;
+  margin-top: 2rem;
+  padding: 1rem 1.1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.2);
+
+  background:
+    var(--library-paper-dark);
+
+  box-shadow:
+    5px 6px 0
+    rgba(24, 60, 53, 0.07);
+
+  transform: rotate(-0.8deg);
+}
+
+.library-resume-card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -7px;
+  width: 55px;
+  height: 12px;
+  transform:
+    translateX(-50%)
+    rotate(1deg);
+  background:
+    rgba(198, 161, 91, 0.55);
+}
+
+.library-resume-card-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.55rem;
+  border-bottom:
+    1px dashed
+    rgba(24, 60, 53, 0.22);
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.library-resume-card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.library-resume-label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+
+}
+
+.library-resume-card-main strong {
+  display: block;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.library-resume-card-main small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.45rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.library-resume-stamp {
+  flex-shrink: 0;
+  padding: 0.45rem 0.55rem;
+  border:
+    1px solid
+    var(--library-ink);
+
+  font-size: 0.4rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  transform: rotate(-5deg);
+}
+
+.library-resume-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.7rem 0.8rem;
+  border:
+    1px solid
+    var(--library-ink);
+  background:
+    var(--library-ink);
+  color:
+    var(--library-paper);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.library-resume-button:hover,
+.library-resume-button:focus-visible {
+  transform: translateY(-2px);
+  background: #244a40;
+}
+
+.library-resume-button:focus-visible {
+  outline:
+    3px solid
+    rgba(198, 161, 91, 0.7);
+
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .library-resume-card {
+    max-width: none;
+    margin-top: 1.5rem;
+  }
+
+  .library-resume-card-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .library-resume-stamp {
+    align-self: flex-start;
+  }
 }

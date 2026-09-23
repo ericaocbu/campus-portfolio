@@ -171,6 +171,43 @@ export function About({
 
           </div>
 
+          <div class="library-resume-card">
+
+            <div class="library-resume-card-top">
+              <span>THE ERICA LIBRARY</span>
+              <span>REF. 001</span>
+            </div>
+
+            <div class="library-resume-card-main">
+              <div>
+                <span class="library-resume-label">
+                  PROFESSIONAL RECORD
+                </span>
+
+                <strong>
+                  RESUME
+                </strong>
+
+                <small>
+                  EXPERIENCE · EDUCATION · SKILLS
+                </small>
+              </div>
+
+              <span class="library-resume-stamp">
+                AVAILABLE
+              </span>
+            </div>
+
+            <a
+              class="library-resume-button"
+              href="/resume.pdf"
+              download
+            >
+              DOWNLOAD RESUME
+            </a>
+
+          </div>
+
         </div>
 
       </div>
