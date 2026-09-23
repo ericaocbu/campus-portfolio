@@ -613,14 +613,10 @@
 
 .home-section-heading > span {
   display: block;
-
   margin-bottom: 1.5rem;
-
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   font-weight: 900;
   letter-spacing: 0.14em;
-
-  opacity: 0.45;
 }
 
 .home-section-heading h2 {
@@ -670,8 +666,7 @@
   margin-bottom: 20px;
   font-size: 0.95rem;
   line-height: 1.8;
-
-  opacity: 0.62;
+  opacity: 0.90;
 }
 
 .home-about-tags {
@@ -760,14 +755,10 @@
 
 .destination-number {
   position: absolute;
-
   top: 1rem;
   right: 1rem;
-
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   font-weight: 900;
-
-  opacity: 0.4;
 }
 
 .destination-icon {
@@ -798,23 +789,19 @@
 }
 
 .destination-text small {
-  font-size: 0.48rem;
+  font-size: 0.55rem;
   font-weight: 900;
   letter-spacing: 0.12em;
-
-  opacity: 0.45;
 }
 
 .destination-text strong {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: -0.025em;
 }
 
 .destination-text em {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-style: normal;
-
-  opacity: 0.5;
 }
 
 .destination-arrow {
@@ -925,7 +912,6 @@
 
 .home-path-option.guided-tour:hover {
   background: #264f45;
-
   box-shadow:
     8px 8px 0
     rgba(24, 60, 53, 0.16);
@@ -933,12 +919,12 @@
 
 .home-path-option.guided-tour > span {
   color: #f5f3eb;
-  opacity: 0.5;
+  opacity: .85;
 }
 
 .home-path-option.guided-tour small {
   color: #f5f3eb;
-  opacity: 0.7;
+  opacity: .85;
 }
 
 .home-path-option.guided-tour b {
@@ -954,33 +940,27 @@
 }
 
 .home-path-option > span {
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   font-weight: 900;
-
-  opacity: 0.4;
+  opacity: .85;
 }
 
 .home-path-option strong {
   font-size: 1rem;
-
   letter-spacing: 0.05em;
 }
 
 .home-path-option small {
   max-width: 330px;
-
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   line-height: 1.55;
-
-  opacity: 0.58;
+  opacity: 0.85;
 }
 
 .home-path-option b {
   margin-top: auto;
-
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   font-weight: 900;
-
   letter-spacing: 0.1em;
 }
 

@@ -36,37 +36,37 @@ export const projects = [
         number: "01",
         title: "RESEARCH",
         description:
-          "Explored student challenges around time management, motivation, organization, and academic planning.",
+          "Explored student challenges surrounding time management, motivation, organization, and academic planning, focusing on how students keep track of competing responsibilities.",
       },
       {
         number: "02",
         title: "DEFINE",
         description:
-          "Translated research findings into user needs, goals, information architecture, and product requirements.",
+          "Synthesized research into key user needs, goals, pain points, and product requirements. Established the information architecture needed to bring assignments, deadlines, schedules, and progress into one experience.",
       },
       {
         number: "03",
         title: "DESIGN",
         description:
-          "Created user flows, wireframes, and interface concepts focused on hierarchy and intuitive navigation.",
+          "Created user flows, wireframes, and interface concepts with an emphasis on clear hierarchy, intuitive navigation, and reducing information overload.",
       },
       {
         number: "04",
         title: "PROTOTYPE",
         description:
-          "Built an interactive Figma prototype to bring the core experience and interactions to life.",
+          "Built an interactive Figma prototype that connected the core flows, including academic organization, deadlines, schedules, progress tracking, and AI-powered academic support.",
       },
       {
         number: "05",
         title: "TEST",
         description:
-          "Evaluated the prototype and refined interactions based on usability feedback.",
+          "Evaluated the prototype to identify usability issues with navigation, information hierarchy, and interactions, then refined the experience based on feedback and observations.",
       },
       {
         number: "06",
         title: "REFLECT",
         description:
-          "Documented design decisions, iterations, challenges, and lessons from the process.",
+          "Documented design decisions, iterations, challenges, and lessons learned throughout the process, including how visual hierarchy and interaction patterns can make complex academic information easier to manage.",
       },
     ],
 
@@ -118,37 +118,37 @@ export const projects = [
         number: "01",
         title: "RESEARCH",
         description:
-          "Explored barriers users may experience when looking for mental health support.",
+          "Explored barriers people may experience when seeking mental health support, including difficulty finding relevant resources, concerns about privacy, and the need for emotionally safe digital experiences.",
       },
       {
         number: "02",
         title: "DEFINE",
         description:
-          "Identified opportunities around trust, emotional safety, accessibility, and finding appropriate resources.",
+          "Identified key opportunities around trust, emotional safety, accessibility, and resource discovery, translating research observations into design goals for the experience.",
       },
       {
         number: "03",
         title: "DESIGN",
         description:
-          "Created mobile flows and visual components centered around a supportive experience.",
+          "Developed user flows, personas, wireframes, and visual components focused on creating a supportive and approachable experience while reducing unnecessary cognitive and emotional friction.",
       },
       {
         number: "04",
         title: "PROTOTYPE",
         description:
-          "Built interactive flows to explore the experience before implementation.",
+          "Built an interactive Figma prototype to visualize the core experience, test navigation between resources, and explore how users would interact with different support features.",
       },
       {
         number: "05",
         title: "TEST",
         description:
-          "Used usability testing to evaluate navigation, interactions, and the overall support experience.",
+          "Used usability testing and feedback to evaluate navigation, interactions, clarity, and the overall support experience, identifying areas that could be improved.",
       },
       {
         number: "06",
         title: "REFLECT",
         description:
-          "Learned how empathy, transparency, and trust influence design for sensitive experiences.",
+          "Reflected on how empathy, transparency, and accessibility influence design decisions when creating experiences around sensitive and personal topics.",
       },
     ],
 
@@ -200,25 +200,25 @@ export const projects = [
         number: "01",
         title: "DEFINE",
         description:
-          "Identified the core information users would need to access quickly.",
+          "Identified the key health information users would need to access quickly, focusing on symptoms, trends, reminders, and other important dashboard information.",
       },
       {
         number: "02",
         title: "DESIGN",
         description:
-          "Created a visual system focused on hierarchy, readability, responsive layouts, and clear data presentation.",
+          "Created a visual system centered around hierarchy, readability, accessibility, and clear data presentation, organizing complex information into an interface that could be scanned easily.",
       },
       {
         number: "03",
         title: "BUILD",
         description:
-          "Implemented the interface using CSS, JavaScript, and TypeScript.",
+          "Translated the interface into a functional front-end experience using CSS, JavaScript, and TypeScript, building reusable components and responsive layouts. <br> Implemented interactive dashboard elements and data visualizations to help users understand information and interact with their health data more efficiently.",
       },
       {
         number: "04",
         title: "REFINE",
         description:
-          "Focused on usability, visual consistency, responsive behavior, and data visualization.",
+          "Iterated on the interface by improving responsive behavior, spacing, visual consistency, component styling, and overall usability across different screen sizes. <br> Evaluated the final implementation against the original design goals and reflected on how front-end decisions can support accessibility, readability, and effective health information visualization.",
       },
     ],
 
@@ -270,25 +270,31 @@ export const projects = [
         number: "01",
         title: "RESEARCH",
         description:
-          "Considered student needs and frustrations surrounding internships and professional development.",
+          "Explored student needs, challenges, and frustrations surrounding internships, career preparation, and professional development, considering the different stages students encounter during the process.",
       },
       {
         number: "02",
         title: "DEFINE",
         description:
-          "Established the major user flows and information students would need throughout the internship process.",
+          "Synthesized findings into key user needs and established the major flows students would use to discover opportunities, manage their internship search, and navigate professional development.",
       },
       {
         number: "03",
         title: "DESIGN",
         description:
-          "Created wireframes and interface concepts as part of a collaborative UX process.",
+          "Collaborated on wireframes, user flows, and interface concepts, focusing on clear navigation, accessible information, and an experience that could support students throughout multiple stages of their search.",
       },
       {
         number: "04",
+        title: "PROTOTYPE",
+        description:
+          "Built an interactive Figma prototype to visualize the core experience, refined concepts and interactions through collaborative feedback, adjusting layouts, information hierarchy, and user flows as the product direction developed.",
+      },
+      {
+        number: "05",
         title: "REFLECT",
         description:
-          "Focused on keeping the experience understandable across different stages of the internship search.",
+          "Considered how the design could remain understandable and useful across different stages of the internship journey, from exploring opportunities to preparing for and managing applications.",
       },
     ],
 
