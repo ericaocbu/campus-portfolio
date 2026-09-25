@@ -1133,7 +1133,7 @@ RESEARCH / NUS DISPLAYS
   color:
     var(--lecture-terracotta);
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 900;
 
@@ -1150,13 +1150,9 @@ RESEARCH / NUS DISPLAYS
 
 .display-board small {
   display: block;
-
   margin-top: 7px;
-
-  color:
-    rgba(62, 44, 36, 0.62);
-
-  font-size: 10px;
+  color: #684535;
+  font-size: 11px;
 }
 
 .display-paper {
@@ -1217,7 +1213,7 @@ RESEARCH / NUS DISPLAYS
   color:
     var(--lecture-terracotta);
 
-  font-size: 8px;
+  font-size: 10px;
 
   font-weight: 900;
 
@@ -1551,7 +1547,7 @@ EXPERIENCE DESKS
   color:
     var(--lecture-terracotta);
 
-  font-size: 9px;
+  font-size: 10px;
 
   font-weight: 700;
 
@@ -1560,16 +1556,11 @@ EXPERIENCE DESKS
 
 .desk-view {
   display: block;
-
   margin-top: 10px;
-
   color:
-    rgba(75, 48, 37, 0.5);
-
-  font-size: 7px;
-
+    #684535;
+  font-size: 9px;
   font-weight: 900;
-
   letter-spacing: 0.1em;
 }
 
@@ -1900,37 +1891,25 @@ FLOOR DETAILS
 
 .lecture-floor-details {
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
-
   height: 260px;
-
   z-index: 8;
-
   pointer-events: none;
 }
 
 .floor-marker {
   position: absolute;
-
   left: 50px;
   bottom: 42px;
-
   display: flex;
-
   align-items: center;
-
   gap: 6px;
-
   color:
     rgba(255, 246, 228, 0.55);
-
   font-size: 9px;
-
   font-weight: 900;
-
   letter-spacing: 0.14em;
 }
 
@@ -1940,26 +1919,19 @@ FLOOR DETAILS
 
 .floor-lines {
   position: absolute;
-
   left: 50%;
   bottom: 35px;
-
   display: flex;
-
   gap: 8px;
-
   transform:
     translateX(-50%);
 }
 
 .floor-lines span {
   display: block;
-
   width: 65px;
   height: 3px;
-
   border-radius: 999px;
-
   background:
     rgba(255, 246, 228, 0.12);
 }
@@ -1974,13 +1946,10 @@ DETAIL MODAL
   position: fixed;
   inset: 0;
   z-index: 10000;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 32px;
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1999,7 +1968,6 @@ DETAIL MODAL
 .experience-detail-backdrop {
   position: absolute;
   inset: 0;
-
   background: rgba(30, 25, 22, 0.55);
   backdrop-filter: blur(4px);
 }
@@ -2007,18 +1975,13 @@ DETAIL MODAL
 .experience-detail-panel {
   position: relative;
   z-index: 1;
-
   width: min(760px, 100%);
   max-height: min(820px, 88vh);
-
   overflow-y: auto;
-
   background: #f8f1e7;
   border: 2px solid #3c302a;
   border-radius: 22px;
-
   padding: 42px;
-
   box-shadow:
     0 24px 70px rgba(0, 0, 0, 0.28);
 
@@ -2038,33 +2001,21 @@ MODAL CLOSE
 
 .experience-detail-close {
   position: absolute;
-
   top: 17px;
   right: 18px;
-
   width: 38px;
   height: 38px;
-
   display: grid;
-
   place-items: center;
-
   border: none;
-
   border-radius: 50%;
-
   background:
     rgba(78, 52, 39, 0.08);
-
   color:
     #543827;
-
   font-size: 25px;
-
   line-height: 1;
-
   cursor: pointer;
-
   transition:
     transform 180ms ease,
     background 180ms ease;
@@ -2087,11 +2038,8 @@ MODAL TOP
 
 .detail-top {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   margin-bottom: 25px;
 }
 
@@ -2136,16 +2084,10 @@ MODAL HEADING
 
 .detail-eyebrow {
   display: block;
-
   margin-bottom: 7px;
-
-  color:
-    rgba(78, 52, 39, 0.5);
-
-  font-size: 8px;
-
+  color:black;
+  font-size: 10px;
   font-weight: 900;
-
   letter-spacing: 0.17em;
 }
 
@@ -2187,30 +2129,21 @@ MODAL META
 
 .detail-meta {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 9px;
-
   margin-top: 20px;
 }
 
 .detail-meta span {
   padding:
     7px 11px;
-
   border-radius: 999px;
-
   background:
     rgba(82, 117, 138, 0.09);
-
   color:
     #52758a;
-
-  font-size: 8px;
-
+  font-size: 10px;
   font-weight: 900;
-
   letter-spacing: 0.1em;
 }
 
@@ -2224,14 +2157,9 @@ DIVIDER
 .detail-divider {
   width: 100%;
   height: 1px;
-
-  margin:
-    28px 0;
-
-  background:
-    rgba(78, 52, 39, 0.12);
+  margin: 28px 0;
+  background:#684535;
 }
-
 
 /*
 ============================================================
@@ -2241,35 +2169,26 @@ DETAIL BODY
 
 .detail-body {
   display: grid;
-
   grid-template-columns:
     minmax(170px, 0.75fr)
     minmax(0, 1.5fr);
-
   gap: 30px;
 }
 
 .detail-summary {
-  color:
-    #684535;
-
+  color:#684535;
   font-family:
     Georgia,
     serif;
-
   font-size: 17px;
-
   font-weight: 700;
-
   line-height: 1.48;
 }
 
 .detail-description {
   color:
     rgba(60, 43, 35, 0.75);
-
   font-size: 14px;
-
   line-height: 1.7;
 }
 
@@ -2291,34 +2210,25 @@ SKILLS
 
 .detail-skills {
   margin-top: 30px;
-
   padding-top: 22px;
-
   border-top:
     1px solid
-    rgba(78, 52, 39, 0.12);
+    #684535;
 }
 
 .detail-skills-label {
   display: block;
-
   margin-bottom: 10px;
-
   color:
-    rgba(78, 52, 39, 0.48);
-
-  font-size: 8px;
-
+    rgb(104, 69, 53);
+  font-size: 10px;
   font-weight: 900;
-
   letter-spacing: 0.16em;
 }
 
 .detail-skills-list {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 7px;
 }
 
