@@ -463,6 +463,10 @@ export function Experience() {
       <span class="display-route">
         NC → SG
       </span>
+
+      <span class="display-arrow">
+        VIEW →
+      </span>
     </button>
   `;
 

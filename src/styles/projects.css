@@ -1271,14 +1271,12 @@ span:last-child {
   border-top:
     1px solid rgba(16, 43, 78, 0.16);
 
-  color: rgba(16, 43, 78, 0.5);
-
   font-family:
     "Courier New",
     monospace;
 
   font-size: 9px;
-
+  font-weight: 700;
   letter-spacing: 0.1em;
 }
 

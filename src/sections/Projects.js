@@ -319,7 +319,7 @@ export function Projects() {
       </p>
 
       <span>
-        END OF ARCHIVE →
+        END OF ARCHIVE
       </span>
 
     </footer>

@@ -904,8 +904,7 @@ export function About({
       <span>THE ERICA LIBRARY</span>
 
       <p>
-        Thanks for getting to know the person
-        behind the portfolio! :)
+        Thanks for getting to know me! :)
       </p>
 
     </div>

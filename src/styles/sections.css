@@ -976,29 +976,20 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   padding-top: 5rem;
-
   font-size: 0.5rem;
   font-weight: 900;
   letter-spacing: 0.12em;
-
-  opacity: 0.45;
 }
 
 .home-footer-note p {
   max-width: 220px;
-
   margin: 0;
-
   font-size: 0.6rem;
   line-height: 1.5;
-
   text-align: right;
-
   letter-spacing: 0;
 }
-
 
 /* =====================================================
    MOBILE
