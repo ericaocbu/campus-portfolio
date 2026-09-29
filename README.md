@@ -32,6 +32,8 @@ in a less traditional way.
 ```text
 campus-portfolio/
 │
+├── public/
+│   └── resume.pdf             # Downloadable resume
 │
 ├── src/
 │   │
@@ -69,7 +71,6 @@ campus-portfolio/
 │   ├── main.js                 # Application entry point
 │   └── style.css               # Main stylesheet
 │
-├── package.json
 └── README.md
 ```
 
