@@ -1,10 +1,4 @@
-import { campus } from "../data/campus.js";
-
-export function Home({
-  onBack,
-  onStartTour,
-  onNavigate,
-}) {
+export function Home({ onBack, onStartTour }) {
   const home = document.createElement("div");
 
   home.classList.add("home-portfolio");
@@ -164,13 +158,14 @@ export function Home({
         <p>
           Every building has a purpose and every path
           leads somewhere. And you decide where
-          you want to go next. You can explore freely or take a guided tour
-          with Orientation Leader Erica!
+          you want to go next. You can explore freely
+          or take a guided tour with Orientation Leader Erica!
         </p>
 
         <p>
-          After you're done looking through campus, stick around and 
-          try to find some <i>discoveries</i> on <i>campus</i> (hint: there's 6 of them!)
+          After you're done looking through campus, stick around and
+          try to find some <i>discoveries</i> on <i>campus</i>
+          (hint: there's 6 of them!)
         </p>
 
 
@@ -197,166 +192,202 @@ export function Home({
       id="home-explore"
     >
 
-      <div class="home-section-heading">
+      <div class="home-directory-heading">
 
-        <span>
-          02 / EXPLORE
-        </span>
+        <div>
 
-        <h2>
-          WHERE SHOULD
-          <br />
-          WE <em>GO?</em>
-        </h2>
+          <span class="home-directory-kicker">
+            02 / EXPLORE
+          </span>
+
+          <h2>
+            KNOW YOUR
+            <br />
+            WAY <em> AROUND.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="home-directory-intro">
+
+          <span class="home-directory-here">
+            ● YOU ARE HERE
+          </span>
+
+          <p>
+            The campus directory in the top-right corner
+            can take you directly to each destination.
+            Use it whenever you want to jump somewhere specific 
+            or start a tour.
+          </p>
+
+        </div>
 
       </div>
 
 
-      <div class="home-destination-grid">
+      <div class="home-campus-directory">
+
+        <!-- STUDENT UNION -->
+
+        <div class="directory-row directory-current">
+
+          <div class="directory-number">
+            01
+          </div>
+
+          <div class="directory-name">
+            <strong>STUDENT UNION</strong>
+            <small>START HERE</small>
+          </div>
+
+          <div class="directory-description">
+            Portfolio introduction
+          </div>
+
+          <div class="directory-status">
+            YOU ARE HERE
+          </div>
+
+        </div>
+
 
         <!-- LIBRARY -->
 
-        <button
-          class="home-destination"
-          type="button"
-          data-location="library"
-        >
+        <div class="directory-row">
 
-          <span class="destination-number">
-            01
-          </span>
+          <div class="directory-number">
+            02
+          </div>
 
-          <span class="destination-icon">
-            ◫
-          </span>
-
-          <span class="destination-text">
-            <small>VISIT THE</small>
+          <div class="directory-name">
             <strong>LIBRARY</strong>
-            <em>About Me</em>
-          </span>
+            <small>ABOUT ME</small>
+          </div>
 
-          <span class="destination-arrow">
-            →
-          </span>
+          <div class="directory-description">
+            Education, skills &amp; background
+          </div>
 
-        </button>
+          <div class="directory-status">
+            DESTINATION
+          </div>
+
+        </div>
 
 
         <!-- INNOVATION LAB -->
 
-        <button
-          class="home-destination"
-          type="button"
-          data-location="innovation-lab"
-        >
+        <div class="directory-row">
 
-          <span class="destination-number">
-            02
-          </span>
+          <div class="directory-number">
+            03
+          </div>
 
-          <span class="destination-icon">
-            ◇
-          </span>
-
-          <span class="destination-text">
-            <small>ENTER THE</small>
+          <div class="directory-name">
             <strong>INNOVATION LAB</strong>
-            <em>My Projects</em>
-          </span>
+            <small>PROJECTS</small>
+          </div>
 
-          <span class="destination-arrow">
-            →
-          </span>
+          <div class="directory-description">
+            UX, UI & Front-End work
+          </div>
 
-        </button>
+          <div class="directory-status">
+            DESTINATION
+          </div>
+
+        </div>
 
 
         <!-- LECTURE HALL -->
 
-        <button
-          class="home-destination"
-          type="button"
-          data-location="lecture-hall"
-        >
+        <div class="directory-row">
 
-          <span class="destination-number">
-            03
-          </span>
+          <div class="directory-number">
+            04
+          </div>
 
-          <span class="destination-icon">
-            □
-          </span>
-
-          <span class="destination-text">
-            <small>STEP INTO THE</small>
+          <div class="directory-name">
             <strong>LECTURE HALL</strong>
-            <em>My Experience</em>
-          </span>
+            <small>EXPERIENCE</small>
+          </div>
 
-          <span class="destination-arrow">
-            →
-          </span>
+          <div class="directory-description">
+            Education & professional experience
+          </div>
 
-        </button>
+          <div class="directory-status">
+            DESTINATION
+          </div>
+
+        </div>
 
 
         <!-- FOOD CANTEEN -->
 
-        <button
-          class="home-destination"
-          type="button"
-          data-location="food-canteen"
-        >
+        <div class="directory-row">
 
-          <span class="destination-number">
-            04
-          </span>
-
-          <span class="destination-icon">
-            ○
-          </span>
-
-          <span class="destination-text">
-            <small>STOP BY THE</small>
-            <strong>FOOD CANTEEN</strong>
-            <em>Contact Me</em>
-          </span>
-
-          <span class="destination-arrow">
-            →
-          </span>
-
-        </button>
-
-
-        <!-- THE DORMS -->
-
-        <button
-          class="home-destination"
-          type="button"
-          data-location="utown"
-        >
-
-          <span class="destination-number">
+          <div class="directory-number">
             05
-          </span>
+          </div>
 
-          <span class="destination-icon">
-            ✦
-          </span>
+          <div class="directory-name">
+            <strong>FOOD CANTEEN</strong>
+            <small>CONTACT</small>
+          </div>
 
-          <span class="destination-text">
-            <small>VISIT</small>
+          <div class="directory-description">
+            Get in touch with me :)
+          </div>
+
+          <div class="directory-status">
+            DESTINATION
+          </div>
+
+        </div>
+
+
+        <!-- UTOWN -->
+
+        <div class="directory-row">
+
+          <div class="directory-number">
+            06
+          </div>
+
+          <div class="directory-name">
             <strong>THE DORMS</strong>
-            <em>Outside of work</em>
-          </span>
+            <small>OUTSIDE OF WORK</small>
+          </div>
 
-          <span class="destination-arrow">
-            →
-          </span>
+          <div class="directory-description">
+            Outside of work you can find me...
+          </div>
 
-        </button>
+          <div class="directory-status">
+            DESTINATION
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="home-directory-footer">
+
+        <span>
+          CAMPUS DIRECTORY
+        </span>
+
+        <span>
+          06 DESTINATIONS
+        </span>
+
+        <span>
+          USE THE CAMPUS NAVIGATION TO VISIT
+        </span>
 
       </div>
 
@@ -370,7 +401,7 @@ export function Home({
     <div class="home-process">
 
       <div class="home-process-label">
-        HOW WOULD YOU LIKE TO EXPLORE?
+        03 / HOW WOULD YOU LIKE TO EXPLORE?
       </div>
 
 
@@ -450,116 +481,50 @@ export function Home({
     </div>
   `;
 
-
   /*
    * SCROLL BUTTONS
    */
 
-  const scrollButtons =
-    home.querySelectorAll("[data-scroll-to]");
+  const scrollButtons = home.querySelectorAll("[data-scroll-to]");
 
   scrollButtons.forEach((button) => {
-
     button.addEventListener("click", () => {
+      const targetId = button.dataset.scrollTo;
 
-      const targetId =
-        button.dataset.scrollTo;
-
-      const target =
-        home.querySelector(`#${targetId}`);
+      const target = home.querySelector(`#${targetId}`);
 
       if (target) {
-
         target.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
-
       }
-
     });
-
   });
-
 
   /*
    * EXPLORE FREELY
    */
 
-  const exploreButton =
-    home.querySelector(
-      '[data-campus-action="explore"]'
-    );
+  const exploreButton = home.querySelector('[data-campus-action="explore"]');
 
   if (exploreButton) {
-
-    exploreButton.addEventListener(
-      "click",
-      () => {
-        onBack();
-      }
-    );
-
+    exploreButton.addEventListener("click", () => {
+      onBack();
+    });
   }
-
 
   /*
    * START CAMPUS TOUR
    */
 
-  const tourButton =
-    home.querySelector(
-      '[data-campus-action="tour"]'
-    );
+  const tourButton = home.querySelector('[data-campus-action="tour"]');
 
   if (tourButton && onStartTour) {
-
-    tourButton.addEventListener(
-      "click",
-      () => {
-        onStartTour();
-      }
-    );
-
+    tourButton.addEventListener("click", () => {
+      onStartTour();
+    });
   }
-
-
-  /*
-   * DESTINATION BUTTONS
-   */
-
-  const destinationButtons =
-    home.querySelectorAll(
-      "[data-location]"
-    );
-
-  destinationButtons.forEach((button) => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const locationId =
-          button.dataset.location;
-
-        const destination =
-          campus.locations.find(
-            (item) =>
-              item.id === locationId
-          );
-
-        if (
-          destination &&
-          onNavigate
-        ) {
-          onNavigate(destination);
-        }
-
-      }
-    );
-
-  });
-
 
   return home;
 }
