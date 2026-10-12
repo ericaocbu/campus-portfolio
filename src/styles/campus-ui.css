@@ -1,0 +1,751 @@
+/* CAMPUS UI: directory, tour controls, discovery HUD, and interaction messages. */
+
+/* ========================================
+   START TOUR BUTTON
+======================================== */
+.campus-tour-cta{
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 150;
+}
+
+.campus-tour-start{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 235px;
+  padding: 0.8rem 1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.18);
+  border-radius: 9px;
+  background:
+    rgba(245, 243, 235, 0.95);
+  color: #183c35;
+  box-shadow:
+    0 10px 28px
+    rgba(24, 60, 53, 0.12);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.campus-tour-start:hover{
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 32px
+    rgba(24, 60, 53, 0.15);
+}
+
+.campus-tour-start:focus-visible{
+  outline:
+    3px solid
+    #183c35;
+  outline-offset: 4px;
+}
+
+.campus-tour-start-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background: #183c35;
+  color: #f5f3eb;
+  font-size: 0.85rem;
+}
+
+.campus-tour-start-copy{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.campus-tour-start-copy strong{
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.campus-tour-start-copy small{
+  font-size: 0.62rem;
+  opacity: 0.5;
+}
+
+.campus-tour-start-arrow{
+  font-size: 1rem;
+}
+
+/* ========================================
+   CAMPUS DIRECTORY
+======================================== */
+.campus-navigation{
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  left: auto;
+  z-index: 250;
+}
+
+.directory-button{
+  padding: 0.8rem 1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.18);
+  border-radius: 7px;
+  background:
+    rgba(245, 243, 235, 0.94);
+  color: #183c35;
+  box-shadow:
+    0 8px 20px
+    rgba(24, 60, 53, 0.08);
+  backdrop-filter: blur(10px);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.directory-button:hover{
+  background: #183c35;
+  color: #f5f3eb;
+}
+
+.directory-panel{
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  left: auto;
+  width: min(390px, calc(100vw - 3rem));
+  max-height: calc(100vh - 3rem);
+  padding: 1.5rem;
+  overflow-y: auto;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.14);
+  border-radius: 12px;
+  background:
+    rgba(245, 243, 235, 0.97);
+  color: #183c35;
+  box-shadow:
+    0 20px 50px
+    rgba(24, 60, 53, 0.18);
+  backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+}
+
+.directory-panel.is-open{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.directory-header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.directory-eyebrow, .directory-divider{
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.directory-header h2{
+  margin-top: 0.3rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+}
+
+.directory-close{
+  width: 34px;
+  height: 34px;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.15);
+  border-radius: 50%;
+  background: transparent;
+  color: #183c35;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.start-tour-button{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-bottom: 1.3rem;
+  padding: 0.9rem;
+  border: 0;
+  border-radius: 8px;
+  background: #183c35;
+  color: #f5f3eb;
+  text-align: left;
+  cursor: pointer;
+}
+
+.start-tour-button > span:nth-child(2){
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.start-tour-button strong{
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.start-tour-button small{
+  font-size: 0.62rem;
+}
+
+.directory-divider{
+  margin-bottom: 0.65rem;
+}
+
+.directory-list{
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.directory-item{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  border:
+    1px solid
+    transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #183c35;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.directory-item:hover{
+  border-color:
+    rgba(24, 60, 53, 0.1);
+  background:
+    rgba(255, 255, 255, 0.5);
+}
+
+.directory-number{
+  width: 22px;
+  font-size: 0.65rem;
+}
+
+.directory-icon{
+  font-size: 1.1rem;
+}
+
+.directory-item-text{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.directory-item-text strong{
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.directory-item-text small{
+  font-size: 0.65rem;
+}
+
+.directory-arrow{
+  opacity: 0.7;
+}
+
+/* ========================================
+   TOUR HUD
+======================================== */
+.tour-hud{
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 280px;
+  z-index: 300;
+  padding: 1rem;
+  border:
+    1px solid
+    rgba(24, 60, 53, 0.15);
+  border-radius: 10px;
+  background:
+    rgba(245, 243, 235, 0.96);
+  color: #183c35;
+  box-shadow:
+    0 16px 40px
+    rgba(24, 60, 53, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.tour-hud-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+  border-bottom:
+    1px solid
+    rgba(24, 60, 53, 0.1);
+}
+
+.tour-hud-label{
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.tour-hud-dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #426c52;
+}
+
+.tour-hud-count{
+  font-size: 0.6rem;
+}
+
+.tour-hud-current, .tour-hud-next{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 0;
+}
+
+.tour-hud-next{
+  border-top:
+    1px solid
+    rgba(24, 60, 53, 0.08);
+}
+
+.tour-hud-eyebrow{
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+
+}
+
+.tour-hud-current strong, .tour-hud-next strong{
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.tour-hud-current small, .tour-hud-next small{
+  font-size: 0.62rem;
+
+}
+
+.tour-hud-actions{
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tour-hud-next-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 0;
+  border-radius: 6px;
+  background: #183c35;
+  color: #f5f3eb;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.tour-hud-exit{
+  padding: 0.55rem;
+  border: 0;
+  background: transparent;
+  color: #183c35;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .campus-navigation{
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .directory-panel{
+    top: 1rem;
+    right: 1rem;
+    width: calc(100vw - 2rem);
+  }
+
+  .campus-tour-cta{
+    bottom: 1rem;
+  }
+
+  .tour-hud{
+    right: 1rem;
+    bottom: 1rem;
+    width: min(280px, calc(100vw - 2rem));
+  }}
+
+
+/* =====================================================
+   MAP START TOUR BUTTON
+===================================================== */
+.map-start-tour{
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 100;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 255px;
+  padding: 0.75rem 1rem;
+  border:
+    2px solid
+    #183c35;
+
+  border-radius: 8px;
+  background:#f5f3eb;
+  color:#183c35;
+  cursor: pointer;
+  box-shadow:
+    0 8px 24px
+    rgba(24, 60, 53, 0.16);
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.map-start-tour:hover{
+  transform:
+    translateX(-50%)
+    translateY(-3px);
+
+  background:#183c35;
+  color:#f5f3eb;
+  box-shadow:
+    0 12px 28px
+    rgba(24, 60, 53, 0.2);
+}
+
+.map-start-tour:focus-visible{
+  outline:
+    3px solid
+    #183c35;
+  outline-offset: 4px;
+}
+
+.map-start-tour-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background:#e8eadf;
+  font-size: 0.8rem;
+}
+
+.map-start-tour-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  flex: 1;
+}
+
+.map-start-tour-text strong{
+  font-size: 0.68rem;
+  letter-spacing:
+    0.08em;
+}
+
+.map-start-tour-text small{
+  font-size: 0.7rem;
+}
+
+.map-start-tour-arrow{
+  font-size: 1rem;
+  font-weight: 700;
+}@media (max-width: 768px) {
+
+  .map-start-tour{
+    bottom: 1rem;
+    min-width: 230px;
+  }
+
+  .campus-discovery-hud{
+    left: 16px;
+    bottom: 18px;
+  }
+
+  .campus-discovery-message{
+    left: 16px;
+    bottom: 72px;
+    width: min(300px, calc(100vw - 32px));
+  }}
+
+/* =====================================================
+   CAMPUS DISCOVERY HUD
+===================================================== */
+.campus-discovery-hud{
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(24, 60, 53, 0.18);
+  border-radius: 8px;
+  background: rgba(245, 243, 235, 0.96);
+  color: #183c35;
+  box-shadow:
+    0 10px 28px
+    rgba(24, 60, 53, 0.14);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.campus-discovery-hud:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 32px
+    rgba(24, 60, 53, 0.18);
+}
+
+.campus-discovery-hud:focus-visible{
+  outline: 3px solid #183c35;
+  outline-offset: 4px;
+}
+
+.campus-discovery-star{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #183c35;
+  color: #f5f3eb;
+  font-size: 0.7rem;
+}
+
+.campus-discovery-copy{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.campus-discovery-copy strong{
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+}
+
+.campus-discovery-count{
+  font-size: 0.52rem;
+  opacity: 0.5;
+}
+
+/* =====================================================
+   DISCOVERY MESSAGE
+===================================================== */
+.campus-discovery-message{
+  position: fixed;
+  left: 24px;
+  bottom: 82px;
+  z-index: 99999;
+  width: 320px;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(24, 60, 53, 0.16);
+  border-radius: 9px;
+  background: rgba(245, 243, 235, 0.97);
+  color: #183c35;
+  box-shadow:
+    0 16px 40px
+    rgba(24, 60, 53, 0.16);
+
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease;
+  pointer-events: none;
+}
+
+.campus-discovery-message.is-visible{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.campus-discovery-message-eyebrow{
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  opacity: 0.45;
+}
+
+.campus-discovery-message-title{
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.campus-discovery-message-text{
+  display: block;
+  font-size: 0.62rem;
+  line-height: 1.55;
+  opacity: 0.62;
+}.campus-discovery-hud{
+  pointer-events: auto;
+}.discovery-label{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  border: 1px solid rgba(24, 60, 53, 0.14);
+  border-radius: 999px;
+  background: rgba(245, 243, 235, 0.94);
+  color: #183c35;
+  font-size: 0.43rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  box-shadow:
+    0 3px 8px
+    rgba(24, 60, 53, 0.07);
+}
+
+.discovery-label{
+  bottom: -8px;
+  padding: 0.15rem 0.4rem;
+}
+
+/* =====================================================
+   TOUR HUD — COMPACT MOBILE LAYOUT
+===================================================== */
+@media (max-width: 768px) {
+  .tour-hud {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+    width: auto;
+    max-width: none;
+    padding: 0.65rem 0.8rem;
+    max-height: 40vh;
+    max-height: 40dvh;
+    overflow-y: auto;
+    border-radius: 10px;
+  }
+
+  .tour-hud-top { padding-bottom: 0.45rem; }
+
+  .tour-hud-current,
+  .tour-hud-next {
+    min-width: 0;
+    padding: 0.55rem 0;
+  }
+
+  .tour-hud-current strong,
+  .tour-hud-next strong {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .tour-hud-current small,
+  .tour-hud-next small {
+    font-size: 0.58rem;
+    line-height: 1.35;
+  }
+
+  .tour-hud-next {
+    border-top: none;
+    border-left: 1px solid rgba(24, 60, 53, 0.12);
+    padding-left: 0.7rem;
+  }
+
+  .tour-hud-current,
+  .tour-hud-next {
+    display: inline-flex;
+    vertical-align: top;
+    width: calc(50% - 0.35rem);
+  }
+
+  .tour-hud-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .tour-hud-next-button {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.65rem;
+    font-size: 0.52rem;
+  }
+
+  .tour-hud-next-button span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-align: left;
+  }
+
+  .tour-hud-exit {
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.48rem;
+  }
+}
