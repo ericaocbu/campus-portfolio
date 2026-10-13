@@ -1,463 +1,108 @@
 export function Beyond({ onBack }) {
   const section = document.createElement("div");
-
-  section.classList.add("dorm-portfolio");
-
-  const instagramUrl =
-    "https://www.instagram.com/ericasdigitalcampus";
+  section.classList.add("dorm-portfolio", "residence-hall");
+  const instagramUrl = "https://www.instagram.com/ericasdigitalcampus";
 
   section.innerHTML = `
-    <div class="dorm-room-scene">
+    <div class="hall-page">
+      <header class="hall-topbar">
+        <div class="hall-location"><span class="hall-location-dot"></span> CAMPUS LIFE <span>/</span> RESIDENCE HALL</div>
+        <span class="hall-floor-label">2ND FLOOR · 204</span>
+      </header>
 
-      <!-- WALL -->
-      <div class="dorm-wall">
-
-        <div class="dorm-window">
-          <div class="dorm-window-glass">
-            <span class="window-cloud window-cloud-one"></span>
-            <span class="window-cloud window-cloud-two"></span>
-            <span class="window-building"></span>
-            <span class="window-tree window-tree-one"></span>
-            <span class="window-tree window-tree-two"></span>
+      <main class="hall-scene" aria-label="Explore my residence hall">
+        <div class="hall-ceiling" aria-hidden="true"><span></span></div>
+        <section class="hall-back-wall">
+          <div class="hall-sign" aria-hidden="true">
+            <small>WELCOME TO</small>
+            <strong>The Dorm</strong>
+            <span>a hallway of information!</span>
           </div>
 
-          <div class="window-frame window-frame-top"></div>
-          <div class="window-frame window-frame-bottom"></div>
-          <div class="window-frame window-frame-left"></div>
-          <div class="window-frame window-frame-right"></div>
-          <div class="window-frame window-frame-middle"></div>
-        </div>
-
-
-        <!-- PHOTO / ART WALL -->
-        <div class="dorm-gallery-wall">
-
-          <button
-            type="button"
-            class="wall-photo wall-photo-large"
-            data-panel="inspiration"
-            aria-label="People who inspire me"
-          >
-            <span class="wall-photo-image">
-              <span>PHOTO</span>
-            </span>
-            <span class="wall-photo-caption">
-              places to see
-            </span>
-          </button>
-
-          <button
-            type="button"
-            class="wall-photo wall-photo-small"
-            data-panel="inspiration"
-            aria-label="People who inspire me"
-          >
-            <span class="wall-photo-image wall-photo-art">
-              <span>ART</span>
-            </span>
-          </button>
-
-          <div class="wall-postcard">
-            <span>HELLO</span>
-            <strong>FROM...<br />SOMEWHERE</strong>
-          </div>
-
-          <div class="wall-tape wall-tape-one"></div>
-          <div class="wall-tape wall-tape-two"></div>
-        </div>
-
-
-        <!-- CORKBOARD -->
-        <button
-          type="button"
-          class="dorm-corkboard"
-          data-panel="goals"
-          aria-label="Goals"
-        >
-          <span class="corkboard-frame"></span>
-
-          <span class="cork-note cork-note-one">
-            VISIT<br />SOMEWHERE<br />NEW
-          </span>
-
-          <span class="cork-note cork-note-two">
-            ENJOY<br />LIFE :)
-          </span>
-
-          <span class="cork-note cork-note-three">
-            TAKE<br />MORE<br />PHOTOS
-          </span>
-
-          <span class="cork-photo">
-            <span>✦</span>
-          </span>
-
-          <span class="cork-pin cork-pin-one"></span>
-          <span class="cork-pin cork-pin-two"></span>
-          <span class="cork-pin cork-pin-three"></span>
-        </button>
-
-        <!-- ROOM CHECKLIST -->
-        <div class="dorm-checklist">
-          <div class="dorm-checklist-header">
-            <span>ROOM 204</span>
-            <strong>TO-DO LIST</strong>
-          </div>
-
-          <div class="dorm-checklist-items">
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="enjoy"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">check the pillow</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="goals"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">read the cork board</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="photography"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">check the camera</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="music"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">check the headphones</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="learning"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">check the monitor</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="inspiration"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">look at the photos</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="travel"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">open the suitcase</span>
-            </div>
-
-            <div
-              class="dorm-checklist-item"
-              data-checklist-panel="interests"
-            >
-              <span class="check-box"></span>
-              <span class="check-text">browse the bookshelf</span>
-            </div>
-
-          </div>
-        </div>
-
-
-        <!-- ROOM SIGN -->
-        <div class="dorm-sign">
-          <span>Room</span>
-          <strong>204</strong>
-        </div>
-
-      </div>
-
-
-      <!-- FLOOR -->
-      <div class="dorm-floor">
-
-        <div class="dorm-rug">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-
-        <!-- BED -->
-        <div class="bed-area">
-          <div class="bed-headboard"></div>
-
-          <div class="bed-mattress">
-
-            <button
-              type="button"
-              class="bed-pillow bed-pillow-one"
-              data-panel="enjoy"
-              aria-label="A Few Favorites"
-            ></button>
-
-            <div class="bed-pillow bed-pillow-two"></div>
-
-            <div class="bed-cover"></div>
-
-          </div>
-
-          <div class="bed-frame"></div>
-        </div>
-
-        <!-- NIGHTSTAND -->
-        <div class="dorm-nightstand">
-
-          <div class="nightstand-top"></div>
-          <div class="nightstand-body"></div>
-          <div class="nightstand-drawer"></div>
-          <div class="nightstand-handle"></div>
-
-          <div class="nightstand-lamp">
-            <span class="lamp-shade"></span>
-            <span class="lamp-stem"></span>
-            <span class="lamp-base"></span>
-          </div>
-
-        </div>
-
-
-        <!-- DESK -->
-        <div class="dorm-desk">
-
-          <div class="desk-top"></div>
-
-          <div class="desk-drawer desk-drawer-one"></div>
-          <div class="desk-drawer desk-drawer-two"></div>
-
-          <div class="desk-leg desk-leg-one"></div>
-          <div class="desk-leg desk-leg-two"></div>
-          <div class="desk-leg desk-leg-three"></div>
-
-          <!-- MONITOR -->
-          <button
-            type="button"
-            class="desk-monitor"
-            data-panel="learning"
-            aria-label="Things I'm learning"
-          >
-            <span class="monitor-screen">
-
-              <strong>
-                go to bed
-              </strong>
-
-              <span class="monitor-tags">
-                you got this!!
+          <div class="hall-decor-row" aria-label="Explore wall displays">
+            <button type="button" class="hall-community-board hall-object" data-panel="goals" aria-label="Open my current goals">
+              <span class="board-heading">COMMUNITY BOARD</span>
+              <span class="board-notes">
+                <span class="board-note board-note-yellow">try something<br>new!</span>
+                <span class="board-note board-note-pink">take more<br>photos</span>
+                <span class="board-note board-note-blue">enjoy life :)</span>
               </span>
-
-            </span>
-
-            <span class="monitor-stand"></span>
-            <span class="monitor-base"></span>
-          </button>
-
-
-          <!-- LAPTOP -->
-          <div class="desk-laptop">
-            <span class="laptop-screen"></span>
-            <span class="laptop-base"></span>
-          </div>
-
-
-          <!-- NOTEBOOK -->
-          <div class="desk-notebook">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-
-          <!-- CAMERA -->
-          <button
-            type="button"
-            class="desk-camera"
-            data-panel="photography"
-            aria-label="Photography"
-          >
-            <span class="camera-body">
-              <span class="camera-lens"></span>
-              <span class="camera-viewfinder"></span>
-              <span class="camera-button"></span>
-            </span>
-          </button>
-
-
-          <!-- HEADPHONES -->
-          <button
-            type="button"
-            class="desk-headphones"
-            data-panel="music"
-            aria-label="Music"
-          >
-            <span class="headphone-band"></span>
-            <span class="headphone-left"></span>
-            <span class="headphone-right"></span>
-          </button>
-
-
-          <div class="desk-cup">
-            <span></span>
-          </div>
-
-        </div>
-
-
-        <!-- BOOKSHELF -->
-        <div class="dorm-bookshelf">
-
-          <div class="bookshelf-side bookshelf-side-left"></div>
-          <div class="bookshelf-side bookshelf-side-right"></div>
-
-          <div class="bookshelf-shelf shelf-onee"></div>
-          <div class="bookshelf-shelf shelf-twoo"></div>
-          <div class="bookshelf-shelf shelf-three"></div>
-          <div class="bookshelf-shelf shelf-four"></div>
-
-          <button
-            type="button"
-            class="bookshelf-books"
-            data-panel="interests"
-            aria-label="Things I'm into"
-          >
-            <span class="book book-one"></span>
-            <span class="book book-two"></span>
-            <span class="book book-three"></span>
-            <span class="book book-four"></span>
-            <span class="book book-five"></span>
-
-            <span class="book-label">
-              currently into
-            </span>
-          </button>
-
-          <div class="bookshelf-plant">
-            <span class="plant-pot"></span>
-            <span class="plant-leaf leaf-one"></span>
-            <span class="plant-leaf leaf-two"></span>
-            <span class="plant-leaf leaf-three"></span>
-            <span class="plant-leaf leaf-four"></span>
-          </div>
-
-        </div>
-
-
-        <!-- SUITCASE -->
-        <button
-          type="button"
-          class="dorm-suitcase"
-          data-panel="travel"
-          aria-label="Places I've been"
-        >
-          <span class="suitcase-handle"></span>
-
-          <span class="suitcase-body">
-
-            <span class="suitcase-sticker sticker-airplane">
-              ✈
-            </span>
-
-            <span class="suitcase-sticker sticker-sg">
-              SG
-            </span>
-
-            <span class="suitcase-sticker sticker-star">
-              ★
-            </span>
-
-            <span class="suitcase-seam"></span>
-
-          </span>
-        </button>
-
-
-        <!-- TOTE BAG -->
-        <div class="dorm-tote">
-          <span class="tote-handle"></span>
-          <span class="tote-body">
-            <strong>UNC</strong>
-            <small>CHAPEL HILL</small>
-          </span>
-        </div>
-
-
-        <!-- FLOOR PILLOW -->
-        <div class="floor-pillow"></div>
-
-
-        <!-- SMALL PLANT -->
-        <div class="floor-plant">
-          <span class="floor-plant-pot"></span>
-          <span class="floor-leaf leaf-one"></span>
-          <span class="floor-leaf leaf-two"></span>
-          <span class="floor-leaf leaf-three"></span>
-          <span class="floor-leaf leaf-four"></span>
-        </div>
-
-
-        <!-- EXPLORATION PANEL -->
-        <div
-          class="dorm-info-panel"
-          aria-hidden="true"
-        >
-          <div class="dorm-info-card">
-
-            <button
-              type="button"
-              class="dorm-info-close"
-              aria-label="Close"
-            >
-              ×
+              <span class="board-footer">GOALS & LITTLE REMINDERS ↗</span>
             </button>
 
-            <div class="dorm-info-content"></div>
+            <button type="button" class="hall-gallery hall-object" data-panel="inspiration" aria-label="Places I want to go">
+              <span class="gallery-frame">
+                <span class="poster-sky"></span><span class="poster-sun"></span>
+                <span class="poster-mountain poster-mountain-one"></span><span class="poster-mountain poster-mountain-two"></span>
+                <span class="poster-water"></span>
+              </span>
+              <span class="gallery-caption">PLACES I WANT TO GO ↗</span>
+            </button>
 
+            <button type="button" class="hall-photo-frame hall-object" data-panel="photography" aria-label="Photography and photo diary">
+              <span class="photo-art photo-art-camera"><span class="camera-flash"></span><span class="camera-body"><span class="camera-lens"></span></span></span>
+              <small>little moments, kept</small>
+              <b>PHOTO DIARY ↗</b>
+            </button>
+
+            <button type="button" class="hall-speaker hall-object" data-panel="music" aria-label="Open music">
+              <span class="speaker-top"></span><span class="speaker-driver speaker-driver-one"></span><span class="speaker-driver speaker-driver-two"></span>
+              <span class="speaker-action">NOW PLAYING ↗</span>
+            </button>
           </div>
+
+          <div class="hall-door-row" aria-label="Explore rooms">
+            <button type="button" class="hall-door hall-door-one" data-panel="learning" aria-label="Explore what I'm learning">
+              <span class="hall-door-number">201</span>
+              <span class="hall-door-name">LEARNING</span>
+              <span class="hall-door-knob"></span>
+              <span class="hall-door-action">OPEN DOOR ↗</span>
+            </button>
+            <button type="button" class="hall-door hall-door-two" data-panel="interests" aria-label="Explore things I'm into">
+              <span class="hall-door-number">202</span>
+              <span class="hall-door-name">CURRENTLY INTO</span>
+              <span class="hall-door-knob"></span>
+              <span class="hall-door-action">OPEN DOOR ↗</span>
+            </button>
+            <button type="button" class="hall-door hall-door-three" data-panel="travel" aria-label="Explore places I've been">
+              <span class="hall-door-number">203</span>
+              <span class="hall-door-name">TRAVEL LOG</span>
+              <span class="hall-door-knob"></span>
+              <span class="hall-door-action">OPEN DOOR ↗</span>
+            </button>
+            <button type="button" class="hall-door hall-door-four" data-panel="enjoy" aria-label="Explore my personal picks">
+              <span class="hall-door-number">204</span>
+              <span class="hall-door-name">PERSONAL PICKS</span>
+              <span class="hall-door-knob"></span>
+              <span class="hall-door-action">OPEN DOOR ↗</span>
+            </button>
+          </div>
+          <div class="hall-baseboard" aria-hidden="true"></div>
+        </section>
+
+        <div class="hall-floor" aria-hidden="true">
+          <span class="hall-floor-line"></span><span class="hall-floor-line"></span><span class="hall-floor-line"></span>
         </div>
 
-      </div>
+        <div class="hall-info-panel" aria-hidden="true">
+          <div class="dorm-info-card" role="dialog" aria-modal="true" aria-label="Portfolio details">
+            <button type="button" class="dorm-info-close" aria-label="Close details">×</button>
+            <div class="dorm-info-content"></div>
+          </div>
+        </div>
+      </main>
 
-
-      <!-- SMALL TOP LABEL -->
-      <div class="dorm-room-title">
-        <span>ROOM 204</span>
-        <strong>EXPLORE MY ROOM :)</strong>
-      </div>
-
+      <footer class="hall-footer">
+        <span>RESIDENCE HALL · FLOOR 2</span>
+        <span>HOVER TO EXPLORE · TAP TO OPEN ↗</span>
+      </footer>
     </div>
   `;
 
-
-  const infoPanel =
-    section.querySelector(
-      ".dorm-info-panel"
-    );
-
-  const infoContent =
-    section.querySelector(
-      ".dorm-info-content"
-    );
-
-  const closeInfo =
-    section.querySelector(
-      ".dorm-info-close"
-    );
-
+  const infoPanel = section.querySelector(".hall-info-panel");
+  const infoContent = section.querySelector(".dorm-info-content");
+  const closeInfo = section.querySelector(".dorm-info-close");
+  let lastTrigger = null;
 
   const panels = {
     goals: {
@@ -469,7 +114,6 @@ export function Beyond({ onBack }) {
           <span>Learn ASL</span>
           <span>Learn another language</span>
           <span>Take more photos!!</span>
-          <span>Try something completely new</span>
           <span>See more live music/concerts</span>
           <span>Get better at cooking...</span>
         </div>
@@ -509,7 +153,7 @@ export function Beyond({ onBack }) {
 
           <a>
             <span>03</span>
-            <strong>[marrakes]</strong>
+            <strong>[Marrakesh]</strong>
             <small>morocco</small>
           </a>
 
@@ -667,7 +311,7 @@ export function Beyond({ onBack }) {
     },
 
     enjoy: {
-      eyebrow: "RECOMMENDATIONS",
+      eyebrow: "Recommendations",
       title: "personal picks",
       body: `
         <div class="favorites-list">
@@ -717,106 +361,48 @@ export function Beyond({ onBack }) {
     },
   };
 
-
-  function openPanel(name) {
-  const data = panels[name];
-
-  if (!data) {
-    return;
+  function openPanel(name, trigger) {
+    const data = panels[name];
+    if (!data) return;
+    lastTrigger = trigger || document.activeElement;
+    infoContent.innerHTML = `
+      <span class="dorm-info-eyebrow">${data.eyebrow}</span>
+      <h2>${data.title}</h2>
+      <div class="dorm-info-body">${data.body}</div>
+    `;
+    infoPanel.classList.add("is-open");
+    infoPanel.setAttribute("aria-hidden", "false");
+    closeInfo.focus();
+    requestAnimationFrame(() =>
+      infoPanel.scrollIntoView({ behavior: "smooth", block: "center" }),
+    );
   }
-
-  infoContent.innerHTML = `
-    <span class="dorm-info-eyebrow">
-      ${data.eyebrow}
-    </span>
-
-    <h2>
-      ${data.title}
-    </h2>
-
-    <div class="dorm-info-body">
-      ${data.body}
-    </div>
-  `;
-
-  infoPanel.classList.add("is-open");
-
-  infoPanel.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-  // Bring the popup into view automatically
-  requestAnimationFrame(() => {
-    infoPanel.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  });
-}
-
 
   function closePanel() {
-    infoPanel.classList.remove(
-      "is-open"
-    );
-
-    infoPanel.setAttribute(
-      "aria-hidden",
-      "true"
-    );
+    infoPanel.classList.remove("is-open");
+    infoPanel.setAttribute("aria-hidden", "true");
+    if (lastTrigger && typeof lastTrigger.focus === "function")
+      lastTrigger.focus();
   }
 
-
-  section
-    .querySelectorAll(
-      "[data-panel]"
-    )
-    .forEach((object) => {
-
-      object.addEventListener(
-        "click",
-        () => {
-          const panelName =
-            object.dataset.panel;
-
-          openPanel(panelName);
-
-          const checklistItem =
-            section.querySelector(
-              `[data-checklist-panel="${panelName}"]`
-            );
-
-          if (checklistItem) {
-            checklistItem.classList.add(
-              "is-complete"
-            );
-          }
-        }
-      );
-
-    });
-
-
-  closeInfo.addEventListener(
-    "click",
-    closePanel
-  );
-
-
-  infoPanel.addEventListener(
-    "click",
-    (event) => {
-
-      if (
-        event.target === infoPanel
-      ) {
-        closePanel();
-      }
-
-    }
-  );
-
+  section.querySelectorAll("[data-panel]").forEach((object) => {
+    const tooltip = document.createElement("span");
+    tooltip.className = "explore-tooltip";
+    tooltip.setAttribute("aria-hidden", "true");
+    tooltip.textContent = "Tap to explore";
+    object.appendChild(tooltip);
+    object.addEventListener("click", () =>
+      openPanel(object.dataset.panel, object),
+    );
+  });
+  closeInfo.addEventListener("click", closePanel);
+  infoPanel.addEventListener("click", (event) => {
+    if (event.target === infoPanel) closePanel();
+  });
+  section.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && infoPanel.classList.contains("is-open"))
+      closePanel();
+  });
 
   return section;
 }

@@ -1,2597 +1,1160 @@
-/* =========================================================
-  DORM ROOM
-========================================================= */
-.dorm-portfolio {
-  --wall: #eee7da;
-  --wall-shadow: #ded3c1;
-
-  --wood: #8a6042;
-  --wood-dark: #624532;
-  --wood-light: #ad805d;
-
-  --floor: #b88359;
-  --floor-light: #c99569;
-
-  --cream: #f8f2e7;
-  --paper: #fffaf1;
-
-  --terracotta: #c9826d;
-  --terracotta-dark: #9d5e4f;
-
-  --sage: #78876e;
-  --sage-light: #b9c4a9;
-
-  --blue: #8299a2;
-  --blue-light: #c7d4d5;
-
-  --ink: #40362f;
-  --muted: #776b60;
-
-  position: relative;
-  min-height: 100%;
-  overflow: hidden;
-  color: var(--ink);
-  background: var(--wall);
-}
-
-/* =========================================================
-   ROOM SCENE
-========================================================= */
-.dorm-room-scene {
-  position: relative;
+/* Residence hall hallway */
+.dorm-portfolio.residence-hall {
+  --hall-ink: #293b32;
+  --hall-muted: #6c796d;
+  --hall-paper: #fbf8f0;
+  --hall-wall: #eee5d6;
+  --hall-wall-light: #f7f0e4;
+  --hall-wood: #876149;
+  --hall-wood-dark: #654735;
+  --hall-sage: #a8b59b;
+  --hall-sage-dark: #6d8268;
+  --hall-rust: #c77f63;
+  --hall-gold: #e1bd72;
   width: 100%;
-  min-height: 850px;
-  overflow: hidden;
+  min-height: 100%;
+  padding: clamp(12px, 2.5vw, 30px);
+  box-sizing: border-box;
+  color: var(--hall-ink);
+  background: #f7f4ec;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* =========================================================
-   WALL
-========================================================= */
-.dorm-wall {
-  position: absolute;
-  inset: 0 0 250px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(98,69,50,0.035),
-      transparent 18%,
-      transparent 82%,
-      rgba(98,69,50,0.035)
-    ),
-    var(--wall);
+.dorm-portfolio.residence-hall *,
+.dorm-portfolio.residence-hall *::before,
+.dorm-portfolio.residence-hall *::after {
+  box-sizing: border-box;
 }
 
-.dorm-wall::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 12px;
-  background: var(--wall-shadow);
-}
-
-/* =========================================================
-   WINDOW
-========================================================= */
-.dorm-window {
-  position: absolute;
-  left: 50%;
-  top: 9%;
-  width: 250px;
-  height: 205px;
-  transform: translateX(-50%);
-  background: #faf6ed;
-  border: 9px solid var(--wood-dark);
-  box-shadow:
-    10px 12px 0 rgba(62,43,31,0.1);
-}
-
-.dorm-window-glass {
-  position: absolute;
-  inset: 12px;
-  overflow: hidden;
-  background:
-    linear-gradient(
-      to bottom,
-      #8eaab4 0%,
-      #c8d7d7 58%,
-      #a8b9a0 59%,
-      #829879 100%
-    );
-}
-
-.window-cloud {
-  position: absolute;
-  width: 65px;
-  height: 18px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.7);
-}
-
-.window-cloud-one {
-  top: 35px;
-  left: 30px;
-}
-
-.window-cloud-two {
-  top: 70px;
-  right: 25px;
-  transform: scale(0.7);
-}
-
-.window-building {
-  position: absolute;
-  left: 35px;
-  bottom: 0;
-  width: 70px;
-  height: 65px;
-  background: #b4a58e;
-}
-
-.window-building::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #6f7771 0 7px,
-      transparent 7px 18px
-    );
-}
-
-.window-tree {
-  position: absolute;
-  bottom: 0;
-  width: 50px;
-  height: 75px;
-  border-radius: 50% 50% 20% 20%;
-  background: var(--sage);
-}
-
-.window-tree-one {
-  left: 125px;
-}
-
-.window-tree-two {
-  right: 15px;
-  height: 58px;
-  width: 40px;
-}
-
-.window-frame {
-  position: absolute;
-  background: var(--wood-dark);
-}
-
-.window-frame-top {
-  inset: 0 0 auto;
-  height: 9px;
-}
-
-.window-frame-bottom {
-  inset: auto 0 0;
-  height: 9px;
-}
-
-.window-frame-left {
-  inset: 0 auto 0 0;
-  width: 9px;
-}
-
-.window-frame-right {
-  inset: 0 0 0 auto;
-  width: 9px;
-}
-
-.window-frame-middle {
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 7px;
-  transform: translateX(-50%);
-}
-
-/* =========================================================
-   ROOM TITLE
-========================================================= */
-.dorm-room-title {
-  position: absolute;
-  left: 2rem;
-  top: 1.75rem;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-}
-
-.dorm-room-title span {
-  font-size: 0.48rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  color: var(--terracotta-dark);
-}
-
-.dorm-room-title strong {
-  margin-top: 0.1rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
-}
-
-/* =========================================================
-   GALLERY WALL
-========================================================= */
-.dorm-gallery-wall {
-  position: absolute;
-  right: 7%;
-  top: 9%;
-  width: 300px;
-  height: 220px;
-}
-
-.wall-photo,
-.wall-postcard {
-  position: absolute;
-}
-
-.wall-photo {
-  padding: 0;
-  border: 0;
-  background: var(--paper);
-  box-shadow:
-    4px 6px 0 rgba(62,43,31,0.12);
-  cursor: pointer;
-}
-
-.wall-photo-large {
-  left: 0;
-  top: 30px;
-  width: 135px;
-  height: 155px;
-  transform: rotate(-4deg);
-}
-
-.wall-photo-small {
-  right: 10px;
-  top: 5px;
-  width: 110px;
-  height: 125px;
-  transform: rotate(5deg);
-}
-
-.wall-photo-image {
-  position: absolute;
-  left: 9px;
-  right: 9px;
-  top: 9px;
-  bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(
-      145deg,
-      #9caeb0,
-      #d2bea3
-    );
-  color: rgba(64,54,47,0.5);
-  font-size: 0.42rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
-.wall-photo-art {
-  background:
-    linear-gradient(
-      135deg,
-      #c98c76 0 35%,
-      #e5d3b5 35% 65%,
-      #8c9b7b 65%
-    );
-}
-
-.wall-photo-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 8px;
-  font-family: Georgia, serif;
-  font-size: 0.5rem;
-  font-style: italic;
-  color: var(--muted);
-}
-
-.wall-postcard {
-  right: 65px;
-  bottom: -5px;
-  width: 100px;
-  height: 72px;
-  padding: 0.6rem;
-  background: #f6dfad;
-  transform: rotate(-7deg);
-  box-shadow: 3px 4px 0 rgba(62,43,31,0.1);
-}
-
-.wall-postcard span {
-  display: block;
-  font-size: 0.4rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-}
-
-.wall-postcard strong {
-  display: block;
-  margin-top: 0.35rem;
-  font-family: Georgia, serif;
-  font-size: 0.75rem;
-  line-height: 0.9;
-}
-
-.wall-tape {
-  position: absolute;
-  width: 42px;
-  height: 11px;
-  background: rgba(198,161,91,0.55);
-}
-
-.wall-tape-one {
-  left: 47px;
-  top: 23px;
-  transform: rotate(-8deg);
-}
-
-.wall-tape-two {
-  right: 55px;
-  bottom: 58px;
-  transform: rotate(25deg);
-}
-
-/* =========================================================
-   CORKBOARD
-========================================================= */
-.dorm-corkboard {
-  position: absolute;
-  left: 10%;
-  top: 22%;
-  width: 235px;
-  height: 175px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  transform: rotate(-1deg);
-}
-
-.corkboard-frame {
-  position: absolute;
-  inset: 0;
-  border: 9px solid var(--wood-dark);
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(255,255,255,0.12) 0 2px,
-      transparent 3px
-    ),
-    #b98761;
-  box-shadow:
-    7px 9px 0 rgba(62,43,31,0.12);
-}
-
-.cork-note {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 67px;
-  height: 63px;
-  padding: 0.35rem;
-  background: #f7e5b4;
-  box-shadow: 2px 3px 0 rgba(62,43,31,0.12);
-  font-size: 0.43rem;
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: 0.05em;
-}
-
-.cork-note-one {
-  left: 17px;
-  top: 20px;
-  transform: rotate(-5deg);
-}
-
-.cork-note-two {
-  left: 87px;
-  top: 12px;
-  background: #d5dfc9;
-  transform: rotate(3deg);
-}
-
-.cork-note-three {
-  right: 15px;
-  top: 28px;
-  background: #e6b3a5;
-  transform: rotate(5deg);
-}
-
-.cork-photo {
-  position: absolute;
-  left: 76px;
-  bottom: 15px;
-  width: 75px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 5px solid white;
-  background: #9aafb0;
-  box-shadow: 2px 3px 0 rgba(62,43,31,0.1);
-}
-
-.cork-photo span {
-  font-size: 1rem;
-}
-
-.cork-pin {
-  position: absolute;
-  z-index: 5;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--terracotta-dark);
-}
-
-.cork-pin-one {
-  left: 29px;
-  top: 16px;
-}
-
-.cork-pin-two {
-  left: 114px;
-  top: 8px;
-}
-
-.cork-pin-three {
-  right: 39px;
-  top: 23px;
-}
-
-/* =========================================================
-   ROOM CHECKLIST
-========================================================= */
-.dorm-checklist {
-  position: absolute;
-  left: 30%;
-  top: 55%;
-  width: 235px;
-  min-height: 175px;
-  padding: 0.85rem 0.9rem 1rem;
-  z-index: 4;
-  background: var(--paper);
-  border: 3px solid var(--wood-dark);
-  box-shadow:
-    6px 7px 0 rgba(62,43,31,0.12);
-  transform: rotate(1deg);
-}
-
-
-/* HEADER */
-.dorm-checklist-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding-bottom: 0.55rem;
-  margin-bottom: 0.45rem;
-  border-bottom: 2px dashed
-    rgba(98,69,50,0.25);
-}
-
-.dorm-checklist-header span {
-  font-size: 0.4rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  color: var(--terracotta-dark);
-}
-
-.dorm-checklist-header strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-}
-
-/* ITEMS */
-.dorm-checklist-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.28rem;
-}
-
-.dorm-checklist-item {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-height: 18px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--ink);
-}
-
-
-/* CHECK BOX */
-.check-box {
-  position: relative;
-  flex: 0 0 11px;
-  width: 11px;
-  height: 11px;
-  border: 1.5px solid var(--wood-dark);
-  background: transparent;
-}
-
-
-/* CHECK MARK */
-.dorm-checklist-item.is-complete
-  .check-box {
-  background: var(--terracotta);
-  border-color: var(--terracotta-dark);
-}
-
-.dorm-checklist-item.is-complete
-  .check-box::after {
-  content: "✓";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform:
-    translate(-50%, -55%);
-
-  color: var(--paper);
-  font-size: 0.48rem;
-  font-weight: 900;
-}
-
-
-/* CROSSED-OFF TEXT */
-.dorm-checklist-item.is-complete
-  .check-text {
-  color: var(--muted);
-  text-decoration: line-through;
-  text-decoration-thickness: 1.5px;
-  text-decoration-color:
-    var(--terracotta-dark);
-}
-
-
-/* LITTLE PAPER DETAIL */
-.dorm-checklist::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -7px;
-  width: 42px;
-  height: 11px;
-  transform:
-    translateX(-50%)
-    rotate(-2deg);
-
-  background:
-    rgba(198,161,91,0.58);
-}
-
-
-/* =========================================================
-   CLICKABLE PILLOW
-========================================================= */
-.bed-pillow-one {
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  appearance: none;
-}
-
-.bed-pillow-one:hover,
-.bed-pillow-one:focus-visible {
-  transform: translateY(-3px);
-}
-
-.bed-pillow-one:focus-visible {
-  outline: 3px solid
-    rgba(201,130,109,0.75);
-  outline-offset: 4px;
-}
-
-/* =========================================================
-   SIGN
-========================================================= */
-.dorm-sign {
-  position: absolute;
-  left: 50%;
-  top: 3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.55rem 1rem;
-  transform: translateX(-50%);
-  background: var(--paper);
-  border: 3px solid var(--wood-dark);
-  box-shadow: 4px 5px 0 rgba(62,43,31,0.1);
-}
-
-.dorm-sign span {
-  font-size: 0.4rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-  opacity: 0.5;
-}
-
-.dorm-sign strong {
-  font-family: Georgia, serif;
-  font-size: 1rem;
-}
-
-/* =========================================================
-   FLOOR
-========================================================= */
-.dorm-floor {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 250px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      var(--floor) 0,
-      var(--floor) 75px,
-      var(--floor-light) 76px,
-      var(--floor-light) 78px
-    );
-  border-top: 8px solid var(--wood-dark);
-}
-
-/* =========================================================
-   RUG
-========================================================= */
-.dorm-rug {
-  position: absolute;
-  left: 50%;
-  bottom: 22px;
-  width: 420px;
-  height: 105px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #e1d3bc 0 35px,
-      #d1c1a8 35px 70px
-    );
-  box-shadow:
-    0 9px 0 rgba(62,43,31,0.1);
-}
-
-.dorm-rug span {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(157,94,79,0.35);
-}
-
-.dorm-rug span:nth-child(1) {
-  left: 60px;
-  top: 30px;
-  width: 70px;
-  height: 35px;
-}
-
-.dorm-rug span:nth-child(2) {
-  left: 175px;
-  top: 20px;
-  width: 80px;
-  height: 45px;
-}
-
-.dorm-rug span:nth-child(3) {
-  right: 45px;
-  top: 30px;
-  width: 65px;
-  height: 35px;
-}
-
-/* =========================================================
-   BED
-========================================================= */
-.bed-area {
-  position: absolute;
-  left: 3%;
-  bottom: 30px;
-  width: 370px;
-  height: 240px;
-}
-
-.bed-headboard {
-  position: absolute;
-  left: 10px;
-  bottom: 58px;
-  width: 350px;
-  height: 170px;
-  border-radius: 14px 14px 4px 4px;
-  background: var(--wood);
-  box-shadow:
-    7px 9px 0 rgba(62,43,31,0.12);
-}
-
-.bed-mattress {
-  position: absolute;
-  left: 0;
-  bottom: 43px;
-  width: 370px;
-  height: 125px;
-  border-radius: 10px;
-  background: #f7f0e5;
-  border: 4px solid var(--wood-dark);
-  overflow: hidden;
-}
-
-.bed-pillow {
-  position: absolute;
-  top: 13px;
-  width: 65px;
-  height: 50px;
-  border-radius: 10px;
-  background: #fffaf0;
-  box-shadow: 0 2px 4px rgba(62,43,31,0.1);
-}
-
-.bed-pillow-one {
-  left: 12px;
-  top: 5px;
-}
-
-.bed-pillow-two {
-  left: 12px;
-  top: 58px;
-}
-
-.bed-cover {
-  position: absolute;
-  right: -10px;
-  top: 0;
-  width: 225px;
-  height: 125px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      var(--terracotta) 0 34px,
-      #d89a85 34px 68px
-    );
-  transform: skewX(-7deg);
-}
-
-.bed-frame {
-  position: absolute;
-  left: -5px;
-  bottom: 10px;
-  width: 380px;
-  height: 42px;
-  border-radius: 5px;
-  background: var(--wood-dark);
-}
-
-.bed-object {
-  position: absolute;
-  left: 30px;
-  top: 85px;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.65);
-  color: var(--terracotta-dark);
-  cursor: pointer;
-}
-
-.bed-object-label {
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
-}
-
-/* =========================================================
-   NIGHTSTAND
-========================================================= */
-.dorm-nightstand {
-  position: absolute;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  left: 420px;
-  bottom: 210px;
-  background: transparent;
+.dorm-portfolio.residence-hall button {
   font: inherit;
-  color: inherit;
-  appearance: none;
 }
 
-.nightstand-top {
-  position: absolute;
-  left: -5px;
-  top: 25px;
-  width: 102px;
-  height: 12px;
-  border-radius: 3px;
-  background: var(--wood-dark);
+.dorm-portfolio.residence-hall button:focus-visible {
+  outline: 3px solid var(--hall-rust);
+  outline-offset: 3px;
 }
 
-.nightstand-body {
-  position: absolute;
-  left: 3px;
-  top: 36px;
-  width: 86px;
-  height: 105px;
-  background: var(--wood);
+.residence-hall .hall-page {
+  width: min(100%, 1180px);
+  margin: 0 auto;
 }
 
-.nightstand-drawer {
-  position: absolute;
-  left: 13px;
-  top: 51px;
-  width: 66px;
-  height: 28px;
-  background: var(--wood-light);
-  border: 2px solid var(--wood-dark);
+.residence-hall .hall-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 42px;
+  margin: 0 0 14px;
 }
 
-.nightstand-handle {
-  position: absolute;
-  left: 42px;
-  top: 62px;
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-  background: var(--wood-dark);
+.residence-hall .hall-location {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--hall-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
 }
 
-.nightstand-lamp {
-  position: absolute;
-  left: 15px;
-  top: -37px;
-  width: 65px;
-  height: 70px;
+.residence-hall .hall-location>span:not(.hall-location-dot) {
+  color: #b6a68e;
 }
 
-.lamp-shade {
-  position: absolute;
-  left: 2px;
-  top: 0;
-  width: 61px;
-  height: 35px;
-  border-radius: 50% 50% 8px 8px;
-  background: #d8bd83;
-}
-
-.lamp-stem {
-  position: absolute;
-  left: 30px;
-  top: 31px;
-  width: 6px;
-  height: 28px;
-  background: var(--wood-dark);
-}
-
-.lamp-base {
-  position: absolute;
-  left: 18px;
-  bottom: 5px;
-  width: 30px;
+.residence-hall .hall-location-dot {
+  width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--wood-dark);
+  background: var(--hall-sage-dark);
 }
 
-/* =========================================================
-   DESK
-========================================================= */
-.dorm-desk {
-  position: absolute;
-  right: 2%;
-  bottom: 25px;
-  width: 400px;
-  height: 245px;
-  z-index: 8;
+.residence-hall .hall-floor-label,
+.residence-hall .hall-footer {
+  color: var(--hall-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
 }
 
-.desk-top {
-  position: absolute;
-  left: 0;
-  bottom: 125px;
-  width: 400px;
-  height: 25px;
-  border-radius: 4px;
-  background: var(--wood-dark);
-  box-shadow: 0 6px 0 rgba(62,43,31,0.1);
+/* Single hallway wall and a short floor strip establish one consistent space. */
+.residence-hall .hall-scene {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #d7cbb8;
+  border-radius: 8px;
+  background: #e7dcc9;
+  box-shadow: 0 10px 26px #34483a0d;
 }
 
-.desk-drawer {
-  position: absolute;
-  left: 20px;
-  width: 120px;
-  height: 34px;
-  border: 3px solid var(--wood-dark);
-  background: var(--wood);
+.residence-hall .hall-ceiling {
+  height: 24px;
+  background: #d8cbb8;
+  border-bottom: 5px solid #c8b79e;
 }
 
-.desk-drawer-one {
-  bottom: 90px;
-}
-
-.desk-drawer-two {
-  bottom: 50px;
-}
-
-.desk-leg {
-  position: absolute;
-  bottom: 0;
-  width: 18px;
-  height: 128px;
-  background: var(--wood-dark);
-}
-
-.desk-leg-one {
-  left: 20px;
-}
-
-.desk-leg-two {
-  right: 20px;
-}
-
-.desk-leg-three {
-  left: 137px;
-}
-
-/* =========================================================
-   MONITOR
-========================================================= */
-.desk-monitor {
-  position: absolute;
-  left: 75px;
-  bottom: 53px;
-  width: 205px;
-  height: 125px;
-  padding: 0;
-  border: 8px solid var(--wood-dark);
-  border-radius: 7px;
-  background: #d6d0c3;
-  cursor: pointer;
-}
-
-.monitor-screen {
-  position: absolute;
-  inset: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0.8rem;
-  text-align: left;
-  background:
-    linear-gradient(
-      145deg,
-      #e2ded3,
-      #c5c4b8
-    );
-}
-
-.monitor-screen strong {
-  margin-top: 0.15rem;
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-
-.monitor-tags {
-  margin-top: 0.55rem;
-  font-size: 0.6rem;
-  font-weight: 900;
-  line-height: 1.6;
-  letter-spacing: 0.05em;
-  color: var(--terracotta-dark);
-}
-
-.monitor-stand {
-  position: absolute;
-  left: 50%;
-  bottom: -29px;
-  width: 12px;
-  height: 28px;
-  transform: translateX(-50%);
-  background: var(--wood-dark);
-}
-
-.monitor-base {
-  position: absolute;
-  left: 50%;
-  bottom: -34px;
-  width: 55px;
-  height: 8px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: var(--wood-dark);
-}
-
-/* =========================================================
-   LAPTOP
-========================================================= */
-.desk-laptop {
-  position: absolute;
-  right: 28px;
-  bottom: 150px;
-  width: 105px;
-  height: 75px;
-}
-
-.laptop-screen {
-  position: absolute;
-  left: 8px;
-  top: 0;
-  width: 89px;
-  height: 55px;
-  border: 5px solid var(--wood-dark);
-  border-radius: 5px;
-  background:
-    linear-gradient(
-      135deg,
-      #b6c5c6,
-      #e1d8c4
-    );
-}
-
-.laptop-base {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 105px;
-  height: 13px;
-  clip-path: polygon(
-    5% 0,
-    95% 0,
-    100% 100%,
-    0 100%
-  );
-  background: var(--wood-dark);
-}
-
-
-/* =========================================================
-   NOTEBOOK
-========================================================= */
-
-.desk-notebook {
-  position: absolute;
-  right: 128px;
-  bottom: 135px;
-  width: 70px;
-  height: 60px;
-  padding: 10px;
-  transform: rotate(-5deg);
-  background: #f2dfae;
-  box-shadow: 2px 4px 0 rgba(62,43,31,0.12);
-}
-
-.desk-notebook span {
+.residence-hall .hall-ceiling span {
   display: block;
-  height: 2px;
-  margin-bottom: 8px;
-  background: rgba(64,54,47,0.25);
+  width: 28%;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 0 0 6px 6px;
+  background: #fff8e8;
+  box-shadow: 0 2px 12px #fff5d4;
 }
 
-/* =========================================================
-   CAMERA
-========================================================= */
-.desk-camera {
-  position: absolute;
-  right: 190px;
-  bottom: 17px;
-  width: 82px;
-  height: 55px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
+.residence-hall .hall-back-wall {
+  position: relative;
+  display: flex;
+  min-height: 530px;
+  flex-direction: column;
+  padding: 22px 4.5% 0;
+  overflow: hidden;
+  background: linear-gradient(90deg, #e9dfce 0%, var(--hall-wall-light) 48%, #e8ddca 100%);
 }
 
-.camera-body {
-  position: absolute;
-  inset: 4px;
-  border-radius: 7px;
-  background: #4c4b48;
-  box-shadow: 3px 5px 0 rgba(62,43,31,0.15);
-}
-
-.camera-lens {
-  position: absolute;
-  left: 25px;
-  top: 8px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 6px solid #73716c;
-  background: #272727;
-}
-
-.camera-lens::after {
+.residence-hall .hall-back-wall::before {
   content: "";
   position: absolute;
-  left: 7px;
-  top: 7px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #8ba2a4;
-}
-
-.camera-viewfinder {
-  position: absolute;
-  left: 9px;
-  top: -7px;
-  width: 23px;
-  height: 10px;
-  border-radius: 3px 3px 0 0;
-  background: #4c4b48;
-}
-
-.camera-button {
-  position: absolute;
-  right: 9px;
-  top: 7px;
-  width: 8px;
-  height: 6px;
-  border-radius: 2px;
-  background: var(--terracotta);
-}
-
-/* =========================================================
-   HEADPHONES
-========================================================= */
-.desk-headphones {
-  position: absolute;
-  right: 20px;
-  bottom: 25px;
-  width: 90px;
-  height: 100px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.headphone-band {
-  position: absolute;
-  left: 15px;
-  top: 5px;
-  width: 60px;
-  height: 70px;
-  border: 8px solid var(--terracotta-dark);
-  border-bottom: 0;
-  border-radius: 50px 50px 0 0;
-}
-
-.headphone-left,
-.headphone-right {
-  position: absolute;
-  bottom: 10px;
-  width: 27px;
-  height: 37px;
-  border-radius: 8px;
-  background: var(--terracotta-dark);
-}
-
-.headphone-left {
-  left: 4px;
-}
-
-.headphone-right {
-  right: 4px;
-}
-
-/* =========================================================
-   CUP
-========================================================= */
-.desk-cup {
-  position: absolute;
-  right: 6px;
-  bottom: 147px;
-  width: 30px;
-  height: 30px;
-  border-radius: 3px 3px 8px 8px;
-  background: #f8f0e3;
-  border: 3px solid var(--wood-dark);
-}
-
-.desk-cup span {
-  position: absolute;
-  right: -12px;
-  top: 7px;
-  width: 12px;
-  height: 12px;
-  border: 3px solid var(--wood-dark);
-  border-left: 0;
-  border-radius: 0 8px 8px 0;
-}
-
-/* =========================================================
-   BOOKSHELF
-========================================================= */
-.dorm-bookshelf {
-  position: absolute;
-  left: 47%;
-  bottom: 27px;
-  width: 155px;
-  height: 325px;
-  z-index: 7;
-}
-
-.bookshelf-side {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 12px;
-  background: var(--wood-dark);
-}
-
-.bookshelf-side-left {
-  left: 0;
-}
-
-.bookshelf-side-right {
-  right: 0;
-}
-
-.bookshelf-shelf {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background: var(--wood-dark);
-}
-
-.shelf-onee {
-  top: 0;
-}
-
-.shelf-twoo {
-  top: 78px;
-}
-
-.shelf-three {
-  top: 156px;
-}
-
-.shelf-four {
-  bottom: 0;
-}
-
-.bookshelf-books {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  top: 14px;
-  height: 60px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 3px;
-}
-
-.book {
-  display: block;
-  width: 24px;
-  height: 55px;
-  background: var(--terracotta);
-}
-
-.book-two {
-  height: 47px;
-  background: var(--sage);
-}
-
-.book-three {
-  height: 58px;
-  background: #7e969d;
-}
-
-.book-four {
-  height: 50px;
-  background: #b89562;
-}
-
-.book-five {
-  height: 44px;
-  background: #d6aa91;
-}
-
-.book-label {
-  position: absolute;
-  left: 47%;
-  bottom: -14px;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font-family: Georgia, serif;
-  font-size: 0.43rem;
-  font-style: italic;
-  color: white;
-}
-
-.bookshelf-plant {
-  position: absolute;
-  right: 15px;
-  top: 96px;
-  width: 50px;
-  height: 65px;
-}
-
-.plant-pot {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
-  width: 30px;
-  height: 27px;
-  border-radius: 3px 3px 10px 10px;
-  background: var(--wood-light);
-}
-
-.plant-leaf {
-  position: absolute;
-  bottom: 18px;
-  width: 24px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--sage);
-}
-
-.leaf-one {
-  left: 0;
-  transform: rotate(-30deg);
-}
-
-.leaf-two {
-  left: 10px;
-  transform: rotate(10deg);
-}
-
-.leaf-three {
-  left: 22px;
-  transform: rotate(35deg);
-}
-
-.leaf-four {
-  left: 12px;
-  bottom: 28px;
-  transform: rotate(-5deg);
-}
-
-/* =========================================================
-   SUITCASE
-========================================================= */
-.dorm-suitcase {
-  position: absolute;
-  left: 40%;
-  bottom: -68px;
-  width: 135px;
-  height: 145px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  transform: rotate(-5deg);
-  z-index: 10;
-}
-
-.suitcase-handle {
-  position: absolute;
-  left: 45px;
-  top: 0;
-  width: 48px;
-  height: 35px;
-  border: 7px solid var(--wood-dark);
-  border-bottom: 0;
-  border-radius: 10px 10px 0 0;
-}
-
-.suitcase-body {
-  position: absolute;
-  left: 8px;
-  bottom: 0;
-  width: 119px;
-  height: 112px;
-  border: 5px solid var(--wood-dark);
-  border-radius: 10px;
-  background: var(--terracotta);
-  box-shadow:
-    5px 7px 0 rgba(62,43,31,0.12);
-}
-
-.suitcase-seam {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  transform: translateX(-50%);
-  background: rgba(62,43,31,0.18);
-}
-
-.suitcase-sticker {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 23px;
-  background: #f8efdf;
-  color: var(--ink);
-  font-size: 0.4rem;
-  font-weight: 900;
-  border-radius: 3px;
-}
-
-.sticker-airplane {
-  left: 12px;
-  top: 17px;
-  transform: rotate(-8deg);
-}
-
-.sticker-sg {
-  right: 11px;
-  top: 45px;
-  background: #d1ddc7;
-  transform: rotate(8deg);
-}
-
-.sticker-star {
-  left: 42px;
-  bottom: 14px;
-  background: #e1c08b;
-}
-
-/* =========================================================
-   TOTE
-========================================================= */
-.dorm-tote {
-  position: absolute;
-  left: 15%;
-  bottom: 27px;
-  width: 105px;
-  height: 130px;
-  z-index: 9;
-  transform: rotate(4deg);
-}
-
-.tote-handle {
-  position: absolute;
-  left: 28px;
-  top: 20px;
-  width: 50px;
-  height: 35px;
-  border: 7px solid var(--wood-dark);
-  border-bottom: 0;
-  border-radius: 40px 40px 0 0;
-}
-
-.tote-body {
-  position: absolute;
-  left: 4px;
-  right: 4px;
-  bottom: 0;
-  height: 75px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #e8dfce;
-  box-shadow: 4px 6px 0 rgba(62,43,31,0.1);
-}
-
-.tote-body strong {
-  font-family: Georgia, serif;
-  font-size: 1rem;
-}
-
-.tote-body small {
-  margin-top: 2px;
-  font-size: 0.35rem;
-  letter-spacing: 0.08em;
-}
-
-/* =========================================================
-   FLOOR PILLOW
-========================================================= */
-.floor-pillow {
-  position: absolute;
-  left: 43%;
-  bottom: 28px;
-  width: 90px;
-  height: 48px;
-  border-radius: 50%;
-  background: #d8b6a6;
-  transform: rotate(-8deg);
-  box-shadow: 0 6px 0 rgba(62,43,31,0.1);
-}
-
-/* =========================================================
-   FLOOR PLANT
-========================================================= */
-.floor-plant {
-  position: absolute;
-  right: 30%;
-  bottom: 27px;
-  width: 90px;
-  height: 135px;
-}
-
-.floor-plant-pot {
-  position: absolute;
-  left: 20px;
-  bottom: 0;
-  width: 52px;
-  height: 55px;
-  border-radius: 4px 4px 20px 20px;
-  background: #b87d57;
-  box-shadow: 4px 5px 0 rgba(62,43,31,0.1);
-}
-
-.floor-leaf {
-  position: absolute;
-  bottom: 38px;
-  width: 35px;
-  height: 80px;
-  border-radius: 100% 0 100% 0;
-  background: var(--sage);
-  transform-origin: bottom;
-}
-
-.floor-leaf.leaf-one {
-  left: 3px;
-  transform: rotate(-32deg);
-}
-
-.floor-leaf.leaf-two {
-  left: 24px;
-  transform: rotate(-8deg);
-}
-
-.floor-leaf.leaf-three {
-  left: 44px;
-  transform: rotate(18deg);
-}
-
-.floor-leaf.leaf-four {
-  left: 30px;
-  bottom: 55px;
-  transform: rotate(38deg);
-}
-
-/* =========================================================
-   INFO PANEL
-========================================================= */
-.dorm-info-panel {
-  position: fixed;
   inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: rgba(49,38,31,0.58);
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transition:
-    opacity 0.22s ease,
-    visibility 0.22s ease;
+  background: linear-gradient(90deg, #fffaf052, transparent 15%, transparent 85%, #fffaf052);
 }
 
-.dorm-info-panel.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.dorm-info-card {
+.residence-hall .hall-sign {
   position: relative;
-  width: min(700px, 100%);
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: clamp(2rem, 5vw, 3.5rem);
-  background: var(--paper);
-  border: 6px solid var(--wood-dark);
-  box-shadow:
-    12px 14px 0 rgba(35,26,20,0.18);
+  z-index: 1;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 185px;
+  padding: 8px 16px 9px;
+  border: 1px solid #b8a68d;
+  background: #fbf6eb;
+  box-shadow: 2px 3px 0 #c9b99f;
+  text-align: center;
 }
 
-.dorm-info-close {
-  position: absolute;
-  top: 0.9rem;
-  right: 0.9rem;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  background: var(--terracotta);
-  color: white;
-  font-size: 1.4rem;
-  cursor: pointer;
+.residence-hall .hall-sign small {
+  color: var(--hall-muted);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .19em;
 }
 
-.dorm-info-eyebrow {
-  display: block;
-  margin-bottom: 0.4rem;
-  color: var(--terracotta-dark);
-  font-size: 0.5rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-}
-
-.dorm-info-content h2 {
-  margin: 0 0 1.6rem;
+.residence-hall .hall-sign strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: .03em;
 }
 
-.dorm-info-body {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-/* =========================================================
-   CONTENT: LIST
-========================================================= */
-.dorm-content-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
-}
-
-.dorm-content-list span {
-  padding: 0.8rem 0.9rem;
-  border-left: 3px solid var(--terracotta);
-  background: #f0e7d8;
+.residence-hall .hall-sign span {
+  color: #7a806f;
   font-family: Georgia, serif;
-}
-
-/* =========================================================
-   CONTENT: PILLS
-========================================================= */
-.dorm-pill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-}
-
-.dorm-pill-grid span {
-  padding: 0.6rem 0.85rem;
-  border: 1px solid rgba(64,54,47,0.18);
-  border-radius: 999px;
-  background: #f0e7d8;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-/* =========================================================
-   CONTENT: RECOMMENDATIONS
-========================================================= */
-.favorites-list {
-  margin-top: 1.5rem;
-  border-top: 1px solid rgba(73, 55, 47, 0.16);
-}
-
-.favorite-item {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(73, 55, 47, 0.16);
-}
-
-.favorite-label {
-  color: #9f5f50;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.favorite-item strong {
-  color: #49372f;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-@media (max-width: 600px) {
-  .favorite-item {
-    grid-template-columns: 75px 1fr;
-    gap: 0.75rem;
-  }
-}
-
-/* =========================================================
-   CONTENT: INSPIRATION
-========================================================= */
-.dorm-inspiration-list {
-  border-top: 1px solid rgba(64,54,47,0.15);
-}
-
-.dorm-inspiration-list a {
-  display: grid;
-  grid-template-columns: 35px 1fr 80px 25px;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(64,54,47,0.15);
-  color: inherit;
-  text-decoration: none;
-}
-
-.dorm-inspiration-list a > span {
-  font-size: 0.65rem;
-  opacity: 0.75;
-}
-
-.dorm-inspiration-list strong {
-  font-family: Georgia, serif;
-  font-size: 0.95rem;
-}
-
-.dorm-inspiration-list small {
-  font-size: 1rem;
-  opacity: 0.75;
-}
-
-/* =========================================================
-   CONTENT: TRAVEL
-========================================================= */
-.travel-stamps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.travel-stamp {
-  position: relative;
-  min-height: 105px;
-  padding: 1.25rem;
-  border: 2px dashed rgba(159, 95, 80, 0.65);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transform: rotate(-2deg);
-  color: #9f5f50;
-}
-
-.travel-stamp:nth-child(2n) {
-  transform: rotate(2deg);
-}
-
-.travel-stamp:nth-child(3n) {
-  transform: rotate(-4deg);
-}
-
-.travel-stamp strong {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.travel-stamp span {
-  margin-top: 0.35rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  opacity: 0.7;
-}
-
-/* =========================================================
-   CONTENT: PHOTOGRAPHY
-========================================================= */
-.dorm-photo-content {
-  text-align: center;
-}
-
-.dorm-photo-content a {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.75rem 1rem;
-  background: var(--terracotta);
-  color: white;
-  text-decoration: none;
-  font-size: 0.55rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
-/* =========================================================
-   CONTENT: INTERESTS
-========================================================= */
-.reading-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-top: 1.25rem;
-  border-top: 1px solid rgba(73, 55, 47, 0.16);
-}
-
-.reading-item {
-  display: grid;
-  grid-template-columns: 36px 1fr auto;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(73, 55, 47, 0.16);
-}
-
-.reading-number {
-  font-size: 0.7rem;
-  color: #9f5f50;
-  font-weight: 700;
-}
-
-.reading-item div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.reading-item strong {
-  color: #49372f;
-  font-size: 0.95rem;
-}
-
-.reading-item small {
-  color: #8b766a;
-  font-size: 0.75rem;
-}
-
-.reading-status {
-  color: #9f5f50;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-align: right;
-}
-
-/* =========================================================
-   CONTENT: MUSIC
-========================================================= */
-.dorm-music-content {
-  text-align: center;
-}
-
-.music-symbol {
-  display: block;
-  margin-bottom: 1rem;
-  color: var(--terracotta);
-  font-size: 3rem;
-}
-
-.music-placeholder {
-  margin-top: 1.25rem;
-  padding: 1rem;
-  background: #eee5d6;
-}
-
-.music-placeholder small {
-  display: block;
-  font-size: 0.5rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
-.music-placeholder strong {
-  display: block;
-  margin-top: 0.35rem;
-  font-family: Georgia, serif;
-  font-size: 1rem;
-}
-
-/* =========================================================
-   CONTENT: FACTS
-========================================================= */
-.dorm-fact-list > div {
-  display: grid;
-  grid-template-columns: 35px 1fr;
-  gap: 0.8rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(64,54,47,0.15);
-}
-
-.dorm-fact-list span {
-  font-size: 0.5rem;
-  opacity: 0.45;
-}
-
-.dorm-fact-list p {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-size: 1rem;
-}
-
-/* =========================================================
-   INTERACTIVE OBJECTS
-========================================================= */
-
-/* Every clickable room object gets a subtle interaction cue */
-.dorm-portfolio
-  [data-panel] {
-  -webkit-tap-highlight-color: transparent;
-}
-
-
-/* Small indicator showing that an object is interactive */
-.dorm-portfolio [data-panel] {
-  position: relative;
-  cursor: pointer;
-}
-
-/* Small interactive indicator */
-.dorm-portfolio [data-panel]::after {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  border: 2px solid var(--paper);
-  box-shadow: 0 2px 5px rgba(62, 43, 31, 0.2);
-  right: 6px;
-  top: 6px;
-  z-index: 30;
-  transition:
-    width 0.2s ease,
-    height 0.2s ease,
-    border-radius 0.2s ease;
-}
-
-/* Hover/focus: turn indicator into the label */
-.dorm-portfolio [data-panel]:hover::after,
-.dorm-portfolio [data-panel]:focus-visible::after {
-  width: auto;
-  height: auto;
-  min-width: 105px;
-  padding: 6px 9px;
-  border-radius: 4px;
-  color: var(--paper);
-  background: var(--terracotta);
-  border: 0;
-  box-shadow: 0 3px 8px rgba(62, 43, 31, 0.2);
-  right: 0;
-  top: -32px;
-  font-family: inherit;
   font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-align: center;
-  white-space: nowrap;
+  font-style: italic;
 }
 
+/* The wall displays share a common row and consistent visual scale. */
+.residence-hall .hall-decor-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(12px, 3vw, 36px);
+  margin: 30px 0 22px;
+}
 
-/* Add a warm interactive outline without changing the room */
-.dorm-portfolio
-  [data-panel]:hover,
-.dorm-portfolio
-  [data-panel]:focus-visible {
-  outline: 3px solid rgba(201,130,109,0.75);
+.residence-hall .hall-object {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  justify-self: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--hall-ink);
+  cursor: pointer;
+  transition: filter .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.residence-hall .hall-object:hover,
+.residence-hall .hall-object:focus-visible {
+  z-index: 5;
+  outline: 2px solid var(--hall-sage-dark);
   outline-offset: 5px;
+  filter: brightness(1.035);
 }
 
-
-/* Small "explore" label */
-.dorm-portfolio
-  [data-panel]::before {
-  content: "CLICK TO EXPLORE";
+/* Explore tooltip */
+.residence-hall .explore-tooltip {
   position: absolute;
-  left: 50%;
+  z-index: 9;
   top: -34px;
-  z-index: 50;
-  transform:
-    translateX(-50%)
-    translateY(4px);
+  left: 50%;
+
+  display: block;
+  width: max-content;
+  max-width: calc(100% + 32px);
   padding: 0.4rem 0.6rem;
-  white-space: nowrap;
-  border: 2px solid var(--wood-dark);
-  background: var(--paper);
-  color: var(--ink);
+
+  transform: translate(-50%, 4px);
+
+  border: 2px solid var(--hall-wood-dark);
+  background: var(--hall-paper);
+  color: var(--hall-ink);
+
   font-family: Arial, sans-serif;
   font-size: 0.42rem;
   font-weight: 900;
   letter-spacing: 0.08em;
-  box-shadow:
-    3px 4px 0 rgba(62,43,31,0.12);
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  box-shadow: 3px 4px 0 rgba(62, 43, 31, 0.12);
 
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+
   transition:
     opacity 0.18s ease,
-    transform 0.18s ease;
+    transform 0.18s ease,
+    visibility 0.18s ease;
 }
 
-.dorm-portfolio
-  [data-panel]:hover::before,
-.dorm-portfolio
-  [data-panel]:focus-visible::before {
+.residence-hall [data-panel]:hover>.explore-tooltip,
+.residence-hall [data-panel]:focus-visible>.explore-tooltip {
   opacity: 1;
-
-  transform:
-    translateX(-50%)
-    translateY(0);
+  visibility: visible;
+  transform: translate(-50%, 0);
 }
 
-/* Keyboard accessibility */
-.dorm-portfolio
-  [data-panel]:focus-visible {
-  outline: 3px solid var(--terracotta);
-  outline-offset: 6px;
+/* Community board */
+.residence-hall .hall-community-board {
+  position: relative;
+  width: 100%;
+  max-width: 190px;
+  min-height: 135px;
+  padding: 10px;
+  border: 7px solid #b48c69;
+  background: #d9c6a9;
+  box-shadow: 2px 3px 0 #c8b79e;
+  text-align: left;
 }
 
-
-/* =========================================================
-   OBJECT-SPECIFIC HOVER MOVEMENT
-========================================================= */
-.dorm-corkboard:hover,
-.dorm-corkboard:focus-visible {
-  transform: rotate(-1deg) translateY(-4px);
+.residence-hall .board-heading {
+  display: block;
+  margin-bottom: 9px;
+  color: #594638;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-align: center;
 }
 
-.wall-photo:hover,
-.wall-photo:focus-visible {
-  transform: rotate(-4deg) translateY(-4px) scale(1.02);
+.residence-hall .board-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  align-items: start;
 }
 
-.wall-photo-small:hover,
-.wall-photo-small:focus-visible {
-  transform: rotate(5deg) translateY(-4px) scale(1.02);
+.residence-hall .board-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 5px 3px;
+  box-shadow: 1px 2px 2px #59463824;
+  color: #51483a;
+  font-family: Georgia, serif;
+  font-size: 9px;
+  line-height: 1.2;
+  text-align: center;
 }
 
-.desk-monitor:hover,
-.desk-monitor:focus-visible {
-  transform: translateY(-4px);
+.residence-hall .board-note-yellow {
+  background: #f2df9c;
+  transform: rotate(-2deg);
 }
 
-.desk-camera:hover,
-.desk-camera:focus-visible {
-  transform: translateY(-5px) rotate(-2deg);
+.residence-hall .board-note-pink {
+  background: #e9bcb3;
+  transform: rotate(2deg);
 }
 
-.desk-headphones:hover,
-.desk-headphones:focus-visible {
-  transform: translateY(-4px);
+.residence-hall .board-note-blue {
+  grid-column: 1 / -1;
+  min-height: 27px;
+  background: #c4d2ce;
+  transform: rotate(-1deg);
 }
 
-.dorm-suitcase:hover,
-.dorm-suitcase:focus-visible {
-  transform: rotate(-5deg) translateY(-5px);
+.residence-hall .board-footer {
+  display: block;
+  margin-top: 9px;
+  color: #5d4b3c;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-align: center;
 }
 
-.bookshelf-books:hover,
-.bookshelf-books:focus-visible {
-  transform: translateY(-4px);
+/* One art poster for places-to-go */
+.residence-hall .hall-gallery {
+  width: 100%;
+  max-width: 155px;
+  align-items: stretch;
 }
 
-.bed-object:hover,
-.bed-object:focus-visible {
-  transform: scale(1.08);
+.residence-hall .gallery-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 9px solid #f9f3e8;
+  background: #d8e2db;
+  box-shadow: 0 3px 0 #b9a78e, 2px 6px 10px #443c2c15;
 }
 
-/* =========================================================
-   DISABLE THE GENERIC LABEL ON THE CAMERA / HEADPHONES
-   WHEN THEIR PARENT IS TOO SMALL
-========================================================= */
-.desk-camera::before,
-.desk-headphones::before {
-  top: -38px;
+.residence-hall .poster-sky {
+  position: absolute;
+  inset: 0 0 45%;
+  background: linear-gradient(#a9c4c4, #dbe1d0);
 }
 
-/* =========================================================
-   MOBILE RESPONSIVENESS ONLY
-========================================================= */
-
-/* Tablets and smaller laptops */
-@media (max-width: 1050px) {
-  .dorm-room-scene {
-    min-height: 850px;
-  }
-
-  .dorm-room-title {
-    left: 1.5rem;
-  }
-
-  .dorm-gallery-wall {
-    right: 3%;
-    transform: scale(0.85);
-    transform-origin: top right;
-  }
-
-  .dorm-corkboard {
-    left: 4%;
-    transform: scale(0.85) rotate(-1deg);
-    transform-origin: top left;
-  }
-
-  .dorm-checklist {
-    left: 30%;
-    max-width: 235px;
-  }
-
-  .bed-area {
-    left: 2%;
-    transform: scale(0.82);
-    transform-origin: bottom left;
-  }
-
-  .dorm-desk {
-    right: 1%;
-    transform: scale(0.82);
-    transform-origin: bottom right;
-  }
-
-  .dorm-bookshelf {
-    left: 45%;
-    transform: scale(0.85);
-    transform-origin: bottom left;
-  }
-
-  .dorm-nightstand {
-    left: 39%;
-  }
-
-  .dorm-suitcase {
-    left: 34%;
-    bottom: 0;
-  }
-
-  .dorm-tote {
-    left: 12%;
-  }
-
-  .floor-plant {
-    right: 24%;
-  }
+.residence-hall .poster-sun {
+  position: absolute;
+  top: 15%;
+  right: 16%;
+  width: 22%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e6bd77;
 }
 
-/* Phones */
+.residence-hall .poster-mountain {
+  position: absolute;
+  bottom: 30%;
+  width: 0;
+  height: 0;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  border-bottom: 90px solid #80917b;
+}
+
+.residence-hall .poster-mountain-one {
+  left: -16%;
+}
+
+.residence-hall .poster-mountain-two {
+  right: -25%;
+  bottom: 26%;
+  border-left-width: 72px;
+  border-right-width: 72px;
+  border-bottom-width: 112px;
+  border-bottom-color: #5f796d;
+}
+
+.residence-hall .poster-water {
+  position: absolute;
+  inset: 68% 0 0;
+  background: linear-gradient(#8baeb0, #c6d5cb);
+}
+
+.residence-hall .gallery-caption {
+  display: block;
+  margin-top: 10px;
+  color: #665644;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* Photography is a camera print, visually separate from the landscape poster. */
+.residence-hall .hall-photo-frame {
+  width: 100%;
+  max-width: 145px;
+  padding: 9px 9px 11px;
+  border: 1px solid #d4c8b5;
+  background: #fbf7ef;
+  box-shadow: 2px 4px 0 #c8b79e, 0 7px 12px #443c2c12;
+  transform: rotate(-1deg);
+}
+
+.residence-hall .photo-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 83px;
+  background: #dfe6dc;
+}
+
+.residence-hall .photo-art-camera {
+  position: relative;
+}
+
+.residence-hall .camera-body {
+  position: relative;
+  width: 58px;
+  height: 37px;
+  border: 4px solid #47584b;
+  border-radius: 6px;
+  background: #899b83;
+}
+
+.residence-hall .camera-body::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  width: 20px;
+  height: 8px;
+  border-radius: 3px 3px 0 0;
+  background: #47584b;
+}
+
+.residence-hall .camera-lens {
+  position: absolute;
+  top: 4px;
+  left: 14px;
+  width: 22px;
+  height: 22px;
+  border: 4px solid #f2e6d3;
+  border-radius: 50%;
+  background: #718b91;
+  box-shadow: inset 0 0 0 3px #47584b;
+}
+
+.residence-hall .camera-flash {
+  position: absolute;
+  top: 25px;
+  right: calc(50% - 24px);
+  width: 7px;
+  height: 5px;
+  background: #f2d18c;
+}
+
+.residence-hall .hall-photo-frame small {
+  display: block;
+  margin-top: 8px;
+  color: #7c8474;
+  font-family: Georgia, serif;
+  font-size: 9px;
+  font-style: italic;
+  text-align: center;
+}
+
+.residence-hall .hall-photo-frame b {
+  display: block;
+  margin-top: 6px;
+  color: #665644;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-align: center;
+}
+
+/* Music object: a small wall-mounted speaker, not a second room/furniture scene. */
+.residence-hall .hall-speaker {
+  width: 90px;
+  min-height: 122px;
+  padding: 11px 10px 9px;
+  border: 1px solid #725c48;
+  border-radius: 4px;
+  background: linear-gradient(110deg, #876b52, #6f5744);
+  box-shadow: inset 3px 0 0 #9b7a5b, 2px 4px 0 #c8b79e;
+}
+
+.residence-hall .speaker-top {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 0 auto 8px;
+  border-radius: 2px;
+  background: #c6b093;
+}
+
+.residence-hall .speaker-driver {
+  display: block;
+  margin: 0 auto 7px;
+  border: 2px solid #c9b99f;
+  border-radius: 50%;
+  background: #4c5147;
+  box-shadow: inset 0 0 0 4px #7e8974;
+}
+
+.residence-hall .speaker-driver-one {
+  width: 40px;
+  height: 40px;
+}
+
+.residence-hall .speaker-driver-two {
+  width: 25px;
+  height: 25px;
+}
+
+.residence-hall .speaker-action {
+  display: block;
+  margin-top: 7px;
+  color: #fff4df;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .05em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Four matching doors with clear, always-visible action labels. */
+.residence-hall .hall-door-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: clamp(10px, 2vw, 22px);
+  margin-top: auto;
+}
+
+.residence-hall .hall-door {
+  position: relative;
+  width: 90%;
+  min-width: 0;
+  height: 370px;
+  padding: 0;
+  overflow: visible;
+  border: 6px solid #d0b696;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(90deg, #6f4d39, #987052 15%, #896147 83%, #704d39);
+  color: #fbf1e1;
+  cursor: pointer;
+  box-shadow: inset 5px 0 0 #674632, inset -5px 0 0 #b28a68;
+  transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.residence-hall .hall-door:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+}
+
+.residence-hall .hall-door:focus-visible {
+  outline: 3px solid var(--hall-sage-dark);
+  outline-offset: 4px;
+}
+
+.residence-hall .hall-door::before {
+  content: "";
+  position: absolute;
+  inset: 13px 10px 0;
+  border: 1px solid #c39b788a;
+  border-bottom: 0;
+  pointer-events: none;
+}
+
+.residence-hall .hall-door::after {
+  content: "";
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: #d2ad8a61;
+  box-shadow: 0 61px 0 #d2ad8a61;
+}
+
+.residence-hall .hall-door-number {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 36px;
+  padding: 5px 7px;
+  border: 1px solid #ddc8aa;
+  background: #f2e6d1;
+  color: #644b3a;
+  font-family: Georgia, serif;
+  font-size: 13px;
+}
+
+.residence-hall .hall-door-name {
+  position: absolute;
+  top: 115px;
+  left: 5px;
+  right: 5px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.residence-hall .hall-door-knob {
+  position: absolute;
+  top: 55%;
+  right: 11px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--hall-gold);
+  box-shadow: 0 0 0 2px #6b4b37;
+}
+
+.residence-hall .hall-door-action {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  padding: 10px 3px 12px;
+  border-top: 1px solid #cda98466;
+  background: #503a2e66;
+  color: #fff4df;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+.residence-hall .hall-baseboard {
+  position: relative;
+  z-index: 2;
+  height: 12px;
+  flex: 0 0 12px;
+  margin: 0 -4.8%;
+  background: #d0bea5;
+  box-shadow: 0 4px 0 #c2ae94;
+}
+
+.residence-hall .hall-floor {
+  position: relative;
+  height: 54px;
+  background: linear-gradient(#d9c9b2, #e4d6c2);
+}
+
+.residence-hall .hall-floor-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #c6b49b;
+}
+
+.residence-hall .hall-floor-line:nth-child(1) {
+  left: 25%;
+}
+
+.residence-hall .hall-floor-line:nth-child(2) {
+  left: 50%;
+}
+
+.residence-hall .hall-floor-line:nth-child(3) {
+  left: 75%;
+}
+
+/* Hover/focus gives every interactive display the same outline and small tag. */
+.residence-hall .hall-door:hover,
+.residence-hall .hall-community-board:hover,
+.residence-hall .hall-gallery:hover,
+.residence-hall .hall-photo-frame:hover,
+.residence-hall .hall-speaker:hover {
+  box-shadow: 0 0 0 3px var(--hall-sage-dark), 0 5px 14px #34483a1c;
+}
+
+.residence-hall .hall-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 2px 0;
+}
+
+/* Information panel */
+.residence-hall .hall-info-panel {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #26372f75;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.residence-hall .hall-info-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.residence-hall .dorm-info-card {
+  position: relative;
+  width: min(100%, 560px);
+  max-height: 88%;
+  overflow: auto;
+  padding: 36px 34px 30px;
+  border: 1px solid #d9cbb7;
+  background: var(--hall-paper);
+  box-shadow: 0 18px 55px #18251d45;
+}
+
+.residence-hall .dorm-info-close {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d8cbb8;
+  background: #f4eee2;
+  color: var(--hall-ink);
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.residence-hall .dorm-info-eyebrow {
+  color: var(--hall-sage-dark);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.residence-hall .dorm-info-card h2 {
+  margin: 8px 40px 18px 0;
+  color: var(--hall-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.residence-hall .dorm-info-body {
+  color: #4e5a50;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.residence-hall .dorm-content-list {
+  display: grid;
+  gap: 8px;
+}
+
+.residence-hall .dorm-content-list span {
+  padding: 10px 12px;
+  border-left: 3px solid #9aaa8c;
+  background: #f0ebdf;
+}
+
+.residence-hall .dorm-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.residence-hall .dorm-pill-grid span {
+  padding: 8px 12px;
+  border: 1px solid #c6cfbc;
+  border-radius: 99px;
+  background: #e8ede3;
+}
+
+.residence-hall .favorites-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.residence-hall .favorite-item {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px;
+  border: 1px solid #e2d7c4;
+  background: #f5f0e6;
+}
+
+.residence-hall .favorite-label {
+  color: #819075;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.residence-hall .favorite-item strong {
+  font-size: 12px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.residence-hall .dorm-inspiration-list {
+  display: grid;
+}
+
+.residence-hall .dorm-inspiration-list a {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e4dac8;
+  color: inherit;
+  text-decoration: none;
+}
+
+.residence-hall .dorm-inspiration-list a>span {
+  color: #8a9a7b;
+  font-size: 10px;
+}
+
+.residence-hall .dorm-inspiration-list strong {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.residence-hall .dorm-inspiration-list small {
+  color: #7b8274;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.residence-hall .travel-stamps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.residence-hall .travel-stamp {
+  display: flex;
+  min-height: 76px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px dashed #a5b197;
+  background: #edf0e5;
+  text-align: center;
+}
+
+.residence-hall .travel-stamp:nth-child(2n) {
+  border-color: #d6ad94;
+  background: #f4e5d7;
+}
+
+.residence-hall .travel-stamp:nth-child(3n) {
+  background: #e7e8d7;
+}
+
+.residence-hall .travel-stamp strong {
+  font-size: 10px;
+}
+
+.residence-hall .travel-stamp span {
+  color: #84917a;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+.residence-hall .dorm-photo-content p {
+  margin: 0 0 15px;
+}
+
+.residence-hall .dorm-photo-content a {
+  display: inline-block;
+  padding: 11px 15px;
+  background: var(--hall-ink);
+  color: #fff9ed;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.residence-hall .reading-list {
+  display: grid;
+}
+
+.residence-hall .reading-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2d8c7;
+}
+
+.residence-hall .reading-number {
+  color: #8c9a7e;
+  font-size: 10px;
+}
+
+.residence-hall .reading-item div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.residence-hall .reading-item strong {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.residence-hall .reading-item small {
+  color: #7b8274;
+  font-size: 9px;
+}
+
+.residence-hall .reading-status {
+  grid-column: 2;
+  color: #8b987c;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.residence-hall .dorm-music-content {
+  display: grid;
+  gap: 12px;
+}
+
+.residence-hall .music-symbol {
+  color: #819475;
+  font-family: Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.residence-hall .dorm-music-content p {
+  margin: 0;
+}
+
+.residence-hall .music-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  border-left: 3px solid #849879;
+  background: #e8ede3;
+}
+
+.residence-hall .music-placeholder small {
+  color: #74836b;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.residence-hall .music-placeholder strong {
+  font-size: 13px;
+}
+
 @media (max-width: 760px) {
-  .dorm-portfolio {
-    width: 100%;
-    min-width: 0;
-    overflow: hidden;
+  .dorm-portfolio.residence-hall {
+    padding: 10px;
   }
 
-  .dorm-room-scene {
-    width: 100%;
-    min-height: 1050px;
-    overflow: hidden;
+  .residence-hall .hall-topbar {
+    margin-bottom: 10px;
   }
 
-  .dorm-wall {
-    bottom: 300px;
+  .residence-hall .hall-location,
+  .residence-hall .hall-floor-label,
+  .residence-hall .hall-footer {
+    font-size: 8px;
   }
 
-  .dorm-floor {
-    height: 300px;
-  }
-
-  .dorm-room-title {
-    left: 1rem;
-    top: 1rem;
-    z-index: 100;
-  }
-
-  .dorm-room-title strong {
-    font-size: 1.05rem;
-  }
-
-  /* Lower the window and sign with the wall layout */
-  .dorm-window {
-    top: 12%;
-    width: 175px;
-    height: 145px;
-    border-width: 7px;
-  }
-
-  .dorm-sign {
-    top: 7%;
-    padding: 0.4rem 0.65rem;
-  }
-
-  .dorm-sign strong {
-    font-size: 0.8rem;
-  }
-
-  /* Wall decorations */
-  .dorm-gallery-wall {
-    right: 2%;
-    top: 31%;
-    transform: scale(0.62);
-    transform-origin: top right;
-  }
-
-  .dorm-corkboard {
-    left: 3%;
-    top: 33%;
-    transform: scale(0.62) rotate(-1deg);
-    transform-origin: top left;
-  }
-
-  .dorm-checklist {
-    left: 50%;
-    top: 51%;
-    width: min(235px, 88%);
+  .residence-hall .hall-back-wall {
     min-height: 0;
-    padding: 0.7rem;
-    transform: translateX(-50%) rotate(1deg);
+    padding: 18px 14px 0;
   }
 
-  .dorm-checklist-header strong {
-    font-size: 0.9rem;
+  .residence-hall .hall-sign {
+    min-width: 165px;
+    padding: 7px 12px 8px;
   }
 
-  .dorm-checklist-item {
-    font-size: 0.65rem;
+  .residence-hall .hall-sign strong {
+    font-size: 20px;
   }
 
-  /* Bring floor furniture upward and reduce the empty gap */
-  .dorm-rug {
-    left: 50%;
-    bottom: 12px;
-    width: min(340px, 88%);
-    height: 85px;
-    transform: translateX(-50%);
+  .residence-hall .hall-decor-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 18px;
+    margin: 28px 0 25px;
+    padding: 0 4%;
   }
 
-  .bed-area {
-    left: 2%;
-    bottom: 65px;
-    transform: scale(0.56);
-    transform-origin: bottom left;
+  .residence-hall .hall-community-board {
+    max-width: 175px;
+    min-height: 135px;
   }
 
-  .dorm-desk {
-    right: 2%;
-    bottom: 65px;
-    transform: scale(0.58);
-    transform-origin: bottom right;
+  .residence-hall .hall-gallery {
+    max-width: 135px;
   }
 
-  .dorm-bookshelf {
-    left: 42%;
-    bottom: 65px;
-    transform: scale(0.55);
-    transform-origin: bottom left;
+  .residence-hall .hall-photo-frame {
+    max-width: 135px;
   }
 
-  .dorm-nightstand {
-    left: 37%;
-    bottom: 200px;
-    transform: scale(0.65);
-    transform-origin: bottom left;
+  .residence-hall .hall-speaker {
+    width: 88px;
+    min-height: 122px;
   }
 
-  .dorm-tote {
-    left: 3%;
-    bottom: 8px;
-    transform: scale(0.65) rotate(4deg);
-    transform-origin: bottom left;
+  .residence-hall .hall-door-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
   }
 
-  .dorm-suitcase {
-    left: 24%;
-    bottom: 3px;
-    transform: scale(0.62) rotate(-5deg);
-    transform-origin: bottom left;
+  .residence-hall .hall-door {
+    height: 165px;
+    border-width: 5px;
   }
 
-  .floor-pillow {
-    left: 47%;
-    bottom: 8px;
-    transform: scale(0.75) rotate(-8deg);
-    transform-origin: bottom center;
+  .residence-hall .hall-door-name {
+    top: 57px;
+    font-size: 8px;
   }
 
-  .floor-plant {
-    right: 3%;
-    bottom: 8px;
-    transform: scale(0.65);
-    transform-origin: bottom right;
+  .residence-hall .hall-door-number {
+    top: 12px;
+    min-width: 32px;
+    padding: 4px 6px;
+    font-size: 12px;
   }
 
-  /* Keep interaction labels from overflowing the phone */
-  .dorm-portfolio [data-panel]::before {
-    content: "TAP TO EXPLORE";
-    max-width: 120px;
-    font-size: 0.4rem;
+  .residence-hall .hall-door-action {
+    padding: 8px 2px 10px;
+    font-size: 7px;
   }
 
-  .dorm-portfolio [data-panel]::after {
-    width: 12px;
-    height: 12px;
+  .residence-hall .hall-baseboard {
+    margin: 0 -14px;
   }
 
-  /* Responsive information panel */
-  .dorm-info-panel {
-    padding: 0.75rem;
+  .residence-hall .hall-floor {
+    height: 34px;
   }
 
-  .dorm-info-card {
-    width: 100%;
-    max-height: 88vh;
-    padding: 2.5rem 1.1rem 1.25rem;
-    border-width: 4px;
-    overflow-y: auto;
-    overflow-x: hidden;
+  .residence-hall .hall-footer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    line-height: 1.5;
   }
 
-  .dorm-info-close {
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 36px;
-    height: 36px;
-  }
-
-  .dorm-info-content h2 {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
-  }
-
-  .dorm-content-list {
-    grid-template-columns: 1fr;
-  }
-
-  .dorm-inspiration-list a {
-    grid-template-columns: 24px minmax(0, 1fr) 22px;
-    gap: 0.45rem;
-  }
-
-  .dorm-inspiration-list a small {
+  .residence-hall .hall-footer span:nth-child(2) {
     display: none;
   }
 
-  .favorite-item {
-    grid-template-columns: 65px minmax(0, 1fr);
-    gap: 0.6rem;
+  .residence-hall .hall-info-panel {
+    padding: 10px;
   }
 
-  .reading-item {
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 0.6rem;
+  .residence-hall .dorm-info-card {
+    width: 100%;
+    max-height: 92%;
+    padding: 32px 20px 22px;
   }
 
-  .reading-status {
-    grid-column: 2;
-    text-align: left;
+  .residence-hall .dorm-info-body {
+    font-size: 12px;
   }
 
-  .travel-stamps {
-    gap: 0.5rem;
+  .residence-hall .travel-stamps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .travel-stamp {
-    min-height: 75px;
-    padding: 0.5rem;
-  }
-}
-
-/* Very narrow phones */
-@media (max-width: 400px) {
-  .dorm-room-scene {
-    min-height: 1000px;
+  .residence-hall .favorites-list {
+    grid-template-columns: 1fr;
   }
 
-  .dorm-room-title {
-    left: 0.7rem;
-    top: 0.8rem;
-  }
-
-  .dorm-room-title strong {
-    font-size: 0.95rem;
-  }
-
-  .dorm-window {
-    top: 13%;
-    width: 145px;
-    height: 125px;
-  }
-
-  .dorm-sign {
-    top: 8%;
-  }
-
-  .dorm-gallery-wall {
-    right: 1%;
-    top: 31%;
-    transform: scale(0.48);
-    transform-origin: top right;
-  }
-
-  .dorm-corkboard {
-    left: 2%;
-    top: 31%;
-    transform: scale(0.49) rotate(-1deg);
-    transform-origin: top left;
-  }
-
-  .dorm-checklist {
-    top: 48%;
-    width: 88%;
-  }
-
-  .bed-area {
-    left: 1%;
-    bottom: 65px;
-    transform: scale(0.47);
-    transform-origin: bottom left;
-  }
-
-  .dorm-desk {
-    right: 1%;
-    bottom: 65px;
-    transform: scale(0.49);
-    transform-origin: bottom right;
-  }
-
-  .dorm-bookshelf {
-    left: 41%;
-    bottom: 65px;
-    transform: scale(0.45);
-    transform-origin: bottom left;
-  }
-
-  .dorm-nightstand {
-    left: 35%;
-    bottom: 190px;
-    transform: scale(0.55);
-    transform-origin: bottom left;
-  }
-
-  .dorm-tote {
-    left: 1%;
-    bottom: 6px;
-    transform: scale(0.55) rotate(4deg);
-    transform-origin: bottom left;
-  }
-
-  .dorm-suitcase {
-    left: 22%;
-    bottom: 2px;
-    transform: scale(0.53) rotate(-5deg);
-    transform-origin: bottom left;
-  }
-
-  .floor-pillow {
-    left: 45%;
-    bottom: 6px;
-    transform: scale(0.62) rotate(-8deg);
-    transform-origin: bottom center;
-  }
-
-  .floor-plant {
-    right: 1%;
-    bottom: 6px;
-    transform: scale(0.55);
-    transform-origin: bottom right;
-  }
-
-  .dorm-info-panel {
-    padding: 0.5rem;
-  }
-
-  .dorm-info-card {
-    padding: 2.4rem 0.85rem 1rem;
+  .residence-hall .explore-tooltip {
+    top: -12px;
+    padding: 6px 8px;
+    font-size: 8px;
   }
 }
 
-/* MOBILE FIXES: floor placement and hover scaling */
-@media (max-width: 760px) {
-  /* Move the main furniture upward */
-  .bed-area {
-    bottom: 100px;
+@media (max-width: 390px) {
+  .residence-hall .hall-door {
+    height: 150px;
   }
 
-  .dorm-desk {
-    bottom: 185px;
+  .residence-hall .hall-door-name {
+    font-size: 7px;
+    letter-spacing: .04em;
   }
 
-  .dorm-bookshelf {
-    bottom: 235px;
+  .residence-hall .hall-door-action {
+    font-size: 6px;
+    letter-spacing: .03em;
   }
 
-  .dorm-nightstand {
-    bottom: 330px;
-    left: 130px;
+  .residence-hall .hall-community-board {
+    padding: 8px;
+    border-width: 6px;
   }
 
-  /* Keep smaller floor items higher too */
-  .dorm-tote {
-    bottom: 255px;
+  .residence-hall .board-heading {
+    font-size: 7px;
   }
 
-  .dorm-suitcase {
-    bottom: 95px;
-    left: 55px;
+  .residence-hall .board-note {
+    font-size: 8px;
   }
 
-  .floor-pillow {
-    bottom: 45px;
+  .residence-hall .gallery-caption,
+  .residence-hall .hall-photo-frame b {
+    font-size: 7px;
   }
 
-  .floor-plant {
-    bottom: 45px;
-  }
-
-  .dorm-rug {
-    bottom: 45px;
-  }
-
-  /* Prevent hover effects from enlarging these items */
-  .dorm-corkboard:hover,
-  .dorm-corkboard:focus-within {
-    transform: scale(0.62) rotate(-1deg);
-  }
-
-  .dorm-suitcase:hover,
-  .dorm-suitcase:focus-within {
-    transform: scale(0.62) rotate(-5deg);
+  .residence-hall .hall-footer span:last-child {
+    width: 100%;
   }
 }
 
-@media (max-width: 400px) {
-  .bed-area {
-    bottom: 115px;
-  }
+@media (hover: none) {
 
-  .dorm-desk {
-    bottom: 115px;
+  /* Touch devices get a clear tap affordance without requiring hover. */
+  .residence-hall .explore-tooltip {
+    top: auto;
+    bottom: calc(100% + 5px);
+    padding: 0.4rem 0.6rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
   }
+}
 
-  .dorm-bookshelf {
-    bottom: 115px;
-  }
+@media (prefers-reduced-motion: reduce) {
 
-  .dorm-nightstand {
-    bottom: 220px;
-  }
-
-  .dorm-tote {
-    bottom: 40px;
-  }
-
-  .dorm-suitcase {
-    bottom: 30px;
-  }
-
-  .floor-pillow {
-    bottom: 40px;
-  }
-
-  .floor-plant {
-    bottom: 40px;
-  }
-
-  .dorm-rug {
-    bottom: 40px;
-  }
-
-  .dorm-corkboard:hover,
-  .dorm-corkboard:focus-within {
-    transform: scale(0.49) rotate(-1deg);
-  }
-
-  .dorm-suitcase:hover,
-  .dorm-suitcase:focus-within {
-    transform: scale(0.53) rotate(-5deg);
+  .residence-hall *,
+  .residence-hall *::before,
+  .residence-hall *::after {
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
   }
 }
