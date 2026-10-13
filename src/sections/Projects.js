@@ -223,80 +223,66 @@ export function Projects() {
       <div class="lab-current-grid">
 
         <article class="current-project">
-
           <div class="current-project-top">
             <span>05</span>
             <span>IN DEVELOPMENT</span>
           </div>
 
           <div class="current-project-content">
-
             <div>
-
               <span class="current-project-label">
-                RESEARCH / UX / PROTOTYPING
+                UI DESIGN / REACT / API INTEGRATION
               </span>
 
               <h3>
-                FINANCIAL AID +
+                ANIME
                 <br />
-                SCHOLARSHIP
-                <em>NAVIGATOR.</em>
+                <em>TRACKER.</em>
               </h3>
 
               <p>
-                An exploration of how students can more easily
-                discover, organize, and navigate financial aid
-                and scholarship opportunities.
+                A personal anime discovery and tracking platform
+                for exploring series, managing watch progress,
+                and keeping up with seasonal releases.
               </p>
-
             </div>
 
             <span class="current-project-arrow">
               05 →
             </span>
-
           </div>
-
         </article>
 
 
         <article class="current-project current-project-alt">
-
           <div class="current-project-top">
             <span>06</span>
             <span>IN DEVELOPMENT</span>
           </div>
 
           <div class="current-project-content">
-
             <div>
-
               <span class="current-project-label">
-                UX / PROTOTYPING / FRONT-END
+                UX RESEARCH / DECISION SUPPORT / PROTOTYPING
               </span>
 
               <h3>
-                TRAVEL
+                BUY OR
                 <br />
-                PLANNING
-                <em>TOOL.</em>
+                <em>BYE?</em>
               </h3>
 
               <p>
-                An exploration of how research, planning,
-                and interactive design can turn complicated
-                travel decisions into a clearer experience.
+                A decision-making experience designed to help
+                shoppers compare options, think through priorities,
+                and feel more confident about what to buy.
               </p>
-
             </div>
 
             <span class="current-project-arrow">
               06 →
             </span>
-
           </div>
-
         </article>
 
       </div>
