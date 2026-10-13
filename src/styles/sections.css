@@ -1497,9 +1497,7 @@
   .home-footer-note p {
     text-align: left;
   }
-
 }
-
 
 @media (max-width: 600px) {
 
@@ -1592,4 +1590,109 @@
     grid-column: 1 / -1;
   }
 
+}
+
+/* =====================================================
+   EXPLORE / CAMPUS DIRECTORY — MOBILE VIEW
+   02 / EXPLORE section
+===================================================== */
+
+@media (max-width: 600px) {
+  .home-explore .home-directory-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-explore .home-directory-heading h2 {
+    max-width: 100%;
+    font-size: clamp(2.25rem, 10.5vw, 3.75rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    overflow-wrap: normal;
+  }
+
+  .home-explore .home-directory-intro {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    box-sizing: border-box;
+  }
+
+  .home-explore .home-directory-intro p {
+    max-width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .home-explore .home-campus-directory {
+    margin-inline: 0;
+    min-width: 0;
+  }
+
+  .home-explore .directory-row {
+    grid-template-columns: 38px minmax(0, 1fr) 72px;
+    gap: 20px;
+    min-height: 88px;
+  }
+
+  .home-explore .home-campus-directory::before {
+    left: 37px;
+  }
+
+  .home-explore .directory-number::after {
+    left: 37px;
+  }
+
+  .home-explore .directory-name {
+    min-width: 0;
+    padding: 1rem 0.35rem;
+  }
+
+  .home-explore .directory-name strong {
+    font-size: 0.88rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .home-explore .directory-name small {
+    font-size: 0.42rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .home-explore .directory-status {
+    min-width: 0;
+    padding: 0 0.2rem;
+    font-size: 0.38rem;
+    line-height: 1.35;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  .home-explore .home-directory-footer {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0.75rem;
+    row-gap: 0.6rem;
+  }
+
+  .home-explore .home-directory-footer span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-explore .home-directory-heading h2 {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .home-explore .directory-row {
+    grid-template-columns: 34px minmax(0, 1fr) 64px;
+  }
+
+  .home-explore .home-campus-directory::before,
+  .home-explore .directory-number::after {
+    left: 33px;
+  }
 }

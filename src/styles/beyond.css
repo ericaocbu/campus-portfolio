@@ -336,7 +336,7 @@
 
 .wall-tape-one {
   left: 47px;
-  top: 12px;
+  top: 23px;
   transform: rotate(-8deg);
 }
 
@@ -1924,149 +1924,6 @@
 }
 
 /* =========================================================
-   RESPONSIVE
-========================================================= */
-@media (max-width: 1050px) {
-
-  .dorm-room-scene {
-    min-height: 1000px;
-  }
-
-  .dorm-desk {
-    right: 0;
-    transform: scale(0.85);
-    transform-origin: right bottom;
-  }
-
-  .dorm-bed {
-    left: 0;
-    transform: scale(0.85);
-    transform-origin: left bottom;
-  }
-
-  .dorm-bookshelf {
-    left: 45%;
-    transform: scale(0.9);
-    transform-origin: bottom center;
-  }
-
-  .dorm-suitcase {
-    left: 31%;
-  }
-}
-
-@media (max-width: 760px) {
-
-  .dorm-room-scene {
-    min-height: 1250px;
-  }
-
-  .dorm-room-title {
-    left: 1rem;
-    top: 1rem;
-  }
-
-  .dorm-window {
-    width: 200px;
-    height: 165px;
-    top: 7%;
-  }
-
-  .dorm-gallery-wall {
-    right: 3%;
-    top: 25%;
-    transform: scale(0.75);
-    transform-origin: right top;
-  }
-
-  .dorm-corkboard {
-    left: 3%;
-    top: 25%;
-    transform: scale(0.75) rotate(-1deg);
-    transform-origin: left top;
-  }
-
-  .bed-area {
-    left: 2%;
-    bottom: 310px;
-    transform: scale(0.75);
-    transform-origin: left bottom;
-  }
-
-  .dorm-nightstand {
-    left: 32%;
-    bottom: 300px;
-    transform: scale(0.8);
-    transform-origin: bottom center;
-  }
-
-  .dorm-bookshelf {
-    left: 47%;
-    bottom: 285px;
-    transform: scale(0.75);
-    transform-origin: bottom center;
-  }
-
-  .dorm-desk {
-    right: 2%;
-    bottom: 30px;
-    transform: scale(0.7);
-    transform-origin: right bottom;
-  }
-
-  .dorm-suitcase {
-    left: 4%;
-    bottom: 45px;
-    transform: scale(0.7);
-    transform-origin: left bottom;
-  }
-
-  .dorm-tote {
-    left: 28%;
-    bottom: 35px;
-    transform: scale(0.7);
-    transform-origin: bottom center;
-  }
-
-  .floor-plant {
-    right: 30%;
-    bottom: 35px;
-    transform: scale(0.7);
-    transform-origin: bottom center;
-  }
-
-  .dorm-rug {
-    width: 340px;
-  }
-
-  .dorm-content-list,
-  .dorm-travel-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dorm-interest-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .dorm-inspiration-list a {
-    grid-template-columns: 25px 1fr 20px;
-  }
-
-  .dorm-inspiration-list small {
-    display: block;
-  }
-
-  .dorm-info-panel {
-    padding: 1rem;
-  }
-
-  .dorm-info-card {
-    padding: 1.75rem;
-    border-width: 5px;
-  }
-}
-
-/* =========================================================
    INTERACTIVE OBJECTS
 ========================================================= */
 
@@ -2241,44 +2098,500 @@
 }
 
 /* =========================================================
-   MOBILE
+   MOBILE RESPONSIVENESS ONLY
 ========================================================= */
-@media (max-width: 760px) {
 
-  .dorm-portfolio
-    [data-panel]::before {
-    content: "TAP TO EXPLORE";
+/* Tablets and smaller laptops */
+@media (max-width: 1050px) {
+  .dorm-room-scene {
+    min-height: 850px;
   }
 
-  .dorm-portfolio
-    [data-panel]::after {
-    width: 20px;
-    height: 20px;
+  .dorm-room-title {
+    left: 1.5rem;
   }
 
+  .dorm-gallery-wall {
+    right: 3%;
+    transform: scale(0.85);
+    transform-origin: top right;
+  }
+
+  .dorm-corkboard {
+    left: 4%;
+    transform: scale(0.85) rotate(-1deg);
+    transform-origin: top left;
+  }
+
+  .dorm-checklist {
+    left: 30%;
+    max-width: 235px;
+  }
+
+  .bed-area {
+    left: 2%;
+    transform: scale(0.82);
+    transform-origin: bottom left;
+  }
+
+  .dorm-desk {
+    right: 1%;
+    transform: scale(0.82);
+    transform-origin: bottom right;
+  }
+
+  .dorm-bookshelf {
+    left: 45%;
+    transform: scale(0.85);
+    transform-origin: bottom left;
+  }
+
+  .dorm-nightstand {
+    left: 39%;
+  }
+
+  .dorm-suitcase {
+    left: 34%;
+    bottom: 0;
+  }
+
+  .dorm-tote {
+    left: 12%;
+  }
+
+  .floor-plant {
+    right: 24%;
+  }
 }
 
-@media (max-width: 600px) {
-  .travel-stamps {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+/* Phones */
+@media (max-width: 760px) {
+  .dorm-portfolio {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
   }
 
-  .travel-stamp {
-    min-height: 85px;
+  .dorm-room-scene {
+    width: 100%;
+    min-height: 1050px;
+    overflow: hidden;
+  }
+
+  .dorm-wall {
+    bottom: 300px;
+  }
+
+  .dorm-floor {
+    height: 300px;
+  }
+
+  .dorm-room-title {
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+  }
+
+  .dorm-room-title strong {
+    font-size: 1.05rem;
+  }
+
+  /* Lower the window and sign with the wall layout */
+  .dorm-window {
+    top: 12%;
+    width: 175px;
+    height: 145px;
+    border-width: 7px;
+  }
+
+  .dorm-sign {
+    top: 7%;
+    padding: 0.4rem 0.65rem;
+  }
+
+  .dorm-sign strong {
+    font-size: 0.8rem;
+  }
+
+  /* Wall decorations */
+  .dorm-gallery-wall {
+    right: 2%;
+    top: 31%;
+    transform: scale(0.62);
+    transform-origin: top right;
+  }
+
+  .dorm-corkboard {
+    left: 3%;
+    top: 33%;
+    transform: scale(0.62) rotate(-1deg);
+    transform-origin: top left;
+  }
+
+  .dorm-checklist {
+    left: 50%;
+    top: 51%;
+    width: min(235px, 88%);
+    min-height: 0;
+    padding: 0.7rem;
+    transform: translateX(-50%) rotate(1deg);
+  }
+
+  .dorm-checklist-header strong {
+    font-size: 0.9rem;
+  }
+
+  .dorm-checklist-item {
+    font-size: 0.65rem;
+  }
+
+  /* Bring floor furniture upward and reduce the empty gap */
+  .dorm-rug {
+    left: 50%;
+    bottom: 12px;
+    width: min(340px, 88%);
+    height: 85px;
+    transform: translateX(-50%);
+  }
+
+  .bed-area {
+    left: 2%;
+    bottom: 65px;
+    transform: scale(0.56);
+    transform-origin: bottom left;
+  }
+
+  .dorm-desk {
+    right: 2%;
+    bottom: 65px;
+    transform: scale(0.58);
+    transform-origin: bottom right;
+  }
+
+  .dorm-bookshelf {
+    left: 42%;
+    bottom: 65px;
+    transform: scale(0.55);
+    transform-origin: bottom left;
+  }
+
+  .dorm-nightstand {
+    left: 37%;
+    bottom: 200px;
+    transform: scale(0.65);
+    transform-origin: bottom left;
+  }
+
+  .dorm-tote {
+    left: 3%;
+    bottom: 8px;
+    transform: scale(0.65) rotate(4deg);
+    transform-origin: bottom left;
+  }
+
+  .dorm-suitcase {
+    left: 24%;
+    bottom: 3px;
+    transform: scale(0.62) rotate(-5deg);
+    transform-origin: bottom left;
+  }
+
+  .floor-pillow {
+    left: 47%;
+    bottom: 8px;
+    transform: scale(0.75) rotate(-8deg);
+    transform-origin: bottom center;
+  }
+
+  .floor-plant {
+    right: 3%;
+    bottom: 8px;
+    transform: scale(0.65);
+    transform-origin: bottom right;
+  }
+
+  /* Keep interaction labels from overflowing the phone */
+  .dorm-portfolio [data-panel]::before {
+    content: "TAP TO EXPLORE";
+    max-width: 120px;
+    font-size: 0.4rem;
+  }
+
+  .dorm-portfolio [data-panel]::after {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Responsive information panel */
+  .dorm-info-panel {
     padding: 0.75rem;
   }
 
-  .travel-stamp strong {
-    font-size: 0.75rem;
+  .dorm-info-card {
+    width: 100%;
+    max-height: 88vh;
+    padding: 2.5rem 1.1rem 1.25rem;
+    border-width: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .dorm-info-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .dorm-info-content h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .dorm-content-list {
+    grid-template-columns: 1fr;
+  }
+
+  .dorm-inspiration-list a {
+    grid-template-columns: 24px minmax(0, 1fr) 22px;
+    gap: 0.45rem;
+  }
+
+  .dorm-inspiration-list a small {
+    display: none;
+  }
+
+  .favorite-item {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 0.6rem;
   }
 
   .reading-item {
-    grid-template-columns: 28px 1fr;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 0.6rem;
   }
 
   .reading-status {
     grid-column: 2;
     text-align: left;
+  }
+
+  .travel-stamps {
+    gap: 0.5rem;
+  }
+
+  .travel-stamp {
+    min-height: 75px;
+    padding: 0.5rem;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 400px) {
+  .dorm-room-scene {
+    min-height: 1000px;
+  }
+
+  .dorm-room-title {
+    left: 0.7rem;
+    top: 0.8rem;
+  }
+
+  .dorm-room-title strong {
+    font-size: 0.95rem;
+  }
+
+  .dorm-window {
+    top: 13%;
+    width: 145px;
+    height: 125px;
+  }
+
+  .dorm-sign {
+    top: 8%;
+  }
+
+  .dorm-gallery-wall {
+    right: 1%;
+    top: 31%;
+    transform: scale(0.48);
+    transform-origin: top right;
+  }
+
+  .dorm-corkboard {
+    left: 2%;
+    top: 31%;
+    transform: scale(0.49) rotate(-1deg);
+    transform-origin: top left;
+  }
+
+  .dorm-checklist {
+    top: 48%;
+    width: 88%;
+  }
+
+  .bed-area {
+    left: 1%;
+    bottom: 65px;
+    transform: scale(0.47);
+    transform-origin: bottom left;
+  }
+
+  .dorm-desk {
+    right: 1%;
+    bottom: 65px;
+    transform: scale(0.49);
+    transform-origin: bottom right;
+  }
+
+  .dorm-bookshelf {
+    left: 41%;
+    bottom: 65px;
+    transform: scale(0.45);
+    transform-origin: bottom left;
+  }
+
+  .dorm-nightstand {
+    left: 35%;
+    bottom: 190px;
+    transform: scale(0.55);
+    transform-origin: bottom left;
+  }
+
+  .dorm-tote {
+    left: 1%;
+    bottom: 6px;
+    transform: scale(0.55) rotate(4deg);
+    transform-origin: bottom left;
+  }
+
+  .dorm-suitcase {
+    left: 22%;
+    bottom: 2px;
+    transform: scale(0.53) rotate(-5deg);
+    transform-origin: bottom left;
+  }
+
+  .floor-pillow {
+    left: 45%;
+    bottom: 6px;
+    transform: scale(0.62) rotate(-8deg);
+    transform-origin: bottom center;
+  }
+
+  .floor-plant {
+    right: 1%;
+    bottom: 6px;
+    transform: scale(0.55);
+    transform-origin: bottom right;
+  }
+
+  .dorm-info-panel {
+    padding: 0.5rem;
+  }
+
+  .dorm-info-card {
+    padding: 2.4rem 0.85rem 1rem;
+  }
+}
+
+/* MOBILE FIXES: floor placement and hover scaling */
+@media (max-width: 760px) {
+  /* Move the main furniture upward */
+  .bed-area {
+    bottom: 100px;
+  }
+
+  .dorm-desk {
+    bottom: 185px;
+  }
+
+  .dorm-bookshelf {
+    bottom: 235px;
+  }
+
+  .dorm-nightstand {
+    bottom: 330px;
+    left: 130px;
+  }
+
+  /* Keep smaller floor items higher too */
+  .dorm-tote {
+    bottom: 255px;
+  }
+
+  .dorm-suitcase {
+    bottom: 95px;
+    left: 55px;
+  }
+
+  .floor-pillow {
+    bottom: 45px;
+  }
+
+  .floor-plant {
+    bottom: 45px;
+  }
+
+  .dorm-rug {
+    bottom: 45px;
+  }
+
+  /* Prevent hover effects from enlarging these items */
+  .dorm-corkboard:hover,
+  .dorm-corkboard:focus-within {
+    transform: scale(0.62) rotate(-1deg);
+  }
+
+  .dorm-suitcase:hover,
+  .dorm-suitcase:focus-within {
+    transform: scale(0.62) rotate(-5deg);
+  }
+}
+
+@media (max-width: 400px) {
+  .bed-area {
+    bottom: 115px;
+  }
+
+  .dorm-desk {
+    bottom: 115px;
+  }
+
+  .dorm-bookshelf {
+    bottom: 115px;
+  }
+
+  .dorm-nightstand {
+    bottom: 220px;
+  }
+
+  .dorm-tote {
+    bottom: 40px;
+  }
+
+  .dorm-suitcase {
+    bottom: 30px;
+  }
+
+  .floor-pillow {
+    bottom: 40px;
+  }
+
+  .floor-plant {
+    bottom: 40px;
+  }
+
+  .dorm-rug {
+    bottom: 40px;
+  }
+
+  .dorm-corkboard:hover,
+  .dorm-corkboard:focus-within {
+    transform: scale(0.49) rotate(-1deg);
+  }
+
+  .dorm-suitcase:hover,
+  .dorm-suitcase:focus-within {
+    transform: scale(0.53) rotate(-5deg);
   }
 }
