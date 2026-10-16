@@ -1,91 +1,58 @@
-# Campus Portfolio
-<img width="1512" height="784" alt="Screenshot 2026-09-20 at 11 42 51 PM" src="https://github.com/user-attachments/assets/54f9922e-3e4a-4bfa-96a4-74e8053ab46d" />
+# Campus Portfolio 👩🏽‍💻
 
+### Campus Overview
+<img width="1512" height="784" alt="Campus Landing Page" src="public/img/Campus.png"/>
 
+### Campus Tour Feature (led by Orientation Leader Erica)
+<img width="1512" height="784" alt="Campus Tour" src="public/img/Campus Tour.png"/>
 
-<br> An interactive portfolio website built around a virtual campus. Each area of the campus represents a 
-different part of my portfolio, making it possible to explore my work, experience, education, and more 
+The guided tour introduces visitors to the campus and helps them discover the different portfolio sections.
+
+### Campus Discoveries Feature (hint: there's 6 in total!)
+<img width="1512" height="784" alt="Campus Discoveries" src="public/img/Campus Discoveries.png"/>
+
+<br> An interactive portfolio website built around a virtual campus. Each area of the campus represents a different part of my portfolio, making it possible to explore my work, experience, education, and more 
 in a less traditional way.
 
 ## Features
 
-* Interactive campus navigation
-  * Orientation Leader-led tour
-* Library - about me (education, skills, and technologies) section
-* Lecture Hall - experience section
-* Innovation Lab - project portfolio section
-* Food Canteen - contact me section
-* The Dorms - play/hobbies section
-* Interactive UI elements and animations
-* Responsive design
-* External links to projects and profiles
+- **Interactive Campus Navigation** — Explore the portfolio through a virtual campus rather than a traditional navigation menu.
+- **Guided Campus Tour** — Follow an orientation leader-led tour to discover different areas of the site.
+- **Library** — Learn about my background, education, skills, and technologies.
+- **Lecture Hall** — Explore my professional experience.
+- **Innovation Lab** — Browse my projects and portfolio work.
+- **Food Canteen** — Find contact information and ways to connect.
+- **The Dorms** — Discover my hobbies, interests, and life beyond work.
+- **Interactive Elements and Animations** — Engage with dynamic UI elements throughout the experience.
+- **Responsive Design** — Navigate the portfolio across different screen sizes.
+- **External Links** — Access projects, professional profiles, and additional resources.
 
 ## Built With
 
-* **JavaScript**
-* **HTML**
-* **CSS**
-* **Git & GitHub**
+- **HTML** — Page structure and content
+- **CSS** — Styling, layouts, animations, and responsive design
+- **JavaScript** — Interactive components and campus navigation
+- **Git & GitHub** — Version control and deployment through GitHub Pages
 
 ## Project Structure
 
-```text
-campus-portfolio/
-│
-├── public/
-│   └── resume.pdf             # Downloadable resume
-│
-├── src/
-│   │
-│   ├── components/
-│   │   ├── Building.js         # Individual campus building components
-│   │   ├── CampusLife.js       # Campus life / dining area content
-│   │   ├── CampusMap.js        # Interactive campus map
-│   │   ├── Navigation.js       # Site and campus navigation
-│   │   ├── ProjectCard.js      # Reusable project card component
-│   │   ├── SectionView.js      # Displays content for selected sections
-│   │   └── TourHUD.js          # Heads-up display for the campus tour
-│   │
-│   ├── data/
-│   │   ├── campus.js           # Campus buildings and location data
-│   │   └── projects.js         # Project portfolio data
-│   │
-│   ├── sections/
-│   │   ├── About.js            # About / education / skills content
-│   │   ├── Beyond.js           # Additional information and interests
-│   │   ├── Contact.js          # Contact information
-│   │   ├── Experience.js       # Professional experience
-│   │   ├── Home.js             # Home / landing page content
-│   │   └── Projects.js         # Project portfolio section
-│   │
-│   ├── styles/
-│   │   ├── beyond.css          # Beyond section styles
-│   │   ├── buildings.css       # Campus building styles
-│   │   ├── campus.css          # Campus-wide styles
-│   │   ├── contact.css         # Contact section styles
-│   │   ├── experience.css      # Experience section styles
-│   │   ├── library.css         # Library / About section styles
-│   │   ├── projects.css        # Project section styles
-│   │   └── sections.css        # Shared section styles
-│   │
-│   ├── main.js                 # Application entry point
-│   └── style.css               # Main stylesheet
-│
-└── README.md
-```
+The project is organized into reusable components, structured content, and separate stylesheets to keep the code maintainable.
 
-## Organization
+- `src/components/` — Reusable UI components and campus navigation elements
+- `src/data/` — Campus locations and project information
+- `src/sections/` — Content for individual portfolio sections
+- `src/styles/` — Styles organized by campus areas and portfolio sections
+- `src/main.js` — Application entry point
+- `src/styles/` — contains CSS files organized by campus areas and portfolio sections.
+- `public/resume.pdf` — Downloadable resume
 
-The project is organized around the following structure:
-- **components/** contains reusable JavaScript components that make up the interactive campus experience.
-- **data/** stores structured information used throughout the portfolio, including campus locations and projects.
-- **sections/** separates portfolio content into individual sections such as About, Experience, Projects, and Contact.
-- **styles/** contains CSS files organized by campus areas and portfolio sections.
-- **main.js** serves as the entry point for the application and initializes the campus experience,
-  while **style.css** serves as the main stylesheet and imports the project's individual CSS files.
 
-The campus itself acts as the main navigation system, with different buildings representing different areas of the portfolio.
+## Design Approach
+
+The goal of this project was to present my background and work in a way that feels more engaging than a conventional portfolio. I used a virtual campus as the primary navigation system, connecting familiar campus spaces with different aspects of my professional and personal identity. <br>
+
+The project emphasizes reusable components and interactive navigation to create an experience that is distinctive while remaining easy to explore.
 
 ## Live Website
 
-[View the Campus Portfolio](https://ericaocbu.github.io/campus-portfolio/)
+**[Explore the Live Campus Portfolio →](https://ericaocbu.github.io/campus-portfolio/)**
