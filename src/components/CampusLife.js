@@ -347,6 +347,9 @@ export function CampusLife() {
         ♻
       </span>
 
+      <span class="bins-label">
+        Recycling Bins
+      </span>
     </button>
 
 

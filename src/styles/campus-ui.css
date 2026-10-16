@@ -647,9 +647,13 @@
   font-size: 0.62rem;
   line-height: 1.55;
   opacity: 0.62;
-}.campus-discovery-hud{
+}
+
+.campus-discovery-hud{
   pointer-events: auto;
-}.discovery-label{
+}
+
+.discovery-label{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -664,10 +668,26 @@
   box-shadow:
     0 3px 8px
     rgba(24, 60, 53, 0.07);
+  bottom: -8px;
+  padding: 0.15rem 0.4rem;
 }
 
-.discovery-label{
-  bottom: -8px;
+.bins-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  border: 1px solid rgba(24, 60, 53, 0.14);
+  border-radius: 999px;
+  background: rgba(245, 243, 235, 0.94);
+  color: #183c35;
+  font-size: 0.43rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  box-shadow:
+    0 3px 8px
+    rgba(24, 60, 53, 0.07);
+  bottom: -15px;
   padding: 0.15rem 0.4rem;
 }
 
