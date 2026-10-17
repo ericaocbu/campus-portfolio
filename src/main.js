@@ -19,6 +19,7 @@ let navigationTimeout = null;
 let tourHUD = null;
 
 let tourActive = false;
+let tourCompleted = false;
 let currentTourIndex = 0;
 let tourStopReady = false;
 
@@ -56,6 +57,24 @@ function updateDirectoryHighlight(location) {
   }
 }
 
+/*
+ * Keep the tour button states synchronized.
+ *
+ * Also notify other parts of the portfolio, such as
+ * the Home page tour button, through a custom event.
+ */
+function updateTourStatus(status) {
+  if (navigation) {
+    navigation.setTourButtonState(status);
+  }
+
+  window.dispatchEvent(
+    new CustomEvent("portfolio:tour-status-change", {
+      detail: { status },
+    }),
+  );
+}
+
 /* =====================================================
    NORMAL CAMPUS NAVIGATION
 ===================================================== */
@@ -67,7 +86,6 @@ function navigateTo(location) {
     return;
   }
 
-  // Highlight the destination in the campus directory.
   updateDirectoryHighlight(location);
 
   /*
@@ -150,24 +168,31 @@ function closeSection() {
     }
 
     if (!tourActive) {
-      // Returning from a building means Main Campus
-      // is now the active directory destination.
+      // Returning from a building resets the directory.
       updateDirectoryHighlight(null);
-
       campusMap.returnToPreviousPosition();
     }
   }, 450);
 }
 
 /* =====================================================
-   START GUIDED TOUR
+   START OR CONTINUE GUIDED TOUR
 ===================================================== */
 
 function startTour() {
+  /*
+   * Never restart a tour that is already running.
+   * The UI button can close its panel and leave the
+   * visitor at the current stop.
+   */
+  if (tourActive) {
+    return;
+  }
+
   clearNavigationTimeout();
 
   /*
-   * Close whatever section is currently open.
+   * Close any section currently open.
    */
   if (activeSection) {
     activeSection.classList.remove("is-active");
@@ -181,11 +206,14 @@ function startTour() {
   }
 
   /*
-   * Activate the guided tour.
+   * A completed tour can be replayed from the beginning.
    */
   tourActive = true;
+  tourCompleted = false;
   currentTourIndex = 0;
   tourStopReady = false;
+
+  updateTourStatus("active");
 
   /*
    * Tell Erica that the tour has started.
@@ -201,9 +229,6 @@ function startTour() {
     }),
   );
 
-  /*
-   * Show the first tour stop.
-   */
   showTourStop();
 }
 
@@ -220,17 +245,11 @@ function showTourStop() {
 
   const nextLocation = findCampusLocation(tourOrder[currentTourIndex + 1]);
 
-  /*
-   * Make sure the location exists.
-   */
   if (!currentLocation) {
     finishTour();
     return;
   }
 
-  /*
-   * Update the tour HUD and directory highlight.
-   */
   updateTourHUD(currentLocation, nextLocation);
   updateDirectoryHighlight(currentLocation);
 
@@ -260,10 +279,7 @@ function showTourStop() {
 
   /*
    * For every building, Erica walks there.
-   *
-   * The building will NOT open yet.
-   * CampusLife will tell us when Erica arrives
-   * and her message has been displayed.
+   * The building opens after Erica arrives.
    */
   window.dispatchEvent(
     new CustomEvent("portfolio:erica-tour", {
@@ -284,13 +300,8 @@ function openTourSection(location) {
     activeSection.remove();
   }
 
-  // Keep the directory synced with the current tour stop.
   updateDirectoryHighlight(location);
 
-  /*
-   * The user has now reached this tour stop.
-   * Next is allowed from here.
-   */
   tourStopReady = true;
 
   activeSection = SectionView(location, closeTourSection, {
@@ -352,32 +363,17 @@ function updateTourHUD(currentLocation, nextLocation) {
 ===================================================== */
 
 function handleNextTourStop() {
-  if (!tourActive) {
-    return;
-  }
-
-  /*
-   * Do not allow the user to advance until
-   * they have actually reached the current stop.
-   */
-  if (!tourStopReady) {
+  if (!tourActive || !tourStopReady) {
     return;
   }
 
   const isLastStop = currentTourIndex >= tourOrder.length - 1;
 
-  /*
-   * If we're at UTown, the tour is finished.
-   */
   if (isLastStop) {
     finishTour();
     return;
   }
 
-  /*
-   * The current stop has been completed.
-   * Reset this before moving to the next stop.
-   */
   tourStopReady = false;
 
   /*
@@ -399,9 +395,6 @@ function handleNextTourStop() {
     return;
   }
 
-  /*
-   * No section is open, so move immediately.
-   */
   currentTourIndex++;
   showTourStop();
 }
@@ -418,8 +411,12 @@ function stopTour(returnToCampus = true) {
   tourStopReady = false;
 
   /*
-   * Tell Erica to stop guided-tour mode.
+   * If the tour was stopped before completion,
+   * allow the visitor to start it again.
    */
+  tourCompleted = false;
+  updateTourStatus("not-started");
+
   window.dispatchEvent(
     new CustomEvent("portfolio:erica-tour", {
       detail: {
@@ -428,17 +425,11 @@ function stopTour(returnToCampus = true) {
     }),
   );
 
-  /*
-   * Remove the tour HUD.
-   */
   if (tourHUD) {
     tourHUD.remove();
     tourHUD = null;
   }
 
-  /*
-   * Close the active section.
-   */
   if (activeSection) {
     activeSection.classList.remove("is-active");
 
@@ -457,9 +448,6 @@ function stopTour(returnToCampus = true) {
     return;
   }
 
-  /*
-   * Return to the campus center.
-   */
   if (returnToCampus) {
     updateDirectoryHighlight(null);
     campusMap.centerCampus();
@@ -481,9 +469,6 @@ function finishTour() {
    */
   tourActive = true;
 
-  /*
-   * Close the final section first.
-   */
   if (activeSection) {
     activeSection.classList.remove("is-active");
 
@@ -493,9 +478,6 @@ function finishTour() {
     setTimeout(() => {
       sectionToRemove.remove();
 
-      /*
-       * Tell Erica to return to Student Campus.
-       */
       window.dispatchEvent(
         new CustomEvent("portfolio:erica-tour", {
           detail: {
@@ -508,9 +490,6 @@ function finishTour() {
     return;
   }
 
-  /*
-   * No section is open, so send Erica back immediately.
-   */
   window.dispatchEvent(
     new CustomEvent("portfolio:erica-tour", {
       detail: {
@@ -528,9 +507,6 @@ window.addEventListener("portfolio:erica-tour-finished", () => {
   clearNavigationTimeout();
 
   navigationTimeout = setTimeout(() => {
-    /*
-     * Hide Erica's final message.
-     */
     window.dispatchEvent(
       new CustomEvent("portfolio:erica-tour", {
         detail: {
@@ -539,14 +515,13 @@ window.addEventListener("portfolio:erica-tour-finished", () => {
       }),
     );
 
-    /*
-     * Now the guided tour is officially over.
-     */
     tourActive = false;
+    tourCompleted = true;
     currentTourIndex = 0;
+    tourStopReady = false;
 
-    // The tour has returned to Main Campus.
     updateDirectoryHighlight(null);
+    updateTourStatus("completed");
 
     if (tourHUD) {
       tourHUD.remove();
@@ -584,12 +559,6 @@ window.addEventListener("portfolio:erica-arrived", (event) => {
     return;
   }
 
-  /*
-   * Erica has arrived and her message
-   * has already been displayed.
-   *
-   * Now open the building.
-   */
   clearNavigationTimeout();
 
   navigationTimeout = setTimeout(() => {
@@ -615,7 +584,6 @@ campusMap = CampusMap(campusContainer, navigateTo, startTour);
 function returnToCampus() {
   clearNavigationTimeout();
 
-  // Reset the directory before leaving the building.
   updateDirectoryHighlight(null);
 
   if (tourActive) {
@@ -638,3 +606,5 @@ function returnToCampus() {
 navigation = Navigation(navigateTo, startTour, returnToCampus);
 
 document.body.appendChild(navigation);
+
+updateTourStatus("not-started");
