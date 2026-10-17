@@ -3,13 +3,18 @@
 ### Campus Overview
 <img width="1512" height="784" alt="Campus Landing Page" src="public/img/Campus.png"/>
 
-### Campus Tour Feature (led by Orientation Leader Erica)
+Welcome to campus! Explore the grounds and discover the spaces that make up my portfolio.
+
+### Campus Tour Feature - led by Orientation Leader Erica
 <img width="1512" height="784" alt="Campus Tour" src="public/img/Campus Tour.png"/>
 
 The guided tour introduces visitors to the campus and helps them discover the different portfolio sections.
 
-### Campus Discoveries Feature (hint: there's 6 in total!)
+### Campus Discoveries Feature 
 <img width="1512" height="784" alt="Campus Discoveries" src="public/img/Campus Discoveries.png"/>
+
+> [!NOTE]
+> Keep your eyes open as you explore campus — there are six hidden discoveries waiting to be found! Can you find them all?
 
 <br> An interactive portfolio website built around a virtual campus. Each area of the campus represents a different part of my portfolio, making it possible to explore my work, experience, education, and more 
 in a less traditional way.
@@ -41,7 +46,6 @@ The project is organized into reusable components, structured content, and separ
 - `src/components/` — Reusable UI components and campus navigation elements
 - `src/data/` — Campus locations and project information
 - `src/sections/` — Content for individual portfolio sections
-- `src/styles/` — Styles organized by campus areas and portfolio sections
 - `src/main.js` — Application entry point
 - `src/styles/` — contains CSS files organized by campus areas and portfolio sections.
 - `public/resume.pdf` — Downloadable resume
@@ -51,7 +55,7 @@ The project is organized into reusable components, structured content, and separ
 
 The goal of this project was to present my background and work in a way that feels more engaging than a conventional portfolio. I used a virtual campus as the primary navigation system, connecting familiar campus spaces with different aspects of my professional and personal identity. <br>
 
-The project emphasizes reusable components and interactive navigation to create an experience that is distinctive while remaining easy to explore.
+The project emphasizes reusable components, interactive navigation, and exploration to create a distinctive experience while keeping portfolio content organized and easy to find.
 
 ## Live Website
 
