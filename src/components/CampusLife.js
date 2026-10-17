@@ -1064,10 +1064,11 @@ function showEricaDialogue(message) {
   }
 
   ericaDialogueText.textContent = message;
-
   ericaDialogue.classList.add("is-visible");
 
-  positionEricaDialogue();
+  requestAnimationFrame(() => {
+    positionEricaDialogue();
+  });
 }
 
 
@@ -1088,17 +1089,23 @@ function positionEricaDialogue() {
   if (!erica || !ericaDialogue) {
     return;
   }
+  const campusRect = life.getBoundingClientRect();
+  const ericaRect = erica.getBoundingClientRect();
+  const gap = 16;
 
-  /*
-   * Erica and her dialogue are both positioned
-   * relative to the campus-life container.
-   *
-   * The dialogue follows Erica horizontally
-   * and sits above her vertically.
-   */
-  ericaDialogue.style.left = erica.style.left;
+  // Find the space available above Erica.
+  const ericaTop = ericaRect.top - campusRect.top;
+  const availableHeight = Math.max(0, ericaTop - gap - 8);
 
-  ericaDialogue.style.top = `calc(${erica.style.top} - 9%)`;
+  // Measure the bubble after applying its height constraint.
+  const dialogueHeight = ericaDialogue.offsetHeight;
+
+  // Center it over Erica and position it completely above her.
+  ericaDialogue.style.left =
+    `${ericaRect.left - campusRect.left + ericaRect.width / 2}px`;
+
+  ericaDialogue.style.top =
+    `${ericaTop - dialogueHeight - gap}px`;
 }
 
 
