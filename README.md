@@ -1,6 +1,11 @@
 # Campus Portfolio 👩🏽‍💻
 
-### Campus Overview
+An interactive portfolio website built around a virtual campus. Each area of the campus represents a different part of my portfolio, making it possible to explore my work, experience, education, and more 
+in a less traditional way.
+
+> Developed by Erica Ocbu 🫶🏽
+
+### Main Campus
 <img width="1512" height="784" alt="Campus Landing Page" src="public/img/Campus.png"/>
 
 Welcome to campus! Explore the grounds and discover the spaces that make up my portfolio.
@@ -15,9 +20,6 @@ The guided tour introduces visitors to the campus and helps them discover the di
 
 > [!NOTE]
 > Keep your eyes open as you explore campus — there are six hidden discoveries waiting to be found! Can you find them all?
-
-<br> An interactive portfolio website built around a virtual campus. Each area of the campus represents a different part of my portfolio, making it possible to explore my work, experience, education, and more 
-in a less traditional way.
 
 ## Features
 
