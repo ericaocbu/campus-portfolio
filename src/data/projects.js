@@ -225,8 +225,8 @@ export const projects = [
     links: {
       prototype: "",
       caseStudy: "",
-      live: "https://symptomsync.vercel.app/",
-      github: "",
+      live: "https://symptomsync-health.vercel.app/",
+      github: "https://github.com/ericaocbu/symptomsync-health",
     },
 
     visual: "health",
