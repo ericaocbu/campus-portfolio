@@ -11,7 +11,7 @@ in a less traditional way.
 Welcome to campus! Explore the grounds and discover the spaces that make up my portfolio.
 
 ### Campus Tour Feature - led by Orientation Leader Erica
-<img width="1512" height="784" alt="Campus Tour" src="public/img/Campus Tour.png"/>
+<img width="1512" height="784" alt="Campus Tour" src="public/img/Campus-Tour.png"/>
 
 The guided tour introduces visitors to the campus and helps them discover the different portfolio sections.
 
