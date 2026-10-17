@@ -5,12 +5,9 @@ export function Navigation(
   onStartTour,
   onBackToCampus
 ) {
-  const navigation =
-    document.createElement("nav");
+  const navigation = document.createElement("nav");
 
-  navigation.classList.add(
-    "campus-navigation"
-  );
+  navigation.classList.add("campus-navigation");
 
   navigation.innerHTML = `
     <button
@@ -70,40 +67,45 @@ export function Navigation(
   `;
 
   const directoryButton =
-    navigation.querySelector(
-      ".directory-button"
-    );
+    navigation.querySelector(".directory-button");
 
   const closeButton =
-    navigation.querySelector(
-      ".directory-close"
-    );
+    navigation.querySelector(".directory-close");
 
   const directoryPanel =
-    navigation.querySelector(
-      ".directory-panel"
-    );
+    navigation.querySelector(".directory-panel");
 
   const startTourButton =
-    navigation.querySelector(
-      ".start-tour-button"
-    );
+    navigation.querySelector(".start-tour-button");
 
   const directoryList =
-    navigation.querySelector(
-      ".directory-list"
-    );
+    navigation.querySelector(".directory-list");
 
-  startTourButton.addEventListener(
-    "click",
-    () => {
-      directoryPanel.classList.remove(
-        "is-open"
-      );
+  // Track and highlight the current destination.
+  function setActiveDestination(activeItem) {
+    navigation
+      .querySelectorAll(".directory-item")
+      .forEach((item) => {
+        const isActive = item === activeItem;
 
-      onStartTour();
-    }
-  );
+        item.classList.toggle(
+          "directory-current",
+          isActive
+        );
+
+        if (isActive) {
+          item.setAttribute("aria-current", "page");
+        } else {
+          item.removeAttribute("aria-current");
+        }
+      });
+  }
+
+  startTourButton.addEventListener("click", () => {
+    directoryPanel.classList.remove("is-open");
+
+    onStartTour();
+  });
 
   // MAIN CAMPUS — special destination 00
   const mainCampusItem =
@@ -140,91 +142,94 @@ export function Navigation(
     </span>
   `;
 
-  mainCampusItem.addEventListener(
-    "click",
-    () => {
-      directoryPanel.classList.remove(
-        "is-open"
-      );
+  mainCampusItem.addEventListener("click", () => {
+    setActiveDestination(mainCampusItem);
 
-      onBackToCampus();
-    }
-  );
+    directoryPanel.classList.remove("is-open");
 
-  directoryList.appendChild(
-    mainCampusItem
-  );
+    onBackToCampus();
+  });
+
+  directoryList.appendChild(mainCampusItem);
 
   // ACTUAL CAMPUS DESTINATIONS
-  campus.locations.forEach(
-    (location, index) => {
-      const item =
-        document.createElement("button");
+  campus.locations.forEach((location, index) => {
+    const item = document.createElement("button");
 
-      item.type = "button";
+    item.type = "button";
 
-      item.classList.add(
-        "directory-item"
-      );
+    item.classList.add("directory-item");
 
-      item.innerHTML = `
-        <span class="directory-number">
-          ${String(index + 1).padStart(2, "0")}
-        </span>
+    item.innerHTML = `
+      <span class="directory-number">
+        ${String(index + 1).padStart(2, "0")}
+      </span>
 
-        <span class="directory-icon">
-          ${location.icon || "🏫"}
-        </span>
+      <span class="directory-icon">
+        ${location.icon || "🏫"}
+      </span>
 
-        <span class="directory-item-text">
-          <strong>
-            ${location.name}
-          </strong>
+      <span class="directory-item-text">
+        <strong>
+          ${location.name}
+        </strong>
 
-          <small>
-            ${location.section}
-          </small>
-        </span>
+        <small>
+          ${location.section}
+        </small>
+      </span>
 
-        <span class="directory-arrow">
-          →
-        </span>
-      `;
+      <span class="directory-arrow">
+        →
+      </span>
+    `;
 
-      item.addEventListener(
-        "click",
-        () => {
-          onSelect(location);
+    item.addEventListener("click", () => {
+      setActiveDestination(item);
 
-          directoryPanel.classList.remove(
-            "is-open"
-          );
-        }
-      );
+      onSelect(location);
 
-      directoryList.appendChild(
-        item
-      );
+      directoryPanel.classList.remove("is-open");
+    });
+
+    directoryList.appendChild(item);
+  });
+
+  directoryButton.addEventListener("click", () => {
+    directoryPanel.classList.add("is-open");
+  });
+
+  closeButton.addEventListener("click", () => {
+    directoryPanel.classList.remove("is-open");
+  });
+
+  // Start with Main Campus highlighted.
+  setActiveDestination(mainCampusItem);
+
+  // Expose this method so the parent app can update
+  // the highlight when a building is entered another way.
+  navigation.setActiveDestination = (location) => {
+    if (!location) {
+      setActiveDestination(mainCampusItem);
+      return;
     }
-  );
 
-  directoryButton.addEventListener(
-    "click",
-    () => {
-      directoryPanel.classList.add(
-        "is-open"
+    const matchingItem = [
+      ...navigation.querySelectorAll(
+        ".directory-item:not(.directory-main-campus)"
+      ),
+    ].find((item) => {
+      const name = item.querySelector(
+        ".directory-item-text strong"
       );
-    }
-  );
 
-  closeButton.addEventListener(
-    "click",
-    () => {
-      directoryPanel.classList.remove(
-        "is-open"
-      );
+      return name?.textContent.trim() === location.name;
+    });
+
+    if (matchingItem) {
+      setActiveDestination(matchingItem);
     }
-  );
+  };
 
   return navigation;
 }

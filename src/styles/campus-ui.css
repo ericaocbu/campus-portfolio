@@ -245,6 +245,67 @@
     border-color 150ms ease;
 }
 
+/* Active destination in the campus directory */
+.campus-navigation .directory-item.directory-current {
+  position: relative;
+  background: linear-gradient(
+    110deg,
+    rgba(109, 130, 104, 0.14),
+    rgba(109, 130, 104, 0.045)
+  );
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(109, 130, 104, 0.16);
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* Slim sage accent */
+.campus-navigation .directory-item.directory-current::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22%;
+  bottom: 22%;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: var(--hall-sage-dark, #6d8268);
+}
+
+/* Active destination name */
+.campus-navigation .directory-item.directory-current
+.directory-item-text strong {
+  color: var(--hall-ink, #293b32);
+  font-weight: 750;
+}
+
+/* Active destination number */
+.campus-navigation .directory-item.directory-current
+.directory-number {
+  color: var(--hall-sage-dark, #6d8268);
+  font-weight: 800;
+}
+
+/* Active arrow */
+.campus-navigation .directory-item.directory-current
+.directory-arrow {
+  color: var(--hall-sage-dark, #6d8268);
+  transform: translateX(2px);
+}
+
+/* Keep the active state clear when navigating by keyboard */
+.campus-navigation .directory-item.directory-current:focus-visible {
+  outline: 2px solid var(--hall-sage-dark, #6d8268);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-navigation .directory-item.directory-current {
+    transition: none;
+  }
+}
+
 .directory-item:hover{
   border-color:
     rgba(24, 60, 53, 0.1);
