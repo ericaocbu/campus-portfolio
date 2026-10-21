@@ -41,10 +41,8 @@ export function CampusLife() {
 
       <div class="bus-body">
 
-        <div class="bus-front-window"></div>
-
         <div class="bus-window-group">
-
+          <span class="bus-window"></span>
           <span class="bus-window"></span>
           <span class="bus-window"></span>
           <span class="bus-window"></span>

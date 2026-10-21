@@ -33,7 +33,7 @@
 /* =====================================================
    BUS
 ===================================================== */
-.campus-bus{
+.campus-bus {
   position: absolute;
   top: calc(3.5% + 15px);
   left: -160px;
@@ -41,28 +41,23 @@
   height: 48px;
   z-index: 5;
   pointer-events: none;
-  animation:
-    campusBusLoop
-    28s linear
-    infinite;
+  animation: campusBusLoop 28s linear infinite;
 }
 
-.bus-body{
+.bus-body {
   position: absolute;
   left: 0;
   bottom: 5px;
+  box-sizing: border-box;
   width: 125px;
   height: 35px;
   border: 2px solid #183c35;
   border-radius: 8px 8px 5px 5px;
   background: #f5f3eb;
-
-  box-shadow:
-    0 6px 0
-    rgba(24, 60, 53, 0.09);
+  box-shadow: 0 6px 0 rgba(24, 60, 53, 0.09);
 }
 
-.bus-roof{
+.bus-roof {
   position: absolute;
   left: 8px;
   top: 4px;
@@ -73,54 +68,62 @@
   background: #183c35;
 }
 
-.bus-front-window{
+.bus-window-group {
   position: absolute;
-  left: 8px;
-  top: 13px;
-  width: 19px;
-  height: 14px;
-  border: 1px solid #183c35;
-  background: #c9d8d2;
-}
-
-.bus-window-group{
-  position: absolute;
-  left: 31px;
+  left: 7px;
   top: 9px;
   display: flex;
-  gap: 4px;
+  gap: 3px;
 }
 
-.bus-window{
-  width: 22px;
+.bus-window {
+  box-sizing: border-box;
+  flex: 0 0 18px;
+  width: 18px;
   height: 15px;
   border: 1px solid #183c35;
+  border-radius: 2px;
   background: #c9d8d2;
 }
 
-.bus-door{
+.bus-door {
   position: absolute;
-  right: 7px;
+  right: 5px;
   top: 9px;
-  width: 15px;
+  box-sizing: border-box;
+  width: 17px;
   height: 23px;
+  overflow: hidden;
   border: 1px solid #183c35;
-  background: #d9e2dc;
+  border-radius: 2px 2px 1px 1px;
+  background: #c9d8d2;
 }
 
-.bus-route{
+.bus-door::after {
+  content: "";
   position: absolute;
-  right: 10px;
-  top: 3px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #183c35;
+  transform: translateX(-50%);
+}
+
+.bus-route {
+  position: absolute;
+  right: 8px;
+  top: 1px;
   z-index: 3;
-  color: #f5f3eb;
+  color: #183c35;
   font-size: 0.45rem;
   font-weight: 900;
 }
 
-.bus-wheel{
+.bus-wheel {
   position: absolute;
   bottom: 0;
+  box-sizing: border-box;
   width: 15px;
   height: 15px;
   border: 2px solid #183c35;
@@ -128,11 +131,11 @@
   background: #4d5d50;
 }
 
-.bus-wheel-left{
+.bus-wheel-left {
   left: 18px;
 }
 
-.bus-wheel-right{
+.bus-wheel-right {
   right: 18px;
 }
 
