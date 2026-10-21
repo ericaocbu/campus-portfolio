@@ -389,6 +389,26 @@
   height: 6px;
   border-radius: 50%;
   background: #426c52;
+  animation: tour-dot-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes tour-dot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(143, 171, 133, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 4px rgba(143, 171, 133, 0.18),
+      0 0 10px rgba(143, 171, 133, 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-hud-dot {
+    animation: none;
+  }
 }
 
 .tour-hud-count{
