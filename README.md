@@ -5,6 +5,8 @@ in a less traditional way.
 
 > Developed by Erica Ocbu 🫶🏽
 
+## Preview
+
 ### Main Campus
 <img width="1512" height="784" alt="Campus Landing Page" src="public/img/Campus.png"/>
 
