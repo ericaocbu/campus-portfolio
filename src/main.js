@@ -230,6 +230,9 @@ function startTour() {
   );
 
   showTourStop();
+
+  // Prompt the visitor to continue from the opening stop.
+  setTourNextPrompt(true);
 }
 
 /* =====================================================
@@ -356,6 +359,21 @@ function updateTourHUD(currentLocation, nextLocation) {
   });
 
   document.body.appendChild(tourHUD);
+}
+
+function setTourNextPrompt(isPrompting) {
+  const nextButton = tourHUD?.querySelector(
+    ".tour-hud-next-button"
+  );
+
+  if (!nextButton) {
+    return;
+  }
+
+  nextButton.classList.toggle(
+    "is-prompting",
+    isPrompting
+  );
 }
 
 /* =====================================================
@@ -567,7 +585,7 @@ window.addEventListener("portfolio:erica-arrived", (event) => {
     }
 
     openTourSection(location);
-    navigationTimeout = null;
+    setTourNextPrompt(true);
   }, 3500);
 });
 

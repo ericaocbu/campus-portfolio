@@ -128,15 +128,15 @@ export function TourHUD({
       ".tour-hud-exit"
     );
 
-  nextButton.addEventListener(
-    "click",
-    onNext
-  );
+  nextButton.addEventListener("click", () => {
+    nextButton.classList.remove("is-prompting");
+    onNext();
+  });
 
-  exitButton.addEventListener(
-    "click",
-    onExit
-  );
+  exitButton.addEventListener("click", () => {
+    nextButton.classList.remove("is-prompting");
+    onExit();
+  });
 
   return hud;
 }

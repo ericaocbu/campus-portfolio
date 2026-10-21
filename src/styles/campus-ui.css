@@ -830,3 +830,35 @@
     font-size: 0.48rem;
   }
 }
+
+/* =========================================
+   TOUR NEXT BUTTON — ATTENTION PULSE
+========================================= */
+
+.tour-hud-next-button.is-prompting {
+  animation: tour-next-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes tour-next-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 2px rgba(143, 171, 133, 0.45),
+      0 0 8px rgba(143, 171, 133, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 5px rgba(143, 171, 133, 0.75),
+      0 0 22px rgba(143, 171, 133, 0.65);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-hud-next-button.is-prompting {
+    animation: none;
+    box-shadow:
+      0 0 0 3px rgba(143, 171, 133, 0.7),
+      0 0 14px rgba(143, 171, 133, 0.4);
+  }
+}
