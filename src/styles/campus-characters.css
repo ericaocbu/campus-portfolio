@@ -163,13 +163,14 @@
 
 .bus-passenger {
   position: absolute;
+  z-index: 7;
   width: 15px;
   height: 34px;
-  z-index: 7;
-  pointer-events: none;
   opacity: 1;
+  pointer-events: none;
 }
 
+/* Ground shadow */
 .passenger-shadow {
   position: absolute;
   bottom: 0;
@@ -180,15 +181,16 @@
   background: rgba(24, 60, 53, 0.15);
 }
 
+/* Head and hair */
 .passenger-hair {
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 3px;
   width: 9px;
   height: 9px;
   border-radius: 50% 50% 35% 35%;
   background: #33251f;
-  z-index: 2;
 }
 
 .passenger-head {
@@ -201,6 +203,7 @@
   background: #b77d5e;
 }
 
+/* Shirt */
 .passenger-body {
   position: absolute;
   top: 10px;
@@ -216,13 +219,18 @@
 }
 
 .passenger-shirt-rust .passenger-body {
-  background: #bd785d;
+  background: #a04521;
 }
 
 .passenger-shirt-blue .passenger-body {
   background: #7897b1;
 }
 
+.passenger-shirt-sage .passenger-body {
+  background: #71917b;
+}
+
+/* Arms */
 .passenger-arm {
   position: absolute;
   top: 11px;
@@ -241,6 +249,7 @@
   right: 1px;
 }
 
+/* Legs */
 .passenger-leg {
   position: absolute;
   top: 21px;
@@ -259,6 +268,7 @@
   right: 3px;
 }
 
+/* Walking animation — only active while moving */
 .bus-passenger.is-walking .passenger-leg-left {
   animation: passenger-step-left 180ms ease-in-out infinite alternate;
 }
@@ -276,15 +286,26 @@
 }
 
 @keyframes passenger-step-left {
-  from { transform: rotate(-22deg); }
-  to { transform: rotate(22deg); }
+  from {
+    transform: rotate(-22deg);
+  }
+
+  to {
+    transform: rotate(22deg);
+  }
 }
 
 @keyframes passenger-step-right {
-  from { transform: rotate(22deg); }
-  to { transform: rotate(-22deg); }
+  from {
+    transform: rotate(22deg);
+  }
+
+  to {
+    transform: rotate(-22deg);
+  }
 }
 
+/* Reduced-motion accessibility */
 @media (prefers-reduced-motion: reduce) {
   .bus-door::before,
   .bus-door::after {

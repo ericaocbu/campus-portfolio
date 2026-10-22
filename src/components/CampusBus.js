@@ -19,11 +19,12 @@ export function initCampusBus(environment, bus, busStop) {
   const stopCenter = () =>
     busStop.offsetLeft + busStop.offsetWidth / 2;
 
+  // Align the bus door with the center of the bus stop.
   const stopPosition = () =>
     stopCenter() - busWidth + 13;
 
   const passengerTop = () =>
-    bus.offsetTop + 14;
+    bus.offsetTop + 25;
 
   bus.style.animation = "none";
   bus.style.left = "-160px";
@@ -35,35 +36,37 @@ export function initCampusBus(environment, bus, busStop) {
     "passenger-shirt-sage",
   ];
 
+  // Passengers in this array remain visible at the stop
+  // until they board a later shuttle.
+  const waitingPassengers = [];
 
-    function createPassenger() {
+  function createPassenger() {
     const passenger = document.createElement("div");
 
     const shirt =
-        passengerShirts[
+      passengerShirts[
         Math.floor(Math.random() * passengerShirts.length)
-        ];
+      ];
 
     passenger.className = "bus-passenger";
     passenger.classList.add(shirt);
     passenger.setAttribute("aria-hidden", "true");
 
     passenger.innerHTML = `
-        <span class="passenger-shadow"></span>
-        <span class="passenger-hair"></span>
-        <span class="passenger-head"></span>
-        <span class="passenger-body"></span>
-        <span class="passenger-arm passenger-arm-left"></span>
-        <span class="passenger-arm passenger-arm-right"></span>
-        <span class="passenger-leg passenger-leg-left"></span>
-        <span class="passenger-leg passenger-leg-right"></span>
+      <span class="passenger-shadow"></span>
+      <span class="passenger-hair"></span>
+      <span class="passenger-head"></span>
+      <span class="passenger-body"></span>
+      <span class="passenger-arm passenger-arm-left"></span>
+      <span class="passenger-arm passenger-arm-right"></span>
+      <span class="passenger-leg passenger-leg-left"></span>
+      <span class="passenger-leg passenger-leg-right"></span>
     `;
 
     environment.appendChild(passenger);
 
     return passenger;
-    }
-
+  }
 
   async function moveElement(element, from, to, duration) {
     element.style.left = `${from}px`;
@@ -91,9 +94,12 @@ export function initCampusBus(environment, bus, busStop) {
     animation.cancel();
   }
 
-  async function walkPassenger(from, to, fadeAtEnd = false) {
-    const passenger = createPassenger();
-
+  async function walkPassenger(
+    passenger,
+    from,
+    to,
+    removeAtEnd = false
+  ) {
     passenger.style.left = `${from}px`;
     passenger.style.top = `${passengerTop()}px`;
     passenger.classList.add("is-walking");
@@ -107,23 +113,36 @@ export function initCampusBus(environment, bus, busStop) {
 
     passenger.classList.remove("is-walking");
 
-    if (fadeAtEnd) {
+    if (removeAtEnd) {
+      // Boarding passengers disappear into the shuttle.
       if (!reducedMotion) {
         const fade = passenger.animate(
           [{ opacity: 1 }, { opacity: 0 }],
-          { duration: 220, fill: "forwards" }
+          {
+            duration: 220,
+            fill: "forwards",
+          }
         );
 
         await fade.finished;
       }
 
       passenger.remove();
-      return;
     }
+  }
 
-    // Give people who exit time to walk away from the bus stop.
-    await wait(2800);
-    passenger.remove();
+  function seedWaitingPassengers() {
+    const initialCount = 2;
+    const queueX = stopCenter() - 8;
+
+    for (let i = 0; i < initialCount; i += 1) {
+      const passenger = createPassenger();
+
+      passenger.style.left = `${queueX - i * 13}px`;
+      passenger.style.top = `${passengerTop()}px`;
+
+      waitingPassengers.push(passenger);
+    }
   }
 
   async function openDoors() {
@@ -140,44 +159,87 @@ export function initCampusBus(environment, bus, busStop) {
     const doorX = stopPosition() + busWidth - 13;
     const queueX = stopCenter() - 8;
 
-    // Let exiting passengers leave first.
+    // Record who was waiting before the bus arrived.
+    // Passengers getting off cannot immediately board again.
+    const waitingWhenBusArrived = [...waitingPassengers];
+
+    // 1. Passengers get off and stay at the bus stop.
     const exitingCount = Math.random() < 0.55 ? 1 : 2;
 
     for (let i = 0; i < exitingCount; i += 1) {
-      const exitX = doorX - 5;
-      const destinationX = stopCenter() - 25 - i * 13;
+      const passenger = createPassenger();
 
-      await walkPassenger(exitX, destinationX);
+      // Position new arrivals after the existing queue.
+      const destinationX =
+        queueX - waitingPassengers.length * 13;
+
+      await walkPassenger(
+        passenger,
+        doorX - 5,
+        destinationX
+      );
+
+      // Keep the passenger visible and waiting for a future bus.
+      waitingPassengers.push(passenger);
+
       await wait(180);
     }
 
     await wait(250);
 
-    // Students waiting at the stop board the shuttle.
-    const boardingCount = Math.random() < 0.55 ? 1 : 2;
+    // 2. Different passengers who were already waiting board.
+    const availableToBoard = waitingWhenBusArrived.filter(
+      (passenger) => waitingPassengers.includes(passenger)
+    );
+
+    const requestedBoarders = Math.random() < 0.55 ? 1 : 2;
+    const boardingCount = Math.min(
+      requestedBoarders,
+      availableToBoard.length
+    );
 
     for (let i = 0; i < boardingCount; i += 1) {
-      const startX = queueX - i * 13;
+      const passenger = availableToBoard[i];
+      const passengerIndex = waitingPassengers.indexOf(passenger);
 
-      await walkPassenger(startX, doorX - 4, true);
+      if (passengerIndex === -1) {
+        continue;
+      }
+
+      const startX =
+        parseFloat(passenger.style.left) || queueX;
+
+      // Remove the passenger from the queue as they board.
+      waitingPassengers.splice(passengerIndex, 1);
+
+      await walkPassenger(
+        passenger,
+        startX,
+        doorX - 4,
+        true
+      );
+
       await wait(180);
     }
   }
 
   async function runBusRoute() {
     while (bus.isConnected && environment.isConnected) {
-      // Give the shuttle a little downtime between visits.
+      // Pause before the next shuttle arrives.
       await wait(randomBetween(2500, 5000));
 
-      if (!bus.isConnected) break;
+      if (!bus.isConnected || !environment.isConnected) {
+        break;
+      }
 
       const startX = -160;
       const stopX = stopPosition();
 
       bus.classList.remove("is-doors-open");
 
-      // Drive in and brake at the bus stop.
+      // Drive up to the stop.
       const arrivalDistance = Math.abs(stopX - startX);
+
       await moveElement(
         bus,
         startX,
@@ -185,7 +247,9 @@ export function initCampusBus(environment, bus, busStop) {
         reducedMotion ? 0 : arrivalDistance * 5.8
       );
 
-      if (!bus.isConnected) break;
+      if (!bus.isConnected || !environment.isConnected) {
+        break;
+      }
 
       await wait(350);
       await openDoors();
@@ -196,12 +260,17 @@ export function initCampusBus(environment, bus, busStop) {
       } catch (error) {
         console.error("Campus passenger animation error:", error);
       } finally {
+        // Always close the doors before departing.
         await closeDoors();
       }
 
-      // Brief pause before pulling away.
       await wait(1500);
 
+      if (!bus.isConnected || !environment.isConnected) {
+        break;
+      }
+
+      // Drive away across the campus.
       const departureX = environmentWidth() + 160;
       const departureDistance = Math.abs(departureX - stopX);
 
@@ -214,10 +283,13 @@ export function initCampusBus(environment, bus, busStop) {
 
       bus.style.left = "-160px";
 
-      // Longer gap before the next shuttle arrives.
+      // Give the remaining passengers time to wait for the next bus.
       await wait(randomBetween(7000, 12000));
     }
   }
+
+  // Start with a couple of students already waiting.
+  seedWaitingPassengers();
 
   runBusRoute().catch((error) => {
     console.error("Campus bus animation error:", error);
