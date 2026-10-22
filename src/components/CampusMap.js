@@ -1,6 +1,7 @@
 import { campus } from "../data/campus.js";
 import { Building } from "./Building.js";
 import { CampusLife } from "./CampusLife.js";
+import { initCampusBus } from "./CampusBus.js";
 
 export function CampusMap(container, onSelect, onStartTour) {
   /* =====================================================
@@ -411,8 +412,17 @@ export function CampusMap(container, onSelect, onStartTour) {
     onStartTour();
   });
 
+
   container.appendChild(viewport);
   container.appendChild(tourButton);
+
+  /* =====================================================
+    CAMPUS BUS ANIMATION
+  ===================================================== */
+
+  if (bus && busStop) {
+    initCampusBus(environment, bus, busStop);
+  }
 
   /* =====================================================
      CAMERA

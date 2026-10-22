@@ -41,7 +41,7 @@
   height: 48px;
   z-index: 5;
   pointer-events: none;
-  animation: campusBusLoop 28s linear infinite;
+  animation: none;
 }
 
 .bus-body {
@@ -86,6 +86,7 @@
   background: #c9d8d2;
 }
 
+
 .bus-door {
   position: absolute;
   right: 5px;
@@ -93,21 +94,38 @@
   box-sizing: border-box;
   width: 17px;
   height: 23px;
-  overflow: hidden;
-  border: 1px solid #183c35;
-  border-radius: 2px 2px 1px 1px;
-  background: #c9d8d2;
+  overflow: visible;
+  border: 0;
+  background: transparent;
 }
 
+.bus-door::before,
 .bus-door::after {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: #183c35;
-  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  border: 1px solid #183c35;
+  background: #c9d8d2;
+  transition: transform 350ms ease;
+}
+
+.bus-door::before {
+  left: 0;
+}
+
+.bus-door::after {
+  right: 0;
+}
+
+.campus-bus.is-doors-open .bus-door::before {
+  transform: translateX(-100%);
+}
+
+.campus-bus.is-doors-open .bus-door::after {
+  transform: translateX(100%);
 }
 
 .bus-route {
@@ -139,13 +157,145 @@
   right: 18px;
 }
 
-@keyframes campusBusLoop {
-  0% {
-    transform: translateX(0);
+/* =========================================
+   CAMPUS BUS — PASSENGERS
+========================================= */
+
+.bus-passenger {
+  position: absolute;
+  width: 15px;
+  height: 34px;
+  z-index: 7;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.passenger-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+  width: 13px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(24, 60, 53, 0.15);
+}
+
+.passenger-hair {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50% 50% 35% 35%;
+  background: #33251f;
+  z-index: 2;
+}
+
+.passenger-head {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 7px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b77d5e;
+}
+
+.passenger-body {
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  width: 11px;
+  height: 12px;
+  border-radius: 4px 4px 2px 2px;
+  background: #71917b;
+}
+
+.passenger-shirt-cream .passenger-body {
+  background: #e9dfc8;
+}
+
+.passenger-shirt-rust .passenger-body {
+  background: #bd785d;
+}
+
+.passenger-shirt-blue .passenger-body {
+  background: #7897b1;
+}
+
+.passenger-arm {
+  position: absolute;
+  top: 11px;
+  width: 3px;
+  height: 11px;
+  border-radius: 3px;
+  background: #b77d5e;
+  transform-origin: top center;
+}
+
+.passenger-arm-left {
+  left: 1px;
+}
+
+.passenger-arm-right {
+  right: 1px;
+}
+
+.passenger-leg {
+  position: absolute;
+  top: 21px;
+  width: 4px;
+  height: 10px;
+  border-radius: 3px;
+  background: #34483e;
+  transform-origin: top center;
+}
+
+.passenger-leg-left {
+  left: 3px;
+}
+
+.passenger-leg-right {
+  right: 3px;
+}
+
+.bus-passenger.is-walking .passenger-leg-left {
+  animation: passenger-step-left 180ms ease-in-out infinite alternate;
+}
+
+.bus-passenger.is-walking .passenger-leg-right {
+  animation: passenger-step-right 180ms ease-in-out infinite alternate;
+}
+
+.bus-passenger.is-walking .passenger-arm-left {
+  animation: passenger-step-right 180ms ease-in-out infinite alternate;
+}
+
+.bus-passenger.is-walking .passenger-arm-right {
+  animation: passenger-step-left 180ms ease-in-out infinite alternate;
+}
+
+@keyframes passenger-step-left {
+  from { transform: rotate(-22deg); }
+  to { transform: rotate(22deg); }
+}
+
+@keyframes passenger-step-right {
+  from { transform: rotate(22deg); }
+  to { transform: rotate(-22deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bus-door::before,
+  .bus-door::after {
+    transition-duration: 0.01ms;
   }
 
-  100% {
-    transform: translateX(2160px);
+  .bus-passenger.is-walking .passenger-leg-left,
+  .bus-passenger.is-walking .passenger-leg-right,
+  .bus-passenger.is-walking .passenger-arm-left,
+  .bus-passenger.is-walking .passenger-arm-right {
+    animation: none;
   }
 }
 
@@ -154,7 +304,7 @@
 ===================================================== */
 .campus-bus-stop{
   position: absolute;
-  left: 12%;
+  left: 15%;
   top: 3.5%;
   width: 78px;
   height: 78px;
