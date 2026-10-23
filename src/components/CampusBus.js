@@ -21,7 +21,7 @@ export function initCampusBus(environment, bus, busStop) {
 
   // Align the bus door with the center of the bus stop.
   const stopPosition = () =>
-    stopCenter() - busWidth + 13;
+    stopCenter() - busWidth + 13 - 30;
 
   const passengerTop = () =>
     bus.offsetTop + 25;
@@ -226,7 +226,7 @@ export function initCampusBus(environment, bus, busStop) {
   async function runBusRoute() {
     while (bus.isConnected && environment.isConnected) {
       // Pause before the next shuttle arrives.
-      await wait(randomBetween(2500, 5000));
+      await wait(randomBetween(1000, 2000));
 
       if (!bus.isConnected || !environment.isConnected) {
         break;
@@ -284,7 +284,7 @@ export function initCampusBus(environment, bus, busStop) {
       bus.style.left = "-160px";
 
       // Give the remaining passengers time to wait for the next bus.
-      await wait(randomBetween(7000, 12000));
+      await wait(randomBetween(1500, 3000));
     }
   }
 
