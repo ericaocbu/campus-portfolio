@@ -184,7 +184,7 @@ export function Contact({
               </strong>
 
               <small>
-                CAMPUS CONNECTION
+                CONNECT WITH ME
               </small>
 
             </span>
@@ -226,8 +226,7 @@ export function Contact({
             </span>
 
             <span class="canteen-menu-item-description">
-              Explore the code behind
-              my projects and experiments.
+              Explore my projects on Github.
             </span>
 
             <span class="canteen-menu-item-arrow">
@@ -371,7 +370,7 @@ export function Contact({
       "https://www.linkedin.com/in/erica-ocbu-157a51237/",
 
     github:
-      "YOUR_GITHUB_URL_HERE",
+      "https://github.com/ericaocbu",
 
     resume:
       "https://docs.google.com/document/d/1oWIFFFn8HCQ5NWvscC9ARSJkkdW-fAgP/edit?usp=sharing&ouid=108500505334719885937&rtpof=true&sd=true",
