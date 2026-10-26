@@ -267,7 +267,7 @@ export function Home({ onBack, onStartTour }) {
           </div>
 
           <div class="directory-description">
-            Education, skills &amp; background
+            Education, skills & background
           </div>
 
           <div class="directory-status">
@@ -291,7 +291,7 @@ export function Home({ onBack, onStartTour }) {
           </div>
 
           <div class="directory-description">
-            UX, UI & Front-End work
+            UI/UX & Front-End projects
           </div>
 
           <div class="directory-status">
@@ -315,7 +315,7 @@ export function Home({ onBack, onStartTour }) {
           </div>
 
           <div class="directory-description">
-            Education & professional experience
+            Professional experience
           </div>
 
           <div class="directory-status">
