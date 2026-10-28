@@ -412,7 +412,6 @@ export function CampusMap(container, onSelect, onStartTour) {
     onStartTour();
   });
 
-  
   container.appendChild(viewport);
   container.appendChild(tourButton);
 
@@ -423,78 +422,248 @@ export function CampusMap(container, onSelect, onStartTour) {
   if (bus && busStop) {
     initCampusBus(environment, bus, busStop);
   }
+/* =====================================================
+  CAMPUS WELCOME
+===================================================== */
+  container.classList.add("campus-welcome-host");
 
-/* CAMPUS WELCOME */
+  const welcomeOverlay = document.createElement("div");
+  welcomeOverlay.className = "campus-welcome-overlay";
 
-container.classList.add("campus-welcome-host");
+  welcomeOverlay.innerHTML = `
+    <section
+      class="campus-welcome-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="campus-welcome-title"
+    >
+      <button
+        class="campus-welcome-close"
+        type="button"
+        aria-label="Close welcome message"
+      >
+        &times;
+      </button>
 
-const welcomeOverlay = document.createElement("div");
-welcomeOverlay.className = "campus-welcome-overlay";
-
-welcomeOverlay.innerHTML = `
-  <section class="campus-welcome-card" role="dialog" aria-modal="true" aria-labelledby="campus-welcome-title">
-    <button class="campus-welcome-close" type="button" aria-label="Close">&times;</button>
-
-    <div class="campus-welcome-icon" aria-hidden="true">✳</div>
-
-    <p class="campus-welcome-eyebrow">A NOTE BEFORE YOU EXPLORE</p>
-    <h2 id="campus-welcome-title">Welcome to my campus!</h2>
-
-    <p class="campus-welcome-description">
-      An interactive portfolio showcasing my projects, experience, and journey in tech and design.
-    </p>
-
-    <div class="campus-welcome-tip">
-      <span class="campus-welcome-tip-icon" aria-hidden="true">⌖</span>
-      <div>
-        <h3>Explore the buildings + campus </h3>
-        <p>Click the buildings to learn more about me, and click the little campus discoveries for some fun surprises.</p>
+      <div class="field-guide-header">
+        <span class="field-guide-stamp">A QUICK FIELD GUIDE</span>
+        <span class="field-guide-edition">EST. 2026</span>
       </div>
-    </div>
 
-    <div class="campus-welcome-tip">
-      <span class="campus-welcome-tip-icon" aria-hidden="true">↗</span>
-      <div>
-        <h3>Explore your way</h3>
-        <p>Take a guided tour with Erica or browse the Campus Directory.</p>
+      <h2 id="campus-welcome-title">
+        Welcome to my
+        <span>campus portfolio.</span>
+      </h2>
+
+      <p class="campus-welcome-description">
+        An interactive portfolio where you can wander around!
+      </p>
+
+      <div class="field-guide-map" aria-label="Illustrated miniature campus map">
+        <span class="map-label map-label-top">YOU ARE HERE</span>
+
+        <svg
+          class="mini-campus-map"
+          viewBox="0 0 340 174"
+          role="img"
+          aria-label="A tiny illustrated campus with buildings, a winding path, trees, and discovery markers"
+        >
+          <defs>
+            <pattern
+              id="map-grid"
+              width="12"
+              height="12"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="2" cy="2" r="0.8" fill="#8d9b76" opacity=".25" />
+            </pattern>
+          </defs>
+
+          <rect
+            x="1"
+            y="1"
+            width="338"
+            height="172"
+            rx="18"
+            fill="#e8ebd9"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="338"
+            height="172"
+            rx="18"
+            fill="url(#map-grid)"
+          />
+
+          <!-- Winding campus path -->
+          <path
+            d="M 12 137 C 68 137, 64 94, 116 104 S 176 145, 218 102 S 276 74, 326 40"
+            fill="none"
+            stroke="#fffaf0"
+            stroke-width="19"
+            stroke-linecap="round"
+          />
+          <path
+            d="M 12 137 C 68 137, 64 94, 116 104 S 176 145, 218 102 S 276 74, 326 40"
+            fill="none"
+            stroke="#c7cba9"
+            stroke-width="1.5"
+            stroke-dasharray="3 5"
+            stroke-linecap="round"
+          />
+
+          <!-- building 1 -->
+          <g transform="translate(27 27)">
+            <rect x="0" y="8" width="66" height="43" rx="4" fill="#52756b" />
+            <path d="M-3 8 L33 -3 L69 8 Z" fill="#355b51" />
+            <rect x="8" y="17" width="12" height="13" rx="1" fill="#f6e7bd" />
+            <rect x="27" y="17" width="12" height="13" rx="1" fill="#f6e7bd" />
+            <rect x="46" y="17" width="12" height="13" rx="1" fill="#f6e7bd" />
+            <rect x="26" y="34" width="14" height="17" rx="2" fill="#e7c9a2" />
+            <rect x="5" y="51" width="56" height="4" rx="2" fill="#355b51" />
+          </g>
+
+          <!-- building 2 -->
+          <g transform="translate(224 20)">
+            <rect x="0" y="13" width="79" height="48" rx="4" fill="#cf8d70" />
+            <path d="M-4 13 L39 -1 L83 13 Z" fill="#a96149" />
+            <rect x="9" y="22" width="14" height="12" rx="1" fill="#f6e7bd" />
+            <rect x="31" y="22" width="14" height="12" rx="1" fill="#f6e7bd" />
+            <rect x="53" y="22" width="14" height="12" rx="1" fill="#f6e7bd" />
+            <rect x="30" y="42" width="18" height="19" rx="2" fill="#8b5844" />
+            <rect x="0" y="61" width="79" height="4" rx="2" fill="#a96149" />
+          </g>
+
+          <!-- Little campus fountain -->
+          <g transform="translate(150 50)">
+            <ellipse cx="0" cy="9" rx="22" ry="10" fill="#a6c3b5" />
+            <ellipse cx="0" cy="7" rx="17" ry="7" fill="#6f9d97" />
+            <path d="M0 -9 C-8 1 -4 4 0 4 C4 4 8 1 0 -9Z" fill="#f5e3ad" />
+            <circle cx="0" cy="5" r="3" fill="#e5c98c" />
+          </g>
+
+          <!-- Trees -->
+          <g fill="#6c8a69" stroke="#4e7058" stroke-width="1.5">
+            <circle cx="75" cy="139" r="10" />
+            <circle cx="315" cy="90" r="9" />
+          </g>
+          <g fill="#a4b78d">       
+            <circle cx="73" cy="135" r="3" />
+            <circle cx="312" cy="87" r="3" />
+          </g>
+
+          <!-- Tiny discovery markers -->
+          <g>
+            <circle cx="13" cy="137" r="8" fill="#f8f4e8" stroke="#52756b" stroke-width="1.5" />
+            <path d="M13 131 L15 135 L19 137 L15 139 L13 143 L11 139 L7 137 L11 135 Z" fill="#52756b" />
+          </g>
+
+          <!-- A tiny flower patch -->
+          <g fill="#d58d78">
+            <circle cx="126" cy="146" r="3" />
+            <circle cx="133" cy="141" r="3" />
+            <circle cx="140" cy="148" r="3" />
+          </g>
+          <g fill="#f0d49b">
+            <circle cx="126" cy="146" r="1.2" />
+            <circle cx="133" cy="141" r="1.2" />
+            <circle cx="140" cy="148" r="1.2" />
+          </g>
+
+          <!-- A tiny flower patch -->
+          <g fill="#d58d78">
+            <circle cx="193" cy="48" r="3" />
+            <circle cx="200" cy="43" r="3" />
+            <circle cx="207" cy="50" r="3" />
+          </g>
+          <g fill="#f0d49b">
+            <circle cx="193" cy="48" r="1.2" />
+            <circle cx="200" cy="43" r="1.2" />
+            <circle cx="207" cy="50" r="1.2" />
+          </g>
+
+          <!-- Dotted route and location pin -->
+          <path
+            d="M167 77 Q195 55 215 88 T250 119 Q260 127 265 142"
+            fill="none"
+            stroke="#a96149"
+            stroke-width="2"
+            stroke-dasharray="2 4"
+            stroke-linecap="round"
+          />
+          <g transform="translate(267 130)">
+            <path d="M0 0 C-11 0 -11 13 0 22 C11 13 11 0 0 0Z" fill="#a96149" />
+            <circle cy="7" r="3.5" fill="#fff8e9" />
+          </g>
+        </svg>
+
+        <span class="map-label map-label-bottom">
+          <span class="map-label-dot"></span>
+          A FEW SECRETS AHEAD
+        </span>
+
+        <span class="field-guide-sparkle sparkle-two">✦</span>
       </div>
-    </div>
 
-    <button class="campus-welcome-continue" type="button">
-      Let's explore <span aria-hidden="true">→</span>
-    </button>
-  </section>
-`;
+      <div class="field-guide-directions">
+        <div class="field-guide-direction">
+          <span class="direction-icon" aria-hidden="true">⌂</span>
+          <p>
+            <strong>Pop into the buildings</strong>
+            <span>Explore my projects + experience, and learn more about me.</span>
+          </p>
+          <span class="direction-arrow" aria-hidden="true">↗</span>
+        </div>
 
-container.appendChild(welcomeOverlay);
+        <div class="field-guide-direction">
+          <span class="direction-icon discovery-icon" aria-hidden="true">✿</span>
+          <p>
+            <strong>Notice the little things</strong>
+            <span>Click campus discoveries for fun surprises.</span>
+          </p>
+          <span class="direction-arrow" aria-hidden="true">✳</span>
+        </div>
+      </div>
 
-const dismissButton = welcomeOverlay.querySelector(
-  ".campus-welcome-close"
-);
-const continueButton = welcomeOverlay.querySelector(
-  ".campus-welcome-continue"
-);
+      <button class="campus-welcome-continue" type="button">
+        Let's explore <span aria-hidden="true">→</span>
+      </button>
 
-let welcomeDismissed = false;
+      <p class="field-guide-footer">
+        <span>TAKE YOUR TIME!</span>
+        <span>GET A LITTLE LOST <3</span>
+      </p>
+    </section>
+  `;
 
-function dismissCampusWelcome() {
-  if (welcomeDismissed) return;
-  welcomeDismissed = true;
+  container.appendChild(welcomeOverlay);
 
-  welcomeOverlay.classList.add("is-dismissing");
-  window.setTimeout(() => welcomeOverlay.remove(), 300);
-}
+  const dismissButton = welcomeOverlay.querySelector(".campus-welcome-close");
+  const continueButton = welcomeOverlay.querySelector(
+    ".campus-welcome-continue",
+  );
 
-dismissButton.addEventListener("click", dismissCampusWelcome);
-continueButton.addEventListener("click", dismissCampusWelcome);
+  let welcomeDismissed = false;
 
-function handleWelcomeEscape(event) {
-  if (event.key === "Escape" && welcomeOverlay.isConnected) {
-    dismissCampusWelcome();
+  function dismissCampusWelcome() {
+    if (welcomeDismissed) return;
+    welcomeDismissed = true;
+
+    welcomeOverlay.classList.add("is-dismissing");
+    window.setTimeout(() => welcomeOverlay.remove(), 300);
   }
-}
 
-document.addEventListener("keydown", handleWelcomeEscape);
+  dismissButton.addEventListener("click", dismissCampusWelcome);
+  continueButton.addEventListener("click", dismissCampusWelcome);
+
+  function handleWelcomeEscape(event) {
+    if (event.key === "Escape" && welcomeOverlay.isConnected) {
+      dismissCampusWelcome();
+    }
+  }
+
+  document.addEventListener("keydown", handleWelcomeEscape);
 
   /* =====================================================
      CAMERA
@@ -562,10 +731,7 @@ document.addEventListener("keydown", handleWelcomeEscape);
         handleTourStatusChange,
       );
 
-      document.removeEventListener(
-        "keydown",
-        handleWelcomeEscape,
-      );
+      document.removeEventListener("keydown", handleWelcomeEscape);
 
       window.clearTimeout(welcomeRemovalTimer);
       welcomeOverlay.remove();

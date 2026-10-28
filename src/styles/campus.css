@@ -1542,14 +1542,9 @@
   pointer-events: none;
 }
 
-
-/* =========================================
-   CAMPUS WELCOME
-========================================= */
-
-.campus-welcome-host {
-  position: relative;
-}
+/* ========================================
+   CAMPUS WELCOME — ILLUSTRATED FIELD GUIDE
+======================================== */
 
 .campus-welcome-overlay {
   position: absolute;
@@ -1559,7 +1554,9 @@
   place-items: center;
   padding: 24px;
   overflow-y: auto;
-  background: rgba(36, 54, 44, 0.2);
+  background: rgba(32, 51, 41, 0.38);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   opacity: 1;
   transition: opacity 240ms ease;
 }
@@ -1569,217 +1566,397 @@
   pointer-events: none;
 }
 
-/* Welcome card */
-
 .campus-welcome-card {
+  --paper: #fffaf0;
+  --ink: #29483d;
+  --muted-ink: #71806a;
+  --sage: #e8ebd9;
+  --terracotta: #b96f54;
+
   position: relative;
-  width: min(100%, 420px);
-  padding: 34px 35px 26px;
-  border: 1px solid #d8d3c1;
-  border-radius: 5px;
-  background: #faf8ef;
-  color: #21453a;
+  width: min(100%, 450px);
+  padding: 27px 30px 18px;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(229, 218, 189, 0.22), transparent 35%),
+    radial-gradient(ellipse at 92% 80%, rgba(219, 224, 197, 0.2), transparent 32%),
+    var(--paper);
+  border: 1px solid #e7ddc7;
+  border-radius: 7px 11px 8px 10px;
   box-shadow:
-    0 3px 0 rgba(54, 69, 48, 0.08),
-    0 18px 48px rgba(31, 48, 39, 0.18);
-  animation: campus-welcome-arrive 350ms ease both;
+    0 24px 65px rgba(24, 39, 30, 0.23),
+    0 3px 0 rgba(255, 255, 255, 0.65) inset;
+  animation: field-guide-arrive 420ms cubic-bezier(.2, .75, .25, 1) both;
 }
 
-/* Small campus-inspired decorative mark */
-
-.campus-welcome-icon {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  margin-bottom: 22px;
-  border: 1px solid #c8d1bd;
-  border-radius: 50%;
-  background: #e9eddf;
-  color: #365b49;
-  font-size: 23px;
+.campus-welcome-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    #527568
+  );
 }
 
-/* Introduction */
-
-.campus-welcome-eyebrow {
-  margin: 0 0 9px;
-  color: #8b7954;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.45px;
-  line-height: 1.6;
+.campus-welcome-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 1px;
+  background: rgba(185, 111, 84, 0.1);
+  pointer-events: none;
 }
-
-.campus-welcome-card h2 {
-  margin: 0 25px 14px 0;
-  color: #204438;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(27px, 3vw, 32px);
-  font-weight: 600;
-  letter-spacing: -0.8px;
-  line-height: 1.15;
-}
-
-.campus-welcome-description {
-  margin: 0;
-  color: #62685a;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 13px;
-  line-height: 1.85;
-}
-
-/* Close button */
 
 .campus-welcome-close {
   position: absolute;
-  top: 12px;
-  right: 13px;
+  z-index: 2;
+  top: 15px;
+  right: 16px;
   display: grid;
+  width: 31px;
+  height: 31px;
   place-items: center;
-  width: 30px;
-  height: 30px;
   padding: 0;
-  border: 0;
+  color: var(--ink);
+  background: #f2eddf;
+  border: 1px solid #e6ddca;
   border-radius: 50%;
-  background: transparent;
-  color: #788071;
-  font-size: 23px;
+  font: inherit;
+  font-size: 22px;
   line-height: 1;
   cursor: pointer;
   transition:
-    background 160ms ease,
-    color 160ms ease;
+    background 180ms ease,
+    transform 180ms ease;
 }
 
 .campus-welcome-close:hover {
-  background: #e9ecdf;
-  color: #21453a;
+  background: #e5e9d7;
+  transform: rotate(8deg);
 }
 
-/* Exploration instructions */
-
-.campus-welcome-tip {
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  align-items: start;
-  gap: 12px;
-  margin-top: 22px;
+.campus-welcome-close:focus-visible,
+.campus-welcome-continue:focus-visible {
+  outline: 3px solid #c68a65;
+  outline-offset: 4px;
 }
 
-.campus-welcome-tip-icon {
-  display: grid;
-  place-items: center;
-  width: 27px;
-  height: 27px;
-  border: 1px solid #d9ddce;
-  border-radius: 50%;
-  background: #edf0e6;
-  color: #587052;
-  font-size: 17px;
-}
-
-.campus-welcome-tip h3 {
-  margin: 1px 0 5px;
-  color: #304b3d;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.campus-welcome-tip p {
-  margin: 0;
-  color: #747668;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 11px;
-  line-height: 1.75;
-}
-
-/* Continue button */
-
-.campus-welcome-continue {
+.field-guide-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin-top: 27px;
-  padding: 13px 16px;
-  border: 1px solid #24483b;
+  gap: 12px;
+  padding-right: 32px;
+}
+
+.field-guide-stamp {
+  display: inline-block;
+  padding: 6px 9px;
+  color: var(--terracotta);
+  border: 1px solid #c68b72;
   border-radius: 3px;
-  background: #24483b;
-  color: #fbf8ed;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  transform: rotate(-3deg);
+}
+
+.field-guide-edition {
+  color: #8b907b;
+  font-size: 9px;
   font-weight: 700;
-  cursor: pointer;
-  transition: background 180ms ease;
+  letter-spacing: 1.2px;
 }
 
-.campus-welcome-continue:hover {
-  background: #345c49;
-}
-
-.campus-welcome-continue span {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-/* Footer detail */
-
-.campus-welcome-footer {
-  margin: 17px 0 0;
-  color: #9a9684;
+.campus-welcome-card h2 {
+  margin: 15px 0 0;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 8px;
-  letter-spacing: 1.1px;
-  line-height: 1.6;
+  font-size: clamp(30px, 6vw, 39px);
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
   text-align: center;
 }
 
-/* Entrance animation */
+.campus-welcome-card h2 span {
+  display: block;
+  color: #65816b;
+  font-style: italic;
+  font-weight: 500;
+}
 
-@keyframes campus-welcome-arrive {
+.campus-welcome-description {
+  max-width: 300px;
+  margin: 12px auto 21px;
+  color: #727865;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* Miniature illustrated campus map */
+
+.field-guide-map {
+  position: relative;
+  margin: 0 0 18px;
+  padding: 19px 8px 20px;
+  background: #f2f0df;
+  border: 1px solid #e3e1cc;
+  border-radius: 5px 14px 6px 12px;
+  transform: rotate(-0.5deg);
+}
+
+.mini-campus-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.map-label {
+  position: absolute;
+  z-index: 1;
+  color: #65755e;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+}
+
+.map-label-top {
+  top: 7px;
+  left: 12px;
+}
+
+.map-label-bottom {
+  right: 11px;
+  bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-label-dot {
+  width: 6px;
+  height: 6px;
+  background: #bc795c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(188, 121, 92, 0.13);
+}
+
+.field-guide-sparkle {
+  position: absolute;
+  color: #b77a5d;
+  pointer-events: none;
+}
+
+.sparkle-two {
+  bottom: 24px;
+  left: 15px;
+  color: #83916f;
+  font-size: 12px;
+}
+
+/* Two short directions, styled like field notes */
+
+.field-guide-directions {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 18px;
+}
+
+.field-guide-direction {
+  display: grid;
+  grid-template-columns: 37px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 7px;
+  border-bottom: 1px dashed #e3decd;
+}
+
+.field-guide-direction:last-child {
+  border-bottom: 0;
+}
+
+.direction-icon {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  color: #527568;
+  background: #e7ebd9;
+  border-radius: 50%;
+  font-size: 21px;
+}
+
+.discovery-icon {
+  color: #ad7058;
+  background: #f2e4d4;
+  font-size: 19px;
+}
+
+.field-guide-direction p {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+}
+
+.field-guide-direction strong {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field-guide-direction p span {
+  color: #74796b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.direction-arrow {
+  color: #9a9c82;
+  font-size: 17px;
+  text-align: center;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.field-guide-direction:hover .direction-arrow {
+  color: var(--terracotta);
+  transform: translate(2px, -2px);
+}
+
+.campus-welcome-continue {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 13px 20px;
+  color: #fffaf0;
+  background: #315548;
+  border: 1px solid #315548;
+  border-radius: 4px 4px 4px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.campus-welcome-continue span {
+  font-size: 18px;
+  transition: transform 180ms ease;
+}
+
+.campus-welcome-continue:hover {
+  background: #416b58;
+  box-shadow: 0 5px 12px rgba(49, 85, 72, 0.15);
+  transform: translateY(-2px);
+}
+
+.campus-welcome-continue:hover span {
+  transform: translateX(4px);
+}
+
+.field-guide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 15px 0 0;
+  color: #999783;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.15px;
+}
+
+@keyframes field-guide-arrive {
   from {
     opacity: 0;
-    transform: translateY(7px);
+    transform: translateY(10px) rotate(-1deg) scale(0.985);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotate(0) scale(1);
   }
 }
 
-/* Smaller screens */
+/* Small screens */
 
-@media (max-width: 540px) {
+@media (max-width: 480px) {
   .campus-welcome-overlay {
-    padding: 16px;
+    padding: 14px;
   }
 
   .campus-welcome-card {
-    padding: 29px 24px 23px;
+    padding: 23px 20px 16px;
+  }
+
+  .field-guide-header {
+    padding-right: 29px;
+  }
+
+  .field-guide-stamp {
+    font-size: 8px;
+  }
+
+  .field-guide-edition {
+    font-size: 8px;
   }
 
   .campus-welcome-card h2 {
-    font-size: 27px;
+    font-size: clamp(29px, 8vw, 36px);
   }
 
   .campus-welcome-description {
+    margin-bottom: 17px;
     font-size: 12px;
+  }
+
+  .field-guide-map {
+    margin-bottom: 13px;
+  }
+
+  .field-guide-direction {
+    gap: 9px;
+    padding: 9px 2px;
+  }
+
+  .field-guide-direction strong {
+    font-size: 13px;
+  }
+
+  .field-guide-direction p span {
+    font-size: 10px;
   }
 }
 
-/* Accessibility */
-
 @media (prefers-reduced-motion: reduce) {
-  .campus-welcome-overlay,
-  .campus-welcome-card,
-  .campus-welcome-close,
-  .campus-welcome-continue {
+  .campus-welcome-card {
     animation: none;
+  }
+
+  .campus-welcome-overlay,
+  .campus-welcome-close,
+  .campus-welcome-continue,
+  .campus-welcome-continue span,
+  .direction-arrow {
     transition: none;
   }
 }
