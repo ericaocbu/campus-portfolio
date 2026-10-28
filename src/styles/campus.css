@@ -1541,3 +1541,245 @@
   z-index: 18;
   pointer-events: none;
 }
+
+
+/* =========================================
+   CAMPUS WELCOME
+========================================= */
+
+.campus-welcome-host {
+  position: relative;
+}
+
+.campus-welcome-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow-y: auto;
+  background: rgba(36, 54, 44, 0.2);
+  opacity: 1;
+  transition: opacity 240ms ease;
+}
+
+.campus-welcome-overlay.is-dismissing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Welcome card */
+
+.campus-welcome-card {
+  position: relative;
+  width: min(100%, 420px);
+  padding: 34px 35px 26px;
+  border: 1px solid #d8d3c1;
+  border-radius: 5px;
+  background: #faf8ef;
+  color: #21453a;
+  box-shadow:
+    0 3px 0 rgba(54, 69, 48, 0.08),
+    0 18px 48px rgba(31, 48, 39, 0.18);
+  animation: campus-welcome-arrive 350ms ease both;
+}
+
+/* Small campus-inspired decorative mark */
+
+.campus-welcome-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 22px;
+  border: 1px solid #c8d1bd;
+  border-radius: 50%;
+  background: #e9eddf;
+  color: #365b49;
+  font-size: 23px;
+}
+
+/* Introduction */
+
+.campus-welcome-eyebrow {
+  margin: 0 0 9px;
+  color: #8b7954;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.45px;
+  line-height: 1.6;
+}
+
+.campus-welcome-card h2 {
+  margin: 0 25px 14px 0;
+  color: #204438;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 3vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+.campus-welcome-description {
+  margin: 0;
+  color: #62685a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Close button */
+
+.campus-welcome-close {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #788071;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.campus-welcome-close:hover {
+  background: #e9ecdf;
+  color: #21453a;
+}
+
+/* Exploration instructions */
+
+.campus-welcome-tip {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.campus-welcome-tip-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #d9ddce;
+  border-radius: 50%;
+  background: #edf0e6;
+  color: #587052;
+  font-size: 17px;
+}
+
+.campus-welcome-tip h3 {
+  margin: 1px 0 5px;
+  color: #304b3d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.campus-welcome-tip p {
+  margin: 0;
+  color: #747668;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* Continue button */
+
+.campus-welcome-continue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 27px;
+  padding: 13px 16px;
+  border: 1px solid #24483b;
+  border-radius: 3px;
+  background: #24483b;
+  color: #fbf8ed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.campus-welcome-continue:hover {
+  background: #345c49;
+}
+
+.campus-welcome-continue span {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Footer detail */
+
+.campus-welcome-footer {
+  margin: 17px 0 0;
+  color: #9a9684;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 8px;
+  letter-spacing: 1.1px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Entrance animation */
+
+@keyframes campus-welcome-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smaller screens */
+
+@media (max-width: 540px) {
+  .campus-welcome-overlay {
+    padding: 16px;
+  }
+
+  .campus-welcome-card {
+    padding: 29px 24px 23px;
+  }
+
+  .campus-welcome-card h2 {
+    font-size: 27px;
+  }
+
+  .campus-welcome-description {
+    font-size: 12px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-welcome-overlay,
+  .campus-welcome-card,
+  .campus-welcome-close,
+  .campus-welcome-continue {
+    animation: none;
+    transition: none;
+  }
+}

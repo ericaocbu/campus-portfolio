@@ -412,7 +412,7 @@ export function CampusMap(container, onSelect, onStartTour) {
     onStartTour();
   });
 
-
+  
   container.appendChild(viewport);
   container.appendChild(tourButton);
 
@@ -423,6 +423,78 @@ export function CampusMap(container, onSelect, onStartTour) {
   if (bus && busStop) {
     initCampusBus(environment, bus, busStop);
   }
+
+/* CAMPUS WELCOME */
+
+container.classList.add("campus-welcome-host");
+
+const welcomeOverlay = document.createElement("div");
+welcomeOverlay.className = "campus-welcome-overlay";
+
+welcomeOverlay.innerHTML = `
+  <section class="campus-welcome-card" role="dialog" aria-modal="true" aria-labelledby="campus-welcome-title">
+    <button class="campus-welcome-close" type="button" aria-label="Close">&times;</button>
+
+    <div class="campus-welcome-icon" aria-hidden="true">✳</div>
+
+    <p class="campus-welcome-eyebrow">A NOTE BEFORE YOU EXPLORE</p>
+    <h2 id="campus-welcome-title">Welcome to my campus!</h2>
+
+    <p class="campus-welcome-description">
+      An interactive portfolio showcasing my projects, experience, and journey in tech and design.
+    </p>
+
+    <div class="campus-welcome-tip">
+      <span class="campus-welcome-tip-icon" aria-hidden="true">⌖</span>
+      <div>
+        <h3>Explore the buildings + campus </h3>
+        <p>Click the buildings to learn more about me, and click the little campus discoveries for some fun surprises.</p>
+      </div>
+    </div>
+
+    <div class="campus-welcome-tip">
+      <span class="campus-welcome-tip-icon" aria-hidden="true">↗</span>
+      <div>
+        <h3>Explore your way</h3>
+        <p>Take a guided tour with Erica or browse the Campus Directory.</p>
+      </div>
+    </div>
+
+    <button class="campus-welcome-continue" type="button">
+      Let's explore <span aria-hidden="true">→</span>
+    </button>
+  </section>
+`;
+
+container.appendChild(welcomeOverlay);
+
+const dismissButton = welcomeOverlay.querySelector(
+  ".campus-welcome-close"
+);
+const continueButton = welcomeOverlay.querySelector(
+  ".campus-welcome-continue"
+);
+
+let welcomeDismissed = false;
+
+function dismissCampusWelcome() {
+  if (welcomeDismissed) return;
+  welcomeDismissed = true;
+
+  welcomeOverlay.classList.add("is-dismissing");
+  window.setTimeout(() => welcomeOverlay.remove(), 300);
+}
+
+dismissButton.addEventListener("click", dismissCampusWelcome);
+continueButton.addEventListener("click", dismissCampusWelcome);
+
+function handleWelcomeEscape(event) {
+  if (event.key === "Escape" && welcomeOverlay.isConnected) {
+    dismissCampusWelcome();
+  }
+}
+
+document.addEventListener("keydown", handleWelcomeEscape);
 
   /* =====================================================
      CAMERA
@@ -489,6 +561,14 @@ export function CampusMap(container, onSelect, onStartTour) {
         "portfolio:tour-status-change",
         handleTourStatusChange,
       );
+
+      document.removeEventListener(
+        "keydown",
+        handleWelcomeEscape,
+      );
+
+      window.clearTimeout(welcomeRemovalTimer);
+      welcomeOverlay.remove();
     },
   };
 }
