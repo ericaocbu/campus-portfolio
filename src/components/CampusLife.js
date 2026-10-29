@@ -553,7 +553,7 @@ export function CampusLife() {
     "campus-cat": {
       title: "THE CAMPUS CAT",
       text:
-        "It doesn't work here...it simply lives here (˶ᵔ ᵕ ᵔ˶)",
+        "It's Teddy, the campus cat! (˶ᵔ ᵕ ᵔ˶)",
     },
 
     recycling: {
@@ -949,7 +949,7 @@ const ericaTourStops = {
     left: "19%",
     top: "69%",
     message:
-      "Here's the Canteen — and, conveniently, this is also where you can find me. Grab a seat!",
+      "Here's the Canteen! Conveniently, this is where you can find me. Grab a seat!",
   },
 
   utown: {
