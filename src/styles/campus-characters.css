@@ -1366,7 +1366,7 @@
   border-left: 0;
   border-bottom: 0;
   border-radius:
-    0 30px 0 0;
+    10px 30px 10px 10px;
   transform:
     rotate(15deg);
   transform-origin:
