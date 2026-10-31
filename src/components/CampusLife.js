@@ -994,7 +994,6 @@ const ericaRoutes = {
     { left: "36%", top: "39%" },
     { left: "36%", top: "50%" },
     { left: "28%", top: "50%" },
-    { left: "28%", top: "58%" },
   ],
 
 
@@ -1004,9 +1003,7 @@ const ericaRoutes = {
   ===================================================== */
 
   "lecture-hall": [
-    { left: "28%", top: "58%" },
     { left: "28%", top: "69%" },
-    { left: "50%", top: "69%" },
     { left: "72%", top: "69%" },
     { left: "72%", top: "58%" },
   ],
@@ -1020,9 +1017,8 @@ const ericaRoutes = {
 
   "food-canteen": [
     { left: "72%", top: "78%" },
-    { left: "50%", top: "78%" },
-    { left: "36%", top: "78%" },
-    { left: "25%", top: "69%" },
+    { left: "43%", top: "78%" },
+    { left: "26%", top: "78%" },
   ],
 
 
@@ -1034,7 +1030,6 @@ const ericaRoutes = {
   utown: [
     { left: "25%", top: "69%" },
     { left: "50%", top: "69%" },
-    { left: "70%", top: "69%" },
     { left: "81%", top: "69%" },
   ],
 
@@ -1046,7 +1041,6 @@ const ericaRoutes = {
 
   "tour-complete": [
     { left: "77%", top: "69%" },
-    { left: "72%", top: "72%" },
     { left: "50%", top: "72%" },
   ],
 };
