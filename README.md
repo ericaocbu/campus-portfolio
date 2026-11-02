@@ -3,21 +3,24 @@
 An interactive portfolio website built around a virtual campus. Each area of the campus represents a different part of my portfolio, making it possible to explore my work, experience, education, and more 
 in a less traditional way.
 
-> Developed by Erica Ocbu 🫶🏽
-
 ## Preview
+
+### Welcome page
+<img width="1512" height="784" alt="Welcome Overlay Page" src="public/img/welcome.png"/>
+
+Visitors are greeted with a welcome message introducing the digital campus and giving them a quick look at how to explore it.
 
 ### Main Campus
 <img width="1512" height="784" alt="Campus Landing Page" src="public/img/Campus.png"/>
 
-Welcome to campus! Explore the grounds and discover the spaces that make up my portfolio.
+Welcome to campus! Explore the interactive campus, visit different buildings to discover my projects and experience, and uncover small details scattered throughout the grounds.
 
-### Campus Tour Feature - led by Orientation Leader Erica
+### Guided Campus Tour - Led by Orientation Leader Erica
 <img width="1512" height="784" alt="Campus Tour" src="public/img/Campus-Tour.png"/>
 
-The guided tour introduces visitors to the campus and helps them discover the different portfolio sections.
+Take a guided tour led by Orientation Leader Erica! She introduces visitors to the campus and helps them navigate the different sections of my portfolio.
 
-### Campus Discoveries Feature 
+### Campus Discoveries
 <img width="1512" height="784" alt="Campus Discoveries" src="public/img/Campus Discoveries.png"/>
 
 > [!NOTE]
