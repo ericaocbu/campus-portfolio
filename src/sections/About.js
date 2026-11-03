@@ -201,9 +201,10 @@ export function About({
             <a
               class="library-resume-button"
               href="/resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              DOWNLOAD RESUME
+              VIEW RESUME
             </a>
 
           </div>

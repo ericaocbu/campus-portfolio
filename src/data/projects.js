@@ -72,7 +72,7 @@ export const projects = [
 
     links: {
       prototype: "https://www.figma.com/proto/B8NBMjRzPPeMZIXV3AfZxu/prep4class?node-id=84-17&p=f&t=uxi1SWPGBlvAOxoO-1&scaling=scale-down&content-scaling=fixed&page-id=37%3A640&starting-point-node-id=84%3A17",
-      caseStudy: "https://www.figma.com/deck/4o83EM01nUHwF2Tjd2Rz7f/EricaOcbu_IndependentStudy?node-id=1-511&t=dctPXUkitBFY1hpk-1",
+      caseStudy: "https://www.figma.com/deck/yUrVQ682kNB5J8eQ6IB8fo/prep4class-design-portfolio-?node-id=1-70&t=TZ2GnVYI9d6DXFmF-1",
       live: "",
       github: "",
     },

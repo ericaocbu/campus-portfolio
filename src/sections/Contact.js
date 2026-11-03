@@ -373,7 +373,7 @@ export function Contact({
       "https://github.com/ericaocbu",
 
     resume:
-      "https://docs.google.com/document/d/1oWIFFFn8HCQ5NWvscC9ARSJkkdW-fAgP/edit?usp=sharing&ouid=108500505334719885937&rtpof=true&sd=true",
+      "/resume.pdf",
   };
 
 
