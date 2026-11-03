@@ -179,26 +179,6 @@ export function Projects() {
   function createCaseStudy(project) {
     const overlay = document.createElement("div");
 
-    const projectImages = {
-      "with-you": `${window.location.pathname.includes("/campus-portfolio")
-        ? "/campus-portfolio"
-        : ""}/projects/with-you-preview.png`,
-
-      prep4class: `${window.location.pathname.includes("/campus-portfolio")
-        ? "/campus-portfolio"
-        : ""}/projects/prep4class-preview.png`,
-
-      symptomsync: `${window.location.pathname.includes("/campus-portfolio")
-        ? "/campus-portfolio"
-        : ""}/projects/symptomsync-preview.png`,
-
-      incompass: `${window.location.pathname.includes("/campus-portfolio")
-        ? "/campus-portfolio"
-        : ""}/projects/incompass-preview.png`,
-    };
-
-    const projectImage = projectImages[project.id];
-
     overlay.className = `project-case-study case-study-${project.accent || "blue"}`;
     overlay.setAttribute("role", "dialog");
     overlay.setAttribute("aria-modal", "true");
@@ -261,35 +241,6 @@ export function Projects() {
             <span>${escapeHTML(project.year)}</span>
           </div>
         </header>
-
-        <section
-          class="case-study-cover"
-          aria-label="${escapeAttribute(project.name)} project preview"
-        >
-          <div class="case-cover-grid" aria-hidden="true"></div>
-
-          <div class="case-cover-corner case-cover-corner-tl">
-            FIG. ${escapeHTML(project.number)}.1
-          </div>
-
-          <div class="case-cover-placeholder">
-            <span class="case-placeholder-icon" aria-hidden="true">＋</span>
-          </div>
-
-          ${
-            projectImage
-              ? `<img
-                  class="case-project-image"
-                  src="${escapeAttribute(projectImage)}"
-                  alt="${escapeAttribute(project.name)} project screenshot"
-                />`
-              : ""
-          }
-
-          <div class="case-cover-corner case-cover-corner-br">
-            VISUAL DOCUMENTATION
-          </div>
-        </section>
 
         <section class="case-study-overview">
           <div class="case-section-heading">
