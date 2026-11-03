@@ -179,6 +179,15 @@ export function Projects() {
   function createCaseStudy(project) {
     const overlay = document.createElement("div");
 
+    const projectImages = {
+      "with-you": "/projects/with-you-preview.png",
+      prep4class: "/projects/prep4class-preview.png",
+      symptomsync: "/projects/symptomsync-preview.png",
+      incompass: "/projects/incompass-preview.png",
+    };
+
+    const projectImage = projectImages[project.id];
+
     overlay.className = `project-case-study case-study-${project.accent || "blue"}`;
     overlay.setAttribute("role", "dialog");
     overlay.setAttribute("aria-modal", "true");
@@ -244,7 +253,10 @@ export function Projects() {
           </div>
         </header>
 
-        <section class="case-study-cover" aria-label="Project screenshot placeholder">
+        <section
+          class="case-study-cover"
+          aria-label="${escapeAttribute(project.name)} project preview"
+        >
           <div class="case-cover-grid" aria-hidden="true"></div>
 
           <div class="case-cover-corner case-cover-corner-tl">
@@ -253,9 +265,17 @@ export function Projects() {
 
           <div class="case-cover-placeholder">
             <span class="case-placeholder-icon" aria-hidden="true">＋</span>
-            <strong>PROJECT PREVIEW</strong>
-            <span>SCREENSHOTS WILL BE ADDED HERE</span>
           </div>
+
+          ${
+            projectImage
+              ? `<img
+                  class="case-project-image"
+                  src="${escapeAttribute(projectImage)}"
+                  alt="${escapeAttribute(project.name)} project screenshot"
+                />`
+              : ""
+          }
 
           <div class="case-cover-corner case-cover-corner-br">
             VISUAL DOCUMENTATION

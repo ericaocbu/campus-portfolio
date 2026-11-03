@@ -131,8 +131,6 @@ function createProjectVisual(project) {
             </div>
           </div>
         </div>
-
-        <div class="visual-label">STUDY / ORGANIZE / GROW</div>
       </div>
     `;
   }
@@ -196,8 +194,6 @@ function createProjectVisual(project) {
             <div></div>
           </div>
         </div>
-
-        <div class="visual-label">TRACK / UNDERSTAND / MANAGE</div>
       </div>
     `;
   }
@@ -226,8 +222,6 @@ function createProjectVisual(project) {
           </div>
         </div>
       </div>
-
-      <div class="visual-label">EXPLORE / CONNECT / APPLY</div>
     </div>
   `;
 }
