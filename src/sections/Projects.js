@@ -146,7 +146,7 @@ export function Projects() {
 
   if (featuredProject) {
     featuredSlot.appendChild(
-      ProjectCard(featuredProject, openProject, { featured: true })
+      ProjectCard(featuredProject, openProject, { featured: true }),
     );
   }
 
@@ -203,14 +203,12 @@ export function Projects() {
               <p>${formatDescription(step.description)}</p>
             </div>
           </article>
-        `
+        `,
       )
       .join("");
 
     const skillsHTML = (project.skills || [])
-      .map(
-        (skill) => `<span class="case-tag">${escapeHTML(skill)}</span>`
-      )
+      .map((skill) => `<span class="case-tag">${escapeHTML(skill)}</span>`)
       .join("");
 
     const toolsHTML = (project.tools || [])
@@ -220,7 +218,7 @@ export function Projects() {
             <span class="case-tool-number">${String(index + 1).padStart(2, "0")}</span>
             <span>${escapeHTML(tool)}</span>
           </div>
-        `
+        `,
       )
       .join("");
 
@@ -387,7 +385,7 @@ export function Projects() {
 
     overlay
       .querySelectorAll(
-        ".case-study-close, .case-study-back, .case-study-footer-back"
+        ".case-study-close, .case-study-back, .case-study-footer-back",
       )
       .forEach((button) => {
         button.addEventListener("click", () => closeCaseStudy());
@@ -410,7 +408,7 @@ export function Projects() {
 
       const focusable = [
         ...overlay.querySelectorAll(
-          'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+          'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])',
         ),
       ].filter((element) => element.offsetParent !== null);
 
@@ -507,26 +505,27 @@ export function Projects() {
 
             <span class="case-link-arrow" aria-hidden="true">↗</span>
           </a>
-        `
+        `,
       )
       .join("");
   }
 
   function formatDescription(value = "") {
-    return escapeHTML(value).replace(
-      /&lt;br\s*\/?&gt;|\n/gi,
-      "<br>"
-    );
+    return escapeHTML(value).replace(/&lt;br\s*\/?&gt;|\n/gi, "<br>");
   }
 
   function escapeHTML(value = "") {
-    return String(value).replace(/[&<>"']/g, (character) => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;",
-    })[character]);
+    return String(value).replace(
+      /[&<>"']/g,
+      (character) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[character],
+    );
   }
 
   function escapeAttribute(value = "") {
