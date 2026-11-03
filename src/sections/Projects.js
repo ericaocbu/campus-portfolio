@@ -180,10 +180,21 @@ export function Projects() {
     const overlay = document.createElement("div");
 
     const projectImages = {
-      "with-you": "/projects/with-you-preview.png",
-      prep4class: "/projects/prep4class-preview.png",
-      symptomsync: "/projects/symptomsync-preview.png",
-      incompass: "/projects/incompass-preview.png",
+      "with-you": `${window.location.pathname.includes("/campus-portfolio")
+        ? "/campus-portfolio"
+        : ""}/projects/with-you-preview.png`,
+
+      prep4class: `${window.location.pathname.includes("/campus-portfolio")
+        ? "/campus-portfolio"
+        : ""}/projects/prep4class-preview.png`,
+
+      symptomsync: `${window.location.pathname.includes("/campus-portfolio")
+        ? "/campus-portfolio"
+        : ""}/projects/symptomsync-preview.png`,
+
+      incompass: `${window.location.pathname.includes("/campus-portfolio")
+        ? "/campus-portfolio"
+        : ""}/projects/incompass-preview.png`,
     };
 
     const projectImage = projectImages[project.id];
