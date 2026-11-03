@@ -78,7 +78,7 @@ export const projects = [
     },
 
     visual: "study",
-    accent: "blue",
+    accent: "burgundy",
   },
 
   {
