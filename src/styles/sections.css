@@ -616,7 +616,7 @@
   max-width: 680px;
 
   margin:
-    4rem 0 0 auto;
+    2rem 0 0 28rem;
 }
 
 .home-large-text {
@@ -1135,6 +1135,13 @@
     text-align: left;
   }
 
+  .home-about-content {
+  max-width: 680px;
+
+  margin:
+    4rem 0 0 auto;
+}
+
 }
 
 
@@ -1228,6 +1235,12 @@
     grid-column: 1 / -1;
   }
 
+  .home-about-content {
+  max-width: 680px;
+
+  margin:
+    4rem 0 0 auto;
+}
 }
 
 /* =====================================================

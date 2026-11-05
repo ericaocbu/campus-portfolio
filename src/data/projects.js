@@ -170,7 +170,7 @@ export const projects = [
     name: "SymptomSync",
     subtitle: "Health & Wellness Dashboard",
     type: "FRONT-END BUILD",
-    year: "2025",
+    year: "2026",
 
     featured: false,
 
