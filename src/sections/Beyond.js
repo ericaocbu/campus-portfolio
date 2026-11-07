@@ -111,11 +111,9 @@ export function Beyond({ onBack }) {
       body: `
         <div class="dorm-content-list">
           <span>Travel within the next year</span>
-          <span>Learn ASL</span>
-          <span>Learn another language</span>
-          <span>Take more photos!!</span>
+          <span>Continue learning and practicing ASL</span>
           <span>See more live music/concerts</span>
-          <span>Get better at cooking...</span>
+          <span>Expand my cooking skills and learn new recipes</span>
         </div>
       `,
     },
@@ -127,8 +125,7 @@ export function Beyond({ onBack }) {
         <div class="dorm-pill-grid">
           <span>ASL</span>
           <span>React js</span>
-          <span>Photography</span>
-          <span>Whatever catches my attention</span>
+          <span>video + photo editing</span>
         </div>
       `,
     },
@@ -337,7 +334,7 @@ export function Beyond({ onBack }) {
           </div>
 
           <div class="favorite-item">
-            <span class="favorite-label">TRAVEL</span>
+            <span class="favorite-label">TRAVEL DESTINATION</span>
             <strong>[vietnam]</strong>
           </div>
 

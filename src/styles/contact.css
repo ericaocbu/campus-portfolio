@@ -905,8 +905,7 @@
 
   .canteen-window {
     max-width: 400px;
-
-    margin: 0 auto;
+    margin: 0;
   }
 
 
@@ -1038,7 +1037,6 @@
 
 }
 
-
 @media (max-width: 600px) {
 
   .canteen-entrance-copy h1 {
@@ -1050,6 +1048,10 @@
       );
   }
 
+  .canteen-window {
+    max-width: 400px;
+    margin: 0;
+  }
 
   .canteen-menu-board {
     padding:

@@ -1309,14 +1309,28 @@ color-mix(in srgb, var(--case-accent) 18%, transparent);
   gap: 0 35px;
 }
 
-.case-process-list::before {
+.case-process-list::before,
+.case-process-list::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 18px;
   width: 1px;
   background: color-mix(in srgb, var(--case-accent) 22%, transparent);
+}
+
+.case-process-list::before {
+  left: 18px;
+}
+
+.case-process-list::after {
+  left: calc(50% + 35px);
+}
+
+@media (max-width: 768px) {
+  .case-process-list::after {
+    display: none;
+  }
 }
 
 .case-process-step {
