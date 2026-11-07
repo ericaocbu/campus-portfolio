@@ -1,17 +1,7 @@
-import { campus } from "../data/campus.js";
+export function About({ onBack, onStartTour } = {}) {
+  const portfolio = document.createElement("div");
 
-export function About({
-  onBack,
-  onStartTour,
-  onNavigate,
-} = {}) {
-
-  const portfolio =
-    document.createElement("div");
-
-  portfolio.classList.add(
-    "library-portfolio"
-  );
+  portfolio.classList.add("library-portfolio");
 
   portfolio.innerHTML = `
 
@@ -750,151 +740,143 @@ export function About({
 
     </section>
 
+    <!-- =====================================================
+     LIBRARY CHECKOUT DESK
+    ====================================================== -->
 
-<!-- =====================================================
-     BEYOND THE SCREEN
-====================================================== -->
+    <section class="library-beyond">
 
-<section class="library-beyond">
+      <div class="library-checkout">
 
-  <div class="library-return-cart">
+        <div class="library-checkout-header">
+          <div>
+            <span class="library-checkout-eyebrow">
+              THE ERICA LIBRARY / BEFORE YOU GO
+            </span>
 
-    <!-- CART HANDLE -->
+            <h2>
+              CHECKOUT
+              <em>DESK.</em>
+            </h2>
+          </div>
 
-    <div class="library-cart-handle">
-      <span></span>
-      <span></span>
-    </div>
-
-
-    <!-- CART BODY -->
-
-    <div class="library-cart-body">
-
-      <div class="library-cart-header">
-
-        <div>
-          <span>LIBRARY SERVICES</span>
-
-          <strong>
-            RETURN CART
-          </strong>
+          <p>
+            That's the end of this collection.
+            Thanks for taking the time to look around.
+            Check out the next location, the Lab!
+          </p>
         </div>
 
-        <span class="library-cart-number">
-          CART NUM 005
-        </span>
+
+        <div class="library-checkout-scene">
+
+          <!-- ITEMS ON THE COUNTER -->
+
+          <div class="library-checkout-countertop">
+
+            <div class="library-checkout-books" aria-hidden="true">
+              <div class="checkout-book checkout-book-one">
+                <span>THE ERICA LIBRARY</span>
+                <strong>IDEAS<br />& PEOPLE</strong>
+                <small>VOL. 01</small>
+              </div>
+
+              <div class="checkout-book checkout-book-two">
+                <span>FIELD NOTES</span>
+                <strong>DESIGN<br />JOURNAL</strong>
+                <small>2026</small>
+              </div>
+
+              <div class="checkout-book checkout-book-three">
+                <span>ARCHIVE</span>
+                <strong>SELECTED<br />WORK</strong>
+                <small>COLLECTION 01</small>
+              </div>
+            </div>
+
+
+            <!-- CHECKOUT TERMINAL -->
+
+            <div class="library-checkout-terminal">
+
+              <div class="checkout-terminal-frame">
+
+                <div class="checkout-terminal-top">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="checkout-terminal-screen">
+
+                  <div class="checkout-screen-brand">
+                    <span>THE ERICA LIBRARY</span>
+                    <span>EST. 2026</span>
+                  </div>
+
+                  <div class="checkout-screen-content">
+                    <span class="checkout-screen-icon">✓</span>
+
+                    <strong>
+                      VISIT<br />
+                      COMPLETE.
+                    </strong>
+
+                    <small>
+                      THANK YOU FOR STOPPING BY
+                    </small>
+                  </div>
+
+                  <div class="checkout-screen-footer">
+                    <span>SESSION 001</span>
+                    <span>END OF COLLECTION</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="checkout-terminal-base"></div>
+
+            </div>
+
+
+            <!-- SMALL DESK DETAIL -->
+
+            <div class="library-checkout-desk-note">
+              <span>PLEASE VISIT AGAIN</span>
+              <strong>THE ERICA LIBRARY</strong>
+            </div>
+
+          </div>
+
+
+          <!-- FRONT OF THE DESK -->
+
+          <div class="library-checkout-front">
+
+            <div class="checkout-front-left">
+              <span>THE ERICA LIBRARY</span>
+              <strong>NEXT STOP: THE LAB</strong>
+            </div>
+
+            <div class="checkout-front-right">
+              <span>DESIGN · CODE · HCI</span>
+              <span>END OF COLLECTION / 001</span>
+            </div>
+
+          </div>
+
+
+          <!-- DESK BASE -->
+
+          <div class="library-checkout-base"></div>
+
+        </div>
 
       </div>
 
-
-      <!-- BOOKS -->
-
-      <div class="library-cart-books">
-
-        <div class="library-cart-book cart-book-one">
-
-          <span>VOLUME</span>
-
-          <strong>
-            DESIGN<br />
-            + CODE
-          </strong>
-
-          <small>
-            ERICA'S LIBRARY
-          </small>
-
-        </div>
-
-
-        <div class="library-cart-book cart-book-two">
-
-          <span>VOLUME</span>
-
-          <strong>
-            BEYOND<br />
-            THE SCREEN
-          </strong>
-
-          <small>
-            CONTINUED...
-          </small>
-
-        </div>
-
-
-        <div class="library-cart-book cart-book-three">
-
-          <span>VOLUME</span>
-
-          <strong>
-            LIFE<br />
-            OFFLINE
-          </strong>
-
-          <small>
-            NEXT CHAPTER
-          </small>
-
-        </div>
-
-      </div>
-
-
-      <!-- RETURN SLIP -->
-
-      <div class="library-return-slip">
-
-        <span class="library-return-slip-label">
-          FINAL VOLUME
-        </span>
-
-        <h2>
-          THERE'S MORE
-          <br />
-          <em>TO ME.</em>
-        </h2>
-
-        <p>
-          Design and development are a big part of
-          my world, but they're not the whole story.
-          There's a little more to discover beyond
-          the screen.
-        </p>
-
-        <div class="library-return-slip-footer">
-
-          <span>
-            DESTINATION
-            <strong>THE DORMS</strong>
-          </span>
-
-          <button
-            type="button"
-            class="library-beyond-button"
-            data-location="utown"
-          >
-            CONTINUE READING
-            <span>→</span>
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- CART WHEELS -->
-
-    <div class="library-cart-wheel library-cart-wheel-left"></div>
-    <div class="library-cart-wheel library-cart-wheel-right"></div>
-
-  </div>
-
-</section>
-
+    </section>
 
     <!-- =====================================================
          FOOTER
@@ -911,37 +893,6 @@ export function About({
     </div>
 
   `;
-
-
-   /*
-   * VISIT THE DORM
-   */
-
-  const beyondButton =
-    portfolio.querySelector(
-      ".library-beyond-button"
-    );
-
-  if (beyondButton) {
-
-    beyondButton.addEventListener(
-      "click",
-      () => {
-
-        const utown =
-          campus.locations.find(
-            (location) =>
-              location.id === "utown"
-          );
-
-        if (utown && onNavigate) {
-          onNavigate(utown);
-        }
-
-      }
-    );
-
-  }
 
   return portfolio;
 }
