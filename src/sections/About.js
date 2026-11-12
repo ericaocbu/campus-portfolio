@@ -190,7 +190,7 @@ export function About({ onBack, onStartTour } = {}) {
 
             <a
               class="library-resume-button"
-              href="/resume.pdf"
+              href="./public/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
