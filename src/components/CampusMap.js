@@ -278,8 +278,8 @@ export function CampusMap(container, onSelect, onStartTour) {
       <span class="sign-post sign-post-right"></span>
 
       <span class="sign-board">
-        ERICA'S
-        <strong>DIGITAL CAMPUS</strong>
+        ERICA OCBU
+        <strong>UI/UX DESIGN · FRONT-END DEVELOPMENT</strong>
       </span>
     </div>
   `;
@@ -446,17 +446,18 @@ export function CampusMap(container, onSelect, onStartTour) {
       </button>
 
       <div class="field-guide-header">
-        <span class="field-guide-stamp">A QUICK FIELD GUIDE</span>
+        <span class="field-guide-stamp">DESIGNER'S FIELD GUIDE</span>
         <span class="field-guide-edition">EST. 2026</span>
       </div>
 
       <h2 id="campus-welcome-title">
-        Welcome to my
-        <span>campus portfolio.</span>
+        Hi, I'm Erica!
+        <span>UI/UX Designer & Front-End Developer.</span>
       </h2>
 
       <p class="campus-welcome-description">
-        An interactive portfolio where you can wander around!
+        I design and build thoughtful digital experiences, bringing user needs,
+        accessible design, and front-end development together.
       </p>
 
       <div class="field-guide-map" aria-label="Illustrated miniature campus map">
@@ -609,25 +610,35 @@ export function CampusMap(container, onSelect, onStartTour) {
       <div class="field-guide-directions">
         <div class="field-guide-direction">
           <span class="direction-icon" aria-hidden="true">⌂</span>
+
           <p>
-            <strong>Pop into the buildings</strong>
-            <span>Explore my projects + experience, and learn more about me.</span>
+            <strong>Explore my work</strong>
+            <span>
+              Visit the <b>Innovation Lab</b> for projects, design processes,
+              and the experiences I've helped create.
+            </span>
           </p>
+
           <span class="direction-arrow" aria-hidden="true">↗</span>
         </div>
 
         <div class="field-guide-direction">
           <span class="direction-icon discovery-icon" aria-hidden="true">✿</span>
+
           <p>
-            <strong>Notice the little things</strong>
-            <span>Click campus discoveries for fun surprises.</span>
+            <strong>Get to know me</strong>
+            <span>
+              Explore my background, experience, and a few personal surprises
+              along the way.
+            </span>
           </p>
+
           <span class="direction-arrow" aria-hidden="true">✳</span>
         </div>
       </div>
 
       <button class="campus-welcome-continue" type="button">
-        Let's explore <span aria-hidden="true">→</span>
+        Explore the campus <span aria-hidden="true">→</span>
       </button>
 
       <p class="field-guide-footer">

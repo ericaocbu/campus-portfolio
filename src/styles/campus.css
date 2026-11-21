@@ -1691,10 +1691,11 @@
   color: #65816b;
   font-style: italic;
   font-weight: 500;
+  font-size: clamp(25px, 5vw, 30px);
 }
 
 .campus-welcome-description {
-  max-width: 300px;
+  max-width: 350px;
   margin: 12px auto 21px;
   color: #727865;
   font-size: 13px;
