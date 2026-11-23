@@ -1572,10 +1572,9 @@
   --muted-ink: #71806a;
   --sage: #e8ebd9;
   --terracotta: #b96f54;
-
   position: relative;
-  width: min(100%, 450px);
-  padding: 27px 30px 18px;
+  width: min(100%, 500px);
+  padding: 28px 38px 20px;
   overflow: hidden;
   color: var(--ink);
   background:
@@ -1695,7 +1694,7 @@
 }
 
 .campus-welcome-description {
-  max-width: 350px;
+  max-width: 460px;
   margin: 12px auto 21px;
   color: #727865;
   font-size: 13px;
@@ -1707,8 +1706,8 @@
 
 .field-guide-map {
   position: relative;
-  margin: 0 0 18px;
-  padding: 19px 8px 20px;
+  margin: 0 0 16px;
+  padding: 17px 12px 18px;
   background: #f2f0df;
   border: 1px solid #e3e1cc;
   border-radius: 5px 14px 6px 12px;
@@ -1906,6 +1905,7 @@
   }
 
   .campus-welcome-card {
+    width: 100%;
     padding: 23px 20px 16px;
   }
 
